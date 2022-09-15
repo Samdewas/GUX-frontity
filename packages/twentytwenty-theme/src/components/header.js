@@ -1,18 +1,22 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Navigation from "./navigation/navigation";
+
 import SearchButton from "./search/search-button";
 import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
-
+import '../assets/css/custome.css';
+import Logo from "../assets/img/logo.png"
 const Header = ({ state }) => {
   const { title, description } = state.frontity;
   const { headerBg } = state.theme.colors;
 
+
+  
   return (
-    <PageHeader bg={headerBg} id="site-header">
+    <PageHeader bg={headerBg} id="site-header" className="ux_header_main">
       <HeaderInner>
         <TitleWrapper>
           {/* Search button on mobile */}
@@ -21,9 +25,13 @@ const Header = ({ state }) => {
           {/* Heading and Description of the site */}
           <TitleGroup>
             <SiteTitle>
-              <StyledLink link="/">{title}</StyledLink>
+              <StyledLink link="/">
+                {/* {title}  */}
+                {/* <img className="logo" src={Logo} /> */}
+                <span> Logo </span>
+              </StyledLink>
             </SiteTitle>
-            <SiteDescription>{description}</SiteDescription>
+            {/* <SiteDescription>{description}</SiteDescription> */}
           </TitleGroup>
 
           {/* Mobile menu button and modal */}
@@ -33,9 +41,12 @@ const Header = ({ state }) => {
 
         <HeaderNavigationWrapper>
           {/* Desktop navigation links */}
-          <Navigation />
+
+          {/* <img src={Logo} /> */}
+          <Navigation className="nav_link_color"/>
+          <button className="header_btn"> <Link to="/"> Contact Us  </Link>  </button>
           {/* Desktop search button */}
-          {state.theme.showSearchInHeader && <SearchButton />}
+          {/* {state.theme.showSearchInHeader && <SearchButton />} */}
         </HeaderNavigationWrapper>
       </HeaderInner>
       {/* Global search modal */}
@@ -86,6 +97,7 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   padding: 2.8rem 0;
   max-width: 168rem;
+  justify-content: center;
   z-index: 100;
   margin-left: auto;
   margin-right: auto;
@@ -109,6 +121,22 @@ const SiteTitle = styled.h1`
     font-weight: 700;
   }
 `;
+
+const SiteTitleImg = styled.img`
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+
+  @media (min-width: 1000px) {
+    margin: 1rem 0 0 2.4rem;
+  }
+  @media (min-width: 700px) {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+`;
+
 
 const SiteDescription = styled.div`
   margin: 0;
@@ -141,9 +169,15 @@ const StyledLink = styled(Link)`
 
 const HeaderNavigationWrapper = styled.div`
   display: none;
-
   @media (min-width: 1000px) {
     align-items: center;
     display: flex;
+   
   }
 `;
+
+
+
+
+
+

@@ -74,7 +74,7 @@ const documentSetup = (colors) => css`
   }
 
   body {
-    background: ${colors.bodyBg};
+    // background: ${colors.bodyBg};
     box-sizing: border-box;
     color: #000;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
@@ -568,6 +568,69 @@ const tableStyles = (colors) => css`
   th {
     font-weight: 700;
   }
+
+
+
+  img.logo {
+    max-width: 180px;
+}
+
+butto.header_btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.header_btn {
+  margin: 0px 20px;
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 12px 29px;
+}
+header#site-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background: transparent;
+}
+img.banner_img {
+  position: absolute;
+  top: 0;
+  z-index: -9;
+}
+section.banner_section {
+  padding: 40px 0px;
+  height: 700px;
+}
+.banner_content {
+  text-align: center;
+  padding-top: 100px;
+  width: 90%;
+  margin: auto;
+}
+.banner_content h2 {
+  color: #084523;
+}
+.banner_content p {
+  font-size: 20px;
+}
+header#site-header a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+.header_btn a {
+  color: white !important;
+}
+
+header#site-header  li{
+  margin: 0.8rem 0 0 3rem!important;
+}
+header#site-header ul{
+  margin: 0px 30px 0px 10px;
+}
+
 `;
 
 /**

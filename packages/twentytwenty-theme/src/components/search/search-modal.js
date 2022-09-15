@@ -101,7 +101,7 @@ const SearchModal = ({ state, actions }) => {
                         ref={inputRef}
                         type="search"
                         defaultValue={searchQuery || ""}
-                        placeholder="search for:"
+                        placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                         name="search"
                       />
                       <SearchButton bg={primary}>Search</SearchButton>

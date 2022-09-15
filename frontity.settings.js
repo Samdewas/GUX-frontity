@@ -13,24 +13,32 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
+            // [
+            //   "Home",
+            //   "/"
+            // ],
             [
-              "Home",
-              "/"
-            ],
-            [
-              "Nature",
+              "Fonts",
               "/category/nature/"
             ],
             [
-              "Travel",
+              "Add-Ons",
               "/category/travel/"
             ],
             [
-              "Japan",
+              "Templates",
               "/tag/japan/"
             ],
             [
-              "About Us",
+              "Graphics",
+              "/about-us/"
+            ],
+            [
+              "Themes",
+              "/about-us/"
+            ],
+            [
+              "Stock Image",
               "/about-us/"
             ]
           ],
