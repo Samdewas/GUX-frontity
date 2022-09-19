@@ -103,7 +103,7 @@ const HeaderInner = styled.div`
   margin-right: auto;
 
   @media (min-width: 700px) {
-    width: calc(100% - 8rem);
+    width: calc(100% - 6rem);
   }
 `;
 

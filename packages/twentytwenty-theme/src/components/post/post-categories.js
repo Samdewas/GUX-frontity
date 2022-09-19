@@ -10,17 +10,19 @@ const PostCategories = ({ categories }) => {
     return null;
   }
 
+  console.log(postCategories)
+
   return (
     <EntryCategories>
       <ScreenReaderText>Categories</ScreenReaderText>
-{/* 
+
       <EntryCategoriesInner >
         {postCategories.map((category) => (
           <CategoryTag key={category.id} link={category.link}>
             {decode(category.name)}
           </CategoryTag>
         ))}
-      </EntryCategoriesInner> */}
+      </EntryCategoriesInner>
     </EntryCategories>
   );
 };

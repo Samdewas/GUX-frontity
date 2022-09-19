@@ -598,6 +598,7 @@ img.banner_img {
   position: absolute;
   top: 0;
   z-index: -9;
+  width:100%;
 }
 section.banner_section {
   padding: 40px 0px;

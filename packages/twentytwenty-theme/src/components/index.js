@@ -109,7 +109,7 @@ const Theme = ({ state, actions }) => {
 
           <section className="banner_section" >
             <img className="banner_img" src={BannerBg} />
-            <SectionContainer>
+            <SectionContainer size="large">
               <div className="banner_content">
                 <h2> Discover Free Premium Fonts,
                   Photoshop Action & All Graphic Resources </h2>

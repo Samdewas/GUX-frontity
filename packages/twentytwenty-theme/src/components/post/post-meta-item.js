@@ -20,18 +20,22 @@ const PostMetaItem = ({ icon: Icon, label, link, children }) => {
 const MetaIcon = styled.span`
   flex-shrink: 0;
   margin-right: 1rem;
+  
 `;
 
 const MetaText = styled.span`
   a {
     color: inherit;
     text-decoration: none;
+    font-size:14px;
   }
 
   a:hover {
     text-decoration: underline;
   }
+  
 `;
+
 
 const ListItem = styled.li`
   align-items: center;
@@ -44,8 +48,11 @@ const ListItem = styled.li`
   text-transform: capitalize;
 
   @media (min-width: 700px) {
-    margin: 1.4rem 0 0 3rem;
+    margin: 1.4rem 0 0 0rem;
     max-width: calc(100% - 3rem);
+  }
+  span{
+    font-size:14px;
   }
 `;
 

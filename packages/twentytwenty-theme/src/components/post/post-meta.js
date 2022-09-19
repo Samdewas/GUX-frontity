@@ -3,9 +3,9 @@ import PostMetaItem from "./post-meta-item";
 import { UserIcon, CalendarIcon } from "../icons";
 
 export const PostMetaWrapper = styled.div`
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   @media (min-width: 700px) {
-    margin-top: 3rem;
+    margin-top: 0.5rem;
   }
 `;
 
@@ -25,7 +25,9 @@ export const PostMetaList = styled.ul`
 
   @media (min-width: 700px) {
     font-size: 1.6rem;
-    margin: -1.4rem 0 0 -3rem;
+    margin: -1.4rem 0 0 0rem;
+    display: flex;
+    justify-content: space-between;
   }
 `;
 

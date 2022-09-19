@@ -31,13 +31,13 @@ const FeaturedMedia = ({ state, id, className }) => {
 
   return (
     <Figure className={className}>
-      <SectionContainer size="medium">
+     
         <Image
           alt={media.title.rendered}
           src={media.source_url}
           srcSet={srcset}
         />
-      </SectionContainer>
+
     </Figure>
   );
 };
@@ -45,18 +45,16 @@ const FeaturedMedia = ({ state, id, className }) => {
 export default connect(FeaturedMedia);
 
 const Figure = styled.figure`
-  margin-top: 5rem;
   position: relative;
-
-  @media (min-width: 700px) {
-    margin-top: 6rem;
-  }
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: -9;
 `;
 
 const Image = styled(Img)`
   margin: 0 auto;
   max-width: 100%;
+  width:auto;
   display: block;
   height: auto;
-  max-height: 440px;
 `;

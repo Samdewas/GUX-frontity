@@ -4,7 +4,7 @@ import FeaturedMedia from "./featured-media";
 import PostMeta from "./post-meta";
 import PostCategories from "./post-categories";
 import PostTags from "./post-tags";
-
+import Eye from "../../assets/img/eye.svg";
 /**
  * Article Component.
  *
@@ -50,46 +50,81 @@ const PostItem = ({
   const content = showExcerpt ? item.excerpt : item.content;
   const { Component: Html2React } = libraries.html2react;
   return (
-    <Post>
-      <PostHeader>
-        <SectionContainer>
-          {/* If the post has categories, render the categories */}
-          {item.categories && <PostCategories categories={categories} />}
+    <>
 
-          {/* The clickable heading for the post */}
-          <PostLink link={item.link}>
-            <PostItemTitle
-              className="heading-size-1"
-              dangerouslySetInnerHTML={{ __html: item.title.rendered }}
-            />
-          </PostLink>
+      {/* {item.categories && <PostCategories categories={categories} />} */}
 
-          {/* The post's metadata like author, publish date, and comments */}
+
+      <PostBox>
+        <PostBoxImg>
+          {state.theme.featuredMedia.showOnArchive && showMedia && (
+            <FeaturedMedia id={item.featured_media} />
+          )}
+        </PostBoxImg>
+
+        <PostTextBox>
+
+          <PostTit>
+            <PostLink link={item.link}>
+              <PostItemTitle
+                className="heading-size-1"
+                dangerouslySetInnerHTML={{ __html: item.title.rendered }}
+              />
+            </PostLink>
+            <ImgView>
+              <img src={Eye} />  <span> 10 Views </span>
+            </ImgView>
+          </PostTit>
           <PostMeta item={item} />
-        </SectionContainer>
-      </PostHeader>
+        </PostTextBox>
+      </PostBox >
 
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
-      {state.theme.featuredMedia.showOnArchive && showMedia && (
-        <FeaturedMedia id={item.featured_media} />
-      )}
 
-      {/* If the post has an excerpt (short summary text), we render it */}
-      {content && (
-        <PostInner size="thin">
-          {/* TODO: Change this to HTML2React */}
-          {/* dangerouslySetInnerHTML={{ __html: content.rendered }} */}
-          <EntryContent>
-            <Html2React html={content.rendered} />
-          </EntryContent>
-          {/* If the post has tags, render it */}
-          {item.tags && <PostTags tags={tags} />}
-        </PostInner>
-      )}
-    </Post>
+
+
+
+
+
+      {/* <Post>
+        <PostHeader>
+          <SectionContainer>
+          
+            {item.categories && <PostCategories categories={categories} />}
+
+         
+            <PostLink link={item.link}>
+              <PostItemTitle
+                className="heading-size-1"
+                dangerouslySetInnerHTML={{ __html: item.title.rendered }}
+              />
+            </PostLink>
+
+           
+            <PostMeta item={item} />
+          </SectionContainer>
+        </PostHeader>
+
+   
+        {state.theme.featuredMedia.showOnArchive && showMedia && (
+          <FeaturedMedia id={item.featured_media} />
+        )}
+
+      
+        {content && (
+          <PostInner size="thin">
+        
+            <EntryContent>
+              <Html2React html={content.rendered} />
+            </EntryContent>
+          
+            {item.tags && <PostTags tags={tags} />}
+          </PostInner>
+        )}
+      </Post> */}
+
+
+
+    </>
   );
 };
 
@@ -119,6 +154,7 @@ const maxWidths = {
   thin: "58rem",
   small: "80rem",
   medium: "100rem",
+  large: "120rem",
 };
 
 /**
@@ -133,18 +169,19 @@ const getMaxWidth = (props) => maxWidths[props.size] || maxWidths["medium"];
 export const SectionContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
-  width: calc(100% - 4rem);
+  width: calc(100% - 0rem);
   max-width: ${getMaxWidth};
 
   @media (min-width: 700px) {
-    width: calc(100% - 8rem);
+    width: calc(100% - 0rem);
   }
 `;
 
 export const PostItemTitle = styled.h2`
-  margin: 0;
+  margin: 12px 0px 5px 0px;
+  
   @media (min-width: 700px) {
-    font-size: 6.4rem;
+    font-size: 2rem;
   }
 `;
 
@@ -156,7 +193,7 @@ export const PostCaption = styled(SectionContainer)`
   /* .section-inner.max-percentage */
   margin-left: auto;
   margin-right: auto;
-  max-width: ${getMaxWidth({ size: "small" })};
+  max-width: ${getMaxWidth({ size: "large" })};
   width: 100%;
 
   /* .singular .intro-text */
@@ -253,3 +290,53 @@ export const EntryContent = styled.div`
     }
   }
 `;
+
+export const PostMain = styled.postMain`
+display: grid;
+grid-template-columns: repeat(3,2fr);
+gap: 20px 20px;
+`;
+
+export const PostBox = styled.postBox`
+width: 100%;
+`;
+
+export const PostBoxImg = styled.postBoxImg`
+
+`;
+
+export const PostTextBox = styled.postText`
+background: #FFFFFF;
+box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+border-radius: 10px;
+width: 90%;
+padding: 5px 15px 15px 15px;
+margin: -3rem 0rem 0rem 2rem;
+float: left;
+z-index: -999;
+
+`;
+
+export const PostTit = styled.postTit`
+
+`;
+
+
+export const ImgView = styled.imgView`
+display:flex;
+align-items: center;
+padding: 0px 0px 4px 0px;
+    img{
+      width: 20px;
+      filter: contrast(0.5);
+      margin-right: 5px;
+    }
+
+    span{
+      font-size: 12px;
+    color: #868686;
+    }
+
+`;
+
+
