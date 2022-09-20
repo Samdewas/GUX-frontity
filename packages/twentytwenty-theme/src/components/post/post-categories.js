@@ -10,10 +10,9 @@ const PostCategories = ({ categories }) => {
     return null;
   }
 
-  console.log(postCategories)
 
   return (
-    <EntryCategories>
+    <EntryCategories> 
       <ScreenReaderText>Categories</ScreenReaderText>
 
       <EntryCategoriesInner >

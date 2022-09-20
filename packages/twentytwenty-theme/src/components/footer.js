@@ -1,6 +1,7 @@
 import { styled, connect } from "frontity";
 import Link from "./link";
-
+import NwsIcon from "../assets/img/nws_icn.png"
+import Notification from "../assets/img/noti.png"
 // Component that provides scroll to top functionality
 const BackToTop = () => {
   // scroll to top function
@@ -27,32 +28,49 @@ const Footer = ({ state }) => {
 
   return (
     <SiteFooter bg={footerBg} role="contentinfo">
-    
-      
+
+
       <SectionContainer>
         <NewsLetter>
+          <NewsImg>
+          <img src={NwsIcon} />
+          </NewsImg>
+         
           <NewsLetterBox>
             <h2> Stay In Touch </h2>
             <p> Subscribe Our Newsletter to get updated! </p>
             <NewsLetterInput>
               <input type="text" placeholder="Email address" />
-              <button> Subscribe </button>
+              <button> Subscribe  <img src={Notification} /> </button>
             </NewsLetterInput>
           </NewsLetterBox>
         </NewsLetter>
 
+        <FooterLink>
+          <h3> <Link to="/"> Logo </Link> </h3>
+          <ul>
+            <li> <Link to="/"> About </Link> </li>
+            <li> <Link to="/"> Categories </Link> </li>
+            <li> <Link to="/"> Privacy Policy </Link> </li>
+            <li> <Link to="/"> Dmca</Link> </li>
+            <li> <Link to="/"> Contact us</Link> </li>
+          </ul>
+        </FooterLink>
 
-        <Credits>
-          <Copyright>
+
+        
+        {/* <BackToTop /> */}
+      </SectionContainer>
+
+      <Credits>
+          {/* <Copyright>
             &copy; {currentYear}{" "}
             <Link link={state.frontity.url}>{state.frontity.title}</Link>
-          </Copyright>
-          <PoweredBy>Powered by Frontity</PoweredBy>
+          </Copyright> */}
+          <PoweredBy>@2021 GraphicUX All Right Reserved</PoweredBy>
         </Credits>
-        {/* <BackToTop /> */}
-        </SectionContainer>
 
-     
+
     </SiteFooter>
   );
 };
@@ -71,9 +89,36 @@ const SiteFooter = styled.footer`
   padding: 3rem 0;
   background-color: #151B27;
   color: #000000;
+  position:relative;
+
+
+  :after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 30px;
+    width: 450px;
+    height: 450px;
+    background: rgba(21, 190, 119, 0.35);
+    -webkit-filter: blur(125.5px);
+    filter: blur(125.5px);
+  }
+
+  :before{
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    width: 450px;
+    height: 450px;
+    background: rgba(21, 190, 119, 0.35);
+    -webkit-filter: blur(125.5px);
+    filter: blur(125.5px);
+    margin: auto 0;
+  }
 
   @media (min-width: 700px) {
-    margin-top: 8rem;
+    margin-top: 15rem;
     font-size: 1.8rem;
     padding: 8rem 0 4.3rem 0;
   }
@@ -85,6 +130,11 @@ const SiteFooter = styled.footer`
 `;
 
 const Credits = styled.div`
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ffffff42;
+    padding-top: 30px;
+    
   @media (min-width: 700px) {
     display: flex;
   }
@@ -113,17 +163,59 @@ const NewsLetter = styled.newsLletter`
 background: #084523;
 box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
 border-radius: 30px;
-height: 325px;
+padding: 90px 0px;
 width: 100%;
 display: block;
 display: flex;
 justify-content: center;
 align-items: center;
+position:relative;
+overflow: hidden;
+margin-top: -17rem;
+margin-bottom: 30px;
+
+:after{
+  content: "";
+  position: absolute;
+  width: 455px;
+  height: 454px;
+  background: rgba(255, 227, 80, 0.2);
+  filter: blur(125.5px);
+  left: -180px;
+  bottom: -150px;
+}
+:before{
+  content: "";
+  position: absolute;
+  width: 455px;
+  height: 454px;
+  background: rgba(255, 227, 80, 0.2);
+  filter: blur(125.5px);
+  right: -180px;
+  top: -150px;
+}
+`;
+
+const NewsImg = styled.newsImg`
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+
+img{
+  position:absolute;
+  width:100%;
+  left:0px;
+  z-index: 88
+}
+
+
 `;
 
 const NewsLetterBox = styled.newsbox`
-width: 75%;
+    width: 65%;
     text-align: center;
+    z-index: 99;
 h2{
   font-style: normal;
   font-weight: 400;
@@ -136,9 +228,9 @@ h2{
 
 p{
   font-size: 18px;
+  padding-top: 10px;
   color: #FFFFFF;
 }
-
 `;
 
 const NewsLetterInput = styled.newsinput`
@@ -150,20 +242,30 @@ justify-content: center;
 
 input{
   background: #FFFFFF;
-  border-radius: 50px;
+  border-radius: 15px;
   border: none;
   padding: 0px 10px;
   width: 80%;
   height: 65px;
   border: none;
+  outline:none;
   box-shadow: none;
+  font-size: 17px;
+  color: #141414;
+}
+
+input::placeholder{
+  font-size: 16px;
+  color: #9f9f9f;
+  position: relative;
+  top: 0px;
 }
 
 button{
   position: absolute;
   padding: 14px 20px;
-  border-radius: 50px;
-  right: 92px;
+  border-radius: 15px;
+  right: 80px;
   background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
   color: white;
   height: 93%;
@@ -171,6 +273,14 @@ button{
   font-size: 18px;
   top: 2px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+img{
+  margin-left: 6px;
 }
 `;
 
@@ -194,3 +304,21 @@ const SectionContainer = styled.div`
   }
 `;
 
+const FooterLink = styled.footerlink`
+  text-align: center;
+
+    h3{
+      color: white;
+      margin-bottom: 10px;
+      font-weight: 200;
+      4rem auto 3rem
+  }
+  ul{
+    list-style: none;
+  }
+  li{
+    display: inline-block;
+    color: white;
+    margin: 0rem 0 0 5rem;
+  }
+`;
