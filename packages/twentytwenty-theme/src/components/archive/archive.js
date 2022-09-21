@@ -5,7 +5,7 @@ import ArchiveHeader from "./archive-header";
 import Pagination from "./archive-pagination";
 import PostSeparator from "../post/post-separator";
 import Post from "../post";
-
+import Circle1 from "../../assets/img/C_circle.png";
 const Archive = ({ state, showExcerpt, showMedia }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
@@ -18,10 +18,48 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
   useEffect(() => {
     Post.preload();
   }, []);
-
   return (
     <>
      <SectionContainer size="large">
+
+     <CategoryMain>
+
+<CategoryCircle>
+  <div>
+     <img src={Circle1} />
+  </div>
+  <p> Serif </p>
+</CategoryCircle>
+
+<CategoryCircle>
+  <div>
+     <img src={Circle1} />
+  </div>
+  <p> Sans Serif </p>
+</CategoryCircle>
+
+<CategoryCircle>
+  <div>
+     <img src={Circle1} />
+  </div>
+  <p> Slab Serif </p>
+</CategoryCircle>
+
+<CategoryCircle>
+  <div>
+     <img src={Circle1} />
+  </div>
+  <p> Brush </p>
+</CategoryCircle>
+
+<CategoryCircle>
+  <div>
+     <img src={Circle1} />
+  </div>
+  <p> Calligraphy </p>
+</CategoryCircle>
+
+</CategoryMain>
     <PostMain>
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
@@ -95,4 +133,26 @@ export const SectionContainer = styled.div`
   @media (min-width: 700px) {
     width: calc(100% - 0rem);
   }
+`;
+
+export const CategoryMain = styled.categorymain`
+display: grid;
+grid-template-columns: repeat(5, 2fr);
+gap: 10px 10px;
+margin-bottom: 5rem;
+margin-top: 7rem;
+`;
+
+export const CategoryCircle = styled.categorycircle`
+text-align: center;
+
+img{
+    box-shadow: 0px 0px 10px 0px #e9dede;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #bcd8c8;
+}
+p{
+  margin-top: 15px;
+}
 `;

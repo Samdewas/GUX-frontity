@@ -600,10 +600,7 @@ img.banner_img {
   z-index: -9;
   width:100%;
 }
-section.banner_section {
-  padding: 40px 0px;
-  height: 700px;
-}
+
 .banner_content {
   text-align: center;
   padding-top: 100px;
@@ -630,6 +627,14 @@ header#site-header  li{
 }
 header#site-header ul{
   margin: 0px 30px 0px 10px;
+}
+
+header#site-header.inner_header{
+  background: #084523 !important;
+}
+
+#site-header.inner_header a {
+  color: white !important;
 }
 
 `;

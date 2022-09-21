@@ -9,14 +9,19 @@ import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
 import '../assets/css/custome.css';
 import Logo from "../assets/img/logo.png"
+import { useLocation } from 'react-router-dom';
+
 const Header = ({ state }) => {
+
   const { title, description } = state.frontity;
   const { headerBg } = state.theme.colors;
 
 
   
   return (
-    <PageHeader bg={headerBg} id="site-header" className="ux_header_main">
+  
+    
+    <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header" : "inner_header" }>
       <HeaderInner>
         <TitleWrapper>
           {/* Search button on mobile */}
