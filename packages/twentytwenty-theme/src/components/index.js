@@ -86,8 +86,7 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
-
-
+console.log(data)
   return (
     <>
       {/* Add global styles for the whole site, like body or a's or font-faces. 
@@ -115,9 +114,11 @@ const Theme = ({ state, actions }) => {
         on the type of URL we are in. */}
         <Main id="main">
 
-
+        {data.isHome || data.isCategory || data.isAuthor ?
           <BannerSection>
-            <img className="banner_img" src={BannerBg} />
+            {data.isHome ?
+              <img className="banner_img" src={BannerBg} />: 
+              <img className="banner_img" src={BannerBg} />}
             <SectionContainer size="large">
              
           <BannerInner>
@@ -151,6 +152,7 @@ const Theme = ({ state, actions }) => {
               </div>
 
               <div>
+              {data.isHome ?
                 <UXCategory>
           
               <li> <a href=""> <img src={Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
@@ -160,11 +162,12 @@ const Theme = ({ state, actions }) => {
               <li> <a href=""> <img src={Cate_img5} /> <h3>Website Themes </h3> </a></li>
             
        
-            </UXCategory>
+            </UXCategory>:""}
 
               </div>
             </SectionContainer>
-          </BannerSection>
+          </BannerSection> : ""}
+
           
           <Switch>
             <Loading when={data.isFetching} />
