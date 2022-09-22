@@ -72,11 +72,6 @@ const Post = ({ state, actions, libraries }) => {
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-<<<<<<< HEAD
-    <PostArticle >
-
-      
-=======
     <PostArticle>
 
       <SectionContainer>
@@ -133,7 +128,6 @@ const Post = ({ state, actions, libraries }) => {
 
 
       {/* 
->>>>>>> 39b9e0c211fbe57e947bb380696e68f069b3a167
       <Header>
         <SectionContainer>
           If the post has categories, render the categories
@@ -279,11 +273,8 @@ const FeaturedImage = styled(FeaturedMedia)`
 `;
 
 
-<<<<<<< HEAD
-=======
 
 
 
 
 
->>>>>>> 39b9e0c211fbe57e947bb380696e68f069b3a167
