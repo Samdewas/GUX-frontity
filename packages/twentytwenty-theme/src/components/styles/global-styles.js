@@ -608,19 +608,9 @@ section.banner_section {
   height: 950px;
 }
 
-.banner_content {
-  text-align: center;
-  padding-top: 120px;
-  width: 70%;
-  margin: auto;
-}
-.banner_content h2 {
-  color: #084523;
-  font-size:45px;
-}
-.banner_content p {
-  font-size: 20px;
-}
+
+
+
 header#site-header a {
   color: black;
   text-decoration: none;
@@ -665,22 +655,7 @@ ul.category_front li a h3 {
   margin: 60px 0px;
   font-size: 20px;
 }
-ul.category_front li:nth-child(1) {
-  background: #15be7754;
-}
-ul.category_front li:nth-child(2) {
-  background: #2bbbfa57;
-}
 
-ul.category_front li:nth-child(3) {
-  background: #f8a64c63;
-}
-ul.category_front li:nth-child(4) {
-  background: #ed56a352;
-}
-ul.category_front li:nth-child(5) {
-  background: #a259ff59;
-}
 
 
 

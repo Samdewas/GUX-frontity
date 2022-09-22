@@ -119,17 +119,17 @@ const Theme = ({ state, actions }) => {
           <BannerSection>
             <img className="banner_img" src={BannerBg} />
             <SectionContainer size="large">
-              <div className="banner_content">
-<<<<<<< HEAD
+             
+          <BannerInner>
+            <div>
+                
                 <h2> Discover Free Premium Fonts,<br/>
-=======
-  
-                <h2> Discover Free Premium Fonts,
->>>>>>> a07a3db133ff3137737facc61880afd4378579aa
                   Photoshop Action & All Graphic Resources </h2>
                 <p>Graphicux.com is well known for saving money for customers but with our
                   free fonts and Photoshop action section, we have gone one step further</p>
-              </div>
+                  </div>
+               </BannerInner>
+           
 
               <div>
                 <SearchForm
@@ -140,6 +140,7 @@ const Theme = ({ state, actions }) => {
                   <SearchInput
                     ref={inputRef}
                     type="search"
+                    autoComplete="off"
                     defaultValue={searchQuery || ""}
                     placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                     name="search"
@@ -150,14 +151,16 @@ const Theme = ({ state, actions }) => {
               </div>
 
               <div>
-            <ul className="category_front">
+                <UXCategory>
+          
               <li> <a href=""> <img src={Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
               <li> <a href=""> <img src={Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
               <li> <a href=""> <img src={Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
               <li> <a href=""> <img src={Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
               <li> <a href=""> <img src={Cate_img5} /> <h3>Website Themes </h3> </a></li>
             
-            </ul>
+       
+            </UXCategory>
 
               </div>
             </SectionContainer>
@@ -189,7 +192,86 @@ const Main = styled.main`
 const BannerSection = styled.bannersection`
   padding: 40px 0px;
   height: 620px;
+
+  h2{  color: #084523;
+    font-size:45px;}
+  p{font-size: 20px;}
 `;
+
+
+const BannerInner = styled.div`
+text-align: center;
+padding-top: 120px;
+width: 70%;
+margin: auto;
+
+@media (max-width:575px){
+  padding-top: 85px;
+  width:80%;
+  h2{font-size:29px;}
+  p{font-size:15px;}
+  
+}
+
+
+
+`;
+
+const UXCategory = styled.uxcategory`
+
+list-style: none;
+margin-top: 140px;
+display: flex;
+justify-content: center;
+margin-left:0px;
+
+li{
+
+  display: inline-block;
+  padding: inherit;
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+  text-align: center;
+  margin:0px 10px;
+}
+a{
+  text-decoration: none;
+  color: #121212;
+}
+
+h3{
+  margin: 60px 0px;
+  font-size: 20px;
+}
+img{ margin: 45px auto;}
+
+li:nth-child(1) {
+  background: #15be7754;
+}
+li:nth-child(2) {
+  background: #2bbbfa57;
+}
+
+li:nth-child(3) {
+  background: #f8a64c63;
+}
+li:nth-child(4) {
+  background: #ed56a352;
+}
+li:nth-child(5) {
+  background: #a259ff59;
+}
+
+@media (max-width:575px){
+
+  margin-top:50px;
+
+}
+
+`;
+
+
 
 const SearchForm = styled.form`
   margin: 0;
@@ -258,6 +340,13 @@ const SearchInput = styled.input`
 ::placeholder{
   opacity: 0.6;
 }
+@media (max-width:575px){
+  padding: 20px 56px;
+  width:82%;
+
+}
+
+
 `;
 
 

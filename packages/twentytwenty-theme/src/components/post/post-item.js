@@ -303,15 +303,17 @@ width: 100%;
 
 export const PostBoxImg = styled.postBoxImg`
 
+img{border-radius:30px;}
+
 `;
 
 export const PostTextBox = styled.postText`
 background: #FFFFFF;
-box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 border-radius: 10px;
 width: 90%;
 padding: 5px 15px 15px 15px;
-margin: -3rem 0rem 0rem 2rem;
+margin: -6rem 0rem 1rem 1.9rem;
 float: left;
 z-index: -999;
 

@@ -3,24 +3,36 @@ import Link from "./link";
 import NwsIcon from "../assets/img/nws_icn.png"
 import Notification from "../assets/img/noti.png"
 // Component that provides scroll to top functionality
-const BackToTop = () => {
-  // scroll to top function
-  const scrollToTop = (event) => {
-    // prevent the default behaviors
-    event.preventDefault();
-    // scroll to the top smoothly
-    scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
 
-  return (
-    <a href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer" }}>
-      <span style={{ marginRight: 8 }}>To the top</span>
-      <span className="arrow" aria-hidden="true">
-        ↑
-      </span>
-    </a>
-  );
-};
+// const BackToTop = () => {
+
+
+//   // scroll to top function
+//   const scrollToTop = (event) => {
+//     // prevent the default behaviors
+//     event.preventDefault();
+//     // scroll to the top smoothly
+//     scrollTo({ top: 0, left: 0, behavior: "smooth" });
+//   };
+
+
+  
+// const BackToTop = styled.BackToTop`
+//   position:fixed;
+// bottom:0;
+// right:20px;
+// z-index:99;
+// `;
+
+//   return (
+//     <p href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer", position: "fixed", right: "30px", bottom: "20px", color: "white" }}>
+//       <span style={{ marginRight: 8 }}>To the top</span>
+//       <span className="arrow" aria-hidden="true">
+//         ↑
+//       </span>
+//     </p>
+//   );
+// };
 
 const Footer = ({ state }) => {
   const currentYear = new Date().getFullYear();
@@ -59,7 +71,8 @@ const Footer = ({ state }) => {
 
 
         
-        {/* <BackToTop /> */}
+       
+
       </SectionContainer>
 
       <Credits>
@@ -67,10 +80,12 @@ const Footer = ({ state }) => {
             &copy; {currentYear}{" "}
             <Link link={state.frontity.url}>{state.frontity.title}</Link>
           </Copyright> */}
-          <PoweredBy>@2021 GraphicUX All Right Reserved</PoweredBy>
+          <PoweredBy>@2022 GraphicUX All Right Reserved</PoweredBy>
         </Credits>
 
-
+   
+            {/* <BackToTop /> */}
+    
     </SiteFooter>
   );
 };
@@ -322,3 +337,4 @@ const FooterLink = styled.footerlink`
     margin: 0rem 0 0 5rem;
   }
 `;
+
