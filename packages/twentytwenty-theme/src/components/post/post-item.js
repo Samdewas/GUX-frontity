@@ -291,18 +291,12 @@ export const EntryContent = styled.div`
   }
 `;
 
-export const PostMain = styled.postMain`
-display: grid;
-grid-template-columns: repeat(3,2fr);
-gap: 20px 20px;
-`;
 
 export const PostBox = styled.postBox`
 width: 100%;
 `;
 
 export const PostBoxImg = styled.postBoxImg`
-
 `;
 
 export const PostTextBox = styled.postText`
@@ -314,7 +308,6 @@ padding: 5px 15px 15px 15px;
 margin: -3rem 0rem 0rem 2rem;
 float: left;
 z-index: -999;
-
 `;
 
 export const PostTit = styled.postTit`

@@ -137,6 +137,7 @@ const Theme = ({ state, actions }) => {
               </div>
             </SectionContainer>
           </BannerSection>
+          
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
@@ -162,8 +163,13 @@ const Main = styled.main`
 
 
 const BannerSection = styled.bannersection`
-  padding: 40px 0px;
-  height: 620px;
+  // padding: 40px 0px;
+  // height: 620px;
+
+  padding: 80px 0px;
+  height: auto!important;
+  width: 100%;
+  display: block;
 `;
 
 const SearchForm = styled.form`

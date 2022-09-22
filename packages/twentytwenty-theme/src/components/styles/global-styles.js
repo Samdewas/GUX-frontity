@@ -631,6 +631,7 @@ header#site-header ul{
 
 header#site-header.inner_header{
   background: #084523 !important;
+  position: inherit;
 }
 
 #site-header.inner_header a {

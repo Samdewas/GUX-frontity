@@ -72,60 +72,172 @@ const Post = ({ state, actions, libraries }) => {
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-    <PostArticle >
-      
+    <PostArticle>
+
+      <SectionContainer>
+
+        <DetailsRow>
+          <DetailsColumnLeft>
+            <PostDetailsTitle>
+              {/* {post.categories && <PostCategories categories={categories} />} */}
+              <PostTitle
+                as="h1"
+                className="heading-size-1"
+                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+              />
+
+              <DetailsText>
+                <div>
+                  {post.caption && (
+                    <PostCaption
+                      dangerouslySetInnerHTML={{ __html: post.caption.rendered }}
+                    />
+                  )}
+                </div>
+
+                <DetailsTextInner >
+                  
+                    <PostMeta item={post} />
+                  
+                  <div>
+                    <button> Lightroom </button>
+                  </div>
+
+
+                </DetailsTextInner>
+              </DetailsText>
+
+              <PostDetailsImg>
+
+                {state.theme.featuredMedia.showOnPost && (
+                  <FeaturedImage id={post.featured_media} isSinglePost={true} />
+                )}
+
+              </PostDetailsImg>
+
+            </PostDetailsTitle>
+          </DetailsColumnLeft>
+
+          <DetailsColumnRight>
+
+          </DetailsColumnRight>
+        </DetailsRow>
+
+      </SectionContainer>
+
+
+
+      {/* 
       <Header>
         <SectionContainer>
-          {/* If the post has categories, render the categories */}
+          If the post has categories, render the categories
           {post.categories && <PostCategories categories={categories} />}
           <PostTitle
             as="h1"
             className="heading-size-1"
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
-          {/* If the post has a caption (like attachments), render it */}
+          If the post has a caption (like attachments), render it
           {post.caption && (
             <PostCaption
               dangerouslySetInnerHTML={{ __html: post.caption.rendered }}
             />
           )}
-          {/* The post's metadata like author, publish date, and comments */}
+          The post's metadata like author, publish date, and comments
           <PostMeta item={post} />
         </SectionContainer>
       </Header>
 
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
+
+      * If the want to show featured media in the
+      * list of featured posts, we render the media.
+
       {state.theme.featuredMedia.showOnPost && (
         <FeaturedImage id={post.featured_media} isSinglePost={true} />
       )}
 
-      {/* If the post has a description (like attachments), we render it */}
+      If the post has a description (like attachments), we render it
       {post.description && (
         <PostInner size="thin">
           <EntryContent
             dangerouslySetInnerHTML={{ __html: post.description.rendered }}
           />
         </PostInner>
-      )}
+      )} */}
 
       {/* If the post has content, we render it */}
-      {post.content && (
+      {/* {post.content && (
         <PostInner size="thin">
           <EntryContent>
             <Html2React html={post.content.rendered} />
           </EntryContent>
-          {/* If the post has tags, render it */}
+       
           {post.tags && <PostTags tags={tags} />}
         </PostInner>
-      )}
+      )} */}
     </PostArticle>
   ) : null;
 };
 
 export default connect(Post);
+
+
+
+
+
+
+const DetailsColumnLeft = styled.detailscolumnleft`
+
+`;
+
+const DetailsColumnRight = styled.detailscolumnright`
+
+`;
+
+const PostDetailsTitle = styled.postdetailstitle`
+
+h1{
+  font-size:24px;
+}
+`;
+
+const PostDetailsImg = styled.postdetailsimg`
+
+
+}
+`;
+
+const DetailsText = styled.detailstext`
+ul{
+  justify-content: inherit;
+}
+li{
+  margin-right:20px;
+  margin-top:20px;
+}
+`;
+
+const DetailsRow = styled.detailsrow`
+
+`;
+
+const DetailsTextInner = styled.detailstextinner`
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+button{
+  background: #ffe2c3;
+  border-radius: 25px;
+  padding: 9px 35px;
+  font-size: 15px;
+  color: #F8A64C;
+  font-weight: 700;
+}
+
+`;
+
+
 
 const Header = styled(PostHeader)`
   background-color: #fff;
@@ -141,7 +253,7 @@ const PostArticle = styled(_Post)`
 `;
 
 const FeaturedImage = styled(FeaturedMedia)`
-  margin-top: 0 !important;
+  margin-top: 30px !important;
   position: relative;
 
   > div {
@@ -153,9 +265,16 @@ const FeaturedImage = styled(FeaturedMedia)`
     content: "";
     display: block;
     position: absolute;
-    bottom: 50%;
+
     left: 0;
     right: 0;
     top: 0;
   }
 `;
+
+
+
+
+
+
+
