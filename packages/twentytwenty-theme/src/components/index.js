@@ -119,14 +119,10 @@ const Theme = ({ state, actions }) => {
           <BannerSection>
             <img className="banner_img" src={BannerBg} />
             <SectionContainer size="large">
-<<<<<<< HEAD
              
           <BannerInner>
             <div>
                 
-=======
-              <div className="banner_content">
->>>>>>> 39b9e0c211fbe57e947bb380696e68f069b3a167
                 <h2> Discover Free Premium Fonts,<br/>
                   Photoshop Action & All Graphic Resources </h2>
                 <p>Graphicux.com is well known for saving money for customers but with our
@@ -195,7 +191,6 @@ const Main = styled.main`
 
 
 const BannerSection = styled.bannersection`
-<<<<<<< HEAD
   padding: 40px 0px;
   height: 620px;
 
@@ -221,15 +216,6 @@ margin: auto;
 
 
 
-=======
-  // padding: 40px 0px;
-  // height: 620px;
-
-  padding: 80px 0px;
-  height: auto!important;
-  width: 100%;
-  display: block;
->>>>>>> 39b9e0c211fbe57e947bb380696e68f069b3a167
 `;
 
 const UXCategory = styled.uxcategory`
@@ -303,6 +289,11 @@ const SearchForm = styled.form`
     margin: 0px auto;
     top: 25px;
     left: 9px;
+  }
+  @media (max-width:575px){
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
   }
   
 img {
