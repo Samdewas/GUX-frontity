@@ -14,6 +14,14 @@ import MetaTitle from "./page-meta-title";
 import PageError from "./page-error";
 import '../assets/css/custome.css';
 import BannerBg from "../assets/img/banner.png"
+import searchicon from "../assets/img/search.png"
+import Cate_img1 from "../assets/img/front/font.png"
+import Cate_img2 from "../assets/img/front/psd.png"
+import Cate_img3 from "../assets/img/front/lr.png"
+import Cate_img4 from "../assets/img/front/gr.png"
+import Cate_img5 from "../assets/img/front/web.png"
+
+
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -22,7 +30,7 @@ const SectionContainer = styled.div`
 margin-left: auto;
 margin-right: auto;
 width: calc(100% - 4rem);
-max-width: 100rem;
+max-width: 130rem;
 
 @media (min-width: 700px) {
   width: calc(100% - 8rem);
@@ -112,8 +120,12 @@ const Theme = ({ state, actions }) => {
             <img className="banner_img" src={BannerBg} />
             <SectionContainer size="large">
               <div className="banner_content">
+<<<<<<< HEAD
+                <h2> Discover Free Premium Fonts,<br/>
+=======
   
                 <h2> Discover Free Premium Fonts,
+>>>>>>> a07a3db133ff3137737facc61880afd4378579aa
                   Photoshop Action & All Graphic Resources </h2>
                 <p>Graphicux.com is well known for saving money for customers but with our
                   free fonts and Photoshop action section, we have gone one step further</p>
@@ -132,8 +144,21 @@ const Theme = ({ state, actions }) => {
                     placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                     name="search"
                   />
+                  <img className="srch_icon" src={searchicon} />
                   <SearchButton bg={primary}>Search</SearchButton>
                 </SearchForm>
+              </div>
+
+              <div>
+            <ul className="category_front">
+              <li> <a href=""> <img src={Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
+              <li> <a href=""> <img src={Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
+              <li> <a href=""> <img src={Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
+              <li> <a href=""> <img src={Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
+              <li> <a href=""> <img src={Cate_img5} /> <h3>Website Themes </h3> </a></li>
+            
+            </ul>
+
               </div>
             </SectionContainer>
           </BannerSection>
@@ -183,8 +208,17 @@ const SearchForm = styled.form`
 
   @media (min-width: 700px) {
     position: relative;
-    width: 100%;
+    width: 73%;
+    margin: 0px auto;
+    top: 25px;
+    left: 9px;
   }
+  
+img {
+  width: 24px;
+  position: absolute;
+  top: 19px;
+}
 `;
 
 const SearchInput = styled.input`
@@ -212,12 +246,15 @@ const SearchInput = styled.input`
     display: none;
   }
 
+
+
+
   @media (min-width: 700px) {
     border: none;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     word-spacing: 2px;
     height: 100%;
-    padding: 20px 20px;
+    padding: 20px 56px;
   }
 
   &:focus {
@@ -232,25 +269,27 @@ const SearchInput = styled.input`
 
 const SearchButton = styled.button`
 background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
-
 border-radius: 31.5px;
-padding: 17px 50px;
+padding: 17px 49px;
 cursor: pointer;
-height: 90%;
-right: 3px;
+height: 88%;
+right: 6px;
 color: white;
 font-weight: 500;
 font-size: 20px;
-  margin: 0 0 0.8rem 0.8rem;
-  border-color: #dcd7ca;
-  position:absolute;
-  top:0;
-  bottom:0;
-  margin: auto 0; 
+margin: 0 0 0.8rem 0.8rem;
+border-color: #dcd7ca;
+position: absolute;
+top: 0;
+bottom: 0;
+margin: auto 0;
   &:focus {
     right: 0;
   }
 `;
+
+
+
 
 
 
