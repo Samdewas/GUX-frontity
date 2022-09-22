@@ -603,10 +603,14 @@ img.banner_img {
   z-index: -9;
   width:100%;
 }
+<<<<<<< HEAD
 section.banner_section {
   padding: 40px 0px;
   height: 950px;
 }
+=======
+
+>>>>>>> a07a3db133ff3137737facc61880afd4378579aa
 .banner_content {
   text-align: center;
   padding-top: 120px;
@@ -637,6 +641,7 @@ header#site-header ul{
   margin: 0px 30px 0px 10px;
 }
 
+<<<<<<< HEAD
 ul.category_front {
   list-style: none;
   margin-top: 140px;
@@ -686,6 +691,15 @@ ul.category_front li:nth-child(5) {
 
 
 
+=======
+header#site-header.inner_header{
+  background: #084523 !important;
+}
+
+#site-header.inner_header a {
+  color: white !important;
+}
+>>>>>>> a07a3db133ff3137737facc61880afd4378579aa
 
 `;
 

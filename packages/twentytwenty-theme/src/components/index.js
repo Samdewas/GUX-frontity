@@ -62,7 +62,7 @@ const Theme = ({ state, actions }) => {
   });
   useFocusEffect(inputRef, isSearchModalOpen);
   useFocusTrap(containerRef, isSearchModalOpen);
-
+  
   // Format the query to remove trailing spaces and replace space with "+"
   const formatQuery = (query) => query.trim().replace(" ", "+").toLowerCase();
 
@@ -86,6 +86,7 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
+
 
   return (
     <>
@@ -115,11 +116,16 @@ const Theme = ({ state, actions }) => {
         <Main id="main">
 
 
-          <section className="banner_section" >
+          <BannerSection>
             <img className="banner_img" src={BannerBg} />
             <SectionContainer size="large">
               <div className="banner_content">
+<<<<<<< HEAD
                 <h2> Discover Free Premium Fonts,<br/>
+=======
+  
+                <h2> Discover Free Premium Fonts,
+>>>>>>> a07a3db133ff3137737facc61880afd4378579aa
                   Photoshop Action & All Graphic Resources </h2>
                 <p>Graphicux.com is well known for saving money for customers but with our
                   free fonts and Photoshop action section, we have gone one step further</p>
@@ -155,7 +161,7 @@ const Theme = ({ state, actions }) => {
 
               </div>
             </SectionContainer>
-          </section>
+          </BannerSection>
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
@@ -179,6 +185,11 @@ const Main = styled.main`
   display: block;
 `;
 
+
+const BannerSection = styled.bannersection`
+  padding: 40px 0px;
+  height: 620px;
+`;
 
 const SearchForm = styled.form`
   margin: 0;
