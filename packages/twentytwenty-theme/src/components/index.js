@@ -86,8 +86,7 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
-
-
+console.log(data)
   return (
     <>
       {/* Add global styles for the whole site, like body or a's or font-faces. 
@@ -115,9 +114,11 @@ const Theme = ({ state, actions }) => {
         on the type of URL we are in. */}
         <Main id="main">
 
-
+        {data.isHome || data.isCategory || data.isAuthor ?
           <BannerSection>
-            <img className="banner_img" src={BannerBg} />
+            {data.isHome ?
+              <img className="banner_img" src={BannerBg} />: 
+              <img className="banner_img" src={BannerBg} />}
             <SectionContainer size="large">
              
           <BannerInner>
@@ -150,6 +151,7 @@ const Theme = ({ state, actions }) => {
               </div>
 
               <div>
+              {data.isHome ?
                 <UXCategory>
           
               <li> <a href=""> <img src={Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
@@ -159,11 +161,12 @@ const Theme = ({ state, actions }) => {
               <li> <a href=""> <img src={Cate_img5} /> <h3>Website Themes </h3> </a></li>
             
        
-            </UXCategory>
+            </UXCategory>:""}
 
               </div>
             </SectionContainer>
-          </BannerSection>
+          </BannerSection> : ""}
+
           
           <Switch>
             <Loading when={data.isFetching} />
@@ -190,9 +193,10 @@ const Main = styled.main`
 
 
 const BannerSection = styled.bannersection`
-<<<<<<< HEAD
-  padding: 40px 0px;
-  height: 620px;
+padding: 80px 0px;
+height: auto!important;
+width: 100%;
+display: block;
 
   h2{  color: #084523;
     font-size:45px;}
@@ -212,20 +216,7 @@ margin: auto;
   h2{font-size:29px;}
   p{font-size:15px;}
   
-}
-
-
-
-=======
-  // padding: 40px 0px;
-  // height: 620px;
-
-  padding: 80px 0px;
-  height: auto!important;
-  width: 100%;
-  display: block;
->>>>>>> 39b9e0c211fbe57e947bb380696e68f069b3a167
-`;
+}`;
 
 const UXCategory = styled.uxcategory`
 

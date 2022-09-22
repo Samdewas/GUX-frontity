@@ -20,87 +20,87 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
   }, []);
   return (
     <>
-     <SectionContainer size="large">
+      <SectionContainer size="large">
+      {state.router.link.includes("/category") ?
+        <CategoryMain>
 
-     <CategoryMain>
+          <CategoryCircle>
+            <div>
+              <img src={Circle1} />
+            </div>
+            <p> Serif </p>
+          </CategoryCircle>
 
-<CategoryCircle>
-  <div>
-     <img src={Circle1} />
-  </div>
-  <p> Serif </p>
-</CategoryCircle>
+          <CategoryCircle>
+            <div>
+              <img src={Circle1} />
+            </div>
+            <p> Sans Serif </p>
+          </CategoryCircle>
 
-<CategoryCircle>
-  <div>
-     <img src={Circle1} />
-  </div>
-  <p> Sans Serif </p>
-</CategoryCircle>
+          <CategoryCircle>
+            <div>
+              <img src={Circle1} />
+            </div>
+            <p> Slab Serif </p>
+          </CategoryCircle>
 
-<CategoryCircle>
-  <div>
-     <img src={Circle1} />
-  </div>
-  <p> Slab Serif </p>
-</CategoryCircle>
+          <CategoryCircle>
+            <div>
+              <img src={Circle1} />
+            </div>
+            <p> Brush </p>
+          </CategoryCircle>
 
-<CategoryCircle>
-  <div>
-     <img src={Circle1} />
-  </div>
-  <p> Brush </p>
-</CategoryCircle>
+          <CategoryCircle>
+            <div>
+              <img src={Circle1} />
+            </div>
+            <p> Calligraphy </p>
+          </CategoryCircle>
 
-<CategoryCircle>
-  <div>
-     <img src={Circle1} />
-  </div>
-  <p> Calligraphy </p>
-</CategoryCircle>
+        </CategoryMain>:""}
+        <PostMain>
+          {/* If the list is a taxonomy, we render a title. */}
+          {data.isTaxonomy && (
+            <ArchiveHeader labelColor={primary} label={data.taxonomy}>
+              <span>{decode(state.source[data.taxonomy][data.id].name)}</span>
+            </ArchiveHeader>
+          )}
 
-</CategoryMain>
-    <PostMain>
-      {/* If the list is a taxonomy, we render a title. */}
-      {data.isTaxonomy && (
-        <ArchiveHeader labelColor={primary} label={data.taxonomy}>
-          <span>{decode(state.source[data.taxonomy][data.id].name)}</span>
-        </ArchiveHeader>
-      )}
+          {/* If the list is for a specific author, we render a title. */}
+          {data.isAuthor && (
+            <ArchiveHeader labelColor={primary} label="Author">
+              <b>{decode(state.source.author[data.id].name)}</b>
+            </ArchiveHeader>
+          )}
 
-      {/* If the list is for a specific author, we render a title. */}
-      {data.isAuthor && (
-        <ArchiveHeader labelColor={primary} label="Author">
-          <b>{decode(state.source.author[data.id].name)}</b>
-        </ArchiveHeader>
-      )}
+          {/* Iterate over the items of the list. */}
+          {data.items.map(({ type, id }, index) => {
+            const isLastArticle = index === data.items.length - 1;
+            const item = state.source[type][id];
+            // Render one Item component for each one.
+            return (
+              <Fragment key={item.id}>
+                <Article
+                  key={item.id}
+                  item={item}
+                  showExcerpt={_showExcerpt}
+                  showMedia={showMedia}
+                />
+                {/* {!isLastArticle && <PostSeparator />} */}
+              </Fragment>
+            );
+          })}
 
-      {/* Iterate over the items of the list. */}
-      {data.items.map(({ type, id }, index) => {
-        const isLastArticle = index === data.items.length - 1;
-        const item = state.source[type][id];
-        // Render one Item component for each one.
-        return (
-          <Fragment key={item.id}>
-            <Article
-              key={item.id}
-              item={item}
-              showExcerpt={_showExcerpt}
-              showMedia={showMedia}
-            />
-            {/* {!isLastArticle && <PostSeparator />} */}
-          </Fragment>
-        );
-      })}
 
-   
-      </PostMain>
-      {data.totalPages > 1 && (
-        <>
-          <PostSeparator />
-          <Pagination size="thin" />
-        </>
-      )}
+        </PostMain>
+        {data.totalPages > 1 && (
+          <>
+            <PostSeparator />
+            <Pagination size="thin" />
+          </>
+        )}
       </SectionContainer>
     </>
   );
