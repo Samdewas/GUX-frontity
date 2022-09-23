@@ -228,6 +228,7 @@ margin-top: 140px;
 display: flex;
 justify-content: center;
 margin-left:0px;
+margin-bottom: 15rem;
 
 li{
 
