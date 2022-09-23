@@ -120,6 +120,12 @@ gap: 20px 20px;
     gap: 20px 20px;
     margin: 0px 15px;
 }
+
+@media (max-width:767px){
+  display: grid;    
+  grid-template-columns: repeat(1,2fr);
+
+}
 `;
 
 const maxWidths = {

@@ -122,7 +122,8 @@ console.log(data)
             <SectionContainer size="large">
              
           <BannerInner>
-              <div className="banner_content">
+            <div>
+                
                 <h2> Discover Free Premium Fonts,<br/>
                   Photoshop Action & All Graphic Resources </h2>
                 <p>Graphicux.com is well known for saving money for customers but with our
@@ -193,10 +194,8 @@ const Main = styled.main`
 
 
 const BannerSection = styled.bannersection`
-padding: 80px 0px;
-height: auto!important;
-width: 100%;
-display: block;
+  padding: 40px 0px;
+  height: 620px;
 
   h2{  color: #084523;
     font-size:45px;}
@@ -216,7 +215,11 @@ margin: auto;
   h2{font-size:29px;}
   p{font-size:15px;}
   
-}`;
+}
+
+
+
+`;
 
 const UXCategory = styled.uxcategory`
 
@@ -289,6 +292,11 @@ const SearchForm = styled.form`
     margin: 0px auto;
     top: 25px;
     left: 9px;
+  }
+  @media (max-width:575px){
+    width: 80%;
+    margin: 0 auto;
+    font-size: 18px;
   }
   
 img {
