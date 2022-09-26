@@ -18,6 +18,7 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
   useEffect(() => {
     Post.preload();
   }, []);
+  console.log(state.source.category);
   return (
     <>
       <SectionContainer size="large">
