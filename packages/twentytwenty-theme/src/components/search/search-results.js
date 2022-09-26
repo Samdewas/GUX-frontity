@@ -41,7 +41,7 @@ const SearchResults = ({ state }) => {
           <SearchForm />
         </SearchContainer>
       ) : (
-        <Archive showExcerpt={true} showMedia={false} />
+        <Archive showExcerpt={true} showMedia={false} /> 
       )}
     </>
   );

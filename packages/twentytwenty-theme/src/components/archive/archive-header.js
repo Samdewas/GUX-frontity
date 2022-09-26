@@ -41,6 +41,6 @@ const ArchiveTitle = styled.h1`
 `;
 
 const ColoredText = styled.span`
-  color: ${(props) => props.color};
+  color: #4ae288;
   text-transform: capitalize;
 `;

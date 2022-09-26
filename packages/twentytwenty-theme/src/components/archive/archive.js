@@ -80,13 +80,14 @@ const Archive = ({ state, showExcerpt, showMedia }) => {
             const isLastArticle = index === data.items.length - 1;
             const item = state.source[type][id];
             // Render one Item component for each one.
+            console.log(item)
             return (
               <Fragment key={item.id}>
                 <Article
                   key={item.id}
                   item={item}
                   showExcerpt={_showExcerpt}
-                  showMedia={showMedia}
+                  showMedia={item.jetpack_featured_media_url}
                 />
                 {/* {!isLastArticle && <PostSeparator />} */}
               </Fragment>
