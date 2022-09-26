@@ -41,7 +41,7 @@ max-width: 130rem;
  * Theme is the root React component of our theme. The one we will export
  * in roots.
  */
-const Theme = ({ state, actions }) => {
+const Theme = ({ state, actions }) => { 
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
@@ -86,7 +86,6 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
-
   return (
     <>
       {/* Add global styles for the whole site, like body or a's or font-faces. 
@@ -114,7 +113,7 @@ const Theme = ({ state, actions }) => {
         on the type of URL we are in. */}
         <Main id="main">
 
-        {data.isHome || data.isCategory || data.isAuthor ?
+        {data.isHome ?
           <BannerSection>
             {data.isHome ?
               <img className="banner_img" src={BannerBg} />: 
@@ -228,7 +227,7 @@ margin-top: 140px;
 display: flex;
 justify-content: center;
 margin-left:0px;
-margin-bottom: 100px;
+margin-bottom: 15rem;
 
 li{
 
