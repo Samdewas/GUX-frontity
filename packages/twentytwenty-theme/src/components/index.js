@@ -1,6 +1,6 @@
 import { connect, Global, Head, styled } from "frontity";
 import Switch from "@frontity/components/switch";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import Footer from "./footer";
 import globalStyles from "./styles/global-styles";
 import FontFaces from "./styles/font-faces";
@@ -21,6 +21,11 @@ import Cate_img3 from "../assets/img/front/lr.png"
 import Cate_img4 from "../assets/img/front/gr.png"
 import Cate_img5 from "../assets/img/front/web.png"
 
+import Cate_img11 from "../assets/img/front/font_active.png"
+import Cate_img12 from "../assets/img/front/psd_active.png"
+import Cate_img13 from "../assets/img/front/lr_active.png"
+import Cate_img14 from "../assets/img/front/gr_active.png"
+import Cate_img15 from "../assets/img/front/web_active.png"
 
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
@@ -44,7 +49,7 @@ max-width: 130rem;
 const Theme = ({ state, actions }) => { 
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
+  const [ishover,setIshover] = useState("");
   const { searchQuery } = state.source.get(state.router.link);
 
   const { isSearchModalOpen } = state.theme;
@@ -154,11 +159,11 @@ const Theme = ({ state, actions }) => {
               {data.isHome ?
                 <UXCategory>
           
-              <li> <a href=""> <img src={Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
-              <li> <a href=""> <img src={Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
-              <li> <a href=""> <img src={Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
-              <li> <a href=""> <img src={Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
-              <li> <a href=""> <img src={Cate_img5} /> <h3>Website Themes </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(5)}> <a href=""> <img src={ishover == 5 ? Cate_img11   : Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(1)}> <a href=""> <img src={ishover == 1 ? Cate_img12   : Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(2)}> <a href=""> <img src={ishover == 2 ? Cate_img13   : Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(3)}> <a href=""> <img src={ishover == 3 ? Cate_img14   : Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(4)}> <a href=""> <img src={ishover == 4 ? Cate_img15   : Cate_img5} /> <h3>Website Themes </h3> </a></li>
             
        
             </UXCategory>:""}
@@ -238,6 +243,10 @@ li{
   height: 210px;
   text-align: center;
   margin:0px 10px;
+
+  :hover a{
+    color: #47e087;
+  }
 }
 a{
   text-decoration: none;
