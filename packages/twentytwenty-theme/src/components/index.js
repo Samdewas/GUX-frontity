@@ -86,7 +86,7 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
-console.log(data)
+
   return (
     <>
       {/* Add global styles for the whole site, like body or a's or font-faces. 
@@ -228,7 +228,7 @@ margin-top: 140px;
 display: flex;
 justify-content: center;
 margin-left:0px;
-margin-bottom: 15rem;
+margin-bottom: 100px;
 
 li{
 
