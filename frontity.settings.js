@@ -53,7 +53,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://befonts.com/"
+          "url": "https://test.frontity.org"
         }
       }
     },
