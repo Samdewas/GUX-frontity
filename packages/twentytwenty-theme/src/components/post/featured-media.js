@@ -49,6 +49,10 @@ const Figure = styled.figure`
   overflow: hidden;
   border-radius: 20px;
   z-index: -9;
+
+  @media(max-width:767px){
+    border-radius: 0px;
+  }
 `;
 
 const Image = styled(Img)`

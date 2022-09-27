@@ -11,6 +11,7 @@ import searchicon from "../../assets/img/search.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
+import Link from "../link";
 
 
 const Archive = ({ state, showExcerpt, showMedia, actions }) => {
@@ -72,6 +73,23 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
       {!data.isHome ?
         <BannerSection>
+
+          {state.router.link != "/" ?
+            <BredCrumb>
+              <ul>
+                <li>
+                  <Link to="/"> Home </Link>
+                </li>
+                <li>
+                  >
+                </li>
+                <li>
+                  <Link to="/"> <span> Premium Font </span></Link>
+                </li>
+              </ul>
+            </BredCrumb> : ""
+          }
+
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             <img className="banner_img" src={BannerBg} />}
@@ -85,11 +103,11 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             </ArchiveHeader>
           )} */}
                 {data.isTaxonomy && (<>
-                <h2>{data.taxonomy.toUpperCase()} : {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </h2>
+                  <h2>{data.taxonomy.toUpperCase()} : {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </h2>
                   <p>{decode(state.source[data.taxonomy][data.id].description)}</p></>
-                  )}
+                )}
                 {data.isAuthor && (<><h2>AUTHOR : {decode(state.source.author[data.id].name).toUpperCase()}</h2>
-                <p>{decode(state.source.author[data.id].description)}</p></>
+                  <p>{decode(state.source.author[data.id].description)}</p></>
                 )}
               </div>
             </BannerInner>
@@ -118,7 +136,8 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
             </div>
           </SectionContainer>
-        </BannerSection> : ""}
+        </BannerSection> : ""
+      }
 
       <SectionContainer size="large">
         {state.router.link.includes("/category") ?
@@ -203,18 +222,20 @@ display: grid;
 grid-template-columns: repeat(3,2fr);
 gap: 20px 20px;
 
-@media (min-width:768px) and (max-width:1024){
-    display: grid;    
-    grid-template-columns: repeat(2,2fr);
-    gap: 20px 20px;
-    margin: 0px 15px;
+@media (min-width:768px) and (max-width:1024px){
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+  gap: 20px 20px;
+  margin: 0px 15px;
 }
 
-@media (max-width:767px){
-  display: grid;    
+@media (min-width:320px) and (max-width:767px){
   grid-template-columns: repeat(1,2fr);
-
+  gap: 20px 0px;
+  margin: 0px 15px;
 }
+
+
 `;
 
 const maxWidths = {
@@ -344,8 +365,6 @@ li:nth-child(5) {
 
 `;
 
-
-
 const SearchForm = styled.form`
   margin: 0;
   position: relative;
@@ -424,9 +443,7 @@ const SearchInput = styled.input`
 
 }
 
-
 `;
-
 
 const SearchButton = styled.button`
 background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
@@ -447,4 +464,34 @@ margin: auto 0;
   &:focus {
     right: 0;
   }
+`;
+
+const BredCrumb = styled.bredcrumb`
+background: #3e916238;
+    width: 100%;
+    float: left;
+    padding: 18px 0px;
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  line-height: normal;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+}
+
+span{
+  color: #15BE77;
+}
+
 `;

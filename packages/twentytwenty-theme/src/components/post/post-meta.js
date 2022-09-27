@@ -3,7 +3,7 @@ import PostMetaItem from "./post-meta-item";
 import { UserIcon, CalendarIcon } from "../icons";
 
 export const PostMetaWrapper = styled.div`
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   @media (min-width: 700px) {
     margin-top: 0.5rem;
   }
@@ -17,15 +17,18 @@ export const PostMetaList = styled.ul`
   font-size: 1.5rem;
   font-weight: 500;
   list-style: none;
-  margin: -1rem 0 0 -2rem;
+  justify-content: space-between;
+  margin: 3px 0px;
 
   svg {
     fill: currentColor;
   }
 
+ 
+
   @media (min-width: 700px) {
     font-size: 1.6rem;
-    margin: -1.4rem 0 0 0rem;
+    margin: 3px 0px;
     display: flex;
     justify-content: space-between;
   }
@@ -56,4 +59,10 @@ const PostMeta = ({ state, item }) => {
   );
 };
 
+
 export default connect(PostMeta);
+
+
+
+
+

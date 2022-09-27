@@ -126,6 +126,7 @@ const Theme = ({ state, actions }) => {
             <SectionContainer size="large">
              
           <BannerInner>
+         
             <div>
                 
                 <h2> Discover Free Premium Fonts,<br/>

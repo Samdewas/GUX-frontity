@@ -75,6 +75,7 @@ const PostItem = ({
               <img src={Eye} />  <span> 10 Views </span>
             </ImgView>
           </PostTit>
+
           <PostMeta item={item} />
         </PostTextBox>
       </PostBox >
@@ -180,6 +181,11 @@ export const SectionContainer = styled.div`
 export const PostItemTitle = styled.h2`
   margin: 12px 0px 5px 0px;
   
+  
+  @media (max-width: 767px) {
+    font-size: 22px;
+    margin:12px 0px 12px 0px;
+  }
   @media (min-width: 700px) {
     font-size: 2rem;
   }
@@ -298,7 +304,15 @@ width: 100%;
 
 export const PostBoxImg = styled.postBoxImg`
 
-img{border-radius:30px;}
+img{
+  border-radius:30px;
+
+@media(max-width:767px){
+  border-radius:0px;
+}
+
+}
+
 
 `;
 
@@ -311,6 +325,12 @@ padding: 5px 15px 15px 15px;
 margin: -6rem 0rem 1rem 1.9rem;
 float: left;
 z-index: -999;
+
+@media(max-width:767px){
+  border-radius: 0px;
+  width: 100%;
+  margin: 0;
+}
 `;
 
 export const PostTit = styled.postTit`
@@ -331,6 +351,10 @@ padding: 0px 0px 4px 0px;
     span{
       font-size: 12px;
     color: #868686;
+    }
+
+    @media (max-width:767px){
+      padding: 0px 0px 0px 0px;
     }
 
 `;
