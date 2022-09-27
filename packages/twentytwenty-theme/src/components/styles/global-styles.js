@@ -659,6 +659,42 @@ ul.category_front li a h3 {
 
 
 
+.css-td2tg-PostBox:hover .css-1rvpis8-PostTextBox {
+  background:  linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  
+}
+.css-td2tg-PostBox:hover .css-1rvpis8-PostTextBox a,.css-td2tg-PostBox:hover .css-1rvpis8-PostTextBox span,.css-td2tg-PostBox:hover .css-1rvpis8-PostTextBox h2 {
+  color:#fff;
+}
+
+.css-1tgnbxy-UXCategory:after {
+  background: rgba(255, 227, 80, 0.35);
+  content: "";
+  width: 484px;
+  display: block;
+  position: absolute;
+  left: -194px;
+  z-index: 999999999;
+  height: 485px;
+  opacity: 0.8;
+  filter: blur(125.5px);
+}
+.css-1tgnbxy-UXCategory:after {
+  background: rgba(255, 227, 80, 0.35);
+  content: "";
+  width: 475px;
+  display: block;
+  position: absolute;
+  left: -194px;
+  z-index: 999999999;
+  height: 443px;
+  opacity: 0.8;
+  filter: blur(125.5px);
+  top: 47em;
+}
+
+
+
 
 
 

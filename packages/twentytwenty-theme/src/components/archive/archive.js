@@ -233,6 +233,8 @@ gap: 20px 20px;
   grid-template-columns: repeat(1,2fr);
   gap: 20px 0px;
   margin: 0px 15px;
+  padding:0px 20px;
+
 }
 
 

@@ -142,6 +142,12 @@ const SiteFooter = styled.footer`
     color: inherit;
     text-decoration: none;
   }
+
+@media (max-width:767px){
+  after:display:none;
+  before:display:none;
+}
+
 `;
 
 const Credits = styled.div`

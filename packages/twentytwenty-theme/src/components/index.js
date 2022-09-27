@@ -217,7 +217,7 @@ margin: auto;
 @media (max-width:575px){
   padding-top: 85px;
   width:80%;
-  h2{font-size:29px;}
+  h2{font-size:21px;}
   p{font-size:15px;}
   
 }
@@ -307,6 +307,12 @@ const SearchForm = styled.form`
     width: 80%;
     margin: 0 auto;
     font-size: 18px;
+
+    button{
+      right: -3px;
+      padding: 15px 28px;
+      
+    }
   }
   
 img {
@@ -362,6 +368,7 @@ const SearchInput = styled.input`
 @media (max-width:575px){
   padding: 20px 56px;
   width:82%;
+  font-size:14px;
 
 }
 
