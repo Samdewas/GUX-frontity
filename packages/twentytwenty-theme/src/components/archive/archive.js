@@ -84,7 +84,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                   >
                 </li>
                 <li>
-                  <Link to="/"> <span> Premium Font </span></Link>
+                  <Link to="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
                 </li>
               </ul>
             </BredCrumb> : ""
