@@ -125,6 +125,7 @@ gap: 20px 20px;
 @media (max-width:767px){
   display: grid;    
   grid-template-columns: repeat(1,2fr);
+  padding:0px 20px;
 
 }
 `;

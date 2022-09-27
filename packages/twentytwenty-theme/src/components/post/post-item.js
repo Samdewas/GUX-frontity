@@ -187,6 +187,10 @@ export const PostItemTitle = styled.h2`
 
 export const PostTitle = styled.h1`
   margin: 0;
+  @media (max-width:575px){
+
+    font-size:18px;
+  }
 `;
 
 export const PostCaption = styled(SectionContainer)`
@@ -221,7 +225,7 @@ const PostLink = styled(Link)`
   text-decoration: none;
   display: inline-block;
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 `;
 
@@ -294,11 +298,15 @@ export const EntryContent = styled.div`
 
 export const PostBox = styled.postBox`
 width: 100%;
+
+
+
 `;
 
 export const PostBoxImg = styled.postBoxImg`
 
 img{border-radius:30px;}
+cursor:pointer;
 
 `;
 
@@ -311,6 +319,7 @@ padding: 5px 15px 15px 15px;
 margin: -6rem 0rem 1rem 1.9rem;
 float: left;
 z-index: -999;
+
 `;
 
 export const PostTit = styled.postTit`
