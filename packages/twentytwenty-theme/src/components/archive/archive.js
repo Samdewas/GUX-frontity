@@ -74,7 +74,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       {!data.isHome ?
         <BannerSection>
 
-          {state.router.link != "/" ?
+          {data?.isHome || !data?.isSearch ?
             <BredCrumb>
               <ul>
                 <li>
