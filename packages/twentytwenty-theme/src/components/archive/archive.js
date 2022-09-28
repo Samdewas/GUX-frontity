@@ -74,14 +74,14 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       {!data.isHome ?
         <BannerSection>
 
-          {state.router.link != "/" ?
+          {data?.isHome || !data?.isSearch ?
             <BredCrumb>
               <ul>
                 <li>
                   <Link to="/"> Home </Link>
                 </li>
                 <li>
-                  >
+                  -
                 </li>
                 <li>
                   <Link to="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>

@@ -218,9 +218,10 @@ const Post = ({ state, actions, libraries }) => {
                 </Form>
               </SearchBar>
 
-              <div>
-                <h5> Categories </h5>
-
+              <SideCateItem>
+                <SidebarH>
+                <h6> Categories </h6>
+                </SidebarH>
                 <ul>
                   <li>
                     <Link to="/"> Premium Fonts </Link>
@@ -235,11 +236,12 @@ const Post = ({ state, actions, libraries }) => {
                     <Link to="/"> Premium Fonts </Link>
                   </li>
                 </ul>
-              </div>
+              </SideCateItem>
 
-              <div>
-                <h5> Categories </h5>
-
+              <SideCateItem>
+              <SidebarH>
+                <h6> Categories </h6>
+                </SidebarH>
                 <ul>
                   <li>
                     <Link to="/"> Premium Fonts </Link>
@@ -254,7 +256,7 @@ const Post = ({ state, actions, libraries }) => {
                     <Link to="/"> Premium Fonts </Link>
                   </li>
                 </ul>
-              </div>
+              </SideCateItem>
 
             </RightBarLink>
           </DetailsColumnRight>
@@ -324,7 +326,7 @@ export default connect(Post);
 
 
 const DetailsColumnLeft = styled.detailscolumnleft`
-width: calc(75% - 5rem);
+width: calc(75% - 6rem);
 position: relative;
 
 
@@ -342,7 +344,9 @@ after::{
 
 const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
+padding: 0px 15px;
 `;
+
 
 const RightBarLink = styled.rightbarlink`
 
@@ -375,8 +379,26 @@ a{
 `;
 
 
-const SearchBar = styled.searchbar`
 
+const SearchBar = styled.searchbar`
+position: relative;
+input{
+  width: 100%;
+  margin: 0;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
+  border-radius: 7px;
+  border: none;
+  outline:none;
+}
+button {
+  position: absolute;
+  right: 4px;
+  padding: 10px 14px;
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  border-radius: 7px;
+  bottom: -4px;
+}
 `;
 
 const PostDetailsTitle = styled.postdetailstitle`
@@ -598,6 +620,40 @@ const EntryContent = styled.div`
       margin: 4.5rem auto 2.5rem;
     }
   }
+`;
+
+const SidebarH = styled.searchbarh`
+position: relative;
+h6{
+    margin: 0;
+    color: #15BE77;
+    position: relative;
+    font-weight: 400;
+    width: -moz-max-content;
+    width: max-content;
+    background: white;
+    padding-right: 15px;
+}
+:before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #15BE77;
+    width: 100%;
+    height: 1px;
+    margin: auto 0;
+}
+`;
+
+
+
+
+const SideCateItem = styled.sidecateitem`
+margin-top: 5rem;
+    float: left;
+    width: 100%;
 `;
 
 
