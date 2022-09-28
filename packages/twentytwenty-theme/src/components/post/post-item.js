@@ -305,7 +305,9 @@ export const EntryContent = styled.div`
 export const PostBox = styled.postBox`
 width: 100%;
 
-
+@media (max-width:575px){
+  margin-top:-50px;
+}
 
 `;
 
@@ -315,7 +317,8 @@ img{
   border-radius:30px;
   cursor:pointer;
 @media(max-width:767px){
-  border-radius:0px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 }
@@ -334,9 +337,11 @@ float: left;
 z-index: -999;
 
 @media(max-width:767px){
-  border-radius: 0px;
-  width: 100%;
-  margin: 0;
+    width: 92%;
+    margin: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transform: translate(14px, -66px);
 }
 `;
 

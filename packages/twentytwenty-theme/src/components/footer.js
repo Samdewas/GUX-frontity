@@ -144,8 +144,8 @@ const SiteFooter = styled.footer`
   }
 
 @media (max-width:767px){
-  after:display:none;
-  before:display:none;
+  :after{display:none;}
+  :before{display:none};
 }
 
 `;
@@ -252,6 +252,11 @@ p{
   padding-top: 10px;
   color: #FFFFFF;
 }
+@media (max-width:575px){
+  h2{font-size:32px;}
+  p{font-size:14px;}
+  width: 80%;
+}
 `;
 
 const NewsLetterInput = styled.newsinput`
@@ -303,6 +308,15 @@ button{
 img{
   margin-left: 6px;
 }
+
+@media (max-width:575px){
+  button{
+    width: 60%;
+    font-size: 18px;
+    right:0px;
+  }
+  input{width:100%;}
+}
 `;
 
 
@@ -341,6 +355,13 @@ const FooterLink = styled.footerlink`
     display: inline-block;
     color: white;
     margin: 0rem 0 0 5rem;
+  }
+  @media (max-width:575px){
+    margin:0px;
+    li{
+    margin: 0px 15px;
+    font-size: 16px;
+    }
   }
 `;
 

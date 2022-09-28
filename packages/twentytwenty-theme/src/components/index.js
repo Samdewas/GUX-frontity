@@ -15,13 +15,13 @@ import PageError from "./page-error";
 import '../assets/css/custome.css';
 import BannerBg from "../assets/img/banner.png"
 import searchicon from "../assets/img/search.png"
-import Cate_img1 from "../assets/img/front/font.png"
+import Cate_img1 from "../assets/img/front/font.svg"
 import Cate_img2 from "../assets/img/front/psd.png"
 import Cate_img3 from "../assets/img/front/lr.png"
 import Cate_img4 from "../assets/img/front/gr.png"
 import Cate_img5 from "../assets/img/front/web.png"
 
-import Cate_img11 from "../assets/img/front/font_active.png"
+import Cate_img11 from "../assets/img/front/font_active.svg"
 import Cate_img12 from "../assets/img/front/psd_active.png"
 import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
@@ -217,8 +217,9 @@ margin: auto;
 @media (max-width:575px){
   padding-top: 85px;
   width:80%;
-  h2{font-size:21px;}
+  h2{font-size:26px;}
   p{font-size:15px;}
+  width: 100%;
   
 }
 

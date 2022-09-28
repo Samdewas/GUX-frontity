@@ -81,7 +81,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                   <Link to="/"> Home </Link>
                 </li>
                 <li>
-                  >
+                  -
                 </li>
                 <li>
                   <Link to="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
@@ -232,7 +232,7 @@ gap: 20px 20px;
 @media (min-width:320px) and (max-width:767px){
   grid-template-columns: repeat(1,2fr);
   gap: 20px 0px;
-  margin: 0px 15px;
+  margin: 0px 0px;
   padding:0px 20px;
 
 }

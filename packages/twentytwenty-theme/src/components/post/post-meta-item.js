@@ -53,6 +53,7 @@ const ListItem = styled.li`
   
   @media (max-width: 767px) {
     margin: 0.5rem 0 0 0rem;
+    font-size:9px;
 
   span{
     font-size:12px;
