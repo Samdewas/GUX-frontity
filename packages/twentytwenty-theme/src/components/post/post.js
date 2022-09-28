@@ -18,7 +18,6 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
-import SearchIcon from "../../assets/img/search-icn.png";
 
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
@@ -185,15 +184,13 @@ const Post = ({ state, actions, libraries }) => {
                     />
                   </Label>
                   <SearchButton bg={primary} type="submit">
-                    <img src={SearchIcon} />
+                    Search
                   </SearchButton>
                 </Form>
               </SearchBar>
 
-              <SideCateItem>
-                <SidebarH>
-                  <h6> Categories </h6>
-                </SidebarH>
+              <div>
+                <h5> Categories </h5>
 
                 <ul>
                   <li>
@@ -209,13 +206,11 @@ const Post = ({ state, actions, libraries }) => {
                     <Link to="/"> Premium Fonts </Link>
                   </li>
                 </ul>
-              </SideCateItem>
+              </div>
 
-              <SideCateItem>
+              <div>
+                <h5> Categories </h5>
 
-                <SidebarH>
-                  <h6> Recent Posts </h6>
-                </SidebarH>
                 <ul>
                   <li>
                     <Link to="/"> Premium Fonts </Link>
@@ -230,7 +225,7 @@ const Post = ({ state, actions, libraries }) => {
                     <Link to="/"> Premium Fonts </Link>
                   </li>
                 </ul>
-              </SideCateItem>
+              </div>
 
             </RightBarLink>
           </DetailsColumnRight>
@@ -300,7 +295,7 @@ export default connect(Post);
 
 
 const DetailsColumnLeft = styled.detailscolumnleft`
-width: calc(75% - 6rem);
+width: calc(75% - 5rem);
 position: relative;
 
 
@@ -318,10 +313,17 @@ after::{
 
 const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
-padding: 0px 15px;
 `;
 
 const RightBarLink = styled.rightbarlink`
+
+h5{
+  margin: 0;
+  margin-top: 3rem;
+  color: #15BE77;
+  position: relative;
+
+}
 
 ul{
   list-style: none;
@@ -337,6 +339,7 @@ li{
 a{
   text-decoration: none;
   color: black;
+  font-weight: 600;
   font-size: 16px;
 }
 
@@ -344,26 +347,6 @@ a{
 
 
 const SearchBar = styled.searchbar`
-position: relative;
-
-input{
-  width: 100%;
-  margin: 0;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 20px rgb(0 0 0 / 10%);
-  border-radius: 7px;
-  border: none;
-  outline:none;
-}
-
-button {
-  position: absolute;
-  right: 4px;
-  padding: 10px 14px;
-  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
-  border-radius: 7px;
-  bottom: -4px;
-}
 
 `;
 
@@ -375,6 +358,7 @@ h1{
 `;
 
 const PostDetailsImg = styled.postdetailsimg`
+
 
 }
 `;
@@ -515,44 +499,6 @@ const SearchButton = styled(Button)`
   margin: 0 0 0.8rem 0.8rem;
 `;
 
-
-const SidebarH = styled.searchbarh`
-position: relative;
-
-h6{
-    margin: 0;
-    color: #15BE77;
-    position: relative;
-    font-weight: 400;
-    width: -moz-max-content;
-    width: max-content;
-    background: white;
-    padding-right: 15px;
-}
-
-:before{
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: #15BE77;
-    width: 100%;
-    height: 1px;
-    margin: auto 0;
-}
-
-`;
-
-
-
-
-const SideCateItem = styled.sidecateitem`
-margin-top: 5rem;
-    float: left;
-    width: 100%;
-
-`;
 
 
 
