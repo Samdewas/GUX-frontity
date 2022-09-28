@@ -693,6 +693,13 @@ ul.category_front li a h3 {
   top: 47em;
 }
 
+.rt_header_main.is-sticky {
+  position: fixed;
+  width: 15%;
+  right: 370px;
+  top: 0px;
+  padding: 0px 15px;
+}
 
 
 

@@ -2,7 +2,7 @@ import { styled, connect } from "frontity";
 import { useEffect } from "react";
 import FeaturedMedia from "./featured-media";
 import {
-  EntryContent,
+
   Post as _Post,
   PostHeader,
   PostInner,
@@ -107,6 +107,24 @@ const Post = ({ state, actions, libraries }) => {
   useEffect(() => {
     actions.source.fetch("/");
   }, [actions.source]);
+  
+
+
+  useEffect(() => {
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  });
+
+  const isSticky = (e) => {
+    const header = document.querySelector(".rt_header_main");
+    const scrollTop = window.scrollY;
+    scrollTop >= 150
+      ? header.classList.add("is-sticky")
+      : header.classList.remove("is-sticky");
+  };
+  
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
@@ -154,7 +172,18 @@ const Post = ({ state, actions, libraries }) => {
             </PostDetailsImg>
 
             <PostDiscription>
-              <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+
+              {post.content && (
+                  <>
+                  <EntryContent>
+                    <Html2React html={post.content.rendered} />
+                  </EntryContent>
+
+                  {post.tags && <PostTags tags={tags} />}
+                </>
+              )}
+
+              {/* <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s, when an unknown
                 printer took a galley of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into electronic typesetting, remaining
@@ -163,13 +192,13 @@ const Post = ({ state, actions, libraries }) => {
                 like Aldus PageMaker including versions of Lorem Ipsum. </p>
               <img src={PostDisc} />
               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s,</p>
+                has been the industry's standard dummy text ever since the 1500s,</p> */}
               <button> Download </button>
             </PostDiscription>
 
           </DetailsColumnLeft>
 
-          <DetailsColumnRight>
+          <DetailsColumnRight className="rt_header_main">
             <RightBarLink>
 
               <SearchBar>
@@ -353,7 +382,7 @@ const SearchBar = styled.searchbar`
 const PostDetailsTitle = styled.postdetailstitle`
 
 h1{
-  font-size:24px;
+  font-size:28px;
 }
 `;
 
@@ -397,11 +426,11 @@ button{
 
 const PostDiscription = styled.discription`
 
-p{
-  font-size: 16px;
-  margin-top: 20px;
-  color: #474747;
-}
+// p{
+//   font-size: 16px;
+//   margin-top: 20px;
+//   color: #474747;
+// }
 
 img{
   margin: 20px 0px;
@@ -412,6 +441,7 @@ button{
   border-radius: 8px;
   padding: 10px 40px;
   color: white;
+  margin-top:20px;
 }
 
 `;
@@ -499,6 +529,76 @@ const SearchButton = styled(Button)`
   margin: 0 0 0.8rem 0.8rem;
 `;
 
+
+
+const EntryContent = styled.div`
+  line-height: 1.5;
+  max-width: 100%;
+  font-family: "Hoefler Text", Garamond, "Times New Roman", serif;
+  letter-spacing: normal;
+
+  @media (min-width: 700px) {
+    font-size: 2.1rem;
+    margin-top: 20px;
+  }
+
+  > *:first-of-type {
+    margin-top: 0;
+  }
+
+  figure {
+    margin: 2em 0;
+    max-width: 100%;
+  }
+
+  figcaption{
+    margin-top:40px;
+  }
+
+  h3{
+    font-size: 28px;
+  }
+
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  cite,
+  figcaption,
+  table,
+  address,
+  .wp-caption-text,
+  .wp-block-file {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      Helvetica, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 3.5rem auto 2rem;
+  }
+
+  @media (min-width: 700px) {
+    h1,
+    h2,
+    h3 {
+      margin: 6rem auto 3rem;
+    }
+
+    h4,
+    h5,
+    h6 {
+      margin: 4.5rem auto 2.5rem;
+    }
+  }
+`;
 
 
 

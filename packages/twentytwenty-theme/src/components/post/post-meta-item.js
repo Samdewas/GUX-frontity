@@ -43,10 +43,22 @@ const ListItem = styled.li`
   flex-wrap: nowrap;
   flex-shrink: 0;
   letter-spacing: -0.016875em;
-  margin: 1rem 0 0 2rem;
+  margin: 1rem 0 0 0rem;
   max-width: calc(100% - 2rem);
   text-transform: capitalize;
+  
+  span,a{
+    font-size:14px;
+  }
+  
+  @media (max-width: 767px) {
+    margin: 0.5rem 0 0 0rem;
 
+  span{
+    font-size:12px;
+  }
+
+  
   @media (min-width: 700px) {
     margin: 1.4rem 0 0 0rem;
     max-width: calc(100% - 3rem);
@@ -54,6 +66,9 @@ const ListItem = styled.li`
   span{
     font-size:14px;
   }
+
+}
+
 `;
 
 export default PostMetaItem;
