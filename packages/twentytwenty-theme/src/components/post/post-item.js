@@ -189,6 +189,10 @@ export const PostItemTitle = styled.h2`
   @media (min-width: 700px) {
     font-size: 2rem;
   }
+  @media (max-width: 320px) {
+    font-size: 18px;
+    margin: 11px 0px 12px 0px;
+  }
 `;
 
 export const PostTitle = styled.h1`

@@ -39,6 +39,7 @@ import ScreenReaderText from "../styles/screen-reader";
  * @returns The {@link Post} element rendered.
  */
 const Post = ({ state, actions, libraries }) => {
+  console.log(state.source);
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // Get the data of the post.
@@ -549,6 +550,8 @@ const SearchButton = styled(Button)`
   opacity: 1;
   transition: opacity 0.15s linear;
   margin: 0 0 0.8rem 0.8rem;
+  background:linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+
 `;
 
 

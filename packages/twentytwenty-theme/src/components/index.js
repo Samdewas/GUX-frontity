@@ -281,8 +281,18 @@ li:nth-child(5) {
 @media (max-width:575px){
 
   margin-top:50px;
+  display: grid;
+  grid-template-columns: repeat(5,2fr);
+  gap: 0px 0px;
+  overflow-x: auto;
+
+  h3{    margin: 0px 0px;
+    font-size: 19px;}
+    img{    margin: 24px auto;
+      width: 59px;}
 
 }
+
 
 `;
 
@@ -304,6 +314,11 @@ const SearchForm = styled.form`
     top: 25px;
     left: 9px;
   }
+
+  @media (min-width:579) and (max-width:700px){
+    width: 73%;
+  }
+
   @media (max-width:575px){
     width: 80%;
     margin: 0 auto;
@@ -321,6 +336,10 @@ img {
   position: absolute;
   top: 19px;
 }
+@media (max-width:320px){
+  width: 95%;
+}
+
 `;
 
 const SearchInput = styled.input`
@@ -366,12 +385,17 @@ const SearchInput = styled.input`
 ::placeholder{
   opacity: 0.6;
 }
+
+
+
 @media (max-width:575px){
   padding: 20px 56px;
   width:82%;
   font-size:14px;
 
 }
+
+
 
 
 `;

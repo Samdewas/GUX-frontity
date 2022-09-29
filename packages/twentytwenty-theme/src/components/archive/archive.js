@@ -266,6 +266,10 @@ grid-template-columns: repeat(5, 2fr);
 gap: 10px 10px;
 margin-bottom: 5rem;
 margin-top: 7rem;
+
+@media (max-width:575px){
+  margin-bottom: 0rem;
+}
 `;
 
 export const CategoryCircle = styled.categorycircle`

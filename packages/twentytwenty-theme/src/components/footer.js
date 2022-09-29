@@ -255,7 +255,12 @@ p{
 @media (max-width:575px){
   h2{font-size:32px;}
   p{font-size:14px;}
-  width: 80%;
+  width: 93%;
+}
+
+@media (max-width:320px){
+  font-size: 19px;
+  p{font-size:13px;
 }
 `;
 
@@ -311,11 +316,16 @@ img{
 
 @media (max-width:575px){
   button{
-    width: 60%;
-    font-size: 18px;
-    right:0px;
+    width: 45%;
+    font-size: 15px;
+    right: 0px;
   }
   input{width:100%;}
+}
+@media (max-width:320px){
+  button{
+  padding:0px;
+  }
 }
 `;
 
@@ -363,5 +373,6 @@ const FooterLink = styled.footerlink`
     font-size: 16px;
     }
   }
+ 
 `;
 
