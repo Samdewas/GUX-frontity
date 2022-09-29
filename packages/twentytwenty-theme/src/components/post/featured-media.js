@@ -31,12 +31,12 @@ const FeaturedMedia = ({ state, id, className }) => {
 
   return (
     <Figure className={className}>
-     
-        <Image
-          alt={media.title.rendered}
-          src={media.source_url}
-          srcSet={srcset}
-        />
+
+      <Image
+        alt={media.title.rendered}
+        src={media.source_url}
+        srcSet={srcset}
+      />
 
     </Figure>
   );
@@ -50,8 +50,11 @@ const Figure = styled.figure`
   border-radius: 20px;
   z-index: -9;
 
+
+  
   @media(max-width:767px){
     border-radius: 0px;
+    margin-top:0px !important;
   }
 `;
 

@@ -105,6 +105,9 @@ const ModalInner = styled.div`
   justify-content: stretch;
   overflow: auto;
   width: 100%;
+
+  
+
 `;
 
 const MenuWrapper = styled(SectionContainer)`

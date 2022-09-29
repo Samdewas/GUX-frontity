@@ -108,7 +108,7 @@ const Post = ({ state, actions, libraries }) => {
   useEffect(() => {
     actions.source.fetch("/");
   }, [actions.source]);
-  
+
 
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const Post = ({ state, actions, libraries }) => {
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
-  
+
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
@@ -175,7 +175,7 @@ const Post = ({ state, actions, libraries }) => {
             <PostDiscription>
 
               {post.content && (
-                  <>
+                <>
                   <EntryContent>
                     <Html2React html={post.content.rendered} />
                   </EntryContent>
@@ -221,7 +221,7 @@ const Post = ({ state, actions, libraries }) => {
 
               <SideCateItem>
                 <SidebarH>
-                <h6> Categories </h6>
+                  <h6> Categories </h6>
                 </SidebarH>
                 <ul>
                   <li>
@@ -240,8 +240,8 @@ const Post = ({ state, actions, libraries }) => {
               </SideCateItem>
 
               <SideCateItem>
-              <SidebarH>
-                <h6> Categories </h6>
+                <SidebarH>
+                  <h6> Categories </h6>
                 </SidebarH>
                 <ul>
                   <li>
@@ -330,6 +330,11 @@ const DetailsColumnLeft = styled.detailscolumnleft`
 width: calc(75% - 6rem);
 position: relative;
 
+@media (min-width:768px) and (max-width:1024px){
+  width: calc(73% - 6rem);
+  position: relative;
+  margin-left: 3rem;
+}
 
 after::{
   content: "";
@@ -346,6 +351,19 @@ after::{
 const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
 padding: 0px 15px;
+
+@media (min-width:768px) and (max-width:1024px){
+  width: 30%;
+  padding: 0px 15px;
+}
+
+@media (min-width:320px) and (max-width:767px){
+    width: 100%;
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 17rem;
+}
+
 `;
 
 
@@ -406,13 +424,22 @@ const PostDetailsTitle = styled.postdetailstitle`
 
 h1{
   font-size:28px;
+
+  @media (min-width:320px) and (max-width:767px) {
+    font-size: 26px;
+  }
 }
 `;
 
 const PostDetailsImg = styled.postdetailsimg`
 
+img{
+  @media (min-width:320px) and (max-width:767px){
+    margin-top: 20px!important;
+  }
 
 }
+
 `;
 
 const DetailsText = styled.detailstext`
@@ -422,6 +449,10 @@ ul{
 li{
   margin-right:20px;
   margin-top:20px;
+  @media (min-width:320px) and (max-width:767px){
+    margin-top:10px;
+  }
+
 }
 `;
 
@@ -429,6 +460,15 @@ const DetailsRow = styled.detailsrow`
 display: flex;
 justify-content: space-between;
 margin-top: 40px;
+
+
+@media (min-width:320px) and (max-width:767px){
+  margin: 0px 0px;
+  padding: 20px 15px;
+  width: 100%;
+  display: block;
+}
+
 `;
 
 const DetailsTextInner = styled.detailstextinner`
@@ -436,6 +476,16 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 
+@media (min-width:320px) and (max-width:767px){
+  display: block;
+}
+
+ul{
+
+  @media (min-width:320px) and (max-width:767px){
+    justify-content: space-between;
+  }
+}
 button{
   background: #ffe2c3;
   border-radius: 25px;
@@ -443,6 +493,12 @@ button{
   font-size: 15px;
   color: #F8A64C;
   font-weight: 700;
+
+
+  @media (min-width:320px) and (max-width:767px) {
+    margin-top: 1rem;
+    display:none;
+  }
 }
 
 `;

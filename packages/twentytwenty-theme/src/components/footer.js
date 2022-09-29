@@ -105,6 +105,8 @@ const SiteFooter = styled.footer`
   background-color: #151B27;
   color: #000000;
   position:relative;
+  width:100%;
+  float:left;
 
 
   :after{
