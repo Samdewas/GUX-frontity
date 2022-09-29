@@ -75,6 +75,8 @@ export const CloseNavToggle = styled(BaseToggle)`
   @media (max-width: 700px) {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    width:max-content;
+    margin-left:auto ;
   }
 
   svg {

@@ -703,8 +703,6 @@ ul.category_front li a h3 {
 
 
 
-
-
 header#site-header.inner_header{
   background: #084523 !important;
   position: inherit;
@@ -714,7 +712,58 @@ header#site-header.inner_header{
   color: white !important;
 }
 
+@media (min-width:768px) and (max-width:1024px){
+.rt_header_main.is-sticky {
+  width: 29%;
+  right: 0px;
+}
+
+}
+
+@media (min-width:320px) and (max-width:767px){
+.rt_header_main.is-sticky {
+  position: inherit;
+  right: 0;
+  top: 0px;
+  width:100%;
+  padding: inherit;
+}
+header#site-header a {
+  color: black ;
+  padding: 20px 0px 10px 0px;
+  font-size: 16px;
+  font-weight: 300;
+}
+header#site-header.inner_header {
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%) !important;
+}
+
+header#site-header li {
+  margin: 0.8rem 0 0 0rem!important;
+}
+#site-header.inner_header a {
+  color: black!important;
+}
+header#site-header.inner_header span {
+  color: black !important;
+}
+header#site-header.inner_header button svg {
+  fill: black;
+}
+
+header#site-header.inner_header {
+  position: relative;
+}
+header#site-header.inner_header svg {
+  fill: white;
+}
+header#site-header.inner_header span {
+  color: white;
+}
+
+}
 `;
+
 
 /**
  * Global styles for the TwentyTwenty theme.

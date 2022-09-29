@@ -24,6 +24,6 @@
     "@frontity/twentytwenty-theme": "./packages/twentytwenty-theme",
     "@frontity/wp-source": "^1.11.7",
     "frontity": "^1.17.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.4.1"
   }
 }
