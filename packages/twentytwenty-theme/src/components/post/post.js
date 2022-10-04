@@ -125,8 +125,7 @@ const Post = ({ state, actions, libraries }) => {
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
-console.log("murli",post)
-  // Load the post, but only if the data is ready.
+   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <PostArticle>
 
@@ -240,7 +239,7 @@ console.log("murli",post)
 
               <SideCateItem>
                 <SidebarH>
-                  <h6> Categories </h6>
+                  <h6> Ad </h6>
                 </SidebarH>
                 <ul>
                   <li>

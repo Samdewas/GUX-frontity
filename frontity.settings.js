@@ -2,7 +2,7 @@ const settings = {
   "name": "ux",
   "state": {
     "frontity": {
-      "url": "https://befonts.com",
+      "url": "https://www.graphicux.com/",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -19,27 +19,27 @@ const settings = {
             // ],
             [
               "Fonts",
-              "/category/nature/"
+              "/category/fonts/"
             ],
             [
               "Add-Ons",
-              "/category/travel/"
+              "/category/add-ons/"
             ],
             [
               "Templates",
-              "/tag/japan/"
+              "/category/templates/"
             ],
             [
               "Graphics",
-              "/about-us/"
+              "/category/graphics/"
             ],
             [
               "Themes",
-              "/about-us/"
+              "/category/themes/"
             ],
             [
               "Stock Image",
-              "/about-us/"
+              "/category/stock-image"
             ]
           ],
           "featured": {
@@ -53,12 +53,14 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://befonts.com"
+          "url": "https://www.graphicux.com/"
         }
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "@frontity/head-tags"
+
   ]
 };
 

@@ -96,6 +96,14 @@ const documentSetup = (colors) => css`
   #site-content {
     overflow: hidden;
   }
+  .wp-block-button a{
+    background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+    border-radius: 8px;
+    padding: 12px 60px;
+    color: white;
+    margin-top: 20px;
+    text-decoration:none;
+  }
 `;
 
 const accessibilitySettings = css`

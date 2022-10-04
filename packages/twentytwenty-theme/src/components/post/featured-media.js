@@ -28,12 +28,11 @@ const FeaturedMedia = ({ state, id, className }) => {
           ),
         ""
       ) || null;
-
   return (
     <Figure className={className}>
-
+      
       <Image
-        alt={media.title.rendered}
+        alt={media.alt_text}
         src={media.source_url}
         srcSet={srcset}
       />
