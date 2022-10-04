@@ -2,7 +2,7 @@ const settings = {
   "name": "ux",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": "https://befonts.com",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -53,7 +53,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://befonts.com"
         }
       }
     },
