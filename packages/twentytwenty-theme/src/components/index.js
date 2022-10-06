@@ -15,13 +15,13 @@ import PageError from "./page-error";
 import '../assets/css/custome.css';
 import BannerBg from "../assets/img/banner.png"
 import searchicon from "../assets/img/search.png"
-import Cate_img1 from "../assets/img/front/font.svg"
+import Cate_img1 from "../assets/img/front/font_active.svg"
 import Cate_img2 from "../assets/img/front/psd.png"
 import Cate_img3 from "../assets/img/front/lr.png"
 import Cate_img4 from "../assets/img/front/gr.png"
 import Cate_img5 from "../assets/img/front/web.png"
 
-import Cate_img11 from "../assets/img/front/font_active.svg"
+import Cate_img11 from"../assets/img/front/font.svg"
 import Cate_img12 from "../assets/img/front/psd_active.png"
 import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
@@ -30,6 +30,7 @@ import Cate_img15 from "../assets/img/front/web_active.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
+import Contact from "./contact";
 
 const SectionContainer = styled.div`
 margin-left: auto;
@@ -178,8 +179,9 @@ const Theme = ({ state, actions }) => {
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
             <Archive when={data.isArchive} />
-            <Post when={data.isPostType} />
+            <Post when={data.isPostType && data.isPost} />
             <PageError when={data.isError} />
+            <Contact when={state.router.link.includes("/contact-us")} />
           </Switch>
         </Main>
       </div>
@@ -261,9 +263,11 @@ h3{
 }
 img{ margin: 45px auto;}
 
+
 li:nth-child(1) {
   background: #15be7754;
 }
+
 li:nth-child(2) {
   background: #2bbbfa57;
 }
@@ -277,6 +281,27 @@ li:nth-child(4) {
 li:nth-child(5) {
   background: #a259ff59;
 }
+li:nth-child(1):hover h3{ color:#15be77; }
+li:nth-child(1):hover {
+  background: #15be77;
+  transition:all 0.8s;
+}
+li:nth-child(2):hover {
+  background: #2bbbfa;
+}
+li:nth-child(2):hover h3{ color:#2bbbfa;}
+li:nth-child(3):hover {
+  background: #f8a64c;
+}
+li:nth-child(3):hover h3{ color:#f8a64c;}
+li:nth-child(4):hover {
+  background: #ed56a3;
+}
+li:nth-child(4):hover h3{ color:#ed56a3;}
+li:nth-child(5):hover {
+  background: #a259ff;
+}
+li:nth-child(5):hover h3{ color:#a259ff;}
 
 @media (max-width:575px){
 

@@ -2,7 +2,7 @@ const settings = {
   "name": "ux",
   "state": {
     "frontity": {
-      "url": "https://www.graphicux.com/",
+      "url": "https://graphicux.com",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -19,7 +19,7 @@ const settings = {
             // ],
             [
               "Fonts",
-              "/category/fonts/"
+              "/category/nature/"
             ],
             [
               "Add-Ons",
@@ -53,7 +53,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://www.graphicux.com/"
+          "url": "https://graphicux.com"
         }
       }
     },
