@@ -32,6 +32,7 @@ import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 
+
 const SectionContainer = styled.div`
 margin-left: auto;
 margin-right: auto;
@@ -281,25 +282,29 @@ li:nth-child(4) {
 li:nth-child(5) {
   background: #a259ff59;
 }
-li:nth-child(1):hover h3{ color:#15be77; }
+li:nth-child(1):hover h3{ color:#15be77;  transition:all 0.8s;}
 li:nth-child(1):hover {
   background: #15be77;
   transition:all 0.8s;
 }
 li:nth-child(2):hover {
   background: #2bbbfa;
+  transition:all 0.8s;
 }
-li:nth-child(2):hover h3{ color:#2bbbfa;}
+li:nth-child(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
 li:nth-child(3):hover {
   background: #f8a64c;
+  transition:all 0.8s;
 }
-li:nth-child(3):hover h3{ color:#f8a64c;}
+li:nth-child(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
 li:nth-child(4):hover {
   background: #ed56a3;
+  transition:all 0.8s;
 }
-li:nth-child(4):hover h3{ color:#ed56a3;}
+li:nth-child(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
 li:nth-child(5):hover {
   background: #a259ff;
+  transition:all 0.8s;
 }
 li:nth-child(5):hover h3{ color:#a259ff;}
 
