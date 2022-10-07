@@ -138,6 +138,10 @@ const PagingList = styled.ul`
 const PagingItem = styled.li`
   display: inline-block;
   margin: 0;
+  background: #e3ffed;
+    padding: 8px;
+    width: 85px;
+    text-align: center;
 
   &:not(:last-of-type) {
     margin-right: 2rem;
