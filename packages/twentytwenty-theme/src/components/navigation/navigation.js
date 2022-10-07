@@ -1,34 +1,43 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
-
+import {useEffect, useState} from "react";
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
-const Navigation = ({ state }) => (
-  <NavWrapper>
-    <MenuNav>
-      <Menu>
-        {state.theme.menu.map(([name, link]) => {
-          // Check if the link matched the current page url
-          const isCurrentPage = state.router.link === link;
-          return (
-            <MenuItem key={name}>
-              {/* If link url is the current page, add `aria-current` for a11y */}
-              <MenuLink
-                link={link}
-                aria-current={isCurrentPage ? "page" : undefined}
-              >
-                {name}
-              </MenuLink>
-            </MenuItem>
-          );
-        })}
-      </Menu>
-    </MenuNav>
-  </NavWrapper>
-);
+const Navigation = ({ state }) => {
+  const [menudata, setMenudata] = useState([]);
+  useEffect(()=>{
+    fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
+    .then(response => response.text())
+    .then(result => setMenudata(JSON.parse(result)))
+    .catch(error => console.log('error', error));
+  },[])
+  console.log(typeof(menudata))
+  return (
+    <NavWrapper>
+      <MenuNav>
+        <Menu>
+          {menudata.items && menudata.items.map(val => {
+            // Check if the link matched the current page url
+            console.log(val);
+            return (
+              <MenuItem key={val.id}>
+                {/* If link url is the current page, add `aria-current` for a11y */}
+                <MenuLink
+                  link={val.url}
+                >
+                  {val.title}
+                </MenuLink>
+              </MenuItem>
+            );
+          })}
+        </Menu>
+      </MenuNav>
+    </NavWrapper>
+  );
+}
 
 export default connect(Navigation);
 
