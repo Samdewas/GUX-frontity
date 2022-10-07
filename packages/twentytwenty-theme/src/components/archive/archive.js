@@ -1,5 +1,5 @@
 import { connect, decode, styled } from "frontity";
-import { Fragment, useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef, useState} from "react";
 import Article from "../post/post-item";
 import ArchiveHeader from "./archive-header";
 import Pagination from "./archive-pagination";
@@ -74,11 +74,18 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
   };
 
 
+  const [subcategory, setSubcategory] = useState([]);
 
   useEffect(() => {
     Post.preload();
+   
   }, []);
-  console.log(state.source)
+  useEffect(() => {
+    fetch(`https://graphicux.com/wp-json/wp/v2/categories?parent=${data.id}`)
+      .then(response => response.text())
+      .then(result => setSubcategory(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+  }, [state.router.link]);
 
 
 
@@ -88,7 +95,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       {!data.isHome ?
         <BannerSection>
 
-          
+
 
           {data?.isHome || !data?.isSearch ?
             <BredCrumb>
@@ -160,16 +167,21 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 
         {state.router.link.includes("/category") ?
+
+
           <CategoryMain>
 
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
+            {subcategory && subcategory.map(val => 
+              <CategoryCircle>
+                <Link to={val.link}>
+                  <div>
+                  <img src={val?.acf?.cate_image} />
+                </div>
+                <p> {val.name} </p>
+                </Link>
+              </CategoryCircle>
+            )}
+            {/* <CategoryCircle>
               <div>
                 <img src={Circle1} />
               </div>
@@ -195,9 +207,10 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                 <img src={Circle1} />
               </div>
               <p> Calligraphy </p>
-            </CategoryCircle>
+            </CategoryCircle> */}
 
-          </CategoryMain> : <CategoryMain></CategoryMain>}
+          </CategoryMain>
+          : <CategoryMain></CategoryMain>}
         <PostMain>
 
 
