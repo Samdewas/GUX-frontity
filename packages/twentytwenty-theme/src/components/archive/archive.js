@@ -87,8 +87,6 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       .catch(error => console.log('error', error));
   }, [state.router.link]);
 
-
-
   return (
     <>
 
@@ -127,10 +125,11 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           )} */}
                 {data.isTaxonomy && (<>
                   <h2>{data.taxonomy.toUpperCase()} : {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </h2>
-                  <p>{decode(state.source[data.taxonomy][data.id].description)}</p></>
+                  <p dangerouslySetInnerHTML={{__html: decode(state.source[data.taxonomy][data.id].description)}} ></p></>
                 )}
                 {data.isAuthor && (<><h2>AUTHOR : {decode(state.source.author[data.id].name).toUpperCase()}</h2>
-                  <p>{decode(state.source.author[data.id].description)}</p></>
+                <p dangerouslySetInnerHTML={{__html: decode(state.source.author[data.id].description)}} ></p></>
+
                 )}
               </div>
             </BannerInner>
@@ -171,55 +170,26 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
           <CategoryMain>
 
-            {subcategory && subcategory.map(val => 
+            {subcategory?.length ? subcategory?.map(val => 
               <CategoryCircle>
-                <Link to={val.link}>
-                  <div>
+                <Link link={val?.link?.replaceAll(state.source.url,"")}>
+                <div>
                   <img src={val?.acf?.cate_image} />
                 </div>
                 <p> {val.name} </p>
                 </Link>
               </CategoryCircle>
-            )}
-            {/* <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Sans Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Slab Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Brush </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Calligraphy </p>
-            </CategoryCircle> */}
-
+            ) : ""}
           </CategoryMain>
           : <CategoryMain></CategoryMain>}
         <PostMain>
 
 
           {/* Iterate over the items of the list. */}
-          {data.items.map(({ type, id }, index) => {
+          {data?.items?.map(({ type, id }, index) => {
             const isLastArticle = index === data.items.length - 1;
             const item = state.source[type][id];
             // Render one Item component for each one.
-            console.log(item)
             return (
               <Fragment key={item.id}>
                 <Article

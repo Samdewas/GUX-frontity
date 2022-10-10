@@ -125,6 +125,7 @@ const Post = ({ state, actions, libraries }) => {
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
+  console.log("murli",post)
    // Load the post, but only if the data is ready.
   return data.isReady ? (
     <PostArticle>
