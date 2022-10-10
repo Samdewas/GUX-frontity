@@ -81,7 +81,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
    
   }, []);
   useEffect(() => {
-    fetch(`https://graphicux.com/wp-json/wp/v2/categories?parent=${data.id}`)
+    fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
       .then(response => response.text())
       .then(result => setSubcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
