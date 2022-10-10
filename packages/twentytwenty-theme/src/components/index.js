@@ -131,6 +131,8 @@ const Theme = ({ state, actions }) => {
           <BannerInner>
          
             <div>
+
+           
                 
                 <h2> Discover Free Premium Fonts,<br/>
                   Photoshop Action & All Graphic Resources </h2>
