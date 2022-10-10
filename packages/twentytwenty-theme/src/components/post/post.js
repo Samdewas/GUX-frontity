@@ -193,6 +193,20 @@ const Post = ({ state, actions, libraries }) => {
               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s,</p> */}
               <button> Download </button>
+
+           <div>
+           <h4>Related Searches</h4>
+                <TagsList>
+                
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                </TagsList>
+                </div>
+             
             </PostDiscription>
 
           </DetailsColumnLeft>
@@ -346,6 +360,19 @@ after::{
 
 `;
 
+const TagsList = styled.tagslist`
+display:flex;
+margin-top:10px;
+list-style:none;
+li{background: #e4faf0;
+  padding: 10px 15px;
+  margin: 1px 10px;
+  border-radius: 7px;
+  font-size: 15px;}
+  a{color:#000; text-decoration:none;}
+
+`;
+
 const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
 padding: 0px 15px;
@@ -363,6 +390,8 @@ padding: 0px 15px;
 }
 
 `;
+
+
 
 
 const RightBarLink = styled.rightbarlink`
