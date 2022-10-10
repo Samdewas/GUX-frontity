@@ -31,6 +31,7 @@ import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
+import Link from "@frontity/components/link"
 
 
 const SectionContainer = styled.div`
@@ -162,11 +163,11 @@ const Theme = ({ state, actions }) => {
               {data.isHome ?
                 <UXCategory>
           
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(5)}> <a href=""> <img src={ishover == 5 ? Cate_img11   : Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(1)}> <a href=""> <img src={ishover == 1 ? Cate_img12   : Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(2)}> <a href=""> <img src={ishover == 2 ? Cate_img13   : Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(3)}> <a href=""> <img src={ishover == 3 ? Cate_img14   : Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(4)}> <a href=""> <img src={ishover == 4 ? Cate_img15   : Cate_img5} /> <h3>Website Themes </h3> </a></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(5)}> <Link link="category/fonts/"> <img src={ishover == 5 ? Cate_img11   : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(1)}> <Link link="category/add-ons/"> <img src={ishover == 1 ? Cate_img12   : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(2)}> <Link link="category/templates/"> <img src={ishover == 2 ? Cate_img13   : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(3)}> <Link link="category/graphics/"> <img src={ishover == 3 ? Cate_img14   : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
+              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(4)}> <Link link="category/themes/"> <img src={ishover == 4 ? Cate_img15   : Cate_img5} /> <h3>Website Themes </h3></Link></li>
             
        
             </UXCategory>:""}

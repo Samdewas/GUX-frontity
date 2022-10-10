@@ -81,6 +81,7 @@ const MenuItem = styled.li`
   @media (min-width: 1220px) {
     margin: 0.8rem 0 0 2.5rem !important;
   }
+  :last-child{display:none;}
 `;
 
 const MenuLink = styled(Link)`
