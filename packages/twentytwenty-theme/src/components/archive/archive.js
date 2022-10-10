@@ -294,11 +294,13 @@ margin-top: 7rem;
 export const CategoryCircle = styled.categorycircle`
 text-align: center;
 
+
 img{
     box-shadow: 0px 0px 10px 0px #e9dede;
     margin: auto;
     border-radius: 50%;
     border: 2px solid #bcd8c8;
+    border: 8px solid #fff;
 }
 p{
   margin-top: 15px;
@@ -319,7 +321,7 @@ const BannerSection = styled.bannersection`
 
 const BannerInner = styled.div`
 text-align: center;
-padding-top: 120px;
+padding-top: 50px;
 width: 70%;
 margin: auto;
 

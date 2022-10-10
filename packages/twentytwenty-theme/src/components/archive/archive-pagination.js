@@ -110,6 +110,9 @@ const maxWidths = {
 
 const inlineBlock = css`
   display: inline-block;
+  @media (max-width: 575px) {
+    margin-bottom:100px;
+  }
 `;
 
 const Container = styled.div`
@@ -145,6 +148,13 @@ const PagingItem = styled.li`
 
   &:not(:last-of-type) {
     margin-right: 2rem;
+  }
+
+  @media (max-width:575px){
+    width: 59px;
+    text-align: center;
+    margin-bottom: 17px;
+    font-size: 15px;
   }
 `;
 
