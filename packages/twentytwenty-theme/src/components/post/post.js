@@ -1,5 +1,5 @@
 import { styled, connect } from "frontity";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import FeaturedMedia from "./featured-media";
 import {
 
@@ -125,8 +125,22 @@ const Post = ({ state, actions, libraries }) => {
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
-  console.log("murli",post)
-   // Load the post, but only if the data is ready.
+
+  const [posttags, setPosttags] = useState([]);
+  const [postcategory, setPostcategory] = useState([]);
+
+  useEffect(() => {
+    fetch(`${state.source.url}/wp-json/wp/v2/tags?post=${data.id}`)
+      .then(response => response.text())
+      .then(result => setPosttags(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+
+    fetch(`${state.source.url}/wp-json/wp/v2/categories?post=${data.id}`)
+      .then(response => response.text())
+      .then(result => setPostcategory(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+  }, [state.router.link]);
+  // Load the post, but only if the data is ready.
   return data.isReady ? (
     <PostArticle>
 
@@ -195,19 +209,15 @@ const Post = ({ state, actions, libraries }) => {
                 has been the industry's standard dummy text ever since the 1500s,</p> */}
               <button> Download </button>
 
-           <div>
-           <h4>Related Searches</h4>
+              <div>
+                <h4>Related Searches</h4>
                 <TagsList>
-                
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
-                <li>  <Link link="contact-us/"> Tags</Link> </li>
+                  {posttags?.map(val =>
+                    <li>  <Link link={val.link}>{val.name}</Link> </li>
+                  )}
                 </TagsList>
-                </div>
-             
+              </div>
+
             </PostDiscription>
 
           </DetailsColumnLeft>
@@ -237,18 +247,12 @@ const Post = ({ state, actions, libraries }) => {
                   <h6> Categories </h6>
                 </SidebarH>
                 <ul>
+                  {postcategory?.map(val=>
                   <li>
-                    <Link to="/"> Premium Fonts </Link>
+                    <Link link={val.link}>{val.name}</Link>
                   </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
+                  )}
+                  
                 </ul>
               </SideCateItem>
 
@@ -256,7 +260,7 @@ const Post = ({ state, actions, libraries }) => {
                 <SidebarH>
                   <h6> Ad </h6>
                 </SidebarH>
-                <ul>
+                {/* <ul>
                   <li>
                     <Link to="/"> Premium Fonts </Link>
                   </li>
@@ -269,7 +273,7 @@ const Post = ({ state, actions, libraries }) => {
                   <li>
                     <Link to="/"> Premium Fonts </Link>
                   </li>
-                </ul>
+                </ul> */}
               </SideCateItem>
 
             </RightBarLink>
