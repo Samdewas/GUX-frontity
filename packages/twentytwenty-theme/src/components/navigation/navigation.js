@@ -6,22 +6,26 @@ import {useEffect, useState} from "react";
  *
  * It renders the navigation links
  */
-const Navigation = ({ state }) => {
+const Navigation = ({ state, actions }) => {
   const [menudata, setMenudata] = useState([]);
   useEffect(()=>{
     fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
     .then(response => response.text())
-    .then(result => setMenudata(JSON.parse(result)))
+    .then(result => {
+      var newdata = JSON.parse(result);
+       setMenudata(newdata);
+       newdata?.items?.map((val) => {
+        actions.source.fetch(val);
+      });
+  })
     .catch(error => console.log('error', error));
   },[])
-  console.log(typeof(menudata))
   return (
     <NavWrapper>
       <MenuNav>
         <Menu>
           {menudata.items && menudata.items.map(val => {
             // Check if the link matched the current page url
-            console.log(val);
             return (
               <MenuItem key={val.id}>
                 {/* If link url is the current page, add `aria-current` for a11y */}

@@ -1,4 +1,4 @@
-import { connect, decode, styled } from "frontity";
+import { connect, decode, fetch, styled } from "frontity";
 import { Fragment, useEffect, useRef, useState} from "react";
 import Article from "../post/post-item";
 import ArchiveHeader from "./archive-header";
@@ -87,25 +87,22 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       .catch(error => console.log('error', error));
   }, [state.router.link]);
 
+  console.log(data)
   return (
     <>
-
       {!data.isHome ?
         <BannerSection>
-
-
-
           {data?.isHome || !data?.isSearch ?
             <BredCrumb>
               <ul>
                 <li>
-                  <Link to="/"> Home </Link>
+                  <Link link="/"> Home </Link>
                 </li>
                 <li>
                   -
                 </li>
                 <li>
-                  <Link to="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
+                  <Link link="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
                 </li>
               </ul>
             </BredCrumb> : ""

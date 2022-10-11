@@ -12,36 +12,7 @@ const settings = {
       "name": "@frontity/twentytwenty-theme",
       "state": {
         "theme": {
-          "menu": [
-            // [
-            //   "Home",
-            //   "/"
-            // ],
-            [
-              "Fonts",
-              "/category/nature/"
-            ],
-            [
-              "Add-Ons",
-              "/category/add-ons/"
-            ],
-            [
-              "Templates",
-              "/category/templates/"
-            ],
-            [
-              "Graphics",
-              "/category/graphics/"
-            ],
-            [
-              "Themes",
-              "/category/themes/"
-            ],
-            [
-              "Stock Image",
-              "/category/stock-image"
-            ]
-          ],
+          "menu": [],
           "featured": {
             "showOnList": false,
             "showOnPost": false
@@ -53,7 +24,11 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://graphicux.com"
+          "url": "https://graphicux.com",
+          "params": {
+            "per_page": 15,
+            "type": ["post", "page"],
+          },
         }
       }
     },
