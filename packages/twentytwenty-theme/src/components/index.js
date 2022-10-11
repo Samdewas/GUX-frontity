@@ -123,7 +123,7 @@ const Theme = ({ state, actions }) => {
           {data.isHome ?
             <BannerSection>
               {data.isHome ?
-                <img className="banner_img" src={BannerBg} /> :
+                <img className="banner_img" src={BannerBg} /> :   
                 <img className="banner_img" src={BannerBg} />}
               <SectionContainer size="large">
 
