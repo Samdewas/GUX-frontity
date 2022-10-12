@@ -55,7 +55,7 @@ const Footer = ({ state }) => {
       <SectionContainer>
        
 
-        <FooterLink>
+        <Footerlink>
 
           <FooterBox1>
           <h3> <Link link="/"> Logo </Link> </h3>
@@ -119,7 +119,7 @@ const Footer = ({ state }) => {
           </SocialMedia>
       
           </FooterBox4>
-        </FooterLink>
+        </Footerlink>
 
 
         
@@ -511,7 +511,7 @@ const SectionContainer = styled.div`
   }
 `;
 
-const FooterLink = styled.footerlink`
+const Footerlink = styled.footerlink`
   text-align: center;
 
     h3{

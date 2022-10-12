@@ -18,7 +18,6 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
-
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
  * "post type" (posts, pages, attachments, etc.).
