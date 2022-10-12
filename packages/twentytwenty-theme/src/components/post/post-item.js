@@ -306,7 +306,7 @@ export const EntryContent = styled.div`
 `;
 
 
-export const PostBox = styled.postBox`
+export const PostBox = styled.postbox`
 width: 100%;
 
 @media (max-width:575px){
@@ -315,7 +315,7 @@ width: 100%;
 
 `;
 
-export const PostBoxImg = styled.postBoxImg`
+export const PostBoxImg = styled.postboximg`
 
 img{
   border-radius:30px;
@@ -330,7 +330,7 @@ img{
 
 `;
 
-export const PostTextBox = styled.postText`
+export const PostTextBox = styled.posttext`
 background: #FFFFFF;
 box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
 border-radius: 10px;
@@ -349,12 +349,12 @@ z-index: -999;
 }
 `;
 
-export const PostTit = styled.postTit`
+export const PostTit = styled.posttit`
 
 `;
 
 
-export const ImgView = styled.imgView`
+export const ImgView = styled.imgview`
 display:flex;
 align-items: center;
 padding: 0px 0px 4px 0px;

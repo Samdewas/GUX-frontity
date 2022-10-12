@@ -81,10 +81,12 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
     Post.preload();
   }, []);
   useEffect(() => {
+    if(state.router.link != "/"){
     fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
       .then(response => response.text())
       .then(result => setSubcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
+    }
   }, [state.router.link]);
  
  
@@ -227,7 +229,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 export default connect(Archive);
 
 
-export const PostMain = styled.postMain`
+export const PostMain = styled.postmain`
 display: grid;
 grid-template-columns: repeat(3,2fr);
 gap: 20px 20px;
@@ -268,6 +270,7 @@ export const SectionContainer = styled.div`
   @media (min-width: 700px) {
     width: calc(100% - 0rem);
   }
+
 `;
 
 export const CategoryMain = styled.categorymain`
@@ -298,6 +301,7 @@ img{
     border: 2px solid #bcd8c8;
     border: 8px solid #fff;
 }
+a{color:#000; text-decoration:none;}
 p{
   margin-top: 15px;
 }

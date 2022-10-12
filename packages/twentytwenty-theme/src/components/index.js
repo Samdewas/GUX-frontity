@@ -160,7 +160,7 @@ const Theme = ({ state, actions }) => {
 
                 <div>
                   {data.isHome ?
-                    <UXCategory>
+                    <Uxcategory>
 
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <img src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
@@ -169,7 +169,7 @@ const Theme = ({ state, actions }) => {
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <img src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
 
 
-                    </UXCategory> : ""}
+                    </Uxcategory> : ""}
 
                 </div>
               </SectionContainer>
@@ -230,7 +230,7 @@ margin: auto;
 
 `;
 
-const UXCategory = styled.uxcategory`
+const Uxcategory = styled.uxcategory`
 
 list-style: none;
 margin-top: 140px;

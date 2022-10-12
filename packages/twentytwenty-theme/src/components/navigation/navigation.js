@@ -1,11 +1,12 @@
 import { connect, fetch, styled } from "frontity";
 import Link from "../link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
+
 const Navigation = ({ state, actions }) => {
   useEffect(() => {
     fetch(`${state.source.url}/wp-json/wp-api-menus/v2/menus/13`)
@@ -25,7 +26,7 @@ const Navigation = ({ state, actions }) => {
 
 
       <MenuNav>
-        <Menu>
+        {/* <Menu>
           {state.theme.menu?.items && state.theme.menu?.items.map(val => {
             // Check if the link matched the current page url
             return (
@@ -39,7 +40,63 @@ const Navigation = ({ state, actions }) => {
               </MenuItem>
             );
           })}
-        </Menu>
+        </Menu> */}
+
+
+        <ul>
+        <li>
+          <Link to="">
+            Home
+          </Link>
+        </li>
+
+        <li>
+          <Link to=""> Fonts  </Link>
+        </li>
+
+        <li>
+          <Link to=""> Add-Ons  </Link>
+        </li>
+
+        <li>
+          <Link to=""> Templates  </Link>
+        </li>
+
+        <li className="dropdown">
+          <Link to=""> Graphics  </Link>
+
+          <ul className="dropdown-menu multi-level">
+            <li><Link to="#">Category 1</Link></li>
+          
+
+            <li className="dropdown-submenu ">
+
+              <Link to="#">Category 3</Link>
+
+              <ul className="dropdown-menu">
+                <li> <Link to="#">Sub menu 1</Link> </li>
+                <li> <Link to="#">Sub menu 2</Link> </li>
+
+                <li> <Link to="#">Sub menu 3</Link> </li>
+
+              </ul>
+
+            </li>
+
+            <li><Link to="#">Category 2</Link></li>
+
+          </ul>
+
+        </li>
+        <li>
+          <Link to=""> Themes  </Link>
+        </li>
+        <li>
+          <Link to=""> Stock Image  </Link>
+        </li>
+
+
+      </ul>
       </MenuNav>
     </NavWrapper>
   );
@@ -58,6 +115,16 @@ const MenuNav = styled.nav`
     display: block;
     width: 100%;
   }
+
+  ul {
+    list-style:none;
+    display: flex;
+  }
+
+  li:hover{
+
+  }
+
 `;
 
 const UXHeader = styled.uxheader`
@@ -106,3 +173,16 @@ const MenuLink = styled(Link)`
     text-decoration: underline;
   }
 `;
+
+
+const SubMenu = styled.submenu`
+  display:none
+`;
+
+const SubMenuChild = styled.submenuchild`
+  
+`;
+
+
+
+

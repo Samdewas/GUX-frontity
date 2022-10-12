@@ -7,7 +7,6 @@ import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
-import '../assets/css/custome.css';
 import Logo from "../assets/img/logo.png"
 import { useLocation } from 'react-router-dom';
 
