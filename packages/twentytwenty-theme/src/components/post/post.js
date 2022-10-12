@@ -8,6 +8,7 @@ import {
   PostTitle,
   PostCaption,
 } from "./post-item";
+import AdSense from 'react-adsense';
 import PostCategories from "./post-categories";
 import PostMeta from "./post-meta";
 import PostTags from "./post-tags";
@@ -64,6 +65,22 @@ const Post = ({ state, actions, libraries }) => {
    * details of each tag in allTags.
    */
   const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
+  const [adblockerActive, setAdblockerActive] = useState(false);
+
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
+
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+
+    document.body.appendChild(script);
+  }, [actions.source]);
+  const adBlockFunction = () => {
+    // Google Analytics End
+    setAdblockerActive(true);
+  }
 
 
 
@@ -140,9 +157,22 @@ const Post = ({ state, actions, libraries }) => {
   }, [state.router.link]);
   // Load the post, but only if the data is ready.
   return data.isReady ? (
+
+    <>
+     {adblockerActive ?
+
+<Adblocker >
+  <div id='ad-message'>
+    Please disable your ad blocker
+  </div>
+</Adblocker> : ""
+}
+    
     <PostArticle>
 
       <SectionContainer size="large">
+
+      
 
         <DetailsRow>
           <DetailsColumnLeft>
@@ -257,6 +287,12 @@ const Post = ({ state, actions, libraries }) => {
               <SideCateItem>
                 <SidebarH>
                   <h6> Ad </h6>
+                  <AdSense.Google
+              client='ca-pub-5442643109134129'
+              slot='5764423148'
+              style={{ width: 500, height: 300, float: 'left' }}
+              format=''
+            />
                 </SidebarH>
                 {/* <ul>
                   <li>
@@ -331,6 +367,7 @@ const Post = ({ state, actions, libraries }) => {
         </PostInner>
       )} */}
     </PostArticle>
+    </>
   ) : null;
 };
 

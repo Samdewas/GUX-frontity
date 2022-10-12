@@ -269,6 +269,7 @@ export const SectionContainer = styled.div`
   @media (min-width: 700px) {
     width: calc(100% - 0rem);
   }
+
 `;
 
 export const CategoryMain = styled.categorymain`
@@ -299,6 +300,7 @@ img{
     border: 2px solid #bcd8c8;
     border: 8px solid #fff;
 }
+a{color:#000; text-decoration:none;}
 p{
   margin-top: 15px;
 }
