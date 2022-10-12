@@ -265,48 +265,48 @@ h3{
 img{ margin: 45px auto;}
 
 
-li:nth-child(1) {
+li:nth-of-type(1) {
   background: #15be7754;
 }
 
-li:nth-child(2) {
+li:nth-of-type(2) {
   background: #2bbbfa57;
 }
 
-li:nth-child(3) {
+li:nth-of-type(3) {
   background: #f8a64c63;
 }
-li:nth-child(4) {
+li:nth-of-type(4) {
   background: #ed56a352;
 }
-li:nth-child(5) {
+li:nth-of-type(5) {
   background: #a259ff59;
 }
-li:nth-child(1):hover h3{ color:#15be77;  transition:all 0.8s;}
-li:nth-child(1):hover {
+li:nth-of-type(1):hover h3{ color:#15be77;  transition:all 0.8s;}
+li:nth-of-type(1):hover {
   background: #15be77;
   transition:all 0.8s;
 }
-li:nth-child(2):hover {
+li:nth-of-type(2):hover {
   background: #2bbbfa;
   transition:all 0.8s;
 }
-li:nth-child(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
-li:nth-child(3):hover {
+li:nth-of-type(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
+li:nth-of-type(3):hover {
   background: #f8a64c;
   transition:all 0.8s;
 }
-li:nth-child(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
-li:nth-child(4):hover {
+li:nth-of-type(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
+li:nth-of-type(4):hover {
   background: #ed56a3;
   transition:all 0.8s;
 }
-li:nth-child(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
-li:nth-child(5):hover {
+li:nth-of-type(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
+li:nth-of-type(5):hover {
   background: #a259ff;
   transition:all 0.8s;
 }
-li:nth-child(5):hover h3{ color:#a259ff;}
+li:nth-of-type(5):hover h3{ color:#a259ff;}
 
 @media (max-width:575px){
 
@@ -321,7 +321,7 @@ li:nth-child(5):hover h3{ color:#a259ff;}
     img{    margin: 24px auto;
       width: 59px;}
       li h3{color:#000 !important;}
-      li:nth-child(3):hover{ background: #f8a64c63;}
+      li:nth-of-type(3):hover{ background: #f8a64c63;}
 
       li{    width: 100px;
         height: 110px;

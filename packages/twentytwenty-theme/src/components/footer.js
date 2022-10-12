@@ -234,11 +234,11 @@ text-align:left;
 
 ul{margin:0px;}
 li{font-size:18px; line-height:40px; }
-li:nth-child(1):hover{color:#15BE77;}
-li:nth-child(2):hover{color:#2BBBFA;}
-li:nth-child(3):hover{color:#F8A64C;}
-li:nth-child(4):hover{color:#ED56A3;}
-li:nth-child(5):hover{color:#A259FF;}
+li:nth-of-type(1):hover{color:#15BE77;}
+li:nth-of-type(2):hover{color:#2BBBFA;}
+li:nth-of-type(3):hover{color:#F8A64C;}
+li:nth-of-type(4):hover{color:#ED56A3;}
+li:nth-of-type(5):hover{color:#A259FF;}
 
 @media (max-width:767px){
   width:100%;
