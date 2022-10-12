@@ -7,7 +7,6 @@ import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
-import '../assets/css/custome.css';
 import Logo from "../assets/img/logo.png"
 import { useLocation } from 'react-router-dom';
 
@@ -49,7 +48,9 @@ const Header = ({ state }) => {
 
           {/* <img src={Logo} /> */}
           <Navigation className="nav_link_color"/>
-          <button className="header_btn"> <Link to="/"> Contact Us  </Link>  </button>
+
+          <button className="header_btn"> <Link to="/contact-us"> Contact Us  </Link>  </button>
+          
           {/* Desktop search button */}
           {/* {state.theme.showSearchInHeader && <SearchButton />} */}
         </HeaderNavigationWrapper>
