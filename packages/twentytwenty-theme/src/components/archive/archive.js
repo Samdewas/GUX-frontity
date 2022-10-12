@@ -1,5 +1,5 @@
 import { connect, decode, fetch, styled } from "frontity";
-import { Fragment, useEffect, useRef, useState} from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Article from "../post/post-item";
 import ArchiveHeader from "./archive-header";
 import Pagination from "./archive-pagination";
@@ -13,6 +13,7 @@ import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
+import AdSense from 'react-adsense';
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -79,15 +80,26 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
   useEffect(() => {
     Post.preload();
-   
+
   }, []);
   useEffect(() => {
     fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
       .then(response => response.text())
       .then(result => setSubcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
-  }, [state.router.link]);
 
+    const script = document.createElement("script");
+     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+     script.async = true;
+     script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+     document.body.appendChild(script);
+  }, [state.router.link]);
+ 
+  //  const adBlockFunction = () => {
+  //    // Google Analytics End
+  //    setAdblockerActive(true);
+  //  }
+ 
   return (
     <>
       {!data.isHome ?
@@ -110,19 +122,19 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={fontbg} /> :
-            state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> :
-            state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> :
-            state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> :
-            state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> :
-            state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> : 
-            <img className="banner_img" src={BannerBg} />
-            }
+              <img className="banner_img" src={fontbg} /> :
+              state.router.link?.includes("/category/fonts/") ?
+                <img className="banner_img" src={BannerBg} /> :
+                state.router.link?.includes("/category/fonts/") ?
+                  <img className="banner_img" src={BannerBg} /> :
+                  state.router.link?.includes("/category/fonts/") ?
+                    <img className="banner_img" src={BannerBg} /> :
+                    state.router.link?.includes("/category/fonts/") ?
+                      <img className="banner_img" src={BannerBg} /> :
+                      state.router.link?.includes("/category/fonts/") ?
+                        <img className="banner_img" src={BannerBg} /> :
+                        <img className="banner_img" src={BannerBg} />
+          }
           <SectionContainer size="large">
 
             <BannerInner>
@@ -134,10 +146,10 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           )} */}
                 {data.isTaxonomy && (<>
                   <h2>{data.taxonomy.toUpperCase()} : {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </h2>
-                  <p dangerouslySetInnerHTML={{__html: decode(state.source[data.taxonomy][data.id].description)}} ></p></>
+                  <p dangerouslySetInnerHTML={{ __html: decode(state.source[data.taxonomy][data.id].description) }} ></p></>
                 )}
                 {data.isAuthor && (<><h2>AUTHOR : {decode(state.source.author[data.id].name).toUpperCase()}</h2>
-                <p dangerouslySetInnerHTML={{__html: decode(state.source.author[data.id].description)}} ></p></>
+                  <p dangerouslySetInnerHTML={{ __html: decode(state.source.author[data.id].description) }} ></p></>
 
                 )}
               </div>
@@ -179,13 +191,13 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
           <CategoryMain>
 
-            {subcategory?.length ? subcategory?.map(val => 
+            {subcategory?.length ? subcategory?.map(val =>
               <CategoryCircle>
-                <Link link={val?.link?.replaceAll(state.source.url,"")}>
-                <div>
-                  <img src={val?.acf?.cate_image} />
-                </div>
-                <p> {val.name} </p>
+                <Link link={val?.link?.replaceAll(state.source.url, "")}>
+                  <div>
+                    <img src={val?.acf?.cate_image} />
+                  </div>
+                  <p> {val.name} </p>
                 </Link>
               </CategoryCircle>
             ) : ""}
@@ -200,16 +212,34 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
             return (
+              index == 4 ? <>
+              {/* ad */}
               <Fragment key={item.id}>
-                <Article
-                  key={item.id}
-                  item={item}
-                  showExcerpt={_showExcerpt}
-                  showMedia={item.jetpack_featured_media_url}
-                />
-                {/* {!isLastArticle && <PostSeparator />} */}
-              </Fragment>
-            );
+              <AdSense.Google
+              client='ca-pub-5442643109134129'
+              slot='5764423148'
+              style={{ width: 500, height: 300, float: 'left' }}
+              format=''
+            />
+            </Fragment>
+              <Fragment key={item.id}>
+              <Article
+                key={item.id}
+                item={item}
+                showExcerpt={_showExcerpt}
+                showMedia={item.jetpack_featured_media_url}
+              />
+            </Fragment>
+            </>  :
+                <Fragment key={item.id}>
+                  <Article
+                    key={item.id}
+                    item={item}
+                    showExcerpt={_showExcerpt}
+                    showMedia={item.jetpack_featured_media_url}
+                  />
+                </Fragment>
+            )
           })}
 
 
