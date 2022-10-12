@@ -87,18 +87,20 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       .then(response => response.text())
       .then(result => setSubcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
-
-    const script = document.createElement("script");
-     script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-     script.async = true;
-     script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
-     document.body.appendChild(script);
   }, [state.router.link]);
  
-  //  const adBlockFunction = () => {
-  //    // Google Analytics End
-  //    setAdblockerActive(true);
-  //  }
+
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
+
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    // script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+
+    document.body.appendChild(script);
+  }, [actions.source]);
+ 
  
   return (
     <>
@@ -192,7 +194,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           <CategoryMain>
 
             {subcategory?.length ? subcategory?.map(val =>
-              <CategoryCircle>
+              <CategoryCircle key={val.id}>
                 <Link link={val?.link?.replaceAll(state.source.url, "")}>
                   <div>
                     <img src={val?.acf?.cate_image} />
@@ -214,7 +216,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             return (
               index == 4 ? <>
               {/* ad */}
-              <Fragment key={item.id}>
+              <Fragment key="6545464">
               <AdSense.Google
               client='ca-pub-5442643109134129'
               slot='5764423148'
@@ -394,20 +396,20 @@ h3{
 }
 img{ margin: 45px auto;}
 
-li:nth-child(1) {
+li:nth-of-type(1) {
   background: #15be7754;
 }
-li:nth-child(2) {
+li:nth-of-type(2) {
   background: #2bbbfa57;
 }
 
-li:nth-child(3) {
+li:nth-of-type(3) {
   background: #f8a64c63;
 }
-li:nth-child(4) {
+li:nth-of-type(4) {
   background: #ed56a352;
 }
-li:nth-child(5) {
+li:nth-of-type(5) {
   background: #a259ff59;
 }
 
