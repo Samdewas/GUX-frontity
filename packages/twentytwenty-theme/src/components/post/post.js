@@ -1,14 +1,14 @@
-import { styled, connect } from "frontity";
-import { useEffect } from "react";
+import { styled, connect, fetch } from "frontity";
+import { useEffect, useState } from "react";
 import FeaturedMedia from "./featured-media";
 import {
-
   Post as _Post,
   PostHeader,
   PostInner,
   PostTitle,
   PostCaption,
 } from "./post-item";
+import AdSense from 'react-adsense';
 import PostCategories from "./post-categories";
 import PostMeta from "./post-meta";
 import PostTags from "./post-tags";
@@ -18,7 +18,6 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
-
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
  * "post type" (posts, pages, attachments, etc.).
@@ -39,7 +38,6 @@ import ScreenReaderText from "../styles/screen-reader";
  * @returns The {@link Post} element rendered.
  */
 const Post = ({ state, actions, libraries }) => {
-  console.log(state.source);
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // Get the data of the post.
@@ -66,6 +64,22 @@ const Post = ({ state, actions, libraries }) => {
    * details of each tag in allTags.
    */
   const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
+  const [adblockerActive, setAdblockerActive] = useState(false);
+
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
+
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+
+    document.body.appendChild(script);
+  }, [actions.source]);
+  const adBlockFunction = () => {
+    // Google Analytics End
+    setAdblockerActive(true);
+  }
 
 
 
@@ -125,11 +139,39 @@ const Post = ({ state, actions, libraries }) => {
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
-   // Load the post, but only if the data is ready.
+
+  const [posttags, setPosttags] = useState([]);
+  const [postcategory, setPostcategory] = useState([]);
+
+  useEffect(() => {
+    fetch(`${state.source.url}/wp-json/wp/v2/tags?post=${data.id}`)
+      .then(response => response.text())
+      .then(result => setPosttags(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+
+    fetch(`${state.source.url}/wp-json/wp/v2/categories?post=${data.id}`)
+      .then(response => response.text())
+      .then(result => setPostcategory(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+  }, [state.router.link]);
+  // Load the post, but only if the data is ready.
   return data.isReady ? (
+
+    <>
+     {adblockerActive ?
+
+<Adblocker >
+  <div id='ad-message'>
+    Please disable your ad blocker
+  </div>
+</Adblocker> : ""
+}
+    
     <PostArticle>
 
       <SectionContainer size="large">
+
+      
 
         <DetailsRow>
           <DetailsColumnLeft>
@@ -192,7 +234,17 @@ const Post = ({ state, actions, libraries }) => {
               <img src={PostDisc} />
               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s,</p> */}
-              <button> Download </button>
+             
+
+              <div>
+                <h4>Related Searches</h4>
+                <TagsList>
+                  {posttags?.map(val =>
+                    <li>  <Link link={val.link}>{val.name}</Link> </li>
+                  )}
+                </TagsList>
+              </div>
+
             </PostDiscription>
 
           </DetailsColumnLeft>
@@ -222,26 +274,26 @@ const Post = ({ state, actions, libraries }) => {
                   <h6> Categories </h6>
                 </SidebarH>
                 <ul>
+                  {postcategory?.map(val=>
                   <li>
-                    <Link to="/"> Premium Fonts </Link>
+                    <Link link={val.link}>{val.name}</Link>
                   </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
+                  )}
+                  
                 </ul>
               </SideCateItem>
 
               <SideCateItem>
                 <SidebarH>
                   <h6> Ad </h6>
+                  <AdSense.Google
+              client='ca-pub-5442643109134129'
+              slot='5764423148'
+              style={{ width: 500, height: 300, float: 'left' }}
+              format=''
+            />
                 </SidebarH>
-                <ul>
+                {/* <ul>
                   <li>
                     <Link to="/"> Premium Fonts </Link>
                   </li>
@@ -254,7 +306,7 @@ const Post = ({ state, actions, libraries }) => {
                   <li>
                     <Link to="/"> Premium Fonts </Link>
                   </li>
-                </ul>
+                </ul> */}
               </SideCateItem>
 
             </RightBarLink>
@@ -314,6 +366,7 @@ const Post = ({ state, actions, libraries }) => {
         </PostInner>
       )} */}
     </PostArticle>
+    </>
   ) : null;
 };
 
@@ -346,6 +399,29 @@ after::{
 
 `;
 
+const TagsList = styled.tagslist`
+display:flex;
+margin-top:10px;
+list-style:none;
+li{background: #e4faf0;
+  padding: 10px 15px;
+  margin: 1px 10px;
+  border-radius: 7px;
+  font-size: 15px;}
+  a{color:#000; text-decoration:none;}
+
+  @media (max-width:767px){
+    display: inline-block;
+   li{ background: #e4faf0;
+    padding: 6px 17px;
+    margin: 3px 3px;
+    border-radius: 7px;
+    font-size: 13px;
+    display: inline-block;}
+  }
+
+`;
+
 const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
 padding: 0px 15px;
@@ -363,6 +439,8 @@ padding: 0px 15px;
 }
 
 `;
+
+
 
 
 const RightBarLink = styled.rightbarlink`

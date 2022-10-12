@@ -48,9 +48,7 @@ const Header = ({ state }) => {
 
           {/* <img src={Logo} /> */}
           <Navigation className="nav_link_color"/>
-
-          <button className="header_btn"> <Link to="/contact-us"> Contact Us  </Link>  </button>
-          
+          <button className="header_btn"> <Link link="contact-us/"> Contact Us  </Link>  </button>
           {/* Desktop search button */}
           {/* {state.theme.showSearchInHeader && <SearchButton />} */}
         </HeaderNavigationWrapper>

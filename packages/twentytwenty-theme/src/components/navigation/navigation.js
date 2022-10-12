@@ -1,33 +1,50 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import Arrow from "../../assets/img/down-arrow.png"
+import { useEffect, useState } from "react";
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
-const Navigation = ({ state }) => (
-  <NavWrapper>
-    <MenuNav>
-      {/* <Menu>
-        {state.theme.menu.map(([name, link]) => {
-          Check if the link matched the current page url
-          const isCurrentPage = state.router.link === link;
-          return (
-            <MenuItem key={name}>
-              If link url is the current page, add `aria-current` for a11y
-              <MenuLink
-                link={link}
-                aria-current={isCurrentPage ? "page" : undefined}
-              >
-                {name}
-              </MenuLink>
-            </MenuItem>
-          );
-        })}
-      </Menu> */}
 
-      <ul>
+const Navigation = ({ state, actions }) => {
+  useEffect(() => {
+    fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
+      .then(response => response.text())
+      .then(result => {
+        var newdata = JSON.parse(result);
+        state.theme.menu = newdata;
+        newdata?.items?.map((val) => {
+        actions.source.fetch(val);
+        });
+      })
+      .catch(error => console.log('error', error));
+  }, [])
+  return (
+    <NavWrapper>
+
+
+
+      <MenuNav>
+        {/* <Menu>
+          {state.theme.menu?.items && state.theme.menu?.items.map(val => {
+            // Check if the link matched the current page url
+            return (
+              <MenuItem key={val.id}>
+
+                <MenuLink
+                  link={val.url}
+                >
+                  {val.title}
+                </MenuLink>
+              </MenuItem>
+            );
+          })}
+        </Menu> */}
+
+
+        <ul>
         <li>
           <Link to="">
             Home
@@ -81,9 +98,10 @@ const Navigation = ({ state }) => (
 
 
       </ul>
-    </MenuNav>
-  </NavWrapper>
-);
+      </MenuNav>
+    </NavWrapper>
+  );
+}
 
 export default connect(Navigation);
 
@@ -107,6 +125,12 @@ const MenuNav = styled.nav`
   li:hover{
 
   }
+
+`;
+
+const UXHeader = styled.uxheader`
+
+
 
 `;
 
@@ -137,6 +161,7 @@ const MenuItem = styled.li`
   @media (min-width: 1220px) {
     margin: 0.8rem 0 0 2.5rem !important;
   }
+  :last-child{display:none;}
 `;
 
 const MenuLink = styled(Link)`

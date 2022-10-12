@@ -1,17 +1,19 @@
-import { connect, decode, styled } from "frontity";
-import { Fragment, useEffect, useRef } from "react";
+import { connect, decode, fetch, styled } from "frontity";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Article from "../post/post-item";
 import ArchiveHeader from "./archive-header";
 import Pagination from "./archive-pagination";
 import PostSeparator from "../post/post-separator";
 import Post from "../post";
 import Circle1 from "../../assets/img/C_circle.png";
+import fontbg from "../../assets/img/category/font.png";
 import BannerBg from "../../assets/img/banner.png"
 import searchicon from "../../assets/img/search.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
+import AdSense from 'react-adsense';
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -74,41 +76,67 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
   };
 
 
+  const [subcategory, setSubcategory] = useState([]);
 
   useEffect(() => {
     Post.preload();
+
   }, []);
-  console.log(state.source)
+  useEffect(() => {
+    fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
+      .then(response => response.text())
+      .then(result => setSubcategory(JSON.parse(result)))
+      .catch(error => console.log('error', error));
+  }, [state.router.link]);
+ 
 
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
 
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    // script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
 
+    document.body.appendChild(script);
+  }, [actions.source]);
+ 
+ 
   return (
     <>
-
       {!data.isHome ?
         <BannerSection>
-
-          
-
           {data?.isHome || !data?.isSearch ?
             <BredCrumb>
               <ul>
                 <li>
-                  <Link to="/"> Home </Link>
+                  <Link link="/"> Home </Link>
                 </li>
                 <li>
                   -
                 </li>
                 <li>
-                  <Link to="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
+                  <Link link="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
                 </li>
               </ul>
             </BredCrumb> : ""
           }
-
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
-            <img className="banner_img" src={BannerBg} />}
+            state.router.link?.includes("/category/fonts/") ?
+              <img className="banner_img" src={fontbg} /> :
+              state.router.link?.includes("/category/fonts/") ?
+                <img className="banner_img" src={BannerBg} /> :
+                state.router.link?.includes("/category/fonts/") ?
+                  <img className="banner_img" src={BannerBg} /> :
+                  state.router.link?.includes("/category/fonts/") ?
+                    <img className="banner_img" src={BannerBg} /> :
+                    state.router.link?.includes("/category/fonts/") ?
+                      <img className="banner_img" src={BannerBg} /> :
+                      state.router.link?.includes("/category/fonts/") ?
+                        <img className="banner_img" src={BannerBg} /> :
+                        <img className="banner_img" src={BannerBg} />
+          }
           <SectionContainer size="large">
 
             <BannerInner>
@@ -120,10 +148,11 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           )} */}
                 {data.isTaxonomy && (<>
                   <h2>{data.taxonomy.toUpperCase()} : {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </h2>
-                  <p>{decode(state.source[data.taxonomy][data.id].description)}</p></>
+                  <p dangerouslySetInnerHTML={{ __html: decode(state.source[data.taxonomy][data.id].description) }} ></p></>
                 )}
                 {data.isAuthor && (<><h2>AUTHOR : {decode(state.source.author[data.id].name).toUpperCase()}</h2>
-                  <p>{decode(state.source.author[data.id].description)}</p></>
+                  <p dangerouslySetInnerHTML={{ __html: decode(state.source.author[data.id].description) }} ></p></>
+
                 )}
               </div>
             </BannerInner>
@@ -160,64 +189,58 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 
         {state.router.link.includes("/category") ?
+
+
           <CategoryMain>
 
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Sans Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Slab Serif </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Brush </p>
-            </CategoryCircle>
-
-            <CategoryCircle>
-              <div>
-                <img src={Circle1} />
-              </div>
-              <p> Calligraphy </p>
-            </CategoryCircle>
-
-          </CategoryMain> : <CategoryMain></CategoryMain>}
+            {subcategory?.length ? subcategory?.map(val =>
+              <CategoryCircle key={val.id}>
+                <Link link={val?.link?.replaceAll(state.source.url, "")}>
+                  <div>
+                    <img src={val?.acf?.cate_image} />
+                  </div>
+                  <p> {val.name} </p>
+                </Link>
+              </CategoryCircle>
+            ) : ""}
+          </CategoryMain>
+          : <CategoryMain></CategoryMain>}
         <PostMain>
 
 
           {/* Iterate over the items of the list. */}
-          {data.items.map(({ type, id }, index) => {
+          {data?.items?.map(({ type, id }, index) => {
             const isLastArticle = index === data.items.length - 1;
             const item = state.source[type][id];
             // Render one Item component for each one.
-            console.log(item)
             return (
+              index == 4 ? <Fragment key={index}>
+
+              {/* ad */}
+              <AdSense.Google
+              client='ca-pub-5442643109134129'
+              slot='5764423148'
+              style={{ width: 500, height: 300, float: 'left' }}
+              format=''
+            />
               <Fragment key={item.id}>
-                <Article
-                  key={item.id}
-                  item={item}
-                  showExcerpt={_showExcerpt}
-                  showMedia={item.jetpack_featured_media_url}
-                />
-                {/* {!isLastArticle && <PostSeparator />} */}
-              </Fragment>
-            );
+              <Article
+                key={item.id}
+                item={item}
+                showExcerpt={_showExcerpt}
+                showMedia={item.jetpack_featured_media_url}
+              />
+            </Fragment>
+            </Fragment>  :
+                <Fragment key={item.id}>
+                  <Article
+                    key={item.id}
+                    item={item}
+                    showExcerpt={_showExcerpt}
+                    showMedia={item.jetpack_featured_media_url}
+                  />
+                </Fragment>
+            )
           })}
 
 
@@ -236,7 +259,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 export default connect(Archive);
 
 
-export const PostMain = styled.postMain`
+export const PostMain = styled.postmain`
 display: grid;
 grid-template-columns: repeat(3,2fr);
 gap: 20px 20px;
@@ -277,14 +300,20 @@ export const SectionContainer = styled.div`
   @media (min-width: 700px) {
     width: calc(100% - 0rem);
   }
+
 `;
 
 export const CategoryMain = styled.categorymain`
 display: grid;
 grid-template-columns: repeat(5, 2fr);
 gap: 10px 10px;
-margin-bottom: 5rem;
+margin-bottom: 1rem;
 margin-top: 7rem;
+
+@media (max-width:767px){
+  grid-template-columns: repeat(3, 2fr);
+  a{color:#000; text-decoration:none;}
+}
 
 @media (max-width:575px){
   margin-bottom: 0rem;
@@ -294,12 +323,15 @@ margin-top: 7rem;
 export const CategoryCircle = styled.categorycircle`
 text-align: center;
 
+
 img{
     box-shadow: 0px 0px 10px 0px #e9dede;
     margin: auto;
     border-radius: 50%;
     border: 2px solid #bcd8c8;
+    border: 8px solid #fff;
 }
+a{color:#000; text-decoration:none;}
 p{
   margin-top: 15px;
 }
@@ -319,14 +351,14 @@ const BannerSection = styled.bannersection`
 
 const BannerInner = styled.div`
 text-align: center;
-padding-top: 120px;
+padding-top: 50px;
 width: 70%;
 margin: auto;
 
 @media (max-width:575px){
   padding-top: 85px;
   width:80%;
-  h2{font-size:29px;}
+  h2{font-size:25px;}
   p{font-size:15px;}
   
 }
@@ -365,20 +397,20 @@ h3{
 }
 img{ margin: 45px auto;}
 
-li:nth-child(1) {
+li:nth-of-type(1) {
   background: #15be7754;
 }
-li:nth-child(2) {
+li:nth-of-type(2) {
   background: #2bbbfa57;
 }
 
-li:nth-child(3) {
+li:nth-of-type(3) {
   background: #f8a64c63;
 }
-li:nth-child(4) {
+li:nth-of-type(4) {
   background: #ed56a352;
 }
-li:nth-child(5) {
+li:nth-of-type(5) {
   background: #a259ff59;
 }
 
@@ -492,7 +524,7 @@ margin: auto 0;
 `;
 
 const BredCrumb = styled.bredcrumb`
-background: #3e916238;
+background: #dedede38;
     width: 100%;
     float: left;
     padding: 18px 0px;

@@ -1,6 +1,6 @@
 import { connect, Global, Head, styled } from "frontity";
 import Switch from "@frontity/components/switch";
-import { useRef,useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Footer from "./footer";
 import globalStyles from "./styles/global-styles";
 import FontFaces from "./styles/font-faces";
@@ -20,17 +20,16 @@ import Cate_img2 from "../assets/img/front/psd.png"
 import Cate_img3 from "../assets/img/front/lr.png"
 import Cate_img4 from "../assets/img/front/gr.png"
 import Cate_img5 from "../assets/img/front/web.png"
-
-import Cate_img11 from"../assets/img/front/font.svg"
+import Cate_img11 from "../assets/img/front/font.svg"
 import Cate_img12 from "../assets/img/front/psd_active.png"
 import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
 import Cate_img15 from "../assets/img/front/web_active.png"
-
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
+import Link from "@frontity/components/link"
 
 
 const SectionContainer = styled.div`
@@ -48,10 +47,11 @@ max-width: 130rem;
  * Theme is the root React component of our theme. The one we will export
  * in roots.
  */
-const Theme = ({ state, actions }) => { 
+const Theme = ({ state, actions }) => {
   // Get information about the current URL.
+  
   const data = state.source.get(state.router.link);
-  const [ishover,setIshover] = useState("");
+  const [ishover, setIshover] = useState("");
   const { searchQuery } = state.source.get(state.router.link);
 
   const { isSearchModalOpen } = state.theme;
@@ -69,7 +69,7 @@ const Theme = ({ state, actions }) => {
   });
   useFocusEffect(inputRef, isSearchModalOpen);
   useFocusTrap(containerRef, isSearchModalOpen);
-  
+
   // Format the query to remove trailing spaces and replace space with "+"
   const formatQuery = (query) => query.trim().replace(" ", "+").toLowerCase();
 
@@ -120,62 +120,62 @@ const Theme = ({ state, actions }) => {
         on the type of URL we are in. */}
         <Main id="main">
 
-        {data.isHome ?
-          <BannerSection>
-            {data.isHome ?
-              <img className="banner_img" src={BannerBg} />: 
-              <img className="banner_img" src={BannerBg} />}
-            <SectionContainer size="large">
-             
-          <BannerInner>
-         
-            <div>
-                
-                <h2> Discover Free Premium Fonts,<br/>
-                  Photoshop Action & All Graphic Resources </h2>
-                <p>Graphicux.com is well known for saving money for customers but with our
-                  free fonts and Photoshop action section, we have gone one step further</p>
-                  </div>
-               </BannerInner>
-           
-
-              <div>
-                <SearchForm
-                  role="search"
-                  aria-label="Search for:"
-                  onSubmit={handleSubmit}
-                >
-                  <SearchInput
-                    ref={inputRef}
-                    type="search"
-                    autoComplete="off"
-                    defaultValue={searchQuery || ""}
-                    placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
-                    name="search"
-                  />
-                  <img className="srch_icon" src={searchicon} />
-                  <SearchButton bg={primary}>Search</SearchButton>
-                </SearchForm>
-              </div>
-
-              <div>
+          {data.isHome ?
+            <BannerSection>
               {data.isHome ?
-                <UXCategory>
-          
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(5)}> <a href=""> <img src={ishover == 5 ? Cate_img11   : Cate_img1} /> <h3>Premium Fonts </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(1)}> <a href=""> <img src={ishover == 1 ? Cate_img12   : Cate_img2} /> <h3>Photoshop Action </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(2)}> <a href=""> <img src={ishover == 2 ? Cate_img13   : Cate_img3} /> <h3>Lightroom Preset </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(3)}> <a href=""> <img src={ishover == 3 ? Cate_img14   : Cate_img4} /> <h3>Graphic & Mockups </h3> </a></li>
-              <li onMouseLeave={()=> setIshover("")} onMouseOver={()=> setIshover(4)}> <a href=""> <img src={ishover == 4 ? Cate_img15   : Cate_img5} /> <h3>Website Themes </h3> </a></li>
-            
-       
-            </UXCategory>:""}
+                <img className="banner_img" src={BannerBg} /> :   
+                <img className="banner_img" src={BannerBg} />}
+              <SectionContainer size="large">
 
-              </div>
-            </SectionContainer>
-          </BannerSection> : ""}
+                <BannerInner>
 
-          
+                  <div>
+
+                    <h2> Discover Free Premium Fonts,<br />
+                      Photoshop Action & All Graphic Resources </h2>
+                    <p>Graphicux.com is well known for saving money for customers but with our
+                      free fonts and Photoshop action section, we have gone one step further</p>
+                  </div>
+                </BannerInner>
+
+
+                <div>
+                  <SearchForm
+                    role="search"
+                    aria-label="Search for:"
+                    onSubmit={handleSubmit}
+                  >
+                    <SearchInput
+                      ref={inputRef}
+                      type="search"
+                      autoComplete="off"
+                      defaultValue={searchQuery || ""}
+                      placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
+                      name="search"
+                    />
+                    <img className="srch_icon" src={searchicon} />
+                    <SearchButton bg={primary}>Search</SearchButton>
+                  </SearchForm>
+                </div>
+
+                <div>
+                  {data.isHome ?
+                    <Uxcategory>
+
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <img src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/templates/"> <img src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <img src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <img src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
+
+
+                    </Uxcategory> : ""}
+
+                </div>
+              </SectionContainer>
+            </BannerSection> : ""}
+
+
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
@@ -230,7 +230,7 @@ margin: auto;
 
 `;
 
-const UXCategory = styled.uxcategory`
+const Uxcategory = styled.uxcategory`
 
 list-style: none;
 margin-top: 140px;
@@ -265,48 +265,48 @@ h3{
 img{ margin: 45px auto;}
 
 
-li:nth-child(1) {
+li:nth-of-type(1) {
   background: #15be7754;
 }
 
-li:nth-child(2) {
+li:nth-of-type(2) {
   background: #2bbbfa57;
 }
 
-li:nth-child(3) {
+li:nth-of-type(3) {
   background: #f8a64c63;
 }
-li:nth-child(4) {
+li:nth-of-type(4) {
   background: #ed56a352;
 }
-li:nth-child(5) {
+li:nth-of-type(5) {
   background: #a259ff59;
 }
-li:nth-child(1):hover h3{ color:#15be77;  transition:all 0.8s;}
-li:nth-child(1):hover {
+li:nth-of-type(1):hover h3{ color:#15be77;  transition:all 0.8s;}
+li:nth-of-type(1):hover {
   background: #15be77;
   transition:all 0.8s;
 }
-li:nth-child(2):hover {
+li:nth-of-type(2):hover {
   background: #2bbbfa;
   transition:all 0.8s;
 }
-li:nth-child(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
-li:nth-child(3):hover {
+li:nth-of-type(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
+li:nth-of-type(3):hover {
   background: #f8a64c;
   transition:all 0.8s;
 }
-li:nth-child(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
-li:nth-child(4):hover {
+li:nth-of-type(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
+li:nth-of-type(4):hover {
   background: #ed56a3;
   transition:all 0.8s;
 }
-li:nth-child(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
-li:nth-child(5):hover {
+li:nth-of-type(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
+li:nth-of-type(5):hover {
   background: #a259ff;
   transition:all 0.8s;
 }
-li:nth-child(5):hover h3{ color:#a259ff;}
+li:nth-of-type(5):hover h3{ color:#a259ff;}
 
 @media (max-width:575px){
 
@@ -316,10 +316,21 @@ li:nth-child(5):hover h3{ color:#a259ff;}
   gap: 0px 0px;
   overflow-x: auto;
 
-  h3{    margin: 0px 0px;
-    font-size: 19px;}
+  h3{ margin: -14px 0px;
+    font-size: 15px;}
     img{    margin: 24px auto;
       width: 59px;}
+      li h3{color:#000 !important;}
+      li:nth-of-type(3):hover{ background: #f8a64c63;}
+
+      li{    width: 100px;
+        height: 110px;
+        margin: 0px 10px;
+        border-radius: 50%;
+      img{margin: 19px auto;
+        width: 35px;}
+      }
+      
 
 }
 

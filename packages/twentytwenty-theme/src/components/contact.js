@@ -1,12 +1,37 @@
-import { styled, connect } from "frontity";
+import { styled, connect, fetch } from "frontity";
 import Link from "./link";
 import ContactImg from "../assets/img/contact-img.png"
 import ContactBg from "../assets/img/contact_bg.png"
 import SectionContainer from "./styles/section-container";
+import { useEffect, useState } from "react";
 
 const Contact = ({ state }) => {
   const currentYear = new Date().getFullYear();
   const { footerBg } = state.theme.colors;
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [msg, setMsg] = useState("");
+
+  const contactform = () => {
+    var formdata = new FormData();
+    formdata.append("your-name",name);
+    formdata.append("your-email", email);
+    formdata.append("your-message", msg);
+    formdata.append("phone", phone);
+
+    var requestOptions = {
+      method: 'POST',
+      body: formdata,
+      redirect: 'follow'
+    };
+
+    fetch(`${state.source.url}/wp-json/contact-form-7/v1/contact-forms/155123/feedback`, requestOptions)
+      .then(response => response.text())
+      .then(result => alert(JSON.parse(result).message))
+      .catch(error => console.log('error', error));
+  }
 
   return (
     <>
@@ -27,6 +52,7 @@ const Contact = ({ state }) => {
       <SectionContainer>
 
         <ContactMain>
+          <form onSubmit={()=> contactform()}>
           <FormBg>
             <img src={ContactBg} />
           </FormBg>
@@ -35,11 +61,11 @@ const Contact = ({ state }) => {
             <h2> Contact Us </h2>
             <FormGroup>
               <label> Full name </label>
-              <input type="text" placeholder="full name" />
+              <input type="text" required placeholder="full name" value={name} onChange={(e)=> setName(e.target.value)} />
             </FormGroup>
             <FormGroup>
               <label> Email Address </label>
-              <input type="text" placeholder="Email Address" />
+              <input type="text" required placeholder="Email Address" value={email} onChange={(e)=> setEmail(e.target.value)}/>
             </FormGroup>
 
             <FormGroup>
@@ -49,10 +75,10 @@ const Contact = ({ state }) => {
 
             <FormGroup>
               <label> Notes </label>
-              <textarea rows="6" cols="50" type="text" placeholder="Your Message" />
+              <textarea rows="6" required cols="50" type="text" placeholder="Your Message" value={msg} onChange={(e)=> setMsg(e.target.value)}/>
             </FormGroup>
 
-            <button> Submit </button>
+            <button type="Submit"> Submit </button>
 
           </LeftContent>
 
@@ -67,7 +93,7 @@ const Contact = ({ state }) => {
             <p> copyright infringement. So we will delete the resources
               and link to your official page. </p>
           </RightContent>
-
+          </form>
         </ContactMain>
 
       </SectionContainer>
