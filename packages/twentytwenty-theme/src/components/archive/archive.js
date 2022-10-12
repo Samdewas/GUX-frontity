@@ -214,16 +214,15 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
             return (
-              index == 4 ? <>
+              index == 4 ? <Fragment key={index}>
+
               {/* ad */}
-              <Fragment key="6545464">
               <AdSense.Google
               client='ca-pub-5442643109134129'
               slot='5764423148'
               style={{ width: 500, height: 300, float: 'left' }}
               format=''
             />
-            </Fragment>
               <Fragment key={item.id}>
               <Article
                 key={item.id}
@@ -232,7 +231,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                 showMedia={item.jetpack_featured_media_url}
               />
             </Fragment>
-            </>  :
+            </Fragment>  :
                 <Fragment key={item.id}>
                   <Article
                     key={item.id}
@@ -260,7 +259,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 export default connect(Archive);
 
 
-export const PostMain = styled.postMain`
+export const PostMain = styled.postmain`
 display: grid;
 grid-template-columns: repeat(3,2fr);
 gap: 20px 20px;
