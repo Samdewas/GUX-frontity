@@ -266,7 +266,7 @@ export const CategoryMain = styled.categorymain`
 display: grid;
 grid-template-columns: repeat(5, 2fr);
 gap: 10px 10px;
-margin-bottom: 5rem;
+margin-bottom: 1rem;
 margin-top: 7rem;
 
 @media (max-width:575px){

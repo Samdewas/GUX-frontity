@@ -16,15 +16,22 @@ const Navigation = ({ state }) => {
   },[])
   console.log(typeof(menudata))
   return (
+
+
+    
+
     <NavWrapper>
-      <MenuNav>
+
+
+
+ <MenuNav>
         <Menu>
           {menudata.items && menudata.items.map(val => {
-            // Check if the link matched the current page url
+          
             console.log(val);
             return (
               <MenuItem key={val.id}>
-                {/* If link url is the current page, add `aria-current` for a11y */}
+              
                 <MenuLink
                   link={val.url}
                 >
@@ -34,7 +41,7 @@ const Navigation = ({ state }) => {
             );
           })}
         </Menu>
-      </MenuNav>
+      </MenuNav> 
     </NavWrapper>
   );
 }
@@ -52,6 +59,12 @@ const MenuNav = styled.nav`
     display: block;
     width: 100%;
   }
+`;
+
+const UXHeader = styled.uxheader`
+
+
+
 `;
 
 const Menu = styled.ul`

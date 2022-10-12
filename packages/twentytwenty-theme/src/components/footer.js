@@ -2,6 +2,15 @@ import { styled, connect } from "frontity";
 import Link from "./link";
 import NwsIcon from "../assets/img/nws_icn.png"
 import Notification from "../assets/img/noti.png"
+import fb1 from "../assets/img/fb1.png"
+import fb2 from "../assets/img/social/fb2.png"
+import i1 from "../assets/img/social/i1.png"
+import i2 from "../assets/img/social/i2.png"
+import p1 from "../assets/img/social/p1.png"
+import p2 from "../assets/img/social/p2.png"
+import t1 from "../assets/img/social/t1.png"
+import t2 from "../assets/img/social/t2.png"
+import buy from "../assets/img/buy.svg"
 // Component that provides scroll to top functionality
 
 // const BackToTop = () => {
@@ -43,23 +52,23 @@ const Footer = ({ state }) => {
 
 
       <SectionContainer>
-        <NewsLetter>
-          <NewsImg>
-          <img src={NwsIcon} />
-          </NewsImg>
-         
-          <NewsLetterBox>
-            <h2> Stay In Touch </h2>
-            <p> Subscribe Our Newsletter to get updated! </p>
-            <NewsLetterInput>
-              <input type="text" placeholder="Email address" />
-              <button> Subscribe  <img src={Notification} /> </button>
-            </NewsLetterInput>
-          </NewsLetterBox>
-        </NewsLetter>
+       
 
         <FooterLink>
+
+          <FooterBox1>
           <h3> <Link to="/"> Logo </Link> </h3>
+          <ul>
+            <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
+
+            <Link to="/"> <img src={buy} /> </Link>
+            <Link to="mailto:graphicgux@gmail.com"> graphicgux@gmail.com </Link>
+
+          </ul>
+          </FooterBox1>
+
+          <FooterBox2>
+          <h3> Quick Links </h3>
           <ul>
             <li> <Link to="/"> About </Link> </li>
             <li> <Link to="/"> Categories </Link> </li>
@@ -67,6 +76,46 @@ const Footer = ({ state }) => {
             <li> <Link to="/"> Dmca</Link> </li>
             <li> <Link to="/"> Contact us</Link> </li>
           </ul>
+          </FooterBox2>
+
+          <FooterBox3>
+          <h3> Categories </h3>
+          <ul>
+            <li> <Link to="/"> Premium Fonts </Link> </li>
+            <li> <Link to="/"> Photoshop Action </Link> </li>
+            <li> <Link to="/"> Lightroom Preset </Link> </li>
+            <li> <Link to="/"> Graphics and Mockups</Link> </li>
+            <li> <Link to="/"> Website Themes</Link> </li>
+          </ul>
+          </FooterBox3>
+
+          <FooterBox4>
+          <h3> Subscribe Newsletter </h3>
+          <ul>
+          <NewsLetterInput>
+              <input type="text" placeholder="Email address" />
+              <button> Subscribe  <img src={Notification} /> </button>
+            </NewsLetterInput>
+          </ul>
+         
+            <SocialMedia>
+          <li> <Link to="/"> <img className="socialimg1" src={fb1} />
+          <img className="socialimg2" src={fb2} />
+          </Link> </li>
+
+          <li> <Link to="/"> <img className="socialimg1" src={i1} />
+          <img className="socialimg2" src={i2} />
+          </Link> </li>
+
+          <li> <Link to="/"> <img className="socialimg1" src={p1} />
+          <img className="socialimg2" src={p2} />
+          </Link> </li>
+
+          <li> <Link to="/"> <img className="socialimg1" src={t1} />
+          <img className="socialimg2" src={t2} />
+          </Link> </li>
+          </SocialMedia>
+          </FooterBox4>
         </FooterLink>
 
 
@@ -114,25 +163,14 @@ const SiteFooter = styled.footer`
     position: absolute;
     bottom: 0px;
     left: 30px;
-    width: 450px;
-    height: 450px;
+    width: 250px;
+    height: 300px;
     background: rgba(21, 190, 119, 0.35);
     -webkit-filter: blur(125.5px);
     filter: blur(125.5px);
   }
 
-  :before{
-    content: "";
-    position: absolute;
-    bottom: 20px;
-    right: 0px;
-    width: 450px;
-    height: 450px;
-    background: rgba(21, 190, 119, 0.35);
-    -webkit-filter: blur(125.5px);
-    filter: blur(125.5px);
-    margin: auto 0;
-  }
+ 
 
   @media (min-width: 700px) {
     margin-top: 15rem;
@@ -151,6 +189,79 @@ const SiteFooter = styled.footer`
 }
 
 `;
+
+const FooterBox1 = styled.footerbox1`
+width:23%;
+float:left;
+margin-right:80px;
+text-align:left;
+
+ul{margin:0px;}
+p{color:#fff; font-weight:100; font-family:inherit; font-size:16px;}
+li{font-size:18px; line-height:40px; }
+
+`;
+
+const FooterBox2 = styled.footerbox2`
+width:19%;
+float:left;
+text-align:left;
+
+ul{margin:0px;}
+li{font-size:18px; line-height:40px; }
+
+`;
+
+const FooterBox3 = styled.footerbox3`
+width:19%;
+float:left;
+text-align:left;
+
+ul{margin:0px;}
+li{font-size:18px; line-height:40px; }
+li:nth-child(1):hover{color:#15BE77;}
+li:nth-child(2):hover{color:#2BBBFA;}
+li:nth-child(3):hover{color:#F8A64C;}
+li:nth-child(4):hover{color:#ED56A3;}
+li:nth-child(5):hover{color:#A259FF;}
+
+`;
+
+const FooterBox4 = styled.footerbox4`
+width:30%;
+float:left;
+text-align:left;
+
+ul{margin:0px;}
+li{font-size:16px; line-height:40px;  }
+
+`;
+
+const SocialMedia = styled.socialmedia`
+position:relative;
+list-style:none;
+top:25px;
+
+li{position:relative; 
+  padding: 0px 10px;
+  display:inline-block; padding:0px 10px;}
+
+.socialimg1{position:relative; transition: all 0.4s}
+img{width:35px;}
+
+.socialimg2{ position: absolute;
+  top: 0px;
+  transition: all 0.4s;
+  transform: translate(-5px, 8px);}
+
+ li img:hover{
+  transition: all 0.4s;
+  transform: translate(0px, 0px);
+ }
+
+`;
+
+
 
 const Credits = styled.div`
     display: flex;
@@ -275,16 +386,16 @@ justify-content: center;
 
 input{
   background: #FFFFFF;
-  border-radius: 15px;
+  border-radius: 10px;
   border: none;
   padding: 0px 10px;
-  width: 80%;
-  height: 65px;
-  border: none;
-  outline:none;
-  box-shadow: none;
-  font-size: 17px;
-  color: #141414;
+    width: 96%;
+    height: 56px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-size: 17px;
+    color: #141414;
 }
 
 input::placeholder{
@@ -296,15 +407,15 @@ input::placeholder{
 
 button{
   position: absolute;
-  padding: 14px 20px;
+  padding: 12px 17px;
   border-radius: 15px;
-  right: 80px;
+  right: 14px;
   background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
   color: white;
-  height: 93%;
-  width: 20%;
-  font-size: 18px;
-  top: 2px;
+  height: 84%;
+  width: 41%;
+  font-size: 16px;
+  top: 4px;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -356,17 +467,18 @@ const FooterLink = styled.footerlink`
 
     h3{
       color: white;
-      margin-bottom: 10px;
+      margin-bottom: 25px;
       font-weight: 200;
-      4rem auto 3rem
+      font-size: 25px;
+      margin-top:0px;
   }
   ul{
     list-style: none;
   }
   li{
-    display: inline-block;
+    display:block;
     color: white;
-    margin: 0rem 0 0 5rem;
+    margin: 0px;
   }
   @media (max-width:575px){
     margin:0px;

@@ -104,6 +104,7 @@ const documentSetup = (colors) => css`
     margin-top: 20px;
     text-decoration:none;
   }
+  .wp-block-button a:after{content}
 `;
 
 const accessibilitySettings = css`
@@ -594,7 +595,8 @@ butto.header_btn a {
   border-radius: 15px;
   display: flex;
   align-items: center;
-  padding: 12px 29px;
+  padding: 16px 15px;
+  font-size: 18px;
 }
 header#site-header {
   position: absolute;
@@ -604,6 +606,7 @@ header#site-header {
 }
 header#site-header li a:hover {
   color: #1ac178;
+  cursor:pointer;
 }
 img.banner_img {
   position: absolute;
@@ -618,7 +621,10 @@ section.banner_section {
 
 
 
-
+.ux_menu_dropdown {
+  width: 50%;
+  float: left;
+}
 header#site-header a {
   color: black;
   text-decoration: none;
@@ -630,11 +636,9 @@ header#site-header a {
 }
 
 header#site-header  li{
-  margin: 0.8rem 0 0 3rem!important;
+  margin: 0.2rem 0 0 6rem!important;
 }
-header#site-header ul{
-  margin: 0px 30px 0px 10px;
-}
+
 
 ul.category_front {
   list-style: none;
@@ -663,6 +667,7 @@ ul.category_front li a h3 {
   margin: 60px 0px;
   font-size: 20px;
 }
+
 
 
 
