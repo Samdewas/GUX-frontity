@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { styled, connect, Global } from "frontity";
 import Link from "../link";
 import { CloseNavToggle } from "../navigation/nav-toggle";
@@ -29,7 +29,6 @@ const MobileMenuModal = ({ state, actions }) => {
 
   // Trap focus within the menu when the mobile menu is open
   useFocusTrap(menuRef, isMobileMenuOpen);
-
   return (
     <Modal data-open={isMobileMenuOpen} role="dialog" aria-modal="true">
       {/* Global styles to prevent body scroll when the menu is open */}
@@ -47,28 +46,26 @@ const MobileMenuModal = ({ state, actions }) => {
               <ToggleText> Close Menu</ToggleText>
               <CloseIcon />
             </CloseNavToggle>
-
             <MenuContent
               as="nav"
               role="navigation"
               aria-label="Mobile menu links"
             >
               <MenuList>
-                {isThereLinks &&
-                  menu.map(([name, link]) => (
-                    <MenuListItem key={name}>
+                {state.theme.menu?.items?.map(val => 
+                    <MenuListItem key={val.id}>
                       <MenuLinkWrapper>
                         <MenuLink
-                          link={link}
+                          link={val.url}
                           aria-current={
-                            state.router.link === link ? "page" : undefined
+                            state.router.link === val.url ? "page" : undefined
                           }
                         >
-                          {name}
+                          {val.title}
                         </MenuLink>
                       </MenuLinkWrapper>
                     </MenuListItem>
-                  ))}
+                  )}
               </MenuList>
             </MenuContent>
           </div>

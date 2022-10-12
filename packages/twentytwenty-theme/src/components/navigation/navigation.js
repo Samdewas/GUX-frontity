@@ -1,41 +1,36 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 /**
  * Navigation Component
  *
  * It renders the navigation links
  */
 const Navigation = ({ state, actions }) => {
-  const [menudata, setMenudata] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
-    .then(response => response.text())
-    .then(result => {
-      var newdata = JSON.parse(result);
-       setMenudata(newdata);
-       newdata?.items?.map((val) => {
+      .then(response => response.text())
+      .then(result => {
+        var newdata = JSON.parse(result);
+        state.theme.menu = newdata;
+        newdata?.items?.map((val) => {
         actions.source.fetch(val);
-      });
-  })
-    .catch(error => console.log('error', error));
-  },[])
+        });
+      })
+      .catch(error => console.log('error', error));
+  }, [])
   return (
-
-
-    
-
     <NavWrapper>
 
 
 
- <MenuNav>
+      <MenuNav>
         <Menu>
-          {menudata.items && menudata.items.map(val => {
+          {state.theme.menu?.items && state.theme.menu?.items.map(val => {
             // Check if the link matched the current page url
             return (
               <MenuItem key={val.id}>
-              
+
                 <MenuLink
                   link={val.url}
                 >
@@ -45,7 +40,7 @@ const Navigation = ({ state, actions }) => {
             );
           })}
         </Menu>
-      </MenuNav> 
+      </MenuNav>
     </NavWrapper>
   );
 }
