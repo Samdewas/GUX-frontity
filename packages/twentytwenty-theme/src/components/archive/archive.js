@@ -13,7 +13,6 @@ import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
-import AdSense from 'react-adsense';
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -80,7 +79,6 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
   useEffect(() => {
     Post.preload();
-
   }, []);
   useEffect(() => {
     fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
@@ -88,18 +86,6 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       .then(result => setSubcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
   }, [state.router.link]);
- 
-
-  useEffect(() => {
-    actions.source.fetch("/");
-    const script = document.createElement("script");
-
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    script.async = true;
-    // script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
-
-    document.body.appendChild(script);
-  }, [actions.source]);
  
  
   return (
@@ -214,25 +200,6 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
             return (
-              index == 4 ? <>
-              {/* ad */}
-              <Fragment key="6545464">
-              <AdSense.Google
-              client='ca-pub-5442643109134129'
-              slot='5764423148'
-              style={{ width: 500, height: 300, float: 'left' }}
-              format=''
-            />
-            </Fragment>
-              <Fragment key={item.id}>
-              <Article
-                key={item.id}
-                item={item}
-                showExcerpt={_showExcerpt}
-                showMedia={item.jetpack_featured_media_url}
-              />
-            </Fragment>
-            </>  :
                 <Fragment key={item.id}>
                   <Article
                     key={item.id}

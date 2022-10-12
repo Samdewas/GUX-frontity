@@ -1,6 +1,6 @@
-import { connect, styled } from "frontity";
+import { connect, fetch, styled } from "frontity";
 import Link from "../link";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 /**
  * Navigation Component
  *
@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
  */
 const Navigation = ({ state, actions }) => {
   useEffect(() => {
-    fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
+    fetch(`${state.source.url}/wp-json/wp-api-menus/v2/menus/13`)
       .then(response => response.text())
       .then(result => {
         var newdata = JSON.parse(result);
