@@ -1,4 +1,4 @@
-import { styled, connect } from "frontity";
+import { styled, connect, fetch } from "frontity";
 import Link from "./link";
 import ContactImg from "../assets/img/contact-img.png"
 import ContactBg from "../assets/img/contact_bg.png"

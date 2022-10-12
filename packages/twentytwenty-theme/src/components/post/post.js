@@ -1,8 +1,7 @@
-import { styled, connect } from "frontity";
+import { styled, connect, fetch } from "frontity";
 import { useEffect, useState } from "react";
 import FeaturedMedia from "./featured-media";
 import {
-
   Post as _Post,
   PostHeader,
   PostInner,
@@ -39,7 +38,6 @@ import ScreenReaderText from "../styles/screen-reader";
  * @returns The {@link Post} element rendered.
  */
 const Post = ({ state, actions, libraries }) => {
-  console.log(state.source);
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
   // Get the data of the post.

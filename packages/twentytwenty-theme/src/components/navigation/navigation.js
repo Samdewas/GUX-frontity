@@ -6,15 +6,20 @@ import {useEffect, useState} from "react";
  *
  * It renders the navigation links
  */
-const Navigation = ({ state }) => {
+const Navigation = ({ state, actions }) => {
   const [menudata, setMenudata] = useState([]);
   useEffect(()=>{
     fetch(`https://graphicux.com/wp-json/wp-api-menus/v2/menus/13`)
     .then(response => response.text())
-    .then(result => setMenudata(JSON.parse(result)))
+    .then(result => {
+      var newdata = JSON.parse(result);
+       setMenudata(newdata);
+       newdata?.items?.map((val) => {
+        actions.source.fetch(val);
+      });
+  })
     .catch(error => console.log('error', error));
   },[])
-  console.log(typeof(menudata))
   return (
 
 
@@ -27,8 +32,7 @@ const Navigation = ({ state }) => {
  <MenuNav>
         <Menu>
           {menudata.items && menudata.items.map(val => {
-          
-            console.log(val);
+            // Check if the link matched the current page url
             return (
               <MenuItem key={val.id}>
               

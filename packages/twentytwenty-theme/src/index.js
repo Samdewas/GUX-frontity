@@ -46,7 +46,7 @@ const twentyTwentyTheme = {
         showOnPost: true,
       },
       // Whether to auto-fetch links on a page. Values can be "no" | "all" | "in-view" | "hover"
-      autoPrefetch: "in-view",
+      autoPrefetch: "all",
 
       /**
        * At the moment, we only include the ascii characters of Inter font.
@@ -74,7 +74,7 @@ const twentyTwentyTheme = {
       closeSearchModal: ({ state }) => {
         state.theme.isSearchModalOpen = false;
       },
-    },
+  }
   },
   libraries: {
     html2react: {
