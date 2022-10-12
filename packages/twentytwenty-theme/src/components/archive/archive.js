@@ -87,7 +87,6 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       .catch(error => console.log('error', error));
   }, [state.router.link]);
 
-  console.log(data)
   return (
     <>
       {!data.isHome ?
@@ -107,10 +106,22 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               </ul>
             </BredCrumb> : ""
           }
-
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
-            <img className="banner_img" src={BannerBg} />}
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> :
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> :
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> :
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> :
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> :
+            state.router.link?.includes("/category/fonts/") ?
+            <img className="banner_img" src={BannerBg} /> : 
+            <img className="banner_img" src={BannerBg} />
+            }
           <SectionContainer size="large">
 
             <BannerInner>
