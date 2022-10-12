@@ -6,6 +6,7 @@ import Pagination from "./archive-pagination";
 import PostSeparator from "../post/post-separator";
 import Post from "../post";
 import Circle1 from "../../assets/img/C_circle.png";
+import fontbg from "../../assets/img/category/font.png";
 import BannerBg from "../../assets/img/banner.png"
 import searchicon from "../../assets/img/search.png"
 import { useTransition, animated } from "react-spring";
@@ -109,7 +110,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
-            <img className="banner_img" src={BannerBg} /> :
+            <img className="banner_img" src={fontbg} /> :
             state.router.link?.includes("/category/fonts/") ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
@@ -277,6 +278,11 @@ gap: 10px 10px;
 margin-bottom: 1rem;
 margin-top: 7rem;
 
+@media (max-width:767px){
+  grid-template-columns: repeat(3, 2fr);
+  a{color:#000; text-decoration:none;}
+}
+
 @media (max-width:575px){
   margin-bottom: 0rem;
 }
@@ -319,7 +325,7 @@ margin: auto;
 @media (max-width:575px){
   padding-top: 85px;
   width:80%;
-  h2{font-size:29px;}
+  h2{font-size:25px;}
   p{font-size:15px;}
   
 }
@@ -485,7 +491,7 @@ margin: auto 0;
 `;
 
 const BredCrumb = styled.bredcrumb`
-background: #3e916238;
+background: #dedede38;
     width: 100%;
     float: left;
     padding: 18px 0px;

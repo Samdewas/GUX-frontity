@@ -11,6 +11,7 @@ import p2 from "../assets/img/social/p2.png"
 import t1 from "../assets/img/social/t1.png"
 import t2 from "../assets/img/social/t2.png"
 import buy from "../assets/img/buy.svg"
+import eml from "../assets/img/email.png"
 // Component that provides scroll to top functionality
 
 // const BackToTop = () => {
@@ -57,12 +58,12 @@ const Footer = ({ state }) => {
         <FooterLink>
 
           <FooterBox1>
-          <h3> <Link to="/"> Logo </Link> </h3>
+          <h3> <Link link="/"> Logo </Link> </h3>
           <ul>
             <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
 
-            <Link to="/"> <img src={buy} /> </Link>
-            <Link to="mailto:graphicgux@gmail.com"> graphicgux@gmail.com </Link>
+            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img src={buy} /> </Link>
+         
 
           </ul>
           </FooterBox1>
@@ -70,22 +71,22 @@ const Footer = ({ state }) => {
           <FooterBox2>
           <h3> Quick Links </h3>
           <ul>
-            <li> <Link to="/"> About </Link> </li>
-            <li> <Link to="/"> Categories </Link> </li>
-            <li> <Link to="/"> Privacy Policy </Link> </li>
-            <li> <Link to="/"> Dmca</Link> </li>
-            <li> <Link to="/"> Contact us</Link> </li>
+            <li> <Link link="/"> About </Link> </li>
+            <li> <Link link="/"> Categories </Link> </li>
+            <li> <Link link="/"> Privacy Policy </Link> </li>
+            <li> <Link link="/"> Dmca</Link> </li>
+            <li> <Link link="contact-us/"> Contact us</Link> </li>
           </ul>
           </FooterBox2>
 
           <FooterBox3>
           <h3> Categories </h3>
           <ul>
-            <li> <Link to="/"> Premium Fonts </Link> </li>
-            <li> <Link to="/"> Photoshop Action </Link> </li>
-            <li> <Link to="/"> Lightroom Preset </Link> </li>
-            <li> <Link to="/"> Graphics and Mockups</Link> </li>
-            <li> <Link to="/"> Website Themes</Link> </li>
+            <li> <Link link="category/fonts/"> Premium Fonts </Link> </li>
+            <li> <Link link="category/add-ons/photoshop-action/"> Photoshop Action </Link> </li>
+            <li> <Link link="category/add-ons/lightroom-preset/"> Lightroom Preset </Link> </li>
+            <li> <Link link="category/graphics/"> Graphics and Mockups</Link> </li>
+            <li> <Link link="category/themes/"> Website Themes</Link> </li>
           </ul>
           </FooterBox3>
 
@@ -99,22 +100,24 @@ const Footer = ({ state }) => {
           </ul>
          
             <SocialMedia>
-          <li> <Link to="/"> <img className="socialimg1" src={fb1} />
+          <li> <Link link="/"> <img className="socialimg1" src={fb1} />
           <img className="socialimg2" src={fb2} />
           </Link> </li>
 
-          <li> <Link to="/"> <img className="socialimg1" src={i1} />
+          <li> <Link link="/"> <img className="socialimg1" src={i1} />
           <img className="socialimg2" src={i2} />
           </Link> </li>
 
-          <li> <Link to="/"> <img className="socialimg1" src={p1} />
+          <li> <Link link="/"> <img className="socialimg1" src={p1} />
           <img className="socialimg2" src={p2} />
           </Link> </li>
 
-          <li> <Link to="/"> <img className="socialimg1" src={t1} />
+          <li> <Link link="/"> <img className="socialimg1" src={t1} />
           <img className="socialimg2" src={t2} />
           </Link> </li>
+          <p><Link link="mailto:graphicgux@gmail.com"> <img src={eml} /> graphicgux@gmail.com </Link> </p>
           </SocialMedia>
+      
           </FooterBox4>
         </FooterLink>
 
@@ -200,6 +203,11 @@ ul{margin:0px;}
 p{color:#fff; font-weight:100; font-family:inherit; font-size:16px;}
 li{font-size:18px; line-height:40px; }
 
+@media (max-width:767px){
+  width:100%;
+  margin-bottom:30px;
+}
+
 `;
 
 const FooterBox2 = styled.footerbox2`
@@ -209,6 +217,13 @@ text-align:left;
 
 ul{margin:0px;}
 li{font-size:18px; line-height:40px; }
+
+@media (max-width:767px){
+  width:100%;
+  margin-bottom:30px;
+  h3{margin-top:20px;}
+  li{font-size:18px;}
+}
 
 `;
 
@@ -225,6 +240,12 @@ li:nth-child(3):hover{color:#F8A64C;}
 li:nth-child(4):hover{color:#ED56A3;}
 li:nth-child(5):hover{color:#A259FF;}
 
+@media (max-width:767px){
+  width:100%;
+  margin-bottom:30px;
+  li{font-size:18px;}
+}
+
 `;
 
 const FooterBox4 = styled.footerbox4`
@@ -234,6 +255,16 @@ text-align:left;
 
 ul{margin:0px;}
 li{font-size:16px; line-height:40px;  }
+
+@media (max-width:767px){
+  width:100%;
+  margin-bottom:30px;
+
+button{width: 45%;
+  font-size: 15px;
+  right: 7px;}
+
+}
 
 `;
 
@@ -258,6 +289,23 @@ img{width:35px;}
   transition: all 0.4s;
   transform: translate(0px, 0px);
  }
+ p{   margin-top: 21px;
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  -webkit-background-clip: text;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  font-weight: 800;
+a{display:flex;
+img{margin-right:10px; padding:7px;}
+}
+}
+@media (max-width:767px){
+  width:100%;
+  margin-bottom:30px;
+  li{padding:0 4px;}
+}
 
 `;
 
@@ -268,6 +316,7 @@ const Credits = styled.div`
     justify-content: center;
     border-top: 1px solid #ffffff42;
     padding-top: 30px;
+    clear:left;
     
   @media (min-width: 700px) {
     display: flex;
@@ -285,7 +334,7 @@ const Copyright = styled.p`
 
 const PoweredBy = styled.p`
   color: #6d6d6d;
-  display: none;
+  display: block;
   margin: 0 0 0 2.4rem;
 
   @media (min-width: 700px) {

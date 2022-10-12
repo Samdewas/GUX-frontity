@@ -316,10 +316,21 @@ li:nth-child(5):hover h3{ color:#a259ff;}
   gap: 0px 0px;
   overflow-x: auto;
 
-  h3{    margin: 0px 0px;
-    font-size: 19px;}
+  h3{ margin: -14px 0px;
+    font-size: 15px;}
     img{    margin: 24px auto;
       width: 59px;}
+      li h3{color:#000 !important;}
+      li:nth-child(3):hover{ background: #f8a64c63;}
+
+      li{    width: 100px;
+        height: 110px;
+        margin: 0px 10px;
+        border-radius: 50%;
+      img{margin: 19px auto;
+        width: 35px;}
+      }
+      
 
 }
 

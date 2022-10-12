@@ -748,7 +748,7 @@ header#site-header a {
   font-weight: 300;
 }
 header#site-header.inner_header {
-  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%) !important;
+  background: linear-gradient(98.81deg, #ffffff -0.82%, #d3eec5 101.53%)!important;
 }
 
 header#site-header li {

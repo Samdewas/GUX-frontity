@@ -205,7 +205,7 @@ const Post = ({ state, actions, libraries }) => {
               <img src={PostDisc} />
               <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
                 has been the industry's standard dummy text ever since the 1500s,</p> */}
-              <button> Download </button>
+             
 
               <div>
                 <h4>Related Searches</h4>
@@ -373,6 +373,16 @@ li{background: #e4faf0;
   border-radius: 7px;
   font-size: 15px;}
   a{color:#000; text-decoration:none;}
+
+  @media (max-width:767px){
+    display: inline-block;
+   li{ background: #e4faf0;
+    padding: 6px 17px;
+    margin: 3px 3px;
+    border-radius: 7px;
+    font-size: 13px;
+    display: inline-block;}
+  }
 
 `;
 
