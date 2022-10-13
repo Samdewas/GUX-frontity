@@ -233,6 +233,7 @@ export const PostMain = styled.postmain`
 display: grid;
 grid-template-columns: repeat(3,2fr);
 gap: 20px 20px;
+clear:left;
 
 @media (min-width:768px) and (max-width:1024px){
   display: grid;

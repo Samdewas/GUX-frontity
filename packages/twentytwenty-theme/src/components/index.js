@@ -26,6 +26,8 @@ import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
 import Cate_img15 from "../assets/img/front/web_active.png"
 import psaction from "../assets/img/home/action.png"
+import font1  from "../assets/img/home/action.png"
+import ticon  from "../assets/img/home/t.svg"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -133,7 +135,7 @@ const Theme = ({ state, actions }) => {
                   <div>
 
                     <h2> Discover Free Premium Fonts,<br />
-                      Photoshop Action & All Graphic Resources </h2>
+                      Photoshop Action and All Graphic Resources </h2>
                     <p>Graphicux.com is well known for saving money for customers but with our
                       free fonts and Photoshop action section, we have gone one step further</p>
                   </div>
@@ -183,10 +185,7 @@ const Theme = ({ state, actions }) => {
                       <h4>Photoshop Actions</h4>
                       <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
                          help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more. Photoshop 
-action bundles speed up the time and deliver results
- quicker than what used to take hours. These will give your photos a sleek and trendy look.
-You can use these filters to create amazing outputs for photography.</p>  
+Photoshop Actions is a </p>  
 <Link link="category/fonts/"> Explore Now </Link>
                       </div>
 
@@ -195,6 +194,65 @@ You can use these filters to create amazing outputs for photography.</p>
 
               </Photoshopaction>
 
+              <Lightroompreset>
+                    <div className="overlay1">
+<SectionContainer>
+<div className="ux_lightroom2"> <img src={psaction} />  </div>            
+        <div className="ux_lightroom1">
+        <h4>Photoshop Actions</h4>
+        <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+           help you achieve an elegant look too.
+Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more. Photoshop 
+action bundles speed up the time and deliver results
+quicker than what used to take hours. These will give your photos a sleek and trendy look.
+You can use these filters to create amazing outputs for photography.</p>  
+<Link link="category/fonts/"> Explore Now </Link>
+        </div>
+
+       
+        </SectionContainer>
+        </div>
+</Lightroompreset>
+              
+<Trendingfonts>
+<SectionContainer>
+  <div className="font_wrapper">
+    <img className="ticon" src={ticon} />
+  <h4>Top Trending Fonts</h4>
+  <div className="fontlist">
+     <Link link="/"> <img src={font1} /> </Link> 
+     <div>
+      <span className="fname">Serif</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+  <div className="fontlist">
+     <Link link="/"> <img src={font1} /> </Link> 
+     <div>
+      <span className="fname">Sans Serif</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+  <div className="fontlist">
+     <Link link="/"> <img src={font1} /> </Link> 
+     <div>
+      <span className="fname">Caligraphy</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+
+  <div className="fontlist">
+     <Link link="/"> <img src={font1} /> </Link> 
+     <div>
+      <span className="fname">Blackletter</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+
+  </div>
+  </SectionContainer>
+
+</Trendingfonts>
             </BannerSection> : ""}
 
 
@@ -486,20 +544,65 @@ margin: auto 0;
 `;
 
 const Photoshopaction = styled.photoshopaction`
-background-color:#FCFCFC;
+background:linear-gradient(180deg, #E2F6FF 0%, rgba(226, 246, 255, 0) 100%);
 width:100%;
-float: left;
 padding-bottom: 50px;
+display:block;
+padding:30px 0px;
+
 .ux_action1{width:38%;
 margin-left:70px;
 margin-right:50px;
 float:left;
-p{font-size:16px;}
+}
+h4{color:#2BBBFA;}
+p{font-size:16px; }
 }
 
 .ux_action2{width:50%;
   float:left;}
 
+`;
+
+const Lightroompreset = styled.lightroompreset`
+background: linear-gradient(0deg, #FDE4C9 0%, rgba(253, 228, 201, 0) 100%, rgba(253, 228, 201, 0) 100%);
+width:100%;
+padding-bottom: 50px;
+float: left;
+margin-bottom: 50px;
+padding:45px 0px;
+.ux_lightroom2{width: 41%;
+  float: left;
+  margin-left: 30px;}
+.ux_lightroom1{width:45%;
+margin-left:70px;
+margin-right:50px;
+float:left;
+}
+h4{color:#F8A64C;}
+p{font-size:16px; }
+}
+`;
+
+const Trendingfonts = styled.trendingfonts`
+.font_wrapper{margin-left:50px;
+  position:relative;
+   clear:left;}
+   .ticon {
+    position: absolute;
+    left: -67px;
+    top: -27px;
+    width: 60px;
+}
+h4{color:#15BE77;}
+.fontlist{display:inline-block; width: 22%;
+  margin: 0px 10px;}
+.fontlist div{ margin: 15px 10px;
+  display: flex;
+  justify-content:
+   space-between;}
+   .fontlist div .fname{font-weight:bold; font-size:16px}  
+   .fontlist div .fcount{font-weight:normal; color:#7c7171; font-size:12px; }  
 `;
 
 
