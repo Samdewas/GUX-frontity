@@ -155,23 +155,14 @@ const Post = ({ state, actions, libraries }) => {
       .catch(error => console.log('error', error));
   }, [state.router.link]);
   // Load the post, but only if the data is ready.
+  console.log(post)
   return data.isReady ? (
 
     <>
-     {adblockerActive ?
-
-<Adblocker >
-  <div id='ad-message'>
-    Please disable your ad blocker
-  </div>
-</Adblocker> : ""
-}
     
     <PostArticle>
 
       <SectionContainer size="large">
-
-      
 
         <DetailsRow>
           <DetailsColumnLeft>
@@ -782,14 +773,16 @@ h6{
 }
 `;
 
-
-
-
 const SideCateItem = styled.sidecateitem`
 margin-top: 5rem;
     float: left;
     width: 100%;
 `;
+
+
+
+
+
 
 
 
