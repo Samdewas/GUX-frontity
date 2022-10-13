@@ -25,6 +25,7 @@ import Cate_img12 from "../assets/img/front/psd_active.png"
 import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
 import Cate_img15 from "../assets/img/front/web_active.png"
+import psaction from "../assets/img/home/action.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -173,6 +174,27 @@ const Theme = ({ state, actions }) => {
 
                 </div>
               </SectionContainer>
+
+              <Photoshopaction>
+
+              <SectionContainer>
+
+                      <div className="ux_action1">
+                      <h4>Photoshop Actions</h4>
+                      <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+                         help you achieve an elegant look too.
+Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more. Photoshop 
+action bundles speed up the time and deliver results
+ quicker than what used to take hours. These will give your photos a sleek and trendy look.
+You can use these filters to create amazing outputs for photography.</p>  
+<Link link="category/fonts/"> Explore Now </Link>
+                      </div>
+
+                      <div className="ux_action2"> <img src={psaction} />  </div>
+                      </SectionContainer>
+
+              </Photoshopaction>
+
             </BannerSection> : ""}
 
 
@@ -461,6 +483,23 @@ margin: auto 0;
   &:focus {
     right: 0;
   }
+`;
+
+const Photoshopaction = styled.photoshopaction`
+background-color:#FCFCFC;
+width:100%;
+float: left;
+padding-bottom: 50px;
+.ux_action1{width:38%;
+margin-left:70px;
+margin-right:50px;
+float:left;
+p{font-size:16px;}
+}
+
+.ux_action2{width:50%;
+  float:left;}
+
 `;
 
 

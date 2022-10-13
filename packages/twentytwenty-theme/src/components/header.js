@@ -1,7 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Navigation from "./navigation/navigation";
-
+import {useEffect} from "react";
 import SearchButton from "./search/search-button";
 import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
@@ -10,17 +10,25 @@ import MobileMenuModal from "./mobile/menu-modal";
 import Logo from "../assets/img/logo.png"
 import { useLocation } from 'react-router-dom';
 
+
+
 const Header = ({ state }) => {
 
   const { title, description } = state.frontity;
   const { headerBg } = state.theme.colors;
 
+  useEffect(() => {
+    (function (w, d, s, id) {
+      if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";
+      fjs.parentNode.appendChild(js);
+    }(window, document, 'script', 'webpushr-jssdk'));
+    webpushr('setup', { 'key': 'BIl49VgR5u3yAHL3HfwpxaWCOpLsK_5nXWmPUBD9hFks77sPaMdfbgCgDnVjnVPL0uT9GyFqrDwnXzlyQIPWx8c' });
+  }, [])
 
-  
   return (
-  
-    
-    <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header" : "inner_header" }>
+
+
+    <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header" : "inner_header"}>
       <HeaderInner>
         <TitleWrapper>
           {/* Search button on mobile */}
@@ -47,7 +55,7 @@ const Header = ({ state }) => {
           {/* Desktop navigation links */}
 
           {/* <img src={Logo} /> */}
-          <Navigation className="nav_link_color"/>
+          <Navigation className="nav_link_color" />
           <button className="header_btn"> <Link link="contact-us/"> Contact Us  </Link>  </button>
           {/* Desktop search button */}
           {/* {state.theme.showSearchInHeader && <SearchButton />} */}
