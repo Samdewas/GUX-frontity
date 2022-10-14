@@ -44,58 +44,29 @@ const Navigation = ({ state, actions }) => {
 
 
         <ul>
-        <li>
-          <Link to="">
-            Home
-          </Link>
-        </li>
-
-        <li>
-          <Link to=""> Fonts  </Link>
-        </li>
-
-        <li>
-          <Link to=""> Add-Ons  </Link>
-        </li>
-
-        <li>
-          <Link to=""> Templates  </Link>
-        </li>
+        {state.theme.menu?.items && state.theme.menu?.items.map(val => 
 
         <li className="dropdown">
-          <Link to=""> Graphics  </Link>
+          <Link link={val.url}>{val.title} </Link>
 
-          <ul className="dropdown-menu multi-level">
-            <li><Link to="#">Category 1</Link></li>
-          
+          <ul className={val.children?.length ? "dropdown-menu multi-level" :""}>
+            {val.children?.map(subval => 
 
-            <li className="dropdown-submenu ">
-
-              <Link to="#">Category 3</Link>
+            <li className={subval.children?.length ? "dropdown-submenu" : ""}>
+              <Link link={subval.url}>{subval.title}</Link>
 
               <ul className="dropdown-menu">
-                <li> <Link to="#">Sub menu 1</Link> </li>
-                <li> <Link to="#">Sub menu 2</Link> </li>
-
-                <li> <Link to="#">Sub menu 3</Link> </li>
+                {subval.children?.map(value => 
+                <li> <Link link={value.url}>{value.title}</Link> </li>
+                )}
 
               </ul>
-
             </li>
-
-            <li><Link to="#">Category 2</Link></li>
-
+            )}
           </ul>
 
         </li>
-        <li>
-          <Link to=""> Themes  </Link>
-        </li>
-        <li>
-          <Link to=""> Stock Image  </Link>
-        </li>
-
-
+        )}
       </ul>
       </MenuNav>
     </NavWrapper>
