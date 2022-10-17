@@ -617,7 +617,7 @@ section.banner_section {
 }
 
 // adblocker css here
-main#main postmain > h2 {
+#main postmain > h2 {
   width: 1888px;
   position: fixed;
   top: -59px;
