@@ -235,10 +235,10 @@ const Post = ({ state, actions, libraries }) => {
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
                       <UXdownload onMouseOver={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
-                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
+                        {/* <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button> */}
                       </UXdownload>
                
-                        <Adwrapper>
+                        <Adwrapper className={downloadhover ? "chalu" : ""}>
                         <GoogleAds />
                         </Adwrapper>
                     
@@ -509,6 +509,12 @@ button {       position: relative;
 const Adwrapper = styled.adwrapper`
   display: inline-block;
   transform: translate(-34px, -58px);
+.chalu{
+  transform: translate(-50px, -187px);
+  position: relative;
+  z-index: 9999;
+  opacity: 0;
+}
 
 `;
 
