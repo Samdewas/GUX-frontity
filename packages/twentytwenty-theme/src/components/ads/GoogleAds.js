@@ -21,12 +21,17 @@ const GoogleAds = ({actions}) => {
       }
 
     return (
+        <>
+        {adblockerActive ? 
+        <h2>Please Deactive Adblocker Tool</h2>
+    :
        <AdSense.Google
               client='ca-pub-5442643109134129'
               slot='5764423148'
               style={{ width: 500, height: 300, float: 'left' }}
               format=''
-            />
+            />}
+            </>
     );
 };
 

@@ -8,7 +8,6 @@ import {
   PostTitle,
   PostCaption,
 } from "./post-item";
-import AdSense from 'react-adsense';
 import PostCategories from "./post-categories";
 import PostMeta from "./post-meta";
 import PostTags from "./post-tags";
@@ -65,24 +64,10 @@ const Post = ({ state, actions, libraries }) => {
    * details of each tag in allTags.
    */
   const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
-  const [adblockerActive, setAdblockerActive] = useState(false);
 
   useEffect(() => {
     actions.source.fetch("/");
-    // const script = document.createElement("script");
-
-    // script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    // script.async = true;
-    // script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
-
-    // document.body.appendChild(script);
   }, [actions.source]);
-  const adBlockFunction = () => {
-    // Google Analytics End
-    setAdblockerActive(true);
-  }
-
-
 
   const parse = libraries.source.parse(state.router.link);
   const searchQuery = parse.query["s"];
