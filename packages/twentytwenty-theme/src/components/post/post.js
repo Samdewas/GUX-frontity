@@ -8,7 +8,6 @@ import {
   PostTitle,
   PostCaption,
 } from "./post-item";
-import AdSense from 'react-adsense';
 import PostCategories from "./post-categories";
 import PostMeta from "./post-meta";
 import PostTags from "./post-tags";
@@ -18,6 +17,8 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
+import GoogleAds from "../ads/GoogleAds";
+
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
  * "post type" (posts, pages, attachments, etc.).
@@ -64,24 +65,10 @@ const Post = ({ state, actions, libraries }) => {
    * details of each tag in allTags.
    */
   const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
-  const [adblockerActive, setAdblockerActive] = useState(false);
 
   useEffect(() => {
     actions.source.fetch("/");
-    const script = document.createElement("script");
-
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    script.async = true;
-    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
-
-    document.body.appendChild(script);
   }, [actions.source]);
-  const adBlockFunction = () => {
-    // Google Analytics End
-    setAdblockerActive(true);
-  }
-
-
 
   const parse = libraries.source.parse(state.router.link);
   const searchQuery = parse.query["s"];
@@ -122,9 +109,6 @@ const Post = ({ state, actions, libraries }) => {
   useEffect(() => {
     actions.source.fetch("/");
   }, [actions.source]);
-
-
-
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
     return () => {
@@ -154,161 +138,151 @@ const Post = ({ state, actions, libraries }) => {
       .then(result => setPostcategory(JSON.parse(result)))
       .catch(error => console.log('error', error));
   }, [state.router.link]);
-  // Load the post, but only if the data is ready.
-  console.log(post)
+
+  // 2mint me 30 second chalega total 1 ghante me 15 mint //
+  const [downloadhover, setDownloadhover] = useState(false);
+
+  const ondownloadhover = () => {
+    const d = new Date();
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
+    if (!((min % 2 == 0) && (sec < 30))) {
+      setDownloadhover(true);
+    } else {
+      setDownloadhover(false);
+    }
+  }
   return data.isReady ? (
 
     <>
-    
-    <PostArticle>
 
-      <SectionContainer size="large">
+      <PostArticle>
 
-        <DetailsRow>
-          <DetailsColumnLeft>
-            <PostDetailsTitle>
-              {/* {post.categories && <PostCategories categories={categories} />} */}
-              <PostTitle
-                as="h1"
-                className="heading-size-1"
-                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              />
-            </PostDetailsTitle>
-            <DetailsText>
-              <div>
-                {post.caption && (
-                  <PostCaption
-                    dangerouslySetInnerHTML={{ __html: post.caption.rendered }}
-                  />
-                )}
-              </div>
+        <SectionContainer size="large">
 
-              <DetailsTextInner >
-
-                <PostMeta item={post} />
-
+          <DetailsRow>
+            <DetailsColumnLeft>
+              <PostDetailsTitle>
+                {/* {post.categories && <PostCategories categories={categories} />} */}
+                <PostTitle
+                  as="h1"
+                  className="heading-size-1"
+                  dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                />
+              </PostDetailsTitle>
+              <DetailsText>
                 <div>
-                  <button> Lightroom </button>
+                  {post.caption && (
+                    <PostCaption
+                      dangerouslySetInnerHTML={{ __html: post.caption.rendered }}
+                    />
+                  )}
                 </div>
 
+                <DetailsTextInner >
 
-              </DetailsTextInner>
-            </DetailsText>
+                  <PostMeta item={post} />
 
-            <PostDetailsImg>
+                  <div>
+                    <button> Lightroom </button>
+                  </div>
 
-              {state.theme.featuredMedia.showOnPost && (
-                <FeaturedImage id={post.featured_media} isSinglePost={true} />
-              )}
 
-            </PostDetailsImg>
+                </DetailsTextInner>
+              </DetailsText>
 
-            <PostDiscription>
+              <PostDetailsImg>
 
-              {post.content && (
-                <>
-                  <EntryContent>
-                    <Html2React html={post.content.rendered} />
-                  </EntryContent>
+                {state.theme.featuredMedia.showOnPost && (
+                  <FeaturedImage id={post.featured_media} isSinglePost={true} />
+                )}
 
-                  {post.tags && <PostTags tags={tags} />}
-                </>
-              )}
+              </PostDetailsImg>
 
-              {/* <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                printer took a galley of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into electronic typesetting, remaining
-                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum. </p>
-              <img src={PostDisc} />
-              <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                has been the industry's standard dummy text ever since the 1500s,</p> */}
-             
+              <PostDiscription>
 
-              <div>
-                <h4>Related Searches</h4>
-                <TagsList>
-                  {posttags?.map(val =>
-                    <li>  <Link link={val.link}>{val.name}</Link> </li>
-                  )}
-                </TagsList>
-              </div>
+                {post.content && (
+                  <>
+                    <EntryContent>
+                      <Html2React html={post.content.rendered} />
+                      <UXdownload onMouseOver={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
+                      </UXdownload>
+               
+                        <Adwrapper className={downloadhover ? "chalu" : ""}>
+                        <GoogleAds />
+                        </Adwrapper>
+                    
+                    </EntryContent>
 
-            </PostDiscription>
+                    {post.tags && <PostTags tags={tags} />}
+                  </>
+                )}
 
-          </DetailsColumnLeft>
+                <div>
+                  <h4>Related Searches</h4>
+                  <TagsList>
+                    {posttags?.map(val =>
+                      <li>  <Link link={val.link}>{val.name}</Link> </li>
+                    )}
+                  </TagsList>
+                </div>
 
-          <DetailsColumnRight className="rt_header_main">
-            <RightBarLink>
+              </PostDiscription>
 
-              <SearchBar>
-                <Form role="search" aria-label="404 not found" onSubmit={handleSubmit}>
-                  <Label>
-                    <ScreenReaderText>Search for:</ScreenReaderText>
-                    <SearchInput
-                      type="search"
-                      defaultValue={searchQuery}
-                      placeholder="Search ..."
-                      ref={inputRef}
-                    />
-                  </Label>
-                  <SearchButton bg={primary} type="submit">
-                    Search
-                  </SearchButton>
-                </Form>
-              </SearchBar>
+            </DetailsColumnLeft>
 
-              <SideCateItem>
-                <SidebarH>
-                  <h6> Categories </h6>
-                </SidebarH>
-                <ul>
-                  {postcategory?.map(val=>
-                  <li>
-                    <Link link={val.link}>{val.name}</Link>
-                  </li>
-                  )}
-                  
-                </ul>
-              </SideCateItem>
+            <DetailsColumnRight className="rt_header_main">
+              <RightBarLink>
 
-              <SideCateItem>
-                <SidebarH>
-                  <h6> Ad </h6>
-                  <AdSense.Google
-              client='ca-pub-5442643109134129'
-              slot='5764423148'
-              style={{ width: 500, height: 300, float: 'left' }}
-              format=''
-            />
-                </SidebarH>
-                {/* <ul>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                  <li>
-                    <Link to="/"> Premium Fonts </Link>
-                  </li>
-                </ul> */}
-              </SideCateItem>
+                <SearchBar>
+                  <Form role="search" aria-label="404 not found" onSubmit={handleSubmit}>
+                    <Label>
+                      <ScreenReaderText>Search for:</ScreenReaderText>
+                      <SearchInput
+                        type="search"
+                        defaultValue={searchQuery}
+                        placeholder="Search ..."
+                        ref={inputRef}
+                      />
+                    </Label>
+                    <SearchButton bg={primary} type="submit">
+                      Search
+                    </SearchButton>
+                  </Form>
+                </SearchBar>
 
-            </RightBarLink>
-          </DetailsColumnRight>
-        </DetailsRow>
+                <SideCateItem>
+                  <SidebarH>
+                    <h6> Categories </h6>
+                  </SidebarH>
+                  <ul>
+                    {postcategory?.map(val =>
+                      <li>
+                        <Link link={val.link}>{val.name}</Link>
+                      </li>
+                    )}
 
-      </SectionContainer>
+                  </ul>
+                </SideCateItem>
+
+                <SideCateItem>
+                  <SidebarH>
+                    {/* <h6> Ad </h6> */}
+                    <GoogleAds />
+                  </SidebarH>
+
+                </SideCateItem>
+
+              </RightBarLink>
+            </DetailsColumnRight>
+          </DetailsRow>
+
+        </SectionContainer>
 
 
 
-      {/* 
+        {/* 
       <Header>
         <SectionContainer>
           If the post has categories, render the categories
@@ -346,8 +320,8 @@ const Post = ({ state, actions, libraries }) => {
         </PostInner>
       )} */}
 
-      {/* If the post has content, we render it */}
-      {/* {post.content && (
+        {/* If the post has content, we render it */}
+        {/* {post.content && (
         <PostInner size="thin">
           <EntryContent>
             <Html2React html={post.content.rendered} />
@@ -356,7 +330,7 @@ const Post = ({ state, actions, libraries }) => {
           {post.tags && <PostTags tags={tags} />}
         </PostInner>
       )} */}
-    </PostArticle>
+      </PostArticle>
     </>
   ) : null;
 };
@@ -485,6 +459,29 @@ button {
   border-radius: 7px;
   bottom: -4px;
 }
+`;
+
+const UXdownload = styled.uxdownload`
+position: relative;
+    top: -59px;
+    background: green;
+    display: block;
+    width: 236px;
+    height: 86px;
+button {       position: relative;
+  top: -4px;
+  background: red;
+  padding: 16px 53px;
+  opacity: 1;
+  z-index: 99;
+  left: 11px;}
+
+`;
+const Adwrapper = styled.adwrapper`
+  display: inline-block;
+  transform: translate(-34px, -58px);
+
+
 `;
 
 const PostDetailsTitle = styled.postdetailstitle`

@@ -96,14 +96,22 @@ const documentSetup = (colors) => css`
   #site-content {
     overflow: hidden;
   }
+  .wp-block-button {
+    z-index: 999;
+    position: relative;
+    display: initial;
+    left: 14px;
+}
   .wp-block-button a{
     background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
     border-radius: 8px;
     padding: 12px 60px;
     color: white;
     margin-top: 20px;
+    margin-left:0px !important;
     text-decoration:none;
   }
+ 
 `;
 
 const accessibilitySettings = css`
@@ -616,6 +624,41 @@ section.banner_section {
   height: 950px;
 }
 
+// adblocker css here
+#main postmain > h2 {
+  width: 1888px;
+  position: fixed;
+  top: -59px;
+  left: 0px;
+  right: 0px;
+  background: #747070b5;
+  height: 100vh;
+  text-align: center;
+  padding-top: 20%;
+  color: #fff;
+  z-index: 999999999;
+}
+.chalu{
+  transform: translate(-50px, -187px) !important;
+  position: relative;
+  z-index: 999999;
+  opacity: 0;
+}
+
+.wp-block-button {
+  z-index: 999;
+  position: relative;
+}
+.wp-block-button a {
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  border-radius: 8px;
+  padding: 12px 60px;
+  color: white;
+  margin-left: 13px;
+  margin-top: 20px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
 
 
 

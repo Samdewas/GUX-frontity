@@ -17,6 +17,7 @@ import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
+import GoogleAds from "../ads/GoogleAds";
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -85,15 +86,15 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
     Post.preload();
   }, []);
   useEffect(() => {
-    if(state.router.link != "/"){
-    fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
-      .then(response => response.text())
-      .then(result => setSubcategory(JSON.parse(result)))
-      .catch(error => console.log('error', error));
+    if (state.router.link != "/") {
+      fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
+        .then(response => response.text())
+        .then(result => setSubcategory(JSON.parse(result)))
+        .catch(error => console.log('error', error));
     }
   }, [state.router.link]);
- 
- 
+
+
   return (
     <>
       {!data.isHome ?
@@ -206,14 +207,27 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
             return (
-                <Fragment key={item.id}>
-                  <Article
-                    key={item.id}
-                    item={item}
-                    showExcerpt={_showExcerpt}
-                    showMedia={item.jetpack_featured_media_url}
-                  />
-                </Fragment>
+              <>
+                {index == 4 ?
+                  <Fragment key={item.id}>
+                    <GoogleAds key="534535"/>
+                    <Article
+                      key={item.id}
+                      item={item}
+                      showExcerpt={_showExcerpt}
+                      showMedia={item.jetpack_featured_media_url}
+                    />
+                    </Fragment> :
+                  <Fragment key={item.id}>
+                    <Article
+                      key={item.id}
+                      item={item}
+                      showExcerpt={_showExcerpt}
+                      showMedia={item.jetpack_featured_media_url}
+                    />
+                  </Fragment>
+                }
+              </>
             )
           })}
 
