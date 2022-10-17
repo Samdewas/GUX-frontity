@@ -141,21 +141,17 @@ const Post = ({ state, actions, libraries }) => {
 
   // 2mint me 30 second chalega total 1 ghante me 15 mint //
   const [downloadhover, setDownloadhover] = useState(false);
-  const [downloadclicked, setDownloadclicked] = useState(false);
-
 
   const ondownloadhover = () => {
     const d = new Date();
     let min = d.getMinutes();
     let sec = d.getSeconds();
-    if (!((min % 2 == 0) && (sec < 30)) && !downloadclicked) {
+    if (!((min % 2 == 0) && (sec < 30))) {
       setDownloadhover(true);
     } else {
       setDownloadhover(false);
     }
   }
-  console.log("cd",downloadclicked)
-  console.log("ch",downloadhover)
   return data.isReady ? (
 
     <>
@@ -213,7 +209,7 @@ const Post = ({ state, actions, libraries }) => {
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload>
                
-                        <Adwrapper onClick={()=> setDownloadclicked(true)} className={downloadhover ? "chalu" : ""}>
+                        <Adwrapper className={downloadhover ? "chalu" : ""}>
                         <GoogleAds />
                         </Adwrapper>
                     
