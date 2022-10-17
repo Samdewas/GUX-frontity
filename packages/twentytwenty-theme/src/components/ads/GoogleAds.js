@@ -17,7 +17,7 @@ const GoogleAds = ({ actions }) => {
     }, [actions.source]);
     const adBlockFunction = () => {
         // Google Analytics End
-        setAdblockerActive(true);
+        setAdblockerActive(false);
     }
 
     return (
