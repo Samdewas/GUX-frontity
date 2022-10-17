@@ -638,6 +638,12 @@ section.banner_section {
   color: #fff;
   z-index: 999999999;
 }
+.chalu{
+  transform: translate(-50px, -187px);
+  position: relative;
+  z-index: 9999;
+  opacity: 0;
+}
 
 .wp-block-button {
   z-index: 999;

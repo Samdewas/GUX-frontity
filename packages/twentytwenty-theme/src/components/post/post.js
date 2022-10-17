@@ -509,12 +509,7 @@ button {       position: relative;
 const Adwrapper = styled.adwrapper`
   display: inline-block;
   transform: translate(-34px, -58px);
-.chalu{
-  transform: translate(-50px, -187px);
-  position: relative;
-  z-index: 9999;
-  opacity: 0;
-}
+
 
 `;
 
