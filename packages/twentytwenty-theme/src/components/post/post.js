@@ -237,9 +237,11 @@ const Post = ({ state, actions, libraries }) => {
                       <UXdownload onMouseOver={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload>
-                      <div className="code-block-13">
+               
+                        <Adwrapper>
                         <GoogleAds />
-                      </div>
+                        </Adwrapper>
+                    
                     </EntryContent>
 
                     {post.tags && <PostTags tags={tags} />}
@@ -502,6 +504,11 @@ button {       position: relative;
   opacity: 1;
   z-index: 99;
   left: 11px;}
+
+`;
+const Adwrapper = styled.adwrapper`
+  display: inline-block;
+  transform: translate(-34px, -58px);
 
 `;
 
