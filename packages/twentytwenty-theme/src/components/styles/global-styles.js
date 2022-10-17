@@ -616,6 +616,20 @@ section.banner_section {
   height: 950px;
 }
 
+// adblocker css here
+main#main postmain > h2 {
+  width: 1888px;
+  position: fixed;
+  top: -59px;
+  left: 0px;
+  right: 0px;
+  background: #747070b5;
+  height: 100vh;
+  text-align: center;
+  padding-top: 20%;
+  color: #fff;
+  z-index: 999999999;
+}
 
 
 
