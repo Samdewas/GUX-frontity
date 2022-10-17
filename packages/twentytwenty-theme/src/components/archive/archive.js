@@ -7,7 +7,7 @@ import PostSeparator from "../post/post-separator";
 import Post from "../post";
 import Circle1 from "../../assets/img/C_circle.png";
 import fontbg from "../../assets/img/category/font.png";
-import addon from "../../assets/img/category/photoshop.png";
+import addon from "../../assets/img/category/Photoshop.png";
 import graphics from "../../assets/img/category/Graphics.png";
 import themes from "../../assets/img/category/Website.png";
 import lightroom from "../../assets/img/category/Lightroom.png";
