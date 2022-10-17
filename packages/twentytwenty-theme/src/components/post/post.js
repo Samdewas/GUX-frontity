@@ -18,6 +18,7 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
+import GoogleAds from "../ads/GoogleAds";
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
  * "post type" (posts, pages, attachments, etc.).
@@ -68,13 +69,13 @@ const Post = ({ state, actions, libraries }) => {
 
   useEffect(() => {
     actions.source.fetch("/");
-    const script = document.createElement("script");
+    // const script = document.createElement("script");
 
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-    script.async = true;
-    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+    // script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    // script.async = true;
+    // script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
 
-    document.body.appendChild(script);
+    // document.body.appendChild(script);
   }, [actions.source]);
   const adBlockFunction = () => {
     // Google Analytics End
@@ -277,12 +278,13 @@ const Post = ({ state, actions, libraries }) => {
               <SideCateItem>
                 <SidebarH>
                   <h6> Ad </h6>
-                  <AdSense.Google
+                  {/* <AdSense.Google
               client='ca-pub-5442643109134129'
               slot='5764423148'
               style={{ width: 500, height: 300, float: 'left' }}
               format=''
-            />
+            /> */}
+            <GoogleAds />
                 </SidebarH>
                 {/* <ul>
                   <li>
