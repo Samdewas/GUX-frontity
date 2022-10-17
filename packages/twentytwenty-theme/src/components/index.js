@@ -26,8 +26,21 @@ import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
 import Cate_img15 from "../assets/img/front/web_active.png"
 import psaction from "../assets/img/home/action.png"
-import font1  from "../assets/img/home/action.png"
+import serif  from "../assets/img/category/Serif/Serif1.png"
+import serif2  from "../assets/img/category/Serif/Serif2.png"
+import serif3  from "../assets/img/category/Serif/Serif3.png"
+import sans  from "../assets/img/category/Calligraphy/Calligraphy.png"
+import sans2  from "../assets/img/category/Calligraphy/Calligraphy2.png"
+import sans3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
+import caligraphy  from "../assets/img/category/Calligraphy/Calligraphy.png"
+import caligraphy2 from "../assets/img/category/Calligraphy/Calligraphy2.png"
+import caligraphy3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
+import blackletter  from "../assets/img/category/Blackletter/Blackletter1.png"
+import blackletter2  from "../assets/img/category/Blackletter/Blackletter2.png"
+import blackletter3  from "../assets/img/category/Blackletter/Blackletter3.png"
 import ticon  from "../assets/img/home/t.svg"
+import graphics  from "../assets/img/home/graphics.svg"
+import websitet  from "../assets/img/home/website.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -167,7 +180,7 @@ const Theme = ({ state, actions }) => {
 
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <img src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/templates/"> <img src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <img src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <img src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <img src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
 
@@ -183,9 +196,9 @@ const Theme = ({ state, actions }) => {
 
                       <div className="ux_action1">
                       <h4>Photoshop Actions</h4>
-                      <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-                         help you achieve an elegant look too.
-Photoshop Actions is a </p>  
+                      <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+           help you achieve an elegant look too.
+Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
 <Link link="category/fonts/"> Explore Now </Link>
                       </div>
 
@@ -199,7 +212,45 @@ Photoshop Actions is a </p>
 <SectionContainer>
 <div className="ux_lightroom2"> <img src={psaction} />  </div>            
         <div className="ux_lightroom1">
-        <h4>Photoshop Actions</h4>
+        <h4>Lightroom Preset</h4>
+        <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+           help you achieve an elegant look too.
+Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
+<Link link="category/fonts/"> Explore Now </Link>
+        </div>
+
+       
+        </SectionContainer>
+        </div>
+</Lightroompreset>
+
+            <Graphics>
+
+              <SectionContainer>
+
+                      <div className="ux_action1">
+                      <h4>Graphics & Mockups</h4>
+                      <p>  The use of a great-looking font is the main part of making
+any kind of design look more professional. Of course, to reach
+the same degree of professionalism you dont always have to
+use premium fonts. If you cant afford to spend money on costly
+fonts to make your designs appear great then dont panic.
+You can instantly download thousands of Free Fonts from here. </p>  
+<Link link="category/fonts/"> Explore Now </Link>
+                      </div>
+
+                      <div className="ux_action2"> <img src={graphics} />  </div>
+                      </SectionContainer>
+
+              </Graphics>
+
+
+              <Uxtheme>
+
+              <SectionContainer>
+<div className="ux_lightroom2"> <img src={websitet} />  </div>            
+        <div className="ux_lightroom1">
+        <h4>Website Themes</h4>
         <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
            help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more. Photoshop 
@@ -211,38 +262,56 @@ You can use these filters to create amazing outputs for photography.</p>
 
        
         </SectionContainer>
-        </div>
-</Lightroompreset>
+
+              </Uxtheme>
+
+
+
+
               
 <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
     <img className="ticon" src={ticon} />
-  <h4>Top Trending Fonts</h4>
+  <h4>Top Trending Fonts <span>View All</span></h4>
   <div className="fontlist">
-     <Link link="/"> <img src={font1} /> </Link> 
+     <Link link="/"> <img src={serif} /> 
+     <img className="ux_fview1" src={serif3} /> 
+     <img className="ux_fview" src={serif2} /> 
+ 
+     </Link> 
      <div>
       <span className="fname">Serif</span>
       <span className="fcount">100 + Fonts</span>
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/"> <img src={font1} /> </Link> 
+     <Link link="/"> <img src={sans} />
+     <img className="ux_fview1" src={sans3} /> 
+     <img className="ux_fview" src={sans2} /> 
+     
+      </Link> 
      <div>
-      <span className="fname">Sans Serif</span>
+      <span className="fname"> Sans Serif</span>
       <span className="fcount">100 + Fonts</span>
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/"> <img src={font1} /> </Link> 
+     <Link link="/"> <img src={caligraphy} />
+     <img className="ux_fview1" src={caligraphy2} /> 
+     <img className="ux_fview" src={caligraphy3} /> 
+      </Link> 
      <div>
-      <span className="fname">Caligraphy</span>
+      <span className="fname">Caligraphy </span>
       <span className="fcount">100 + Fonts</span>
      </div>
   </div>
 
   <div className="fontlist">
-     <Link link="/"> <img src={font1} /> </Link> 
+     <Link link="/"> <img src={blackletter} /> 
+     <img className="ux_fview1" src={blackletter3} /> 
+     <img className="ux_fview" src={blackletter2} /> 
+     </Link> 
      <div>
       <span className="fname">Blackletter</span>
       <span className="fcount">100 + Fonts</span>
@@ -253,6 +322,7 @@ You can use these filters to create amazing outputs for photography.</p>
   </SectionContainer>
 
 </Trendingfonts>
+
             </BannerSection> : ""}
 
 
@@ -554,13 +624,24 @@ padding:30px 0px;
 margin-left:70px;
 margin-right:50px;
 float:left;
+a{text-decoration:none;}
+
+  @media (max-width:767px){
+      width: 90%;
+      margin-left: 20px;
+      margin-bottom:20px;
+      margin-right: 0px;}
+} 
 }
 h4{color:#2BBBFA;}
-p{font-size:16px; }
+p{font-size:16px; line-height:30px; }
 }
 
 .ux_action2{width:50%;
   float:left;}
+
+
+
 
 `;
 
@@ -569,7 +650,6 @@ background: linear-gradient(0deg, #FDE4C9 0%, rgba(253, 228, 201, 0) 100%, rgba(
 width:100%;
 padding-bottom: 50px;
 float: left;
-margin-bottom: 50px;
 padding:45px 0px;
 .ux_lightroom2{width: 41%;
   float: left;
@@ -580,29 +660,166 @@ margin-right:50px;
 float:left;
 }
 h4{color:#F8A64C;}
+p{font-size:16px; line-height:30px; }
+
+@media (max-width:767px){
+  .ux_lightroom2{width: 90%;
+    float: left;
+    margin-left: 30px;}
+  .ux_lightroom1{width:90%;
+  margin-left:20px;
+  margin-right:0px;
+  float:left;
+  }
+
+}
+
+}
+
+
+
+
+
+
+`;
+
+const Graphics = styled.graphics`
+width:100%;
+padding-bottom: 50px;
+display:block;
+padding:30px 0px;
+float:left;
+
+.ux_action1{width:38%;
+margin-left:70px;
+margin-right:50px;
+float:left;
+}
+h4{color:#ED56A3;}
 p{font-size:16px; }
+
+
+@media (max-width:767px){
+  .ux_action1{width:90%;
+     margin-left:20px;
+     margin-right:0px;
+     }
+     .ux_action2{width:90%;}
+ }
+
+}
+
+.ux_action2{width:50%;
+  float:left;}
+
+
+`;
+
+const Uxtheme = styled.uxtheme`
+background: #e3cdff6b;
+width:100%;
+padding-bottom: 50px;
+float: left;
+padding:45px 0px;
+.ux_lightroom2{width: 41%;
+  float: left;
+  margin-left: 30px;}
+.ux_lightroom1{width:45%;
+margin-left:70px;
+margin-right:50px;
+float:left;
+}
+h4{color:#A259FF;}
+p{font-size:16px; line-height:30px; }
+
+@media (max-width:767px){
+  .ux_lightroom2{width: 90%;
+    float: left;
+    margin-left: 30px;}
+  .ux_lightroom1{width:90%;
+  margin-left:20px;
+  margin-right:0px;
+  }
+
+}
+
 }
 `;
 
 const Trendingfonts = styled.trendingfonts`
-.font_wrapper{margin-left:50px;
-  position:relative;
-   clear:left;}
+.font_wrapper{margin-left: 50px;
+  position: relative;
+  margin-top: 60px;
+  float: left;
+  width: 100%;
+  margin-bottom: 66px;
+}
    .ticon {
     position: absolute;
     left: -67px;
-    top: -27px;
+    top: 0px;
     width: 60px;
 }
-h4{color:#15BE77;}
+h4{color:#15BE77;  margin-bottom:50px;
+  span{text-align: right;
+    display: block;
+    font-size: 19px;
+    margin-right:50px;
+  }
+}
 .fontlist{display:inline-block; width: 22%;
-  margin: 0px 10px;}
+  margin: 0px 15px;
+  position:relative;
+  div{ margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  span:first-child{font-size: 20px;
+    font-weight: 800;}
+    span:last-child{font-size: 14px;
+      color: #9f9f9f;}
+
+  }
+.ux_fview{ position: absolute;
+  top: -7px;
+  z-index: 999;
+  width: 87%;}
+  .ux_fview1{position: absolute;
+    top: -13px;
+    z-index: 99;
+    width: 79%;}  
+img:first-child{
+  position: relative;
+  top: 0px;
+  z-index:9999999;
+  width:100%;
+
+
+}
+
+:hover .ux_fview1 {transform: translate(0px, -6px); transition: all 0.4s;}
+}
+:hover .ux_fview {transform: translate(0px, -4px); transition: all 0.4s;}
+}
+
+
 .fontlist div{ margin: 15px 10px;
   display: flex;
   justify-content:
    space-between;}
    .fontlist div .fname{font-weight:bold; font-size:16px}  
    .fontlist div .fcount{font-weight:normal; color:#7c7171; font-size:12px; }  
+
+@media (max-width:767px){
+
+  margin-left: 0px;
+  position: relative;
+  margin-top: 14px;
+  width: 100%;
+
+  .fontlist{display:inline;}
+
+}
+
 `;
 
 

@@ -7,6 +7,10 @@ import PostSeparator from "../post/post-separator";
 import Post from "../post";
 import Circle1 from "../../assets/img/C_circle.png";
 import fontbg from "../../assets/img/category/font.png";
+import addon from "../../assets/img/category/Photoshop.png";
+import graphics from "../../assets/img/category/Graphics.png";
+import themes from "../../assets/img/category/Website.png";
+import lightroom from "../../assets/img/category/Lightroom.png";
 import BannerBg from "../../assets/img/banner.png"
 import searchicon from "../../assets/img/search.png"
 import { useTransition, animated } from "react-spring";
@@ -114,16 +118,16 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
               <img className="banner_img" src={fontbg} /> :
-              state.router.link?.includes("/category/fonts/") ?
-                <img className="banner_img" src={BannerBg} /> :
-                state.router.link?.includes("/category/fonts/") ?
-                  <img className="banner_img" src={BannerBg} /> :
-                  state.router.link?.includes("/category/fonts/") ?
-                    <img className="banner_img" src={BannerBg} /> :
-                    state.router.link?.includes("/category/fonts/") ?
-                      <img className="banner_img" src={BannerBg} /> :
-                      state.router.link?.includes("/category/fonts/") ?
-                        <img className="banner_img" src={BannerBg} /> :
+              state.router.link?.includes("/category/add-ons/") ?
+                <img className="banner_img" src={addon} /> :
+                state.router.link?.includes("/category/graphics/") ?
+                  <img className="banner_img" src={graphics} /> :
+                  state.router.link?.includes("/category/themes/") ?
+                    <img className="banner_img" src={themes} /> :
+                    state.router.link?.includes("/category/add-ons/photoshop-action/") ?
+                      <img className="banner_img" src={addon} /> :
+                      state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
+                        <img className="banner_img" src={lightroom} /> :
                         <img className="banner_img" src={BannerBg} />
           }
           <SectionContainer size="large">
