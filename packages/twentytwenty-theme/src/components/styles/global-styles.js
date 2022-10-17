@@ -641,7 +641,7 @@ section.banner_section {
 .chalu{
   transform: translate(-50px, -187px);
   position: relative;
-  z-index: 9999;
+  z-index: 999999;
   opacity: 0;
 }
 
