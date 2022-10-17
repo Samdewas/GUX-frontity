@@ -1,20 +1,34 @@
-import React, {useEffect} from 'react';
+import React, {useEffect,useState} from 'react';
 import {connect, styled} from "frontity";
+import AdSense from 'react-adsense';
 
-const GoogleAds = ({}) => {
+const GoogleAds = ({actions}) => {
+    const [adblockerActive, setAdblockerActive] = useState(false);
 
     useEffect(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-    })
+        actions.source.fetch("/");
+        const script = document.createElement("script");
+    
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        script.async = true;
+        script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+    
+        document.body.appendChild(script);
+      }, [actions.source]);
+      const adBlockFunction = () => {
+        // Google Analytics End
+        setAdblockerActive(true);
+      }
 
     return (
-        <ins className="adsbygoogle"
-             style={{display: 'block'}}
-             data-ad-client="ca-pub-5442643109134129"
-             data-ad-slot="5764423148"
-             data-ad-format="auto"
-             data-full-width-responsive="true"/>
+       <AdSense.Google
+              client='ca-pub-5442643109134129'
+              slot='5764423148'
+              style={{ width: 500, height: 300, float: 'left' }}
+              format=''
+            />
     );
 };
 
 export default connect(GoogleAds);
+

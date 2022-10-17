@@ -206,7 +206,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                    {/* <GoogleAds /> */}
+                    <GoogleAds />
                     <Article
                       key={item.id}
                       item={item}
