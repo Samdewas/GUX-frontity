@@ -800,7 +800,9 @@ ul.dropdown-menu.multi-level li {
 }
 header#site-header .dropdown-menu li {
   margin-left: 1px !important;
+  padding: 4px 4px;
 }
+header#site-header li:last-child{display:none;}
 
 .dropdown-submenu:hover>.dropdown-menu {
   display: block;
@@ -888,9 +890,10 @@ header#site-header.inner_header{
   position: inherit;
 }
 
-#site-header.inner_header a {
+#site-header.inner_header .dropdown > a {
   color: white !important;
 }
+.dropdown .dropdown-menu li a{color:#000 !important;}
 
 
 .submenu-main-item:hover .SubMenu {
