@@ -639,7 +639,7 @@ section.banner_section {
   z-index: 999999999;
 }
 .chalu{
-  transform: translate(-50px, -187px);
+  transform: translate(-50px, -187px) !important;
   position: relative;
   z-index: 999999;
   opacity: 0;
