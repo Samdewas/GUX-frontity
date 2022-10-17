@@ -23,9 +23,9 @@ const GoogleAds = ({ actions }) => {
     return (
         <>
             {adblockerActive ?
-                <div style={{width : "800px", height : "300px", position:"fixed", top:"30%", left:0 , right: 0}}>
+                <Adblock>
                     <h2>Please Deactive Adblocker Tool</h2>
-                </div>
+                </Adblock>
                 : ""}
             <AdSense.Google
                 client='ca-pub-5442643109134129'
@@ -39,3 +39,19 @@ const GoogleAds = ({ actions }) => {
 
 export default connect(GoogleAds);
 
+const Adblock = styled.adblock`
+h2 {
+    width: 1888px;
+    position: fixed;
+    top: -59px;
+    left: 0px;
+    right: 0px;
+    background: #747070b5;
+    height: 100vh;
+    text-align: center;
+    padding-top: 20%;
+    color: #fff;
+    z-index: 999999999;
+  }
+
+`;
