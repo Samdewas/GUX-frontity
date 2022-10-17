@@ -154,7 +154,8 @@ const Post = ({ state, actions, libraries }) => {
       setDownloadhover(false);
     }
   }
-  console.log(post)
+  console.log("cd",downloadclicked)
+  console.log("ch",downloadhover)
   return data.isReady ? (
 
     <>
