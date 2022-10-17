@@ -143,41 +143,41 @@ const Post = ({ state, actions, libraries }) => {
   const [downloadhover, setDownloadhover] = useState(false);
 
 
-  const ondownloadhover = () =>{
+  const ondownloadhover = () => {
     const d = new Date();
-        let min = d.getMinutes();
-        let sec = d.getSeconds();
-        if (!((min % 2 == 0) && (sec < 30))) {
-          setDownloadhover(true);
-        }else{
-          setDownloadhover(false);
-        }
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
+    if (!((min % 2 == 0) && (sec < 30))) {
+      setDownloadhover(true);
+    } else {
+      setDownloadhover(false);
+    }
   }
   //true me band hojayega or false me chalega 
-    // var hovered = false;
-    // var rightstoclick = true;
-    // document.getElementsByClassName(".wp-block-button").hover(
-    //   function () {
-    //     // 2mint me 30 second chalega total 1 ghante me 15 mint //
-    //     
+  // var hovered = false;
+  // var rightstoclick = true;
+  // document.getElementsByClassName(".wp-block-button").hover(
+  //   function () {
+  //     // 2mint me 30 second chalega total 1 ghante me 15 mint //
+  //     
 
-    //     if (hovered == false) {
-    //       console.log("unhover")
-    //       document.getElementsByClassName('.code-block-13').addClass("sameer-hover").css({ "margin": "-60px 0px 0px 0px", "opacity": "0" }).off('hover');
-    //       if (rightstoclick) {
-    //         rightstoclick = false;
-    //         const myTimeout = window.setTimeout(function () {
-    //           window.location.href = document.getElementsByClassName('.wp-block-button__link').attr('href'); clearTimeout(myTimeout);
-    //         }, 3000);
-    //       }
-    //       hovered = true;
-    //     }else{
-    //       console.log("hover")
-    //       hovered = false;
-    //     }
-    //   }
-    // );
-    // setInterval(function () { $('.code-block-13').removeClass('box-hover').css({ "margin": "8px auto 8px 0px", "opacity": "1" }) }, 15000);
+  //     if (hovered == false) {
+  //       console.log("unhover")
+  //       document.getElementsByClassName('.code-block-13').addClass("sameer-hover").css({ "margin": "-60px 0px 0px 0px", "opacity": "0" }).off('hover');
+  //       if (rightstoclick) {
+  //         rightstoclick = false;
+  //         const myTimeout = window.setTimeout(function () {
+  //           window.location.href = document.getElementsByClassName('.wp-block-button__link').attr('href'); clearTimeout(myTimeout);
+  //         }, 3000);
+  //       }
+  //       hovered = true;
+  //     }else{
+  //       console.log("hover")
+  //       hovered = false;
+  //     }
+  //   }
+  // );
+  // setInterval(function () { $('.code-block-13').removeClass('box-hover').css({ "margin": "8px auto 8px 0px", "opacity": "1" }) }, 15000);
 
 
   // Load the post, but only if the data is ready.
@@ -234,17 +234,18 @@ const Post = ({ state, actions, libraries }) => {
                   <>
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
-                    <UXdownload onMouseOver={ondownloadhover} onMouseLeave={()=> setDownloadhover(false)}>
-                        <Button style={{zIndex: downloadhover ? 9999 : 99}} className="d_innerbtn">Download</Button>
-                         </UXdownload>
+                      <UXdownload onMouseOver={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
+                      </UXdownload>
+                      <div className="code-block-13">
+                        <GoogleAds />
+                      </div>
                     </EntryContent>
 
                     {post.tags && <PostTags tags={tags} />}
                   </>
                 )}
-                <div className="code-block-13">
-                <GoogleAds />
-                </div>
+
                 <div>
                   <h4>Related Searches</h4>
                   <TagsList>
