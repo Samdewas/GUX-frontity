@@ -141,46 +141,20 @@ const Post = ({ state, actions, libraries }) => {
 
   // 2mint me 30 second chalega total 1 ghante me 15 mint //
   const [downloadhover, setDownloadhover] = useState(false);
+  const [downloadclicked, setDownloadclicked] = useState(false);
 
 
   const ondownloadhover = () => {
     const d = new Date();
     let min = d.getMinutes();
     let sec = d.getSeconds();
-    if (!((min % 2 == 0) && (sec < 30))) {
+    if (!((min % 2 == 0) && (sec < 30)) && !downloadclicked) {
       setDownloadhover(true);
     } else {
       setDownloadhover(false);
     }
   }
-  //true me band hojayega or false me chalega 
-  // var hovered = false;
-  // var rightstoclick = true;
-  // document.getElementsByClassName(".wp-block-button").hover(
-  //   function () {
-  //     // 2mint me 30 second chalega total 1 ghante me 15 mint //
-  //     
-
-  //     if (hovered == false) {
-  //       console.log("unhover")
-  //       document.getElementsByClassName('.code-block-13').addClass("sameer-hover").css({ "margin": "-60px 0px 0px 0px", "opacity": "0" }).off('hover');
-  //       if (rightstoclick) {
-  //         rightstoclick = false;
-  //         const myTimeout = window.setTimeout(function () {
-  //           window.location.href = document.getElementsByClassName('.wp-block-button__link').attr('href'); clearTimeout(myTimeout);
-  //         }, 3000);
-  //       }
-  //       hovered = true;
-  //     }else{
-  //       console.log("hover")
-  //       hovered = false;
-  //     }
-  //   }
-  // );
-  // setInterval(function () { $('.code-block-13').removeClass('box-hover').css({ "margin": "8px auto 8px 0px", "opacity": "1" }) }, 15000);
-
-
-  // Load the post, but only if the data is ready.
+  console.log(post)
   return data.isReady ? (
 
     <>
@@ -238,7 +212,7 @@ const Post = ({ state, actions, libraries }) => {
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload>
                
-                        <Adwrapper className={downloadhover ? "chalu" : ""}>
+                        <Adwrapper onClick={()=> setDownloadclicked(true)} className={downloadhover ? "chalu" : ""}>
                         <GoogleAds />
                         </Adwrapper>
                     
