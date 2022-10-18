@@ -19,49 +19,49 @@ const FontFace = ({ state }) => {
           font-style: sans-serif;
           font-weight: 400;
           font-display: "swap";
-          src: url(${Regular}) format("woff2");
+          src: url(${Regular});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 100;
           font-display: "swap";
-          src: url(${Thin}) format("woff2");
+          src: url(${Thin});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 300;
           font-display: "swap";
-          src: url(${Light}) format("woff2");
+          src: url(${Light});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 500;
           font-display: "swap";
-          src: url(${Mediumn}) format("woff2");
+          src: url(${Mediumn});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 700;
           font-display: "swap";
-          src: url(${Bold}) format("woff2");
+          src: url(${Bold});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 800;
           font-display: "swap";
-          src: url(${ExtraBold}) format("woff2");
+          src: url(${ExtraBold});
         }
         @font-face {
           font-family: 'Poppins';
           font-style: sans-serif;
           font-weight: 300;
           font-display: "swap";
-          src: url(${ExtraLightItalic}) format("woff2");
+          src: url(${ExtraLightItalic});
         }
       `}
     />
