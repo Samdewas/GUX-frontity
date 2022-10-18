@@ -200,7 +200,7 @@ margin-right:80px;
 text-align:left;
 
 ul{margin:0px;}
-p{color:#fff; font-weight:100; font-family:inherit; font-size:16px;}
+p{color:#fff; font-weight:400; font-family:inherit; font-size:15px;}
 li{font-size:18px; line-height:40px; }
 
 @media (max-width:767px){
@@ -295,7 +295,7 @@ img{width:35px;}
   margin-top: 30px;
   margin-bottom: 80px;
   -webkit-text-fill-color: transparent;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 800;
 a{display:flex;
 img{margin-right:10px; padding:7px;}
@@ -517,7 +517,7 @@ const Footerlink = styled.footerlink`
     h3{
       color: white;
       margin-bottom: 25px;
-      font-weight: 200;
+      font-weight: 500;
       font-size: 25px;
       margin-top:0px;
   }
