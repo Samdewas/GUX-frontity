@@ -590,9 +590,13 @@ const tableStyles = (colors) => css`
     max-width: 180px;
 }
 
-butto.header_btn a {
+button.header_btn a {
   text-decoration: none;
   color: white;
+  font-weight:600;
+}
+button.header_btn a {
+  font-weight: 600 !important;
 }
 
 .header_btn {
@@ -664,7 +668,6 @@ section.banner_section {
 header#site-header a {
   color: black;
   text-decoration: none;
-  font-weight: 700;
   padding: 0px 7px;
 }
 .header_btn a {
@@ -773,6 +776,8 @@ li.sub_menu_child_li_outer {
 header#site-header a{
   position: relative;
   display: block;
+  font-weight: 500;
+  font-size:20px;
 }
 
 .dropdown-menu {
@@ -1023,7 +1028,7 @@ header#site-header a {
   color: black ;
   padding: 20px 0px 10px 0px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
 }
 header#site-header.inner_header {
   background: linear-gradient(

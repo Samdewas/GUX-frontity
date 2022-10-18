@@ -40,12 +40,17 @@ import blackletter2  from "../assets/img/category/Blackletter/Blackletter2.png"
 import blackletter3  from "../assets/img/category/Blackletter/Blackletter3.png"
 import ticon  from "../assets/img/home/t.svg"
 import graphics  from "../assets/img/home/graphics.svg"
+import ficon1  from "../assets/img/home/high.svg"
+import ficon2  from "../assets/img/home/ready.svg"
+import ficon3  from "../assets/img/home/Guarantee.svg"
+import ficon4  from "../assets/img/home/fresh.svg"
 import websitet  from "../assets/img/home/website.png"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 import Link from "@frontity/components/link"
+import Skelton from "./Skelton";
 
 
 const SectionContainer = styled.div`
@@ -146,10 +151,11 @@ const Theme = ({ state, actions }) => {
                 <BannerInner>
 
                   <div>
+                  <Skelton />
 
                     <h2> Discover Free Premium Fonts,<br />
                       Photoshop Action and All Graphic Resources </h2>
-                    <p>Graphicux.com is well known for saving money for customers but with our
+                    <p>Graphicux.com is well known for saving money for customers but with our<br />
                       free fonts and Photoshop action section, we have gone one step further</p>
                   </div>
                 </BannerInner>
@@ -188,7 +194,65 @@ const Theme = ({ state, actions }) => {
                     </Uxcategory> : ""}
 
                 </div>
+
+                 
+
               </SectionContainer>
+
+              <Uxfeatured>
+
+                <SectionContainer>
+                  <h4>The Smartest Choice For Creatives Like You</h4>  
+                  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
+
+                    <ul>
+                      <li> 
+                        <div className="fimg">
+                       <img src={ficon1} />
+                       </div>
+                       <div className="fcaption">
+                        <h5>High-quality stock content</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                          </div>
+                      </li>
+
+                      <li> 
+                        <div className="fimg">
+                       <img src={ficon2} />
+                       </div>
+                       <div className="fcaption">
+                        <h5>Ready-to-use assets</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                          </div>
+                      </li>
+
+                      <li> 
+                        <div className="fimg">
+                       <img src={ficon3} />
+                       </div>
+                       <div className="fcaption">
+                        <h5>Guaranteed search results</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                          </div>
+                      </li>
+
+                      <li> 
+                        <div className="fimg">
+                       <img src={ficon4} />
+                       </div>
+                       <div className="fcaption">
+                        <h5>Fresh content everyday</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                          </div>
+                      </li>
+                    </ul>
+                    </SectionContainer>
+
+                  </Uxfeatured> 
 
               <Photoshopaction>
 
@@ -251,12 +315,12 @@ You can instantly download thousands of Free Fonts from here. </p>
 <div className="ux_lightroom2"> <img src={websitet} />  </div>            
         <div className="ux_lightroom1">
         <h4>Website Themes</h4>
-        <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-           help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more. Photoshop 
-action bundles speed up the time and deliver results
-quicker than what used to take hours. These will give your photos a sleek and trendy look.
-You can use these filters to create amazing outputs for photography.</p>  
+        <p> The use of a great-looking font is the main part of making
+any kind of design look more professional. Of course, to reach
+the same degree of professionalism you dont always have to
+use premium fonts. If you cant afford to spend money on costly
+fonts to make your designs appear great then dont panic.
+You can instantly download thousands of Free Fonts from here.</p>  
 <Link link="category/fonts/"> Explore Now </Link>
         </div>
 
@@ -356,7 +420,7 @@ const BannerSection = styled.bannersection`
   height: 620px;
 
   h2{  color: #084523;
-    font-size:45px;}
+    font-size:42px;}
   p{font-size: 20px;}
 `;
 
@@ -371,7 +435,7 @@ margin: auto;
   padding-top: 85px;
   width:80%;
   h2{font-size:26px;}
-  p{font-size:15px;}
+  p{font-size:15px; font-weight:500;}
   width: 100%;
   
 }
@@ -409,8 +473,9 @@ a{
 }
 
 h3{
-  margin: 60px 0px;
-  font-size: 20px;
+  margin: 69px 0px;
+    font-size: 19px;
+    font-weight: 600;
 }
 img{ margin: 45px auto;}
 
@@ -618,20 +683,20 @@ background:linear-gradient(180deg, #E2F6FF 0%, rgba(226, 246, 255, 0) 100%);
 width:100%;
 padding-bottom: 50px;
 display:block;
-padding:30px 0px;
+padding: 80px 0px;
 
 .ux_action1{width:38%;
 margin-left:70px;
 margin-right:50px;
-float:left;
+float:left;}
 a{text-decoration:none;}
 
   @media (max-width:767px){
       width: 90%;
       margin-left: 20px;
       margin-bottom:20px;
-      margin-right: 0px;}
-} 
+      margin-right: 0px;
+
 }
 h4{color:#2BBBFA;}
 p{font-size:16px; line-height:30px; }
@@ -639,9 +704,6 @@ p{font-size:16px; line-height:30px; }
 
 .ux_action2{width:50%;
   float:left;}
-
-
-
 
 `;
 
@@ -677,18 +739,15 @@ p{font-size:16px; line-height:30px; }
 }
 
 
-
-
-
-
 `;
 
 const Graphics = styled.graphics`
 width:100%;
 padding-bottom: 50px;
 display:block;
-padding:30px 0px;
+padding: 80px 0px;
 float:left;
+padding-bottom:0px;
 
 .ux_action1{width:38%;
 margin-left:70px;
@@ -819,6 +878,38 @@ img:first-child{
   .fontlist{display:inline;}
 
 }
+
+`;
+
+const Uxfeatured = styled.uxfeatured`
+
+list-style:none;
+text-align:center;
+ul{margin-top:50px;}
+p{font-size:16px;}
+li{display: inline-block;
+  width: 44%;
+  margin-bottom: 40px;
+  margin-right: 50px;}
+h4{color:#077A3A;
+   font-size:30px;
+   margin-bottom: 15px;
+   letter-spacing:0.1px;
+    font-weight:600;}
+
+
+    .fimg {
+      width: 100px;
+      float: left;
+  }
+  .fcaption {
+    float: right;
+    width: 76%;
+    text-align: left;
+    margin-top: -50px;
+}
+.fcaption p{font-size:16px;}
+.fcaption h5{margin-bottom:10px; font-weight:600; font-size:22px;}
 
 `;
 
