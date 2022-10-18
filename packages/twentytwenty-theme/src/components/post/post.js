@@ -391,6 +391,9 @@ const DetailsColumnRight = styled.detailscolumnright`
 width: 25%;
 padding: 0px 15px;
 
+
+
+
 @media (min-width:768px) and (max-width:1024px){
   width: 30%;
   padding: 0px 15px;
@@ -525,6 +528,14 @@ display: flex;
 justify-content: space-between;
 margin-top: 40px;
 
+@media (min-width:1200px) and (max-width:1300px){
+  justify-content:space-evenly;
+}
+@media (max-width:1249px){
+  justify-content:center;
+  display:block;
+  padding:50px;
+}
 
 @media (min-width:320px) and (max-width:767px){
   margin: 0px 0px;

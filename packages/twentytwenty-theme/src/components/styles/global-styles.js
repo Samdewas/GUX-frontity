@@ -960,6 +960,49 @@ header#site-header .SubMenu ul li {
   border-radius: 3px;
 }
 
+@media (min-width:1600px) and (max-width:1800px){
+  .rt_header_main.is-sticky {
+    position: fixed;
+    width: 18%;
+    right: 231px;
+    top: 41px;
+}
+}
+
+@media (min-width:1400px) and (max-width:1600px){
+  .rt_header_main.is-sticky {
+    width: 21%;
+    right: 126px;
+    top: 0px;
+    padding: 0px 15px;
+  }
+}
+
+@media (min-width:1250px) and (max-width:1300px){
+  .rt_header_main.is-sticky {
+    width: 21%;
+    right: 39px;
+    top: 0px;
+    padding: 0px 15px;
+  }
+}
+
+@media (max-width:1249px){
+  .rt_header_main.is-sticky {
+    width: 90%;
+    position:sticky;
+    padding: 0px 15px;
+  }
+}
+
+position: fixed;
+    width: 15%;
+    right: 370px;
+    top: 0px;
+    padding: 0px 15px;
+
+
+
 
 @media (min-width:768px) and (max-width:1024px){
 .rt_header_main.is-sticky {
