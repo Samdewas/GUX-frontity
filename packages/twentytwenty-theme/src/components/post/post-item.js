@@ -249,7 +249,7 @@ export const PostInner = styled(SectionContainer)`
 export const EntryContent = styled.div`
   line-height: 1.5;
   max-width: 58rem;
-  font-family: "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-family:'Poppins', sans-serif;
   letter-spacing: normal;
 
   @media (min-width: 700px) {
@@ -277,8 +277,7 @@ export const EntryContent = styled.div`
   address,
   .wp-caption-text,
   .wp-block-file {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-      Helvetica, sans-serif;
+    font-family:'Poppins', sans-serif;
   }
 
   h1,
