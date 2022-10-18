@@ -111,7 +111,7 @@ const documentSetup = (colors) => css`
   -webkit-text-decoration: none;
   text-decoration: none;
   text-transform:uppercase !important;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
 }
  
