@@ -77,8 +77,7 @@ const documentSetup = (colors) => css`
     // background: ${colors.bodyBg};
     box-sizing: border-box;
     color: #000;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-      Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     letter-spacing: -0.015em;
     text-align: left;
@@ -454,7 +453,7 @@ const codeStyle = (colors) => css`
   kbd,
   pre,
   samp {
-    font-family: monospace;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
     padding: 0.4rem 0.6rem;
   }
