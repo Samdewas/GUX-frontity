@@ -101,15 +101,19 @@ const documentSetup = (colors) => css`
     display: initial;
     left: 14px;
 }
-  .wp-block-button a{
-    background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
-    border-radius: 8px;
-    padding: 12px 60px;
-    color: white;
-    margin-top: 20px;
-    margin-left:0px !important;
-    text-decoration:none;
-  }
+.wp-block-button a {
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  border-radius: 8px;
+  padding: 10px 50px;
+  color: white;
+  margin-left: 0px;
+  margin-top: 20px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform:uppercase !important;
+  font-weight: 600;
+  font-size: 18px;
+}
  
 `;
 
@@ -652,16 +656,7 @@ section.banner_section {
   z-index: 999;
   position: relative;
 }
-.wp-block-button a {
-  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
-  border-radius: 8px;
-  padding: 12px 60px;
-  color: white;
-  margin-left: 13px;
-  margin-top: 20px;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
+
 
 
 

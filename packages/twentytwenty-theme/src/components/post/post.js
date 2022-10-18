@@ -147,12 +147,7 @@ const Post = ({ state, actions, libraries }) => {
     let min = d.getMinutes();
     let sec = d.getSeconds();
     if (!((min % 2 == 0) && (sec < 30))) {
-      if(downloadhover){
-        setDownloadhover(false);
-
-      }else{
-        setDownloadhover(true);
-      }
+      setDownloadhover(true);
     } else {
       setDownloadhover(false);
     }
@@ -210,8 +205,8 @@ const Post = ({ state, actions, libraries }) => {
                   <>
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
-                      <UXdownload onMouseOver={ondownloadhover} >
-                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
+                      <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }}   className="d_innerbtn">Download</Button>
                       </UXdownload>
                
                         <Adwrapper className={downloadhover ? "chalu" : ""}>
@@ -472,13 +467,12 @@ button {
 const UXdownload = styled.uxdownload`
 position: relative;
     top: -59px;
-    background: green;
     display: block;
     width: 236px;
     height: 86px;
-button {       position: relative;
+button {     position: relative;
   top: -4px;
-  background: red;
+  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
   padding: 16px 53px;
   opacity: 1;
   z-index: 99;
