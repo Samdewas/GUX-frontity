@@ -472,10 +472,11 @@ position: relative;
     height: 86px;
 button {     position: relative;
   top: -4px;
-  background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
+  background: red;
   padding: 16px 53px;
   opacity: 1;
   z-index: 99;
+  font-size: 18px;
   left: 11px;}
 
 `;
