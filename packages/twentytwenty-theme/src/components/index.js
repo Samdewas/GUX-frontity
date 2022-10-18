@@ -50,7 +50,6 @@ import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 import Link from "@frontity/components/link"
-import Skelton from "./Skelton";
 
 
 const SectionContainer = styled.div`
@@ -151,8 +150,6 @@ const Theme = ({ state, actions }) => {
                 <BannerInner>
 
                   <div>
-                  <Skelton />
-
                     <h2> Discover Free Premium Fonts,<br />
                       Photoshop Action and All Graphic Resources </h2>
                     <p>Graphicux.com is well known for saving money for customers but with our<br />

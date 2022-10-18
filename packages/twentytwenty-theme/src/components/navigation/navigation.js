@@ -1,6 +1,8 @@
 import { connect, fetch, styled } from "frontity";
 import Link from "../link";
 import { useEffect, useState } from "react";
+import Skelton from "../Skelton.js";
+
 /**
  * Navigation Component
  *
@@ -26,25 +28,9 @@ const Navigation = ({ state, actions }) => {
 
 
       <MenuNav>
-        {/* <Menu>
-          {state.theme.menu?.items && state.theme.menu?.items.map(val => {
-            // Check if the link matched the current page url
-            return (
-              <MenuItem key={val.id}>
-
-                <MenuLink
-                  link={val.url}
-                >
-                  {val.title}
-                </MenuLink>
-              </MenuItem>
-            );
-          })}
-        </Menu> */}
-
-
         <ul>
-        {state.theme.menu?.items && state.theme.menu?.items.map(val => 
+        {state.theme.menu?.items ? 
+        state.theme.menu?.items.map(val => 
 
         <li className="dropdown">
           <Link link={val.url}>{val.title} </Link>
@@ -66,7 +52,33 @@ const Navigation = ({ state, actions }) => {
           </ul>
 
         </li>
-        )}
+        )
+        
+        :
+        <>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        <li className="dropdown">
+        <Skelton height={30} width={100} radius={10}/>
+        </li>
+        </>
+        }
       </ul>
       </MenuNav>
     </NavWrapper>

@@ -18,6 +18,7 @@ import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
 import GoogleAds from "../ads/GoogleAds";
+import Skelton from "../Skelton";
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -81,15 +82,20 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 
   const [subcategory, setSubcategory] = useState([]);
+  const [loadingcategory, setLoadingcategory] = useState(true);
 
   useEffect(() => {
     Post.preload();
   }, []);
   useEffect(() => {
+    setLoadingcategory(true)
     if (state.router.link != "/") {
       fetch(`${state.source.url}/wp-json/wp/v2/categories?parent=${data.id}`)
         .then(response => response.text())
-        .then(result => setSubcategory(JSON.parse(result)))
+        .then(result => {
+          setSubcategory(JSON.parse(result))
+          setLoadingcategory(false)
+        })
         .catch(error => console.log('error', error));
     }
   }, [state.router.link]);
@@ -186,16 +192,27 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
           <CategoryMain>
 
-            {subcategory?.length ? subcategory?.map(val =>
-              <CategoryCircle key={val.id}>
-                <Link link={val?.link?.replaceAll(state.source.url, "")}>
-                  <div>
-                    <img src={val?.acf?.cate_image} />
-                  </div>
-                  <p> {val.name} </p>
-                </Link>
-              </CategoryCircle>
-            ) : ""}
+            {!loadingcategory ?
+              subcategory?.map(val =>
+                <CategoryCircle key={val.id}>
+                  <Link link={val?.link?.replaceAll(state.source.url, "")}>
+                    <div>
+                      <img src={val?.acf?.cate_image} />
+                    </div>
+                    <p> {val.name} </p>
+                  </Link>
+                </CategoryCircle>
+              )
+              :
+              <>
+              
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+              </>
+            }
           </CategoryMain>
           : <CategoryMain></CategoryMain>}
         <PostMain>
@@ -210,14 +227,14 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                    <GoogleAds key="534535"/>
+                    <GoogleAds key="534535" />
                     <Article
                       key={item.id}
                       item={item}
                       showExcerpt={_showExcerpt}
                       showMedia={item.jetpack_featured_media_url}
                     />
-                    </Fragment> :
+                  </Fragment> :
                   <Fragment key={item.id}>
                     <Article
                       key={item.id}
@@ -296,7 +313,7 @@ export const CategoryMain = styled.categorymain`
 display: grid;
 grid-template-columns: repeat(5, 2fr);
 gap: 10px 10px;
-margin-bottom: 1rem;
+margin-bottom: 5rem;
 margin-top: 7rem;
 
 @media (max-width:767px){

@@ -205,8 +205,8 @@ const Post = ({ state, actions, libraries }) => {
                   <>
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
-                      <UXdownload onMouseOver={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
-                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} onMouseOver={ondownloadhover} className="d_innerbtn">Download</Button>
+                      <UXdownload onMouseOver={ondownloadhover} >
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} onMouseLeave={() => setDownloadhover(false)} onMouseOver={ondownloadhover} className="d_innerbtn">Download</Button>
                       </UXdownload>
                
                         <Adwrapper className={downloadhover ? "chalu" : ""}>

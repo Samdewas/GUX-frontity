@@ -1,10 +1,9 @@
-import { styled, connect} from "frontity";
+import { styled, connect } from "frontity";
 
 const Skelton = (props) => {
- 
-const id = props.id;
+
   return (
-    <Uxskeleton  style={{width: "600px", height: "200px"}}>
+    <Uxskeleton style={{ width: props.width, height: props.height, borderRadius: props.radius }}>
     </Uxskeleton>
   );
 };
@@ -12,9 +11,10 @@ export default connect(Skelton);
 
 export const Uxskeleton = styled.uxskeleton`
 
-background: #eff1f3;
-background-image: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+background: #e0e0e0;
+background-image: linear-gradient(to right, #e0e0e0 0%, #e6e6e6 75%);
   background-size:100% 400px;
+
   background-repeat: no-repeat;
   display: inline-block;
   position: relative; 
