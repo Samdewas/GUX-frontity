@@ -38,13 +38,16 @@ import caligraphy3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
 import blackletter  from "../assets/img/category/Blackletter/Blackletter1.png"
 import blackletter2  from "../assets/img/category/Blackletter/Blackletter2.png"
 import blackletter3  from "../assets/img/category/Blackletter/Blackletter3.png"
-import ticon  from "../assets/img/home/t.svg"
+import ticon  from "../assets/img/home/t.gif"
+import ps_icon  from "../assets/img/home/pen.gif"
 import graphics  from "../assets/img/home/graphics.svg"
 import ficon1  from "../assets/img/home/high.svg"
 import ficon2  from "../assets/img/home/ready.svg"
 import ficon3  from "../assets/img/home/Guarantee.svg"
 import ficon4  from "../assets/img/home/fresh.svg"
 import websitet  from "../assets/img/home/website.png"
+import arrowicon  from "../assets/img/right.svg"
+import circle1  from "../assets/img/home/elipse1.svg"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -198,66 +201,66 @@ const Theme = ({ state, actions }) => {
 
               <Uxfeatured>
 
-                <SectionContainer>
-                  <h4>The Smartest Choice For Creatives Like You</h4>  
-                  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
+<SectionContainer>
+  <h4>The Smartest Choice For Creatives Like You</h4>  
+  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
 
-                    <ul>
-                      <li> 
-                        <div className="fimg">
-                       <img src={ficon1} />
-                       </div>
-                       <div className="fcaption">
-                        <h5>High-quality stock content</h5>
-                        <p>Download scroll-stopping images of the best quality
-                          to make your projects look professional.</p>
-                          </div>
-                      </li>
+    <ul>
+      <li> 
+        <div className="fimg">
+       <img src={ficon1} />
+       </div>
+       <div className="fcaption">
+        <h5>High-quality stock content</h5>
+        <p>Download scroll-stopping images of the best quality
+          to make your projects look professional.</p>
+          </div>
+      </li>
 
-                      <li> 
-                        <div className="fimg">
-                       <img src={ficon2} />
-                       </div>
-                       <div className="fcaption">
-                        <h5>Ready-to-use assets</h5>
-                        <p>Download scroll-stopping images of the best quality
-                          to make your projects look professional.</p>
-                          </div>
-                      </li>
+      <li> 
+        <div className="fimg">
+       <img src={ficon2} />
+       </div>
+       <div className="fcaption">
+        <h5>Ready-to-use assets</h5>
+        <p>Download scroll-stopping images of the best quality
+          to make your projects look professional.</p>
+          </div>
+      </li>
 
-                      <li> 
-                        <div className="fimg">
-                       <img src={ficon3} />
-                       </div>
-                       <div className="fcaption">
-                        <h5>Guaranteed search results</h5>
-                        <p>Download scroll-stopping images of the best quality
-                          to make your projects look professional.</p>
-                          </div>
-                      </li>
+      <li> 
+        <div className="fimg">
+       <img src={ficon3} />
+       </div>
+       <div className="fcaption">
+        <h5>Guaranteed search results</h5>
+        <p>Download scroll-stopping images of the best quality
+          to make your projects look professional.</p>
+          </div>
+      </li>
 
-                      <li> 
-                        <div className="fimg">
-                       <img src={ficon4} />
-                       </div>
-                       <div className="fcaption">
-                        <h5>Fresh content everyday</h5>
-                        <p>Download scroll-stopping images of the best quality
-                          to make your projects look professional.</p>
-                          </div>
-                      </li>
-                    </ul>
-                    </SectionContainer>
+      <li> 
+        <div className="fimg">
+       <img src={ficon4} />
+       </div>
+       <div className="fcaption">
+        <h5>Fresh content everyday</h5>
+        <p>Download scroll-stopping images of the best quality
+          to make your projects look professional.</p>
+          </div>
+      </li>
+    </ul>
+    </SectionContainer>
 
-                  </Uxfeatured> 
+  </Uxfeatured> 
 
                   <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
     <img className="ticon" src={ticon} />
-  <h4>Top Trending Fonts <span>View All</span></h4>
+  <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
   <div className="fontlist">
-     <Link link="/"> <img src={serif} /> 
+     <Link link="/category/fonts/serif/"> <img src={serif} /> 
      <img className="ux_fview1" src={serif3} /> 
      <img className="ux_fview" src={serif2} /> 
  
@@ -268,7 +271,7 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/"> <img src={sans} />
+     <Link link="/category/fonts/sans-serif/"> <img src={sans} />
      <img className="ux_fview1" src={sans3} /> 
      <img className="ux_fview" src={sans2} /> 
      
@@ -279,7 +282,7 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/"> <img src={caligraphy} />
+     <Link link="/category/fonts/caligraphy"> <img src={caligraphy} />
      <img className="ux_fview1" src={caligraphy2} /> 
      <img className="ux_fview" src={caligraphy3} /> 
       </Link> 
@@ -290,7 +293,7 @@ const Theme = ({ state, actions }) => {
   </div>
 
   <div className="fontlist">
-     <Link link="/"> <img src={blackletter} /> 
+     <Link link="/category/fonts/blackletter"> <img src={blackletter} /> 
      <img className="ux_fview1" src={blackletter3} /> 
      <img className="ux_fview" src={blackletter2} /> 
      </Link> 
@@ -314,10 +317,13 @@ const Theme = ({ state, actions }) => {
                       <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
            help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<Link link="category/fonts/"> Explore Now </Link>
+<div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><img src={arrowicon} /></div>
+<img className="_psgif" src={ps_icon} />
                       </div>
 
-                      <div className="ux_action2"> <img src={psaction} />  </div>
+                      <div className="ux_action2">
+                      
+                         <img  src={psaction} />  </div>
                       </SectionContainer>
 
               </Photoshopaction>
@@ -331,7 +337,7 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
         <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
            help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<Link link="category/fonts/"> Explore Now </Link>
+<div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><img src={arrowicon} /></div>
         </div>
 
        
@@ -351,7 +357,7 @@ the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here. </p>  
-<Link link="category/fonts/"> Explore Now </Link>
+<div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><img src={arrowicon} /></div>
                       </div>
 
                       <div className="ux_action2"> <img src={graphics} />  </div>
@@ -372,7 +378,7 @@ the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here.</p>  
-<Link link="category/fonts/"> Explore Now </Link>
+<div className="d_btn"><Link link="category/themes/"> Download Now </Link><img src={arrowicon} /></div>
         </div>
 
        
@@ -380,15 +386,12 @@ You can instantly download thousands of Free Fonts from here.</p>
 
               </Uxtheme>
 
-
-
-
-              
-
-
-            </BannerSection> : ""}
-
-
+     </BannerSection> : ""}
+     {data.isHome ?
+<Recentitem>
+  Recent Published
+</Recentitem>
+:""}
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
@@ -399,6 +402,8 @@ You can instantly download thousands of Free Fonts from here.</p>
           </Switch>
         </Main>
       </div>
+
+    
 
       <Footer />
     </>
@@ -433,13 +438,21 @@ margin: auto;
 @media (max-width:575px){
   padding-top: 85px;
   width:80%;
-  h2{font-size:26px;}
+  h2{font-size:22px;}
   p{font-size:15px; font-weight:500;}
   width: 100%;
   
 }
 
+`;
 
+const Recentitem = styled.h4`
+clear: left;
+text-align: center;
+padding-top: 80px;
+margin-bottom: -25px;
+font-size: 36px;
+color: #15BE77;
 
 `;
 
@@ -687,7 +700,22 @@ padding: 80px 0px;
 .ux_action1{width:38%;
 margin-left:70px;
 margin-right:50px;
-float:left;}
+float:left;
+position:relative;
+._psgif {
+  position: absolute;
+  right: -110px;
+  width: 129px;
+  bottom: -127px;
+}
+.d_btn{display:flex;
+  :hover img{transform: translate(10px, 0px);
+    transition: all 0.4s; cursor:pointer;}
+  img {
+    margin-left: 10px;
+}
+}
+}
 a{text-decoration:none;}
 
   @media (max-width:767px){
@@ -711,6 +739,14 @@ background: linear-gradient(0deg, #FDE4C9 0%, rgba(253, 228, 201, 0) 100%, rgba(
 width:100%;
 padding-bottom: 50px;
 float: left;
+.d_btn{display:flex;
+  a{text-decoration:none;}
+  :hover img{transform: translate(10px, 0px);
+    transition: all 0.4s; cursor:pointer;}
+  img {
+    margin-left: 10px;
+}
+}
 padding:45px 0px;
 .ux_lightroom2{width: 41%;
   float: left;
@@ -746,6 +782,29 @@ padding-bottom: 50px;
 display:block;
 padding: 80px 0px;
 float:left;
+position:relative;
+&:after {
+  content:"";
+  background: #ED56A3;
+opacity: 0.35;
+filter: blur(125.5px);
+transform: matrix(-1, 0, 0, 1, 0, 0);
+width:200px;
+height:200px;
+display:block;
+z-index:999;
+position:absolute;
+left: 0px;
+top: 110px;
+}
+.d_btn{display:flex;
+  a{text-decoration:none;}
+  :hover img{transform: translate(10px, 0px);
+    transition: all 0.4s; cursor:pointer;}
+  img {
+    margin-left: 10px;
+}
+}
 padding-bottom:0px;
 
 .ux_action1{width:38%;
@@ -778,7 +837,17 @@ background: #e3cdff6b;
 width:100%;
 padding-bottom: 50px;
 float: left;
+.d_btn{display:flex;
+  a{text-decoration:none;}
+  :hover img{transform: translate(10px, 0px);
+    transition: all 0.4s; cursor:pointer;}
+  .d_btn img {
+    margin-left: 10px;
+}
+}
 padding:45px 0px;
+border-bottom-right-radius: 190px;
+border-bottom-left-radius: 190px;
 .ux_lightroom2{width: 41%;
   float: left;
   margin-left: 30px;}
@@ -808,7 +877,23 @@ const Trendingfonts = styled.trendingfonts`
 width: 100%;
 float: left;
 background:#EDF9F5;
-
+border-top-right-radius: 190px;
+border-top-left-radius: 190px;
+padding:30px 0px;
+position:relative;
+&:after {
+  content:"";
+  background: rgba(21, 190, 119, 0.35);
+opacity: 0.8;
+filter: blur(125.5px);
+width:330px;
+height:329px;
+display:block;
+z-index:999;
+position:absolute;
+right:0px;
+top:110px;
+}
 .font_wrapper{margin-left: 50px;
   position: relative;
   margin-top: 60px;
@@ -818,9 +903,9 @@ background:#EDF9F5;
 }
    .ticon {
     position: absolute;
-    left: -67px;
-    top: 0px;
-    width: 60px;
+    left: -117px;
+    top: 3px;
+    width: 100px;
 }
 h4{color:#15BE77;  margin-bottom:50px;
   span{text-align: right;
@@ -886,8 +971,29 @@ img:first-child{
 
 const Uxfeatured = styled.uxfeatured`
 
-list-style:none;
-text-align:center;
+list-style: none;
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    position:relative;
+
+&:after {
+  content:"";
+  background: rgba(255, 227, 80, 0.35);
+  opacity: 0.8;
+  filter: blur(125.5px);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+width:378px;
+height:377px;
+display:block;
+z-index:999;
+position:absolute;
+right:0px;
+top:0px;
+}
+
 ul{margin-top:50px;}
 p{font-size:16px;}
 li{display: inline-block;

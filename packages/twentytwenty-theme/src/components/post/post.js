@@ -366,14 +366,16 @@ after::{
 `;
 
 const TagsList = styled.tagslist`
-display:flex;
 margin-top:10px;
 list-style:none;
 li{background: #e4faf0;
-  padding: 10px 15px;
-  margin: 1px 10px;
+  margin: 5px 10px;
   border-radius: 7px;
-  font-size: 15px;}
+  font-size: 14px;
+  padding: 14px 45px;
+  display: inline-block;
+  cursor:pointer;
+  font-weight: 400;}
   a{color:#000; text-decoration:none;}
 
   @media (max-width:767px){
@@ -473,7 +475,6 @@ position: relative;
     height: 86px;
 button {     position: relative;
   top: -4px;
-  background: red;
   padding: 16px 53px;
   opacity: 1;
   z-index: 99;

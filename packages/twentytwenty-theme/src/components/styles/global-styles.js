@@ -835,6 +835,7 @@ header#site-header a{
 
 ul.dropdown-menu.multi-level li a {
   font-weight: 600 !important;
+  font-size:15px !important;
 }
 
 ul.dropdown-menu.multi-level li {
