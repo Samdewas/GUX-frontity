@@ -18,6 +18,7 @@ import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
 import GoogleAds from "../ads/GoogleAds";
+import Comments from "../globle/comments/index.js";
 
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
@@ -228,6 +229,8 @@ const Post = ({ state, actions, libraries }) => {
                     )}
                   </TagsList>
                 </div>
+             
+                <Comments postId={data.id} id="comments"/>
 
               </PostDiscription>
 
