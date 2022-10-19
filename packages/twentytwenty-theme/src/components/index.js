@@ -251,6 +251,60 @@ const Theme = ({ state, actions }) => {
 
                   </Uxfeatured> 
 
+                  <Trendingfonts>
+<SectionContainer>
+  <div className="font_wrapper">
+    <img className="ticon" src={ticon} />
+  <h4>Top Trending Fonts <span>View All</span></h4>
+  <div className="fontlist">
+     <Link link="/"> <img src={serif} /> 
+     <img className="ux_fview1" src={serif3} /> 
+     <img className="ux_fview" src={serif2} /> 
+ 
+     </Link> 
+     <div>
+      <span className="fname">Serif</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+  <div className="fontlist">
+     <Link link="/"> <img src={sans} />
+     <img className="ux_fview1" src={sans3} /> 
+     <img className="ux_fview" src={sans2} /> 
+     
+      </Link> 
+     <div>
+      <span className="fname"> Sans Serif</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+  <div className="fontlist">
+     <Link link="/"> <img src={caligraphy} />
+     <img className="ux_fview1" src={caligraphy2} /> 
+     <img className="ux_fview" src={caligraphy3} /> 
+      </Link> 
+     <div>
+      <span className="fname">Caligraphy </span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+
+  <div className="fontlist">
+     <Link link="/"> <img src={blackletter} /> 
+     <img className="ux_fview1" src={blackletter3} /> 
+     <img className="ux_fview" src={blackletter2} /> 
+     </Link> 
+     <div>
+      <span className="fname">Blackletter</span>
+      <span className="fcount">100 + Fonts</span>
+     </div>
+  </div>
+
+  </div>
+  </SectionContainer>
+
+</Trendingfonts>
+
               <Photoshopaction>
 
               <SectionContainer>
@@ -330,59 +384,7 @@ You can instantly download thousands of Free Fonts from here.</p>
 
 
               
-<Trendingfonts>
-<SectionContainer>
-  <div className="font_wrapper">
-    <img className="ticon" src={ticon} />
-  <h4>Top Trending Fonts <span>View All</span></h4>
-  <div className="fontlist">
-     <Link link="/"> <img src={serif} /> 
-     <img className="ux_fview1" src={serif3} /> 
-     <img className="ux_fview" src={serif2} /> 
- 
-     </Link> 
-     <div>
-      <span className="fname">Serif</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
-  <div className="fontlist">
-     <Link link="/"> <img src={sans} />
-     <img className="ux_fview1" src={sans3} /> 
-     <img className="ux_fview" src={sans2} /> 
-     
-      </Link> 
-     <div>
-      <span className="fname"> Sans Serif</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
-  <div className="fontlist">
-     <Link link="/"> <img src={caligraphy} />
-     <img className="ux_fview1" src={caligraphy2} /> 
-     <img className="ux_fview" src={caligraphy3} /> 
-      </Link> 
-     <div>
-      <span className="fname">Caligraphy </span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
 
-  <div className="fontlist">
-     <Link link="/"> <img src={blackletter} /> 
-     <img className="ux_fview1" src={blackletter3} /> 
-     <img className="ux_fview" src={blackletter2} /> 
-     </Link> 
-     <div>
-      <span className="fname">Blackletter</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
-
-  </div>
-  </SectionContainer>
-
-</Trendingfonts>
 
             </BannerSection> : ""}
 
@@ -679,7 +681,7 @@ const Photoshopaction = styled.photoshopaction`
 background:linear-gradient(180deg, #E2F6FF 0%, rgba(226, 246, 255, 0) 100%);
 width:100%;
 padding-bottom: 50px;
-display:block;
+float: left;
 padding: 80px 0px;
 
 .ux_action1{width:38%;
@@ -803,6 +805,10 @@ p{font-size:16px; line-height:30px; }
 `;
 
 const Trendingfonts = styled.trendingfonts`
+width: 100%;
+float: left;
+background:#EDF9F5;
+
 .font_wrapper{margin-left: 50px;
   position: relative;
   margin-top: 60px;

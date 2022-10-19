@@ -191,13 +191,14 @@ const Post = ({ state, actions, libraries }) => {
                 </DetailsTextInner>
               </DetailsText>
 
-              <PostDetailsImg>
+               {/* Post Featured image here we can put adsense here      */}
+              {/* <PostDetailsImg>
 
                 {state.theme.featuredMedia.showOnPost && (
                   <FeaturedImage id={post.featured_media} isSinglePost={true} />
                 )}
 
-              </PostDetailsImg>
+              </PostDetailsImg> */}
 
               <PostDiscription>
 
@@ -580,6 +581,7 @@ button{
 
 const PostDiscription = styled.discription`
 
+
 // p{
 //   font-size: 16px;
 //   margin-top: 20px;
@@ -588,6 +590,7 @@ const PostDiscription = styled.discription`
 
 img{
   margin: 20px 0px;
+  border-radius:5px;
 }
 
 button{
