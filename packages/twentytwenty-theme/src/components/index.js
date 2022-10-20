@@ -413,8 +413,6 @@ const BannerSection = styled.bannersection`
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
-
- 
 `;
 
 
@@ -527,7 +525,7 @@ li:nth-of-type(5):hover h3{ color:#a259ff;}
 @media (max-width:575px){
 
   margin-top:50px;
-  display: none;
+  display: grid;
   grid-template-columns: repeat(5,2fr);
   gap: 0px 0px;
   overflow-x: auto;
@@ -1021,13 +1019,16 @@ h4{color:#077A3A;
 .fcaption h5{margin-bottom:10px; font-weight:600; font-size:22px;}
 
 @media (max-width:767px){
-  display:none;
   margin-top:-130px;
 
   &:after {
     content:"";
   width:1px;
   height:1px;
+  z-index:999;
+  position:absolute;
+  right:0px;
+  top:0px;
   }
   .fimg{    width: 100px;
     float: none;
@@ -1037,7 +1038,6 @@ h4{color:#077A3A;
     width: 100%;
     margin-bottom: 0px;
     margin-left: 0px;
-    margin-right: 0px;
   
     .fcaption{    float: right;
       width: 80%;
