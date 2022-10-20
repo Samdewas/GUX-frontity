@@ -26,35 +26,35 @@ import Cate_img13 from "../assets/img/front/lr_active.png"
 import Cate_img14 from "../assets/img/front/gr_active.png"
 import Cate_img15 from "../assets/img/front/web_active.png"
 import psaction from "../assets/img/home/action.png"
-import serif  from "../assets/img/category/Serif/Serif1.png"
-import serif2  from "../assets/img/category/Serif/Serif2.png"
-import serif3  from "../assets/img/category/Serif/Serif3.png"
-import sans  from "../assets/img/category/Calligraphy/Calligraphy.png"
-import sans2  from "../assets/img/category/Calligraphy/Calligraphy2.png"
-import sans3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
-import caligraphy  from "../assets/img/category/Calligraphy/Calligraphy.png"
+import serif from "../assets/img/category/Serif/Serif1.png"
+import serif2 from "../assets/img/category/Serif/Serif2.png"
+import serif3 from "../assets/img/category/Serif/Serif3.png"
+import sans from "../assets/img/category/Calligraphy/Calligraphy.png"
+import sans2 from "../assets/img/category/Calligraphy/Calligraphy2.png"
+import sans3 from "../assets/img/category/Calligraphy/Calligraphy3.png"
+import caligraphy from "../assets/img/category/Calligraphy/Calligraphy.png"
 import caligraphy2 from "../assets/img/category/Calligraphy/Calligraphy2.png"
-import caligraphy3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
-import blackletter  from "../assets/img/category/Blackletter/Blackletter1.png"
-import blackletter2  from "../assets/img/category/Blackletter/Blackletter2.png"
-import blackletter3  from "../assets/img/category/Blackletter/Blackletter3.png"
-import ticon  from "../assets/img/home/t.gif"
-import ps_icon  from "../assets/img/home/pen.gif"
-import graphics  from "../assets/img/home/graphics.svg"
-import ficon1  from "../assets/img/home/high.svg"
-import ficon2  from "../assets/img/home/ready.svg"
-import ficon3  from "../assets/img/home/Guarantee.svg"
-import ficon4  from "../assets/img/home/fresh.svg"
-import websitet  from "../assets/img/home/website.png"
-import arrowicon  from "../assets/img/right.svg"
-import circle1  from "../assets/img/home/elipse1.svg"
+import caligraphy3 from "../assets/img/category/Calligraphy/Calligraphy3.png"
+import blackletter from "../assets/img/category/Blackletter/Blackletter1.png"
+import blackletter2 from "../assets/img/category/Blackletter/Blackletter2.png"
+import blackletter3 from "../assets/img/category/Blackletter/Blackletter3.png"
+import ticon from "../assets/img/home/t.gif"
+import ps_icon from "../assets/img/home/pen.gif"
+import graphics from "../assets/img/home/graphics.svg"
+import ficon1 from "../assets/img/home/high.svg"
+import ficon2 from "../assets/img/home/ready.svg"
+import ficon3 from "../assets/img/home/Guarantee.svg"
+import ficon4 from "../assets/img/home/fresh.svg"
+import websitet from "../assets/img/home/website.png"
+import arrowicon from "../assets/img/right.svg"
+import circle1 from "../assets/img/home/elipse1.svg"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 import Link from "@frontity/components/link"
-import Lazyload from "./lazyloading/lazyload";
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const SectionContainer = styled.div`
 margin-left: auto;
@@ -73,7 +73,7 @@ max-width: 130rem;
  */
 const Theme = ({ state, actions }) => {
   // Get information about the current URL.
-  
+
   const data = state.source.get(state.router.link);
   const [ishover, setIshover] = useState("");
   const { searchQuery } = state.source.get(state.router.link);
@@ -147,8 +147,10 @@ const Theme = ({ state, actions }) => {
           {data.isHome ?
             <BannerSection>
               {data.isHome ?
-                <Lazyload className="banner_img" src={BannerBg} /> :   
-                <Lazyload className="banner_img" src={BannerBg} />}
+                <LazyLoadImage
+                  effect="blur" className="banner_img" src={BannerBg} /> :
+                <LazyLoadImage
+                  effect="blur" className="banner_img" src={BannerBg} />}
               <SectionContainer size="large">
 
                 <BannerInner>
@@ -176,7 +178,8 @@ const Theme = ({ state, actions }) => {
                       placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                       name="search"
                     />
-                    <Lazyload className="srch_icon" src={searchicon} />
+                    <LazyLoadImage
+                      effect="blur" className="srch_icon" src={searchicon} />
                     <SearchButton bg={primary}>Search</SearchButton>
                   </SearchForm>
                 </div>
@@ -185,214 +188,245 @@ const Theme = ({ state, actions }) => {
                   {data.isHome ?
                     <Uxcategory>
 
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="/category/fonts/"> <Lazyload src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="/category/add-ons/"> <Lazyload src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="/category/add-ons/lightroom-preset/"> <Lazyload src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="/category/graphics/"> <Lazyload src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="/category/themes/"> <Lazyload src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <LazyLoadImage
+                        effect="blur" src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <LazyLoadImage
+                        effect="blur" src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <LazyLoadImage
+                        effect="blur" src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <LazyLoadImage
+                        effect="blur" src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <LazyLoadImage
+                        effect="blur" src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
 
 
                     </Uxcategory> : ""}
 
                 </div>
 
-                 
+
 
               </SectionContainer>
 
               <Uxfeatured>
 
-<SectionContainer>
-  <h4>The Smartest Choice For Creatives Like You</h4>  
-  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
+                <SectionContainer>
+                  <h4>The Smartest Choice For Creatives Like You</h4>
+                  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
 
-    <ul>
-      <li> 
-        <div className="fimg">
-          <Lazyload src={ficon1} />
-       </div>
-       <div className="fcaption">
-        <h5>High-quality stock content</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
-          </div>
-      </li>
+                  <ul>
+                    <li>
+                      <div className="fimg">
+                        <LazyLoadImage
+                          effect="blur" src={ficon1} />
+                      </div>
+                      <div className="fcaption">
+                        <h5>High-quality stock content</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                      </div>
+                    </li>
 
-      <li> 
-        <div className="fimg">
-       <Lazyload src={ficon2} />
-       </div>
-       <div className="fcaption">
-        <h5>Ready-to-use assets</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
-          </div>
-      </li>
+                    <li>
+                      <div className="fimg">
+                        <LazyLoadImage
+                          effect="blur" src={ficon2} />
+                      </div>
+                      <div className="fcaption">
+                        <h5>Ready-to-use assets</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                      </div>
+                    </li>
 
-      <li> 
-        <div className="fimg">
-       <Lazyload src={ficon3} />
-       </div>
-       <div className="fcaption">
-        <h5>Guaranteed search results</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
-          </div>
-      </li>
+                    <li>
+                      <div className="fimg">
+                        <LazyLoadImage
+                          effect="blur" src={ficon3} />
+                      </div>
+                      <div className="fcaption">
+                        <h5>Guaranteed search results</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                      </div>
+                    </li>
 
-      <li> 
-        <div className="fimg">
-       <Lazyload src={ficon4} />
-       </div>
-       <div className="fcaption">
-        <h5>Fresh content everyday</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
-          </div>
-      </li>
-    </ul>
-    </SectionContainer>
+                    <li>
+                      <div className="fimg">
+                        <LazyLoadImage
+                          effect="blur" src={ficon4} />
+                      </div>
+                      <div className="fcaption">
+                        <h5>Fresh content everyday</h5>
+                        <p>Download scroll-stopping images of the best quality
+                          to make your projects look professional.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </SectionContainer>
 
-  </Uxfeatured> 
+              </Uxfeatured>
 
-                  <Trendingfonts>
-<SectionContainer>
-  <div className="font_wrapper">
-    <Lazyload className="ticon" src={ticon} />
-  <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
-  <div className="fontlist">
-     <Link link="/category/fonts/serif/"> <Lazyload src={serif} /> 
-     <Lazyload className="ux_fview1" src={serif3} /> 
-     <Lazyload className="ux_fview" src={serif2} /> 
- 
-     </Link> 
-     <div>
-      <span className="fname">Serif</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
-  <div className="fontlist">
-     <Link link="/category/fonts/sans-serif/"> <Lazyload src={sans} />
-     <Lazyload className="ux_fview1" src={sans3} /> 
-     <Lazyload className="ux_fview" src={sans2} /> 
-     
-      </Link> 
-     <div>
-      <span className="fname"> Sans Serif</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
-  <div className="fontlist">
-     <Link link="/category/fonts/caligraphy"> <Lazyload src={caligraphy} />
-     <Lazyload className="ux_fview1" src={caligraphy2} /> 
-     <Lazyload className="ux_fview" src={caligraphy3} /> 
-      </Link> 
-     <div>
-      <span className="fname">Caligraphy </span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
+              <Trendingfonts>
+                <SectionContainer>
+                  <div className="font_wrapper">
+                    <LazyLoadImage
+                      effect="blur" className="ticon" src={ticon} />
+                    <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
+                    <div className="fontlist">
+                      <Link link="/category/fonts/serif/"> <LazyLoadImage
+                        effect="blur" src={serif} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview1" src={serif3} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview" src={serif2} />
 
-  <div className="fontlist">
-     <Link link="/category/fonts/blackletter"> <Lazyload src={blackletter} /> 
-     <Lazyload className="ux_fview1" src={blackletter3} /> 
-     <Lazyload className="ux_fview" src={blackletter2} /> 
-     </Link> 
-     <div>
-      <span className="fname">Blackletter</span>
-      <span className="fcount">100 + Fonts</span>
-     </div>
-  </div>
+                      </Link>
+                      <div>
+                        <span className="fname">Serif</span>
+                        <span className="fcount">100 + Fonts</span>
+                      </div>
+                    </div>
+                    <div className="fontlist">
+                      <Link link="/category/fonts/sans-serif/"> <LazyLoadImage
+                        effect="blur" src={sans} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview1" src={sans3} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview" src={sans2} />
 
-  </div>
-  </SectionContainer>
+                      </Link>
+                      <div>
+                        <span className="fname"> Sans Serif</span>
+                        <span className="fcount">100 + Fonts</span>
+                      </div>
+                    </div>
+                    <div className="fontlist">
+                      <Link link="/category/fonts/caligraphy"> <LazyLoadImage
+                        effect="blur" src={caligraphy} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview1" src={caligraphy2} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview" src={caligraphy3} />
+                      </Link>
+                      <div>
+                        <span className="fname">Caligraphy </span>
+                        <span className="fcount">100 + Fonts</span>
+                      </div>
+                    </div>
 
-</Trendingfonts>
+                    <div className="fontlist">
+                      <Link link="/category/fonts/blackletter"> <LazyLoadImage
+                        effect="blur" src={blackletter} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview1" src={blackletter3} />
+                        <LazyLoadImage
+                          effect="blur" className="ux_fview" src={blackletter2} />
+                      </Link>
+                      <div>
+                        <span className="fname">Blackletter</span>
+                        <span className="fcount">100 + Fonts</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </SectionContainer>
+
+              </Trendingfonts>
 
               <Photoshopaction>
 
-              <SectionContainer>
+                <SectionContainer>
 
-                      <div className="ux_action1">
-                      <h4>Photoshop Actions</h4>
-                      <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-           help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-<Lazyload className="_psgif" src={ps_icon} />
-                      </div>
+                  <div className="ux_action1">
+                    <h4>Photoshop Actions</h4>
+                    <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+                      help you achieve an elegant look too.
+                      Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>
+                    <div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><LazyLoadImage
+                      effect="blur" src={arrowicon} /></div>
+                    <LazyLoadImage
+                      effect="blur" className="_psgif" src={ps_icon} />
+                  </div>
 
-                      <div className="ux_action2">
-                      
-                         <Lazyload  src={psaction} />  </div>
-                      </SectionContainer>
+                  <div className="ux_action2">
+
+                    <LazyLoadImage
+                      effect="blur" src={psaction} />  </div>
+                </SectionContainer>
 
               </Photoshopaction>
 
               <Lightroompreset>
-                    <div className="overlay1">
-<SectionContainer>
-<div className="ux_lightroom2"> <Lazyload src={psaction} />  </div>            
-        <div className="ux_lightroom1">
-        <h4>Lightroom Preset</h4>
-        <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-           help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-        </div>
+                <div className="overlay1">
+                  <SectionContainer>
+                    <div className="ux_lightroom2"> <LazyLoadImage
+                      effect="blur" src={psaction} />  </div>
+                    <div className="ux_lightroom1">
+                      <h4>Lightroom Preset</h4>
+                      <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+                        help you achieve an elegant look too.
+                        Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>
+                      <div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><LazyLoadImage
+                        effect="blur" src={arrowicon} /></div>
+                    </div>
 
-       
-        </SectionContainer>
-        </div>
-</Lightroompreset>
 
-            <Graphics>
+                  </SectionContainer>
+                </div>
+              </Lightroompreset>
 
-              <SectionContainer>
+              <Graphics>
 
-                      <div className="ux_action1">
-                      <h4>Graphics & Mockups</h4>
-                      <p>  The use of a great-looking font is the main part of making
-any kind of design look more professional. Of course, to reach
-the same degree of professionalism you dont always have to
-use premium fonts. If you cant afford to spend money on costly
-fonts to make your designs appear great then dont panic.
-You can instantly download thousands of Free Fonts from here. </p>  
-<div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-                      </div>
+                <SectionContainer>
 
-                      <div className="ux_action2"> <Lazyload src={graphics} />  </div>
-                      </SectionContainer>
+                  <div className="ux_action1">
+                    <h4>Graphics & Mockups</h4>
+                    <p>  The use of a great-looking font is the main part of making
+                      any kind of design look more professional. Of course, to reach
+                      the same degree of professionalism you dont always have to
+                      use premium fonts. If you cant afford to spend money on costly
+                      fonts to make your designs appear great then dont panic.
+                      You can instantly download thousands of Free Fonts from here. </p>
+                    <div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><LazyLoadImage
+                      effect="blur" src={arrowicon} /></div>
+                  </div>
+
+                  <div className="ux_action2"> <LazyLoadImage
+                    effect="blur" src={graphics} />  </div>
+                </SectionContainer>
 
               </Graphics>
 
 
               <Uxtheme>
 
-              <SectionContainer>
-<div className="ux_lightroom2"> <Lazyload src={websitet} />  </div>            
-        <div className="ux_lightroom1">
-        <h4>Website Themes</h4>
-        <p> The use of a great-looking font is the main part of making
-any kind of design look more professional. Of course, to reach
-the same degree of professionalism you dont always have to
-use premium fonts. If you cant afford to spend money on costly
-fonts to make your designs appear great then dont panic.
-You can instantly download thousands of Free Fonts from here.</p>  
-<div className="d_btn"><Link link="category/themes/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-        </div>
+                <SectionContainer>
+                  <div className="ux_lightroom2"> <LazyLoadImage
+                    effect="blur" src={websitet} />  </div>
+                  <div className="ux_lightroom1">
+                    <h4>Website Themes</h4>
+                    <p> The use of a great-looking font is the main part of making
+                      any kind of design look more professional. Of course, to reach
+                      the same degree of professionalism you dont always have to
+                      use premium fonts. If you cant afford to spend money on costly
+                      fonts to make your designs appear great then dont panic.
+                      You can instantly download thousands of Free Fonts from here.</p>
+                    <div className="d_btn"><Link link="category/themes/"> Download Now </Link><LazyLoadImage
+                      effect="blur" src={arrowicon} /></div>
+                  </div>
 
-       
-        </SectionContainer>
+
+                </SectionContainer>
 
               </Uxtheme>
 
-     </BannerSection> : ""}
-     {data.isHome ?
-<Recentitem>
-  Recent Published
-</Recentitem>
-:""}
+            </BannerSection> : ""}
+          {data.isHome ?
+            <Recentitem>
+              Recent Published
+            </Recentitem>
+            : ""}
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
@@ -404,7 +438,7 @@ You can instantly download thousands of Free Fonts from here.</p>
         </Main>
       </div>
 
-    
+
 
       <Footer />
     </>
@@ -928,14 +962,14 @@ h4{color:#15BE77;  margin-bottom:50px;
 
   }
 .ux_fview{ position: absolute;
-  top: 4px;
+  top: -7px;
   z-index: 999;
   width: 87%;}
   .ux_fview1{position: absolute;
-    top: -5px;
+    top: -13px;
     z-index: 99;
     width: 79%;}  
-div:first-child{
+img:first-child{
   position: relative;
   top: 0px;
   z-index:9999999;
