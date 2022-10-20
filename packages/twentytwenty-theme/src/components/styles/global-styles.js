@@ -81,6 +81,7 @@ const documentSetup = (colors) => css`
     font-size: 1.8rem;
     letter-spacing: -0.015em;
     text-align: left;
+    font-display: "swap";
   }
 
   *,
@@ -153,6 +154,7 @@ const elementBase = (colors) => css`
     letter-spacing: -0.0415625em;
     line-height: 1.25;
     margin: 3.5rem 0 2rem;
+    font-display: "swap";
   }
 
   h1,
