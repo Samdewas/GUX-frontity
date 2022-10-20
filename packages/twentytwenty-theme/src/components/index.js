@@ -13,31 +13,18 @@ import SkipLink from "./styles/skip-link";
 import MetaTitle from "./page-meta-title";
 import PageError from "./page-error";
 import '../assets/css/custome.css';
-import BannerBg from "../assets/img/banner.png"
-import searchicon from "../assets/img/search.png"
+import BannerBg from "../assets/img/banner.svg"
+import searchicon from "../assets/img/search.svg"
 import Cate_img1 from "../assets/img/front/font_active.svg"
-import Cate_img2 from "../assets/img/front/psd.png"
-import Cate_img3 from "../assets/img/front/lr.png"
-import Cate_img4 from "../assets/img/front/gr.png"
-import Cate_img5 from "../assets/img/front/web.png"
+import Cate_img2 from "../assets/img/front/psd.svg"
+import Cate_img3 from "../assets/img/front/lr.svg"
+import Cate_img4 from "../assets/img/front/gr.svg"
+import Cate_img5 from "../assets/img/front/web.svg"
 import Cate_img11 from "../assets/img/front/font.svg"
-import Cate_img12 from "../assets/img/front/psd_active.png"
-import Cate_img13 from "../assets/img/front/lr_active.png"
-import Cate_img14 from "../assets/img/front/gr_active.png"
-import Cate_img15 from "../assets/img/front/web_active.png"
-import psaction from "../assets/img/home/action.png"
-import serif  from "../assets/img/category/Serif/Serif1.png"
-import serif2  from "../assets/img/category/Serif/Serif2.png"
-import serif3  from "../assets/img/category/Serif/Serif3.png"
-import sans  from "../assets/img/category/Calligraphy/Calligraphy.png"
-import sans2  from "../assets/img/category/Calligraphy/Calligraphy2.png"
-import sans3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
-import caligraphy  from "../assets/img/category/Calligraphy/Calligraphy.png"
-import caligraphy2 from "../assets/img/category/Calligraphy/Calligraphy2.png"
-import caligraphy3  from "../assets/img/category/Calligraphy/Calligraphy3.png"
-import blackletter  from "../assets/img/category/Blackletter/Blackletter1.png"
-import blackletter2  from "../assets/img/category/Blackletter/Blackletter2.png"
-import blackletter3  from "../assets/img/category/Blackletter/Blackletter3.png"
+import Cate_img12 from "../assets/img/front/psd_active.svg"
+import Cate_img13 from "../assets/img/front/lr_active.svg"
+import Cate_img14 from "../assets/img/front/gr_active.svg"
+import Cate_img15 from "../assets/img/front/web_active.svg"
 import ticon  from "../assets/img/home/t.gif"
 import ps_icon  from "../assets/img/home/pen.gif"
 import graphics  from "../assets/img/home/graphics.svg"
@@ -45,9 +32,7 @@ import ficon1  from "../assets/img/home/high.svg"
 import ficon2  from "../assets/img/home/ready.svg"
 import ficon3  from "../assets/img/home/Guarantee.svg"
 import ficon4  from "../assets/img/home/fresh.svg"
-import websitet  from "../assets/img/home/website.png"
 import arrowicon  from "../assets/img/right.svg"
-import circle1  from "../assets/img/home/elipse1.svg"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
@@ -261,9 +246,9 @@ const Theme = ({ state, actions }) => {
     <Lazyload className="ticon" src={ticon} />
   <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
   <div className="fontlist">
-     <Link link="/category/fonts/serif/"> <Lazyload src={serif} /> 
-     <Lazyload className="ux_fview1" src={serif3} /> 
-     <Lazyload className="ux_fview" src={serif2} /> 
+     <Link link="/category/fonts/serif/"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Serif1.webp" /> 
+     <Lazyload className="ux_fview1" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Serif3.webp" /> 
+     <Lazyload className="ux_fview" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Serif2.webp" /> 
  
      </Link> 
      <div>
@@ -272,9 +257,9 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/sans-serif/"> <Lazyload src={sans} />
-     <Lazyload className="ux_fview1" src={sans3} /> 
-     <Lazyload className="ux_fview" src={sans2} /> 
+     <Link link="/category/fonts/sans-serif/"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy.webp" />
+     <Lazyload className="ux_fview1" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy3.webp" /> 
+     <Lazyload className="ux_fview" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy2.webp" /> 
      
       </Link> 
      <div>
@@ -283,9 +268,9 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/caligraphy"> <Lazyload src={caligraphy} />
-     <Lazyload className="ux_fview1" src={caligraphy2} /> 
-     <Lazyload className="ux_fview" src={caligraphy3} /> 
+     <Link link="/category/fonts/caligraphy"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy.webp" />
+     <Lazyload className="ux_fview1" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy3.webp" /> 
+     <Lazyload className="ux_fview" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Calligraphy2.webp" /> 
       </Link> 
      <div>
       <span className="fname">Caligraphy </span>
@@ -294,9 +279,9 @@ const Theme = ({ state, actions }) => {
   </div>
 
   <div className="fontlist">
-     <Link link="/category/fonts/blackletter"> <Lazyload src={blackletter} /> 
-     <Lazyload className="ux_fview1" src={blackletter3} /> 
-     <Lazyload className="ux_fview" src={blackletter2} /> 
+     <Link link="/category/fonts/blackletter"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Blackletter1.webp" /> 
+     <Lazyload className="ux_fview1" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Blackletter3.webp" /> 
+     <Lazyload className="ux_fview" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Blackletter2.webp" /> 
      </Link> 
      <div>
       <span className="fname">Blackletter</span>
@@ -324,7 +309,7 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
 
                       <div className="ux_action2">
                       
-                         <Lazyload  src={psaction} />  </div>
+                         <Lazyload  src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/action.webp" />  </div>
                       </SectionContainer>
 
               </Photoshopaction>
@@ -332,7 +317,7 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
               <Lightroompreset>
                     <div className="overlay1">
 <SectionContainer>
-<div className="ux_lightroom2"> <Lazyload src={psaction} />  </div>            
+<div className="ux_lightroom2"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/action.webp" />  </div>            
         <div className="ux_lightroom1">
         <h4>Lightroom Preset</h4>
         <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
@@ -370,7 +355,7 @@ You can instantly download thousands of Free Fonts from here. </p>
               <Uxtheme>
 
               <SectionContainer>
-<div className="ux_lightroom2"> <Lazyload src={websitet} />  </div>            
+<div className="ux_lightroom2"> <Lazyload src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/website.webp" />  </div>            
         <div className="ux_lightroom1">
         <h4>Website Themes</h4>
         <p> The use of a great-looking font is the main part of making

@@ -5,14 +5,8 @@ import ArchiveHeader from "./archive-header";
 import Pagination from "./archive-pagination";
 import PostSeparator from "../post/post-separator";
 import Post from "../post";
-import Circle1 from "../../assets/img/C_circle.png";
-import fontbg from "../../assets/img/category/font.png";
-import addon from "../../assets/img/category/Photoshop.png";
-import graphics from "../../assets/img/category/Graphics.png";
-import themes from "../../assets/img/category/Website.png";
-import lightroom from "../../assets/img/category/Lightroom.png";
-import BannerBg from "../../assets/img/banner.png"
-import searchicon from "../../assets/img/search.png"
+import BannerBg from "../../assets/img/banner.svg"
+import searchicon from "../../assets/img/search.svg"
 import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
@@ -123,17 +117,17 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
-              <img className="banner_img" src={fontbg} /> :
+              <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-font.webp" /> :
               state.router.link?.includes("/category/add-ons/") ?
-                <img className="banner_img" src={addon} /> :
+                <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Photoshop.webp"  /> :
                 state.router.link?.includes("/category/graphics/") ?
-                  <img className="banner_img" src={graphics} /> :
+                  <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Graphics.webp"  /> :
                   state.router.link?.includes("/category/themes/") ?
-                    <img className="banner_img" src={themes} /> :
+                    <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Website.webp"  /> :
                     state.router.link?.includes("/category/add-ons/photoshop-action/") ?
-                      <img className="banner_img" src={addon} /> :
+                      <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Photoshop.webp"  /> :
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
-                        <img className="banner_img" src={lightroom} /> :
+                        <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Lightroom.webp"  /> :
                         <img className="banner_img" src={BannerBg} />
           }
           <SectionContainer size="large">
