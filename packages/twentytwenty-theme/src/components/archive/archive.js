@@ -117,17 +117,17 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
-              <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-font.webp" /> :
+              <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-font.webp" /> :
               state.router.link?.includes("/category/add-ons/") ?
-                <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Photoshop.webp"  /> :
+                <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
                 state.router.link?.includes("/category/graphics/") ?
-                  <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Graphics.webp"  /> :
+                  <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Graphics.webp"  /> :
                   state.router.link?.includes("/category/themes/") ?
-                    <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Website.webp"  /> :
+                    <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
                     state.router.link?.includes("/category/add-ons/photoshop-action/") ?
-                      <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Photoshop.webp"  /> :
+                      <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
-                        <img className="banner_img" src="https://graphicuxmedia.s3.us-west-1.amazonaws.com/wp-content/frontity/px-Lightroom.webp"  /> :
+                        <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
                         <img className="banner_img" src={BannerBg} />
           }
           <SectionContainer size="large">
