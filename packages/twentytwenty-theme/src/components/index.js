@@ -240,14 +240,14 @@ const Theme = ({ state, actions }) => {
 
   </Uxfeatured> 
 
-                  {/* <Trendingfonts>
+                  <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
     <Lazyload className="ticon" src={ticon} />
   <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
   <div className="fontlist">
  
-     <Link link="/category/fonts/serif/"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Serif1.webp" /> 
+     <Link link="/category/fonts/serif/"> <Lazyload className="f_hover" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Serif1.webp" /> 
      <Lazyload className="ux_fview1" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Serif3.webp" /> 
      <Lazyload className="ux_fview" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Serif2.webp" /> 
  
@@ -258,7 +258,7 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/sans-serif/"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy.webp" />
+     <Link link="/category/fonts/sans-serif/"> <Lazyload className="f_hover" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy.webp" />
      <Lazyload className="ux_fview1" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy3.webp" /> 
      <Lazyload className="ux_fview" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy2.webp" /> 
      
@@ -269,7 +269,7 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/caligraphy"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy.webp" />
+     <Link link="/category/fonts/caligraphy"> <Lazyload className="f_hover" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy.webp" />
      <Lazyload className="ux_fview1" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy3.webp" /> 
      <Lazyload className="ux_fview" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Calligraphy2.webp" /> 
       </Link> 
@@ -280,7 +280,7 @@ const Theme = ({ state, actions }) => {
   </div>
 
   <div className="fontlist">
-     <Link link="/category/fonts/blackletter"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Blackletter1.webp" /> 
+     <Link link="/category/fonts/blackletter"> <Lazyload className="f_hover" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Blackletter1.webp" /> 
      <Lazyload className="ux_fview1" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Blackletter3.webp" /> 
      <Lazyload className="ux_fview" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Blackletter2.webp" /> 
      </Link> 
@@ -293,9 +293,9 @@ const Theme = ({ state, actions }) => {
   </div>
   </SectionContainer>
 
-</Trendingfonts> */}
+</Trendingfonts>
 
-              {/* <Photoshopaction>
+              <Photoshopaction>
 
               <SectionContainer>
 
@@ -371,7 +371,7 @@ You can instantly download thousands of Free Fonts from here.</p>
        
         </SectionContainer>
 
-              </Uxtheme> */}
+              </Uxtheme>
 
      </BannerSection> : ""}
      {data.isHome ?
@@ -708,8 +708,17 @@ a{text-decoration:none;}
   @media (max-width:767px){
       width: 90%;
       margin-left: 20px;
-      margin-bottom:20px;
       margin-right: 0px;
+      padding-bottom: 0px;
+      .ux_action1{width:95%; margin-left:0px;
+        ._psgif {
+          position: absolute;
+          width: 129px;
+          bottom: -335px;
+          left: 0px;
+      }
+        
+      }
 
 }
 h4{color:#2BBBFA;}
@@ -747,6 +756,8 @@ h4{color:#F8A64C;}
 p{font-size:16px; line-height:30px; }
 
 @media (max-width:767px){
+
+  margin-top:20px;
   .ux_lightroom2{width: 90%;
     float: left;
     margin-left: 30px;}
@@ -904,54 +915,54 @@ h4{color:#15BE77;  margin-bottom:50px;
 .fontlist{display:inline-block; width: 22%;
   margin: 0px 15px;
   position:relative;
-  div{ margin-top: 20px;
+    div{ margin-top: 20px;
     display: flex;
     justify-content: space-between;
-  span:first-child{font-size: 20px;
+  .fname{font-size: 20px;
     font-weight: 800;}
     span:last-child{font-size: 14px;
       color: #9f9f9f;}
 
   }
+
 .ux_fview{ position: absolute;
   top: -7px;
   z-index: 999;
   width: 87%;}
+
+
   .ux_fview1{position: absolute;
     top: -13px;
     z-index: 99;
-    width: 79%;}  
-img:first-child{
-  position: relative;
-  top: 0px;
-  z-index:9999999;
-  width:100%;
+    width: 79%;} 
+    .f_hover{
+      position: relative;
+      top: -16px;
+      z-index:9999999;
+      width:100%;
+    }
+    :hover .ux_fview1 {transform: translate(0px, -6px); transition: all 0.4s;}
 
-
-}
-
-:hover .ux_fview1 {transform: translate(0px, -6px); transition: all 0.4s;}
-}
 :hover .ux_fview {transform: translate(0px, -4px); transition: all 0.4s;}
-}
+  } 
+    
 
 
-.fontlist div{ margin: 15px 10px;
-  display: flex;
-  justify-content:
-   space-between;}
-   .fontlist div .fname{font-weight:bold; font-size:16px}  
-   .fontlist div .fcount{font-weight:normal; color:#7c7171; font-size:12px; }  
+
+
+
+
+ 
 
 @media (max-width:767px){
-
-  margin-left: 0px;
-  position: relative;
-  margin-top: 14px;
-  width: 100%;
-
-  .fontlist{display:inline;}
-
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+    .font_wrapper{margin-left:0px;
+      .fontlist{
+        width:90%;
+        margin-top: 30px;
+      }
+   }
 }
 
 `;
@@ -1006,6 +1017,35 @@ h4{color:#077A3A;
 }
 .fcaption p{font-size:16px;}
 .fcaption h5{margin-bottom:10px; font-weight:600; font-size:22px;}
+
+@media (max-width:767px){
+  margin-top:-130px;
+
+  &:after {
+    content:"";
+  width:1px;
+  height:1px;
+  }
+  .fimg{    width: 100px;
+    float: none;
+    margin: 25px auto;}
+  ul{margin: 0px;}
+  li{display: inline-block;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+  
+    .fcaption{    float: right;
+      width: 80%;
+      text-align: left;
+      margin-top: -36px;
+    h5{    margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 19px;}
+    }
+  }
+}
 
 `;
 

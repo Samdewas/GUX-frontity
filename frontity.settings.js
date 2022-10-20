@@ -2,7 +2,7 @@ const settings = {
   "name": "ux",
   "state": {
     "frontity": {
-      "url": "https://freepsdvn.com//",
+      "url": "https://graphicux.com",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -24,7 +24,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://freepsdvn.com//",
+          "url": "https://graphicux.com",
           "params": {
             "per_page": 14,
             "type": ["post", "page"],
