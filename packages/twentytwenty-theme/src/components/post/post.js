@@ -212,7 +212,7 @@ const Post = ({ state, actions, libraries }) => {
                       </UXdownload>
                
                         <Adwrapper className={downloadhover ? "chalu" : ""}>
-                        <GoogleAds />
+                        {/* <GoogleAds /> */}
                         </Adwrapper>
                     
                     </EntryContent>
@@ -273,7 +273,7 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    <GoogleAds />
+                    {/* <GoogleAds /> */}
                   </SidebarH>
 
                 </SideCateItem>
