@@ -68,8 +68,8 @@ const PostItem = ({
             <PostLink link={item.link}>
               <PostItemTitle
                 className="heading-size-1"
-                dangerouslySetInnerHTML={{ __html: item.title.rendered }}
-              />
+              >
+              <Html2React html={item.title.rendered} /></PostItemTitle>
             </PostLink>
             <ImgView>
               <img src={Eye} />  <span> 10 Views </span>
