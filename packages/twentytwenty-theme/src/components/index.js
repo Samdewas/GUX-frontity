@@ -53,6 +53,7 @@ import useFocusTrap from "./hooks/use-trap-focus";
 import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 import Link from "@frontity/components/link"
+import Lazyload from "./lazyloading/lazyload";
 
 
 const SectionContainer = styled.div`
@@ -146,8 +147,8 @@ const Theme = ({ state, actions }) => {
           {data.isHome ?
             <BannerSection>
               {data.isHome ?
-                <img className="banner_img" src={BannerBg} /> :   
-                <img className="banner_img" src={BannerBg} />}
+                <Lazyload className="banner_img" src={BannerBg} /> :   
+                <Lazyload className="banner_img" src={BannerBg} />}
               <SectionContainer size="large">
 
                 <BannerInner>
@@ -175,7 +176,7 @@ const Theme = ({ state, actions }) => {
                       placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                       name="search"
                     />
-                    <img className="srch_icon" src={searchicon} />
+                    <Lazyload className="srch_icon" src={searchicon} />
                     <SearchButton bg={primary}>Search</SearchButton>
                   </SearchForm>
                 </div>
@@ -184,11 +185,11 @@ const Theme = ({ state, actions }) => {
                   {data.isHome ?
                     <Uxcategory>
 
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <img src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <img src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <img src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <img src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="/category/fonts/"> <Lazyload src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="/category/add-ons/"> <Lazyload src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="/category/add-ons/lightroom-preset/"> <Lazyload src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="/category/graphics/"> <Lazyload src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="/category/themes/"> <Lazyload src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
 
 
                     </Uxcategory> : ""}
@@ -208,7 +209,7 @@ const Theme = ({ state, actions }) => {
     <ul>
       <li> 
         <div className="fimg">
-       <img src={ficon1} />
+          <Lazyload src={ficon1} />
        </div>
        <div className="fcaption">
         <h5>High-quality stock content</h5>
@@ -219,7 +220,7 @@ const Theme = ({ state, actions }) => {
 
       <li> 
         <div className="fimg">
-       <img src={ficon2} />
+       <Lazyload src={ficon2} />
        </div>
        <div className="fcaption">
         <h5>Ready-to-use assets</h5>
@@ -230,7 +231,7 @@ const Theme = ({ state, actions }) => {
 
       <li> 
         <div className="fimg">
-       <img src={ficon3} />
+       <Lazyload src={ficon3} />
        </div>
        <div className="fcaption">
         <h5>Guaranteed search results</h5>
@@ -241,7 +242,7 @@ const Theme = ({ state, actions }) => {
 
       <li> 
         <div className="fimg">
-       <img src={ficon4} />
+       <Lazyload src={ficon4} />
        </div>
        <div className="fcaption">
         <h5>Fresh content everyday</h5>
@@ -257,12 +258,12 @@ const Theme = ({ state, actions }) => {
                   <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
-    <img className="ticon" src={ticon} />
+    <Lazyload className="ticon" src={ticon} />
   <h4>Top Trending Fonts <span><Link link="/category/fonts/"> View All  </Link></span></h4>
   <div className="fontlist">
-     <Link link="/category/fonts/serif/"> <img src={serif} /> 
-     <img className="ux_fview1" src={serif3} /> 
-     <img className="ux_fview" src={serif2} /> 
+     <Link link="/category/fonts/serif/"> <Lazyload src={serif} /> 
+     <Lazyload className="ux_fview1" src={serif3} /> 
+     <Lazyload className="ux_fview" src={serif2} /> 
  
      </Link> 
      <div>
@@ -271,9 +272,9 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/sans-serif/"> <img src={sans} />
-     <img className="ux_fview1" src={sans3} /> 
-     <img className="ux_fview" src={sans2} /> 
+     <Link link="/category/fonts/sans-serif/"> <Lazyload src={sans} />
+     <Lazyload className="ux_fview1" src={sans3} /> 
+     <Lazyload className="ux_fview" src={sans2} /> 
      
       </Link> 
      <div>
@@ -282,9 +283,9 @@ const Theme = ({ state, actions }) => {
      </div>
   </div>
   <div className="fontlist">
-     <Link link="/category/fonts/caligraphy"> <img src={caligraphy} />
-     <img className="ux_fview1" src={caligraphy2} /> 
-     <img className="ux_fview" src={caligraphy3} /> 
+     <Link link="/category/fonts/caligraphy"> <Lazyload src={caligraphy} />
+     <Lazyload className="ux_fview1" src={caligraphy2} /> 
+     <Lazyload className="ux_fview" src={caligraphy3} /> 
       </Link> 
      <div>
       <span className="fname">Caligraphy </span>
@@ -293,9 +294,9 @@ const Theme = ({ state, actions }) => {
   </div>
 
   <div className="fontlist">
-     <Link link="/category/fonts/blackletter"> <img src={blackletter} /> 
-     <img className="ux_fview1" src={blackletter3} /> 
-     <img className="ux_fview" src={blackletter2} /> 
+     <Link link="/category/fonts/blackletter"> <Lazyload src={blackletter} /> 
+     <Lazyload className="ux_fview1" src={blackletter3} /> 
+     <Lazyload className="ux_fview" src={blackletter2} /> 
      </Link> 
      <div>
       <span className="fname">Blackletter</span>
@@ -317,13 +318,13 @@ const Theme = ({ state, actions }) => {
                       <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
            help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><img src={arrowicon} /></div>
-<img className="_psgif" src={ps_icon} />
+<div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><Lazyload src={arrowicon} /></div>
+<Lazyload className="_psgif" src={ps_icon} />
                       </div>
 
                       <div className="ux_action2">
                       
-                         <img  src={psaction} />  </div>
+                         <Lazyload  src={psaction} />  </div>
                       </SectionContainer>
 
               </Photoshopaction>
@@ -331,13 +332,13 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
               <Lightroompreset>
                     <div className="overlay1">
 <SectionContainer>
-<div className="ux_lightroom2"> <img src={psaction} />  </div>            
+<div className="ux_lightroom2"> <Lazyload src={psaction} />  </div>            
         <div className="ux_lightroom1">
         <h4>Lightroom Preset</h4>
         <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
            help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
-<div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><img src={arrowicon} /></div>
+<div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><Lazyload src={arrowicon} /></div>
         </div>
 
        
@@ -357,10 +358,10 @@ the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here. </p>  
-<div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><img src={arrowicon} /></div>
+<div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><Lazyload src={arrowicon} /></div>
                       </div>
 
-                      <div className="ux_action2"> <img src={graphics} />  </div>
+                      <div className="ux_action2"> <Lazyload src={graphics} />  </div>
                       </SectionContainer>
 
               </Graphics>
@@ -369,7 +370,7 @@ You can instantly download thousands of Free Fonts from here. </p>
               <Uxtheme>
 
               <SectionContainer>
-<div className="ux_lightroom2"> <img src={websitet} />  </div>            
+<div className="ux_lightroom2"> <Lazyload src={websitet} />  </div>            
         <div className="ux_lightroom1">
         <h4>Website Themes</h4>
         <p> The use of a great-looking font is the main part of making
@@ -378,7 +379,7 @@ the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here.</p>  
-<div className="d_btn"><Link link="category/themes/"> Download Now </Link><img src={arrowicon} /></div>
+<div className="d_btn"><Link link="category/themes/"> Download Now </Link><Lazyload src={arrowicon} /></div>
         </div>
 
        
@@ -927,14 +928,14 @@ h4{color:#15BE77;  margin-bottom:50px;
 
   }
 .ux_fview{ position: absolute;
-  top: -7px;
+  top: 4px;
   z-index: 999;
   width: 87%;}
   .ux_fview1{position: absolute;
-    top: -13px;
+    top: -5px;
     z-index: 99;
     width: 79%;}  
-img:first-child{
+div:first-child{
   position: relative;
   top: 0px;
   z-index:9999999;
