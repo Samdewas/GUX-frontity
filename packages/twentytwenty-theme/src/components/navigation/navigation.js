@@ -10,24 +10,24 @@ import Skelton from "../Skelton.js";
  */
 
 const Navigation = ({ state, actions }) => {
-  // useEffect(() => {
-  //   fetch(`${state.source.url}/wp-json/wp-api-menus/v2/menus/13`)
-  //     .then(response => response.text())
-  //     .then(result => {
-  //       var newdata = JSON.parse(result);
-  //       state.theme.menu = newdata;
-  //       newdata?.items?.map((val) => {
-  //       actions.source.fetch(val);
-  //       });
-  //     })
-  //     .catch(error => console.log('error', error));
-  // }, [])
+  useEffect(() => {
+    fetch(`${state.source.url}/wp-json/wp-api-menus/v2/menus/13`)
+      .then(response => response.text())
+      .then(result => {
+        var newdata = JSON.parse(result);
+        state.theme.menu = newdata;
+        newdata?.items?.map((val) => {
+        actions.source.fetch(val);
+        });
+      })
+      .catch(error => console.log('error', error));
+  }, [])
   return (
     <NavWrapper>
 
 
 
-      {/* <MenuNav>
+      <MenuNav>
         <ul>
         {state.theme.menu?.items ? 
         state.theme.menu?.items.map(val => 
@@ -80,7 +80,7 @@ const Navigation = ({ state, actions }) => {
         </>
         }
       </ul>
-      </MenuNav> */}
+      </MenuNav>
     </NavWrapper>
   );
 }
