@@ -382,7 +382,7 @@ You can instantly download thousands of Free Fonts from here.</p>
           <Switch>
             <Loading when={data.isFetching} />
             <SearchResults when={data.isSearch} />
-            <Archive when={data.isArchive} />
+            <Archive when={data.isArchive && !data.isHome} />
             <Post when={data.isPostType && data.isPost} />
             <PageError when={data.isError} />
             <Contact when={state.router.link.includes("/contact-us")} />
