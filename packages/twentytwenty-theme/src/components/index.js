@@ -166,7 +166,7 @@ const Theme = ({ state, actions }) => {
                   </SearchForm>
                 </div>
 
-                <div>
+                {/* <div>
                   {data.isHome ?
                     <Uxcategory>
 
@@ -179,13 +179,13 @@ const Theme = ({ state, actions }) => {
 
                     </Uxcategory> : ""}
 
-                </div>
+                </div> */}
 
                  
 
               </SectionContainer>
 
-              <Uxfeatured>
+              {/* <Uxfeatured>
 
 <SectionContainer>
   <h4>The Smartest Choice For Creatives Like You</h4>  
@@ -238,9 +238,9 @@ const Theme = ({ state, actions }) => {
     </ul>
     </SectionContainer>
 
-  </Uxfeatured> 
+  </Uxfeatured>  */}
 
-                  <Trendingfonts>
+                  {/* <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
     <Lazyload className="ticon" src={ticon} />
@@ -293,9 +293,9 @@ const Theme = ({ state, actions }) => {
   </div>
   </SectionContainer>
 
-</Trendingfonts>
+</Trendingfonts> */}
 
-              <Photoshopaction>
+              {/* <Photoshopaction>
 
               <SectionContainer>
 
@@ -371,7 +371,7 @@ You can instantly download thousands of Free Fonts from here.</p>
        
         </SectionContainer>
 
-              </Uxtheme>
+              </Uxtheme> */}
 
      </BannerSection> : ""}
      {data.isHome ?
