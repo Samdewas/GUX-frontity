@@ -250,6 +250,7 @@ export const EntryContent = styled.div`
   line-height: 1.5;
   max-width: 58rem;
   font-family:'Poppins', sans-serif;
+  font-display:swap;
   letter-spacing: normal;
 
   @media (min-width: 700px) {
@@ -278,6 +279,7 @@ export const EntryContent = styled.div`
   .wp-caption-text,
   .wp-block-file {
     font-family:'Poppins', sans-serif;
+    font-display:swap;
   }
 
   h1,
@@ -307,7 +309,7 @@ export const EntryContent = styled.div`
 
 export const PostBox = styled.postbox`
 width: 100%;
-
+margin-bottom:60px;
 @media (max-width:575px){
   margin-top:-50px;
 }

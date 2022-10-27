@@ -698,6 +698,7 @@ const EntryContent = styled.div`
   line-height: 1.5;
   max-width: 100%;
   font-family: 'Poppins', sans-serif;
+  font-display:swap;
   letter-spacing: normal;
 
   @media (min-width: 700px) {
@@ -736,6 +737,7 @@ const EntryContent = styled.div`
   .wp-caption-text,
   .wp-block-file {
     font-family: 'Poppins', sans-serif;
+    font-display:swap;
   }
 
   h1,

@@ -6,6 +6,7 @@ export const BaseToggle = styled.button`
   color: inherit;
   cursor: pointer;
   font-family: inherit;
+  font-display:swap;
   position: relative;
   text-align: inherit;
   user-select: none;

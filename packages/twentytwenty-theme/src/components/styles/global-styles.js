@@ -78,10 +78,10 @@ const documentSetup = (colors) => css`
     box-sizing: border-box;
     color: #000;
     font-family: 'Poppins', sans-serif;
+    font-display:swap;
     font-size: 1.8rem;
     letter-spacing: -0.015em;
     text-align: left;
-    font-display: "swap";
   }
 
   *,
@@ -462,6 +462,7 @@ const codeStyle = (colors) => css`
     font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
     padding: 0.4rem 0.6rem;
+    font-display:swap;
   }
 
   code,

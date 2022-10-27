@@ -200,8 +200,10 @@ margin-right:80px;
 text-align:left;
 
 ul{margin:0px;}
-p{color:#fff; font-weight:400; font-family:inherit; font-size:15px;}
+p{color:#fff; font-weight:400; font-family:inherit; font-display:swap; font-size:15px;}
 li{font-size:18px; line-height:40px; }
+img{    width: 210px;
+  height: 62px;}
 
 @media (max-width:767px){
   width:100%;
@@ -278,7 +280,7 @@ li{position:relative;
   display:inline-block; padding:0px 10px;}
 
 .socialimg1{position:relative; transition: all 0.4s}
-img{width:35px;}
+img{width:35px; height:35px;}
 
 .socialimg2{ position: absolute;
   top: 0px;
@@ -298,7 +300,7 @@ img{width:35px;}
   font-size: 22px;
   font-weight: 800;
 a{display:flex;
-img{margin-right:10px; padding:7px;}
+img{margin-right:10px; padding:7px; width:35px; height:35px;}
 }
 }
 @media (max-width:767px){
@@ -474,6 +476,9 @@ button{
 
 img{
   margin-left: 6px;
+  width: 20px;
+  height: 20px;
+
 }
 
 @media (max-width:575px){
