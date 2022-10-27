@@ -26,7 +26,7 @@ const settings = {
         "source": {
           "url": "https://freepsdvn.com/",
           "params": {
-            "per_page": 14,
+            "per_page": 6,
             "type": ["post", "page"],
           },
         }
