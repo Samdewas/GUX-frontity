@@ -131,9 +131,9 @@ const Theme = ({ state, actions }) => {
 
           {data.isHome ?
             <BannerSection>
-              {data.isHome ?
+              {/* {data.isHome ?
                <Lazyload className="banner_img" src={BannerBg} /> :   
-                <Lazyload className="banner_img" src={BannerBg} />}
+                <Lazyload className="banner_img" src={BannerBg} />} */}
               <SectionContainer size="large">
 
                 <BannerInner>
@@ -240,7 +240,7 @@ const Theme = ({ state, actions }) => {
 
   </Uxfeatured> 
 
-                  <Trendingfonts>
+                  {/* <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
     <Lazyload className="ticon" src={ticon} />
@@ -293,7 +293,7 @@ const Theme = ({ state, actions }) => {
   </div>
   </SectionContainer>
 
-</Trendingfonts>
+</Trendingfonts> */}
 
               <Photoshopaction>
 
