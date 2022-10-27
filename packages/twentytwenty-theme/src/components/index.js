@@ -136,7 +136,7 @@ const Theme = ({ state, actions }) => {
                 <Lazyload className="banner_img" src={BannerBg} />} */}
               <SectionContainer size="large">
 
-                <BannerInner>
+                {/* <BannerInner>
 
                   <div>
                     <h2> Discover Free Premium Fonts,<br />
@@ -144,10 +144,10 @@ const Theme = ({ state, actions }) => {
                     <p>Graphicux.com is well known for saving money for customers but with our<br />
                       free fonts and Photoshop action section, we have gone one step further</p>
                   </div>
-                </BannerInner>
+                </BannerInner> */}
 
 
-                <div>
+                {/* <div>
                   <SearchForm
                     role="search"
                     aria-label="Search for:"
@@ -164,9 +164,9 @@ const Theme = ({ state, actions }) => {
                     <Lazyload className="srch_icon" src={searchicon} />
                     <SearchButton bg={primary}>Search</SearchButton>
                   </SearchForm>
-                </div>
+                </div> */}
 
-                <div>
+                {/* <div>
                   {data.isHome ?
                     <Uxcategory>
 
@@ -179,7 +179,7 @@ const Theme = ({ state, actions }) => {
 
                     </Uxcategory> : ""}
 
-                </div>
+                </div> */}
 
                  
 
