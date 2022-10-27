@@ -12,7 +12,6 @@ const settings = {
       "name": "@frontity/twentytwenty-theme",
       "state": {
         "theme": {
-          "menu": [],
           "featured": {
             "showOnList": false,
             "showOnPost": false
