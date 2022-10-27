@@ -482,7 +482,8 @@ h3{
     font-size: 19px;
     font-weight: 600;
 }
-img{ margin: 45px auto;}
+img{ margin: 45px auto; width: 120px;
+  height: 120px;}
 
 
 li:nth-of-type(1) {
