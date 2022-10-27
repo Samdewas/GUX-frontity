@@ -13,7 +13,7 @@ import SkipLink from "./styles/skip-link";
 import MetaTitle from "./page-meta-title";
 import PageError from "./page-error";
 import '../assets/css/custome.css';
-import BannerBg from "../assets/img/banner.svg"
+import BannerBg from "../assets/img/hero.svg"
 import searchicon from "../assets/img/search.svg"
 import Cate_img1 from "../assets/img/front/font_active.svg"
 import Cate_img2 from "../assets/img/front/psd.svg"
@@ -131,9 +131,9 @@ const Theme = ({ state, actions }) => {
 
           {data.isHome ?
             <BannerSection>
-              {/* {data.isHome ?
+              {data.isHome ?
                <Lazyload className="banner_img" src={BannerBg} /> :   
-                <Lazyload className="banner_img" src={BannerBg} />} */}
+                <Lazyload className="banner_img" src={BannerBg} />}
               <SectionContainer size="large">
 
                 <BannerInner>
