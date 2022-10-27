@@ -57,9 +57,9 @@ const PostItem = ({
 
       <PostBox>
         <PostBoxImg>
-          {state.theme.featuredMedia.showOnArchive && showMedia && (
+          {/* {state.theme.featuredMedia.showOnArchive && showMedia && (
             <FeaturedMedia id={item.featured_media} />
-          )}
+          )} */}
         </PostBoxImg>
 
         <PostTextBox>
