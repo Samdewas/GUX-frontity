@@ -413,6 +413,12 @@ const BannerSection = styled.bannersection`
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
+
+  @media (max-width:767px){
+    background: linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%);
+    display: block;
+    img{display:none;}
+  }
 `;
 
 
@@ -1036,7 +1042,7 @@ h4{color:#077A3A;
     margin: 25px auto;}
   ul{margin: 0px;}
   li{display: inline-block;
-    width: 100%;
+    width: 85%;
     margin-bottom: 0px;
     margin-left: 0px;
   
