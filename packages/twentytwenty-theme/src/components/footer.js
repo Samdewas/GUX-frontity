@@ -62,7 +62,7 @@ const Footer = ({ state }) => {
           <ul>
             <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
 
-            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img alt="buy" src={buy} /> </Link>
+            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img  src={buy} /> </Link>
          
 
           </ul>
@@ -100,20 +100,20 @@ const Footer = ({ state }) => {
           </ul>
          
             <SocialMedia>
-          <li> <Link link="/"> <img alt="facebook" className="socialimg1" src={fb1} />
-          <img alt="facebook" className="socialimg2" src={fb2} />
+          <li> <Link link="/"> <img  className="socialimg1" src={fb1} />
+          <img  className="socialimg2" src={fb2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="instagram" className="socialimg1" src={i1} />
-          <img alt="instagram" className="socialimg2" src={i2} />
+          <li> <Link link="/"> <img  className="socialimg1" src={i1} />
+          <img  className="socialimg2" src={i2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="pinterest"  className="socialimg1" src={p1} />
-          <img alt="pinterest" className="socialimg2" src={p2} />
+          <li> <Link link="/"> <img   className="socialimg1" src={p1} />
+          <img  className="socialimg2" src={p2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="twitter" className="socialimg1" src={t1} />
-          <img alt="twitter" className="socialimg2" src={t2} />
+          <li> <Link link="/"> <img  className="socialimg1" src={t1} />
+          <img  className="socialimg2" src={t2} />
           </Link> </li>
           <p><Link link="mailto:graphicgux@gmail.com"> <img src={eml} /> graphicgux@gmail.com </Link> </p>
           </SocialMedia>
