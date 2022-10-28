@@ -318,7 +318,7 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
               <Lightroompreset>
                     <div className="overlay1">
 <SectionContainer>
-<div className="ux_lightroom2"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/action.webp" />  </div>            
+<div className="ux_lightroom2"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
         <div className="ux_lightroom1">
         <h4>Lightroom Preset</h4>
         <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
@@ -376,7 +376,7 @@ You can instantly download thousands of Free Fonts from here.</p>
      </BannerSection> : ""}
      {data.isHome ?
 <Recentitem>
-  Recent Published
+  {/* Recent Published */}
 </Recentitem>
 :""}
           <Switch>
@@ -392,7 +392,7 @@ You can instantly download thousands of Free Fonts from here.</p>
 
     
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
@@ -531,7 +531,7 @@ li:nth-of-type(5):hover h3{ color:#a259ff;}
 @media (max-width:575px){
 
   margin-top:50px;
-  display: grid;
+  display: none;
   grid-template-columns: repeat(5,2fr);
   gap: 0px 0px;
   overflow-x: auto;
@@ -713,6 +713,7 @@ position:relative;
 a{text-decoration:none;}
 
   @media (max-width:767px){
+    display:none;
       width: 90%;
       margin-left: 20px;
       margin-right: 0px;
@@ -763,7 +764,7 @@ h4{color:#F8A64C;}
 p{font-size:16px; line-height:30px; }
 
 @media (max-width:767px){
-
+  display:none;
   margin-top:20px;
   .ux_lightroom2{width: 90%;
     float: left;
@@ -822,6 +823,7 @@ p{font-size:16px; }
 
 
 @media (max-width:767px){
+  display:none;
   .ux_action1{width:90%;
      margin-left:20px;
      margin-right:0px;
@@ -865,6 +867,7 @@ h4{color:#A259FF;}
 p{font-size:16px; line-height:30px; }
 
 @media (max-width:767px){
+  display:none;
   .ux_lightroom2{width: 90%;
     float: left;
     margin-left: 30px;}
@@ -1027,6 +1030,7 @@ h4{color:#077A3A;
 .fcaption h5{margin-bottom:10px; font-weight:600; font-size:22px;}
 
 @media (max-width:767px){
+  display:none;
   margin-top:-130px;
 
   &:after {
