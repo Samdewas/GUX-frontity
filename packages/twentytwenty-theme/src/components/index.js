@@ -392,7 +392,7 @@ You can instantly download thousands of Free Fonts from here.</p>
 
     
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
