@@ -409,8 +409,6 @@ const Main = styled.main`
 const BannerSection = styled.bannersection`
   padding: 40px 0px;
   height: 620px;
-  background: linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%);
-  display: block;
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
