@@ -16,9 +16,9 @@ const Navigation = ({ state, actions }) => {
       .then(result => {
         var newdata = JSON.parse(result);
         state.theme.menu = newdata;
-        newdata?.items?.map((val) => {
-        actions.source.fetch(val);
-        });
+        // newdata?.items?.map((val) => {
+        // actions.source.fetch(val);
+        // });
       })
       .catch(error => console.log('error', error));
   }, [])
