@@ -72,7 +72,7 @@ const PostItem = ({
               <Html2React html={item.title.rendered} /></PostItemTitle>
             </PostLink>
             <ImgView>
-              <img style={{width:"20px", height: "20px"}}  src={Eye} />  <span> 10 Views </span>
+              <img alt="view" style={{width:"20px", height: "20px"}}  src={Eye} />  <span> 10 Views </span>
             </ImgView>
           </PostTit>
 

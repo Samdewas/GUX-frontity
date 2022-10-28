@@ -171,10 +171,10 @@ const Theme = ({ state, actions }) => {
                     <Uxcategory>
 
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <Lazyload src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <Lazyload src={ishover == 1 ? Cate_img12 : Cate_img2} /> <h3>Photoshop Action </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <Lazyload src={ishover == 2 ? Cate_img13 : Cate_img3} /> <h3>Lightroom Preset </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <Lazyload src={ishover == 3 ? Cate_img14 : Cate_img4} /> <h3>Graphic & Mockups </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <Lazyload src={ishover == 4 ? Cate_img15 : Cate_img5} /> <h3>Website Themes </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <Lazyload src={ishover == 1 ? Cate_img12 : Cate_img2}  /> <h3>Photoshop Action </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <Lazyload src={ishover == 2 ? Cate_img13 : Cate_img3}  /> <h3>Lightroom Preset </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <Lazyload src={ishover == 3 ? Cate_img14 : Cate_img4}  /> <h3>Graphic & Mockups </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <Lazyload src={ishover == 4 ? Cate_img15 : Cate_img5}  /> <h3>Website Themes </h3></Link></li>
 
 
                     </Uxcategory> : ""}
@@ -409,7 +409,8 @@ const Main = styled.main`
 const BannerSection = styled.bannersection`
   padding: 40px 0px;
   height: 620px;
-
+  background: linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%);
+  display: block;
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
@@ -597,6 +598,7 @@ img {
   width: 24px;
   position: absolute;
   top: 19px;
+  left:0px;
 }
 @media (max-width:320px){
   width: 95%;
