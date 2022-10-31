@@ -240,6 +240,23 @@ const Theme = ({ state, actions }) => {
 
   </Uxfeatured> 
 
+
+     </BannerSection> : ""}
+     {data.isHome ?
+<Recentitem>
+  Recent Published
+</Recentitem>
+:""}
+          <Switch>
+            <Loading when={data.isFetching} />
+            <SearchResults when={data.isSearch} />
+            <Archive when={data.isArchive} />
+            <Post when={data.isPostType && data.isPost} />
+            <PageError when={data.isError} />
+            <Contact when={state.router.link.includes("/contact-us")} />
+          </Switch>
+
+      
                   {/* <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
@@ -294,100 +311,88 @@ const Theme = ({ state, actions }) => {
   </SectionContainer>
 
 </Trendingfonts> */}
+ {data.isHome ?
+ <>
+<Photoshopaction>
 
-              <Photoshopaction>
+<SectionContainer>
 
-              <SectionContainer>
-
-                      <div className="ux_action1">
-                      <h4>Photoshop Actions</h4>
-                      <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-           help you achieve an elegant look too.
+        <div className="ux_action1">
+        <h4>Photoshop Actions</h4>
+        <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
 <div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><Lazyload src={arrowicon} /></div>
 <Lazyload className="_psgif" src={ps_icon} />
-                      </div>
+        </div>
 
-                      <div className="ux_action2">
-                      
-                         <Lazyload  src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/action.webp" />  </div>
-                      </SectionContainer>
+        <div className="ux_action2">
+        
+           <Lazyload  src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/action.webp" />  </div>
+        </SectionContainer>
 
-              </Photoshopaction>
+</Photoshopaction>
 
-              <Lightroompreset>
-                    <div className="overlay1">
+<Lightroompreset>
+      <div className="overlay1">
 <SectionContainer>
 <div className="ux_lightroom2"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
-        <div className="ux_lightroom1">
-        <h4>Lightroom Preset</h4>
-        <p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-           help you achieve an elegant look too.
+<div className="ux_lightroom1">
+<h4>Lightroom Preset</h4>
+<p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
+help you achieve an elegant look too.
 Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
 <div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-        </div>
+</div>
 
-       
-        </SectionContainer>
-        </div>
+
+</SectionContainer>
+</div>
 </Lightroompreset>
 
-            <Graphics>
+<Graphics>
 
-              <SectionContainer>
+<SectionContainer>
 
-                      <div className="ux_action1">
-                      <h4>Graphics & Mockups</h4>
-                      <p>  The use of a great-looking font is the main part of making
+        <div className="ux_action1">
+        <h4>Graphics & Mockups</h4>
+        <p>  The use of a great-looking font is the main part of making
 any kind of design look more professional. Of course, to reach
 the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here. </p>  
 <div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-                      </div>
+        </div>
 
-                      <div className="ux_action2"> <Lazyload src={graphics} />  </div>
-                      </SectionContainer>
+        <div className="ux_action2"> <Lazyload src={graphics} />  </div>
+        </SectionContainer>
 
-              </Graphics>
+</Graphics>
 
 
-              <Uxtheme>
+<Uxtheme>
 
-              <SectionContainer>
+<SectionContainer>
 <div className="ux_lightroom2"> <Lazyload src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/website.webp" />  </div>            
-        <div className="ux_lightroom1">
-        <h4>Website Themes</h4>
-        <p> The use of a great-looking font is the main part of making
+<div className="ux_lightroom1">
+<h4>Website Themes</h4>
+<p> The use of a great-looking font is the main part of making
 any kind of design look more professional. Of course, to reach
 the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here.</p>  
 <div className="d_btn"><Link link="category/themes/"> Download Now </Link><Lazyload src={arrowicon} /></div>
-        </div>
+</div>
 
-       
-        </SectionContainer>
 
-              </Uxtheme>
+</SectionContainer>
 
-     </BannerSection> : ""}
-     {data.isHome ?
-<Recentitem>
-  {/* Recent Published */}
-</Recentitem>
-:""}
-          <Switch>
-            <Loading when={data.isFetching} />
-            <SearchResults when={data.isSearch} />
-            <Archive when={data.isArchive} />
-            <Post when={data.isPostType && data.isPost} />
-            <PageError when={data.isError} />
-            <Contact when={state.router.link.includes("/contact-us")} />
-          </Switch>
+</Uxtheme> </> :""}
+
         </Main>
+
       </div>
 
     
@@ -441,10 +446,9 @@ margin: auto;
 const Recentitem = styled.h4`
 clear: left;
 text-align: center;
-padding-top: 80px;
 margin-bottom: -25px;
-font-size: 36px;
-color: #15BE77;
+font-size: 30px;
+color: #077A3A;
 
 `;
 
@@ -690,6 +694,7 @@ width:100%;
 padding-bottom: 50px;
 float: left;
 padding: 80px 0px;
+margin-top:80px;
 
 .ux_action1{width:38%;
 margin-left:70px;
@@ -853,8 +858,6 @@ float: left;
 }
 }
 padding:45px 0px;
-border-bottom-right-radius: 190px;
-border-bottom-left-radius: 190px;
 .ux_lightroom2{width: 41%;
   float: left;
   margin-left: 30px;}
@@ -983,7 +986,7 @@ list-style: none;
     text-align: center;
     float: left;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 0px;
     margin-bottom: 50px;
     position:relative;
 

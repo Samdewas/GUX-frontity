@@ -57,9 +57,9 @@ const PostItem = ({
 
       <PostBox>
         <PostBoxImg>
-          {/* {state.theme.featuredMedia.showOnArchive && showMedia && (
+          {state.theme.featuredMedia.showOnArchive && showMedia && (
             <FeaturedMedia id={item.featured_media} />
-          )} */}
+          )}
         </PostBoxImg>
 
         <PostTextBox>
@@ -71,9 +71,9 @@ const PostItem = ({
               >
               <Html2React html={item.title.rendered} /></PostItemTitle>
             </PostLink>
-            <ImgView>
+            {/* <ImgView>
               <img  style={{width:"20px", height: "20px"}}  src={Eye} />  <span> 10 Views </span>
-            </ImgView>
+            </ImgView> */}
           </PostTit>
 
           <PostMeta item={item} />
@@ -309,7 +309,7 @@ export const EntryContent = styled.div`
 
 export const PostBox = styled.postbox`
 width: 100%;
-margin-bottom:60px;
+margin-bottom:20px;
 @media (max-width:575px){
   margin-top:-50px;
 }

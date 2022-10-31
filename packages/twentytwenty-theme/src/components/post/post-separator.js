@@ -22,7 +22,7 @@ const PostSeparator = styled.hr`
 
   @media (min-width: 700px) {
     width: calc(100% - 8rem);
-    margin: 8rem auto;
+    margin: 6rem auto;
   }
 
   &:before,
