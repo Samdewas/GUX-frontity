@@ -57,6 +57,10 @@ const Pagination = ({ state, actions, libraries }) => {
     if (next) actions.source.fetch(next);
   }, []);
 
+  const scroll = () => {
+    const section = document.querySelector( "#archivetop" );
+    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+  };
   return (
     <Container>
       <Direction>
@@ -82,7 +86,7 @@ const Pagination = ({ state, actions, libraries }) => {
 
             return (
               <PagingItem key={index}>
-                <StyledLink link={getPageLink(item)}>{item}</StyledLink>
+                <StyledLink onClick={scroll} link={getPageLink(item)}>{item}</StyledLink>
               </PagingItem>
             );
           })}

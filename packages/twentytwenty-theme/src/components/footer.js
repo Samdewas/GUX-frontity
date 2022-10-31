@@ -12,38 +12,34 @@ import t1 from "../assets/img/social/t1.png"
 import t2 from "../assets/img/social/t2.png"
 import buy from "../assets/img/buy.svg"
 import eml from "../assets/img/email.png"
+import topimg from "../assets/img/goto.svg"
 import Lazyload from "./lazyloading/lazyload";
 // Component that provides scroll to top functionality
 
-// const BackToTop = () => {
+const BackToTop = () => {
 
 
-//   // scroll to top function
-//   const scrollToTop = (event) => {
-//     // prevent the default behaviors
-//     event.preventDefault();
-//     // scroll to the top smoothly
-//     scrollTo({ top: 0, left: 0, behavior: "smooth" });
-//   };
+  // scroll to top function
+  const scrollToTop = (event) => {
+    // prevent the default behaviors
+    event.preventDefault();
+    // scroll to the top smoothly
+    scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
 
   
-// const BackToTop = styled.BackToTop`
-//   position:fixed;
-// bottom:0;
-// right:20px;
-// z-index:99;
-// `;
 
-//   return (
-//     <p href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer", position: "fixed", right: "30px", bottom: "20px", color: "white" }}>
-//       <span style={{ marginRight: 8 }}>To the top</span>
-//       <span className="arrow" aria-hidden="true">
-//         ↑
-//       </span>
-//     </p>
-//   );
-// };
+
+  return (
+    <p href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer", position: "fixed", right: "30px", bottom: "20px", color: "white" }}>
+      <span style={{ marginRight: 8 }}><Lazyload alt="gototop" src={topimg} /></span>
+      <span className="arrow" aria-hidden="true">
+        ↑
+      </span>
+    </p>
+  );
+};
 
 const Footer = ({ state }) => {
   const currentYear = new Date().getFullYear();
@@ -63,7 +59,7 @@ const Footer = ({ state }) => {
           <ul>
             <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
 
-            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img alt="buymecoffee"  src={buy} /> </Link>
+            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <Lazyload alt="buymecoffee"  src={buy} /> </Link>
          
 
           </ul>
@@ -137,7 +133,7 @@ const Footer = ({ state }) => {
         </Credits>
 
    
-            {/* <BackToTop /> */}
+            <BackToTop />
     
     </SiteFooter>
   );
