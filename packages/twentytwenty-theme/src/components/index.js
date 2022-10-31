@@ -131,9 +131,9 @@ const Theme = ({ state, actions }) => {
 
           {data.isHome ?
             <BannerSection>
-              {data.isHome ?
+              {/* {data.isHome ?
                <Lazyload className="banner_img" alt="heroimg" width="1903px" height="726px" src={BannerBg} /> :   
-                <Lazyload className="banner_img" alt="heroimg2"  width="1903px" height="726px" src={BannerBg} />}
+                <Lazyload className="banner_img" alt="heroimg2"  width="1903px" height="726px" src={BannerBg} />} */}
               <SectionContainer size="large">
 
                 <BannerInner>
