@@ -64,7 +64,5 @@ const Figure = styled.figure`
 const Image = styled(Img)`
   margin: 0 auto;
   max-width: 100%;
-  width:auto;
   display: block;
-  height: auto;
 `;
