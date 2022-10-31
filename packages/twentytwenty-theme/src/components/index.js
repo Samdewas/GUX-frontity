@@ -194,7 +194,7 @@ const Theme = ({ state, actions }) => {
 
     <ul>
       <li> 
-        <div className="fimgmob"> <img  src={ficon1} /></div>
+        <div className="fimgmob"> <img alt="quality" width="100px" height="100px"  src={ficon1} /></div>
         <div className="fimg">
           
        <Lazyload alt="quality" src={ficon1} />
@@ -207,7 +207,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
-      <div className="fimgmob"> <img  src={ficon2} /></div>
+      <div className="fimgmob"> <img alt="Ready-to-use" width="100px" height="100px"src={ficon2} /></div>
         <div className="fimg">
        <Lazyload alt="Ready-to-use" src={ficon2} />
        </div>
@@ -219,7 +219,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
-      <div className="fimgmob"> <img  src={ficon3} /></div>
+      <div className="fimgmob"> <img alt="Guaranteed" width="100px" height="100px" src={ficon3} /></div>
         <div className="fimg">
        <Lazyload alt="Guaranteed" src={ficon3} />
        </div>
@@ -231,7 +231,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
-      <div className="fimgmob"> <img  src={ficon4} /></div>
+      <div className="fimgmob"> <img alt="Fresh" width="100px" height="100px" src={ficon4} /></div>
         <div className="fimg">
        <Lazyload alt="Fresh"  src={ficon4} />
        </div>
@@ -444,9 +444,10 @@ width: 70%;
 margin: auto;
 
 @media (max-width:575px){
-  padding-top: 85px;
+  padding-top: 100px;
   width:80%;
-  h2{font-size:22px;}
+  h2{font-size:22px; margin: 0px;
+    height: 130px;}
   p{font-size:15px; font-weight:500; display:none;}
   width: 100%;
   
@@ -1039,7 +1040,7 @@ h4{color:#077A3A;
       width: 100px;
       height:100px;
       float: left;
-      img{display:none;}
+      display:none;
   }
     .fimg {
       width: 100px;
@@ -1054,6 +1055,7 @@ h4{color:#077A3A;
 }
 .fcaption p{font-size:16px;}
 .fcaption h5{margin-bottom:10px; font-weight:600; font-size:22px;}
+
 
 @media (max-width:767px){
   display:block;
