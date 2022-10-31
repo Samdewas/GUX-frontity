@@ -160,7 +160,7 @@ const elementBase = (colors) => css`
   h1,
   .heading-size-1 {
     font-size: 3.6rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.138888889;
   }
 
