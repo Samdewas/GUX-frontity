@@ -1,7 +1,7 @@
 import { Global, css, connect } from "frontity";
-import Regular from "../../fonts/Poppins/Poppins-Regular.ttf";
-import Mediumn from "../../fonts/Poppins/Poppins-Medium.ttf";
-import Bold from "../../fonts/Poppins/Poppins-Bold.ttf";
+import Regular from "../../fonts/Poppins/Poppins-Regular.woff2";
+import Mediumn from "../../fonts/Poppins/Poppins-Medium.woff2";
+import Bold from "../../fonts/Poppins/Poppins-Bold.woff2";
 
 
 

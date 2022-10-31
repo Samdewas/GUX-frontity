@@ -31,11 +31,13 @@ const FeaturedMedia = ({ state, id, className }) => {
       ) || null;
   return (
     <Figure className={className}>
-      <LazyLoad height="282px" width="387px">
+      <LazyLoad>
         <Image
           alt={media.alt_text}
           src={media.source_url}
           srcSet={srcset}
+          height="282px"
+          width="387px"
         />
       </LazyLoad>
 
