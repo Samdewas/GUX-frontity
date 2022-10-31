@@ -96,7 +96,7 @@ const Footer = ({ state }) => {
           <ul>
           <NewsLetterInput>
               <input type="text" placeholder="Email address" />
-              <button> Subscribe  <Lazyload src={Notification} /> </button>
+              <button> Subscribe  <Lazyload alt="notification" src={Notification} /> </button>
             </NewsLetterInput>
           </ul>
          
@@ -116,7 +116,7 @@ const Footer = ({ state }) => {
           <li> <Link link="/"> <Lazyload alt="twitt"  className="socialimg1" src={t1} />
           <Lazyload alt="twitter"  className="socialimg2" src={t2} />
           </Link> </li>
-          <p><Link link="mailto:graphicgux@gmail.com"> <Lazyload src={eml} /> graphicgux@gmail.com </Link> </p>
+          <p><Link link="mailto:graphicgux@gmail.com"> <Lazyload alt="email" src={eml} /> graphicgux@gmail.com </Link> </p>
           </SocialMedia>
       
           </FooterBox4>
