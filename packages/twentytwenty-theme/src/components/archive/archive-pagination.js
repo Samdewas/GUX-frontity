@@ -149,6 +149,7 @@ const PagingItem = styled.li`
     padding: 8px;
     width: 85px;
     text-align: center;
+    a{color:#000;}
 
   &:not(:last-of-type) {
     margin-right: 2rem;
