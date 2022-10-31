@@ -1076,6 +1076,7 @@ h4{color:#077A3A;
 
   .fimgmob {
     width: 100px;
+    display:block;
     height: 100px;
     float: none !important;
     margin: 29px auto;
