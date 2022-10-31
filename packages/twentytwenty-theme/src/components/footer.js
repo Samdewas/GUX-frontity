@@ -12,6 +12,7 @@ import t1 from "../assets/img/social/t1.png"
 import t2 from "../assets/img/social/t2.png"
 import buy from "../assets/img/buy.svg"
 import eml from "../assets/img/email.png"
+import Lazyload from "./lazyloading/lazyload";
 // Component that provides scroll to top functionality
 
 // const BackToTop = () => {
@@ -95,27 +96,27 @@ const Footer = ({ state }) => {
           <ul>
           <NewsLetterInput>
               <input type="text" placeholder="Email address" />
-              <button> Subscribe  <img src={Notification} /> </button>
+              <button> Subscribe  <Lazyload src={Notification} /> </button>
             </NewsLetterInput>
           </ul>
          
             <SocialMedia>
-          <li> <Link link="/"> <img alt="fb"  className="socialimg1" src={fb1} />
-          <img alt="facebook"  className="socialimg2" src={fb2} />
+          <li> <Link link="/"> <Lazyload alt="fb"  className="socialimg1" src={fb1} />
+          <Lazyload alt="facebook"  className="socialimg2" src={fb2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="insta"  className="socialimg1" src={i1} />
-          <img alt="instagram"  className="socialimg2" src={i2} />
+          <li> <Link link="/"> <Lazyload alt="insta"  className="socialimg1" src={i1} />
+          <Lazyload alt="instagram"  className="socialimg2" src={i2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="pinterest"   className="socialimg1" src={p1} />
-          <img alt="pin"  className="socialimg2" src={p2} />
+          <li> <Link link="/"> <Lazyload alt="pinterest"   className="socialimg1" src={p1} />
+          <Lazyload alt="pin"  className="socialimg2" src={p2} />
           </Link> </li>
 
-          <li> <Link link="/"> <img alt="twitt"  className="socialimg1" src={t1} />
-          <img alt="twitter"  className="socialimg2" src={t2} />
+          <li> <Link link="/"> <Lazyload alt="twitt"  className="socialimg1" src={t1} />
+          <Lazyload alt="twitter"  className="socialimg2" src={t2} />
           </Link> </li>
-          <p><Link link="mailto:graphicgux@gmail.com"> <img src={eml} /> graphicgux@gmail.com </Link> </p>
+          <p><Link link="mailto:graphicgux@gmail.com"> <Lazyload src={eml} /> graphicgux@gmail.com </Link> </p>
           </SocialMedia>
       
           </FooterBox4>
