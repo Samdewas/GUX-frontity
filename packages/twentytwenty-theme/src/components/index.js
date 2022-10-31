@@ -194,7 +194,9 @@ const Theme = ({ state, actions }) => {
 
     <ul>
       <li> 
+        <div className="fimgmob"> <img  src={ficon1} /></div>
         <div className="fimg">
+          
        <Lazyload alt="quality" src={ficon1} />
        </div>
        <div className="fcaption">
@@ -205,6 +207,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
+      <div className="fimgmob"> <img  src={ficon2} /></div>
         <div className="fimg">
        <Lazyload alt="Ready-to-use" src={ficon2} />
        </div>
@@ -216,6 +219,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
+      <div className="fimgmob"> <img  src={ficon3} /></div>
         <div className="fimg">
        <Lazyload alt="Guaranteed" src={ficon3} />
        </div>
@@ -227,6 +231,7 @@ const Theme = ({ state, actions }) => {
       </li>
 
       <li> 
+      <div className="fimgmob"> <img  src={ficon4} /></div>
         <div className="fimg">
        <Lazyload alt="Fresh"  src={ficon4} />
        </div>
@@ -442,7 +447,7 @@ margin: auto;
   padding-top: 85px;
   width:80%;
   h2{font-size:22px;}
-  p{font-size:15px; font-weight:500;}
+  p{font-size:15px; font-weight:500; display:none;}
   width: 100%;
   
 }
@@ -1030,7 +1035,12 @@ h4{color:#077A3A;
    letter-spacing:0.1px;
     font-weight:600;}
 
-
+    .fimgmob {
+      width: 100px;
+      height:100px;
+      float: left;
+      img{display:none;}
+  }
     .fimg {
       width: 100px;
       height:100px;
@@ -1048,7 +1058,7 @@ h4{color:#077A3A;
 @media (max-width:767px){
   display:block;
   margin-top:0px;
-
+  margin-bottom:0px;
   &:after {
     content:"";
   width:1px;
@@ -1058,26 +1068,40 @@ h4{color:#077A3A;
   right:0px;
   top:0px;
   }
-  h4{font-size:25px;}
+  ul{margin-left: 0px;}
+  h4{font-size:19px;}
+  p{font-size:13px;}
+
+  .fimgmob {
+    width: 100px;
+    height: 100px;
+    float: none !important;
+    margin: 29px auto;
+    img{display:block;}
+}
+li{display: inline-block;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+
+  .fcaption{  
+    width: 95%;
+    text-align:center;
+    margin-top: -36px;
+  h5{    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 19px;}
+  }
+}
+
   .fimg{    width: 100px;
     float: none;
     display:none;
-    margin: 25px auto;}
-  ul{margin: 0px;}
-  li{display: inline-block;
-    width: 100%;
-    margin-bottom: 0px;
-    margin-left: 0px;
+    margin: 25px auto; 
+
+  ul{margin: 0px; }
   
-    .fcaption{    float: right;
-      width: 95%;
-      text-align: left;
-      margin-top: -36px;
-    h5{    margin-bottom: 10px;
-      font-weight: 600;
-      font-size: 19px;}
-    }
-  }
 }
 
 `;
