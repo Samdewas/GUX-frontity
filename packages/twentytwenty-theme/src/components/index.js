@@ -131,9 +131,9 @@ const Theme = ({ state, actions }) => {
 
           {data.isHome ?
             <BannerSection>
-              {/* {data.isHome ?
-               <Lazyload className="banner_img" src={BannerBg} /> :   
-                <Lazyload className="banner_img" src={BannerBg} />} */}
+              {data.isHome ?
+               <Lazyload className="banner_img" alt="heroimg" width="1903px" height="726px" src={BannerBg} /> :   
+                <Lazyload className="banner_img" alt="heroimg2"  width="1903px" height="726px" src={BannerBg} />}
               <SectionContainer size="large">
 
                 <BannerInner>
@@ -170,11 +170,12 @@ const Theme = ({ state, actions }) => {
                   {data.isHome ?
                     <Uxcategory>
 
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <Lazyload alt="fonts" src={ishover == 5 ? Cate_img11 : Cate_img1} /> <h3>Premium Fonts </h3> </Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <Lazyload alt="psaction" src={ishover == 1 ? Cate_img12 : Cate_img2}  /> <h3>Photoshop Action </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <Lazyload alt="lightroom" src={ishover == 2 ? Cate_img13 : Cate_img3}  /> <h3>Lightroom Preset </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <Lazyload alt="graphics" src={ishover == 3 ? Cate_img14 : Cate_img4}  /> <h3>Graphic & Mockups </h3></Link></li>
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <Lazyload alt="themes" src={ishover == 4 ? Cate_img15 : Cate_img5}  /> <h3>Website Themes </h3></Link></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <Lazyload alt="fonts" src={ishover == 5 ? Cate_img11 : Cate_img1} />  </Link><h3>Premium Fonts </h3>
+                      </li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <Lazyload alt="psaction" src={ishover == 1 ? Cate_img12 : Cate_img2}  /></Link>  <h3>Photoshop Action </h3></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <Lazyload alt="lightroom" src={ishover == 2 ? Cate_img13 : Cate_img3}  /> </Link> <h3>Lightroom Preset </h3></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(3)}> <Link link="category/graphics/"> <Lazyload alt="graphics" src={ishover == 3 ? Cate_img14 : Cate_img4}  /> </Link> <h3>Graphic & Mockups </h3></li>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(4)}> <Link link="category/themes/"> <Lazyload alt="themes" src={ishover == 4 ? Cate_img15 : Cate_img5}  /> </Link> <h3>Website Themes </h3></li>
 
 
                     </Uxcategory> : ""}
@@ -412,8 +413,6 @@ const Main = styled.main`
 
 
 const BannerSection = styled.bannersection`
-  background:linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%);
-  display:block;
   padding: 40px 0px;
   h2{  color: #084523;
     font-size:42px;}
@@ -426,8 +425,7 @@ const BannerSection = styled.bannersection`
   }
   }
   @media (max-width:767px){
-    background:linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%);
-    img{display:none;}
+    img{display:block;}
   }
 `;
 
@@ -468,15 +466,7 @@ justify-content: center;
 margin-left:0px;
 
 li{
-
-  display: inline-block;
-  padding: inherit;
-  border-radius: 50%;
-  width: 210px;
-  height: 210px;
-  text-align: center;
-  margin:0px 10px;
-
+  text-align:center;
   :hover a{
     color: #47e087;
   }
@@ -484,10 +474,17 @@ li{
 a{
   text-decoration: none;
   color: #121212;
+  display: inline-block;
+  padding: inherit;
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+  text-align: center;
+  margin:0px 10px;
 }
 
 h3{
-  margin: 69px 0px;
+  margin: 20px 0px;
     font-size: 19px;
     font-weight: 600;
 }
@@ -495,44 +492,44 @@ img{ margin: 45px auto; width: 120px;
   height: 120px;}
 
 
-li:nth-of-type(1) {
+li:nth-of-type(1) a {
   background: #15be7754;
 }
 
-li:nth-of-type(2) {
+li:nth-of-type(2) a {
   background: #2bbbfa57;
 }
 
-li:nth-of-type(3) {
+li:nth-of-type(3) a {
   background: #f8a64c63;
 }
-li:nth-of-type(4) {
+li:nth-of-type(4) a {
   background: #ed56a352;
 }
-li:nth-of-type(5) {
+li:nth-of-type(5) a {
   background: #a259ff59;
 }
 li:nth-of-type(1):hover h3{ color:#15be77;  transition:all 0.8s;}
-li:nth-of-type(1):hover {
+li:nth-of-type(1) a:hover {
   background: #15be77;
   transition:all 0.8s;
 }
-li:nth-of-type(2):hover {
+li:nth-of-type(2) a:hover {
   background: #2bbbfa;
   transition:all 0.8s;
 }
 li:nth-of-type(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
-li:nth-of-type(3):hover {
+li:nth-of-type(3) a:hover {
   background: #f8a64c;
   transition:all 0.8s;
 }
 li:nth-of-type(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
-li:nth-of-type(4):hover {
+li:nth-of-type(4) a:hover {
   background: #ed56a3;
   transition:all 0.8s;
 }
 li:nth-of-type(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
-li:nth-of-type(5):hover {
+li:nth-of-type(5) a:hover {
   background: #a259ff;
   transition:all 0.8s;
 }

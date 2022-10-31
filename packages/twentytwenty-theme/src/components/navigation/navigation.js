@@ -57,25 +57,22 @@ const Navigation = ({ state, actions }) => {
         :
         <>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
-        </li>
-        <li className="dropdown">
-        <Skelton height={30} width={100} radius={10}/>
+        <Skelton height={30} width={104} radius={10}/>
         </li>
         </>
         }
