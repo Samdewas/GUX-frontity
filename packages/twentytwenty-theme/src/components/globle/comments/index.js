@@ -13,7 +13,7 @@ const Comments = ({actions, state, postId}) => {
         data.isReady && (
             <>
                <Commentdata id={postId} />
-                <h6>Add your comment here</h6>
+                <h6>Leave a Reply</h6>
                 <CommentsForm postId={postId}/>
             </>
         )

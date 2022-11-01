@@ -44,7 +44,7 @@ const Contact = ({ state }) => {
             -
           </li>
           <li>
-            <Link to="/contact-us">  <span> Contact </span> </Link>
+            <Link to="/contact-us">  <span> Contact Us </span> </Link>
           </li>
         </ul>
       </BredCrumb>
@@ -152,6 +152,10 @@ button{
   outline: none;
 }
 
+@media (max-width:767px){
+  width:100%;
+}
+
 `;
 
 
@@ -162,7 +166,7 @@ export const RightContent = styled.rightcontent`
     h4{
       margin-top: 5px;
       font-weight: 500;
-      font-size: 22px;
+      font-size: 20px;
       color: #084523;
       margin-bottom: 10px;
     }
@@ -173,7 +177,7 @@ export const RightContent = styled.rightcontent`
       -webkit-text-fill-color: transparent;
       font-style: normal;
       font-weight: 600;
-      font-size: 36px;
+      font-size: 33px;
       margin-top: 0;
       margin: 8px 0px 10px 0px;
     }
@@ -185,6 +189,12 @@ export const RightContent = styled.rightcontent`
     line-height: 26px;
     color: #084523;
     margin-bottom: 0px;
+    }
+
+    @media (max-width:767px){
+      width:100%;
+      h2{font-size:20px;}
+      h4{font-size:16px; margin-top:16px;}
     }
 
 `;

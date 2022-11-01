@@ -153,6 +153,7 @@ const Post = ({ state, actions, libraries }) => {
       setDownloadhover(false);
     }
   }
+  console.log("lasldfjlsjd", postcategory)
   return data.isReady ? (
 
     <>
@@ -185,14 +186,14 @@ const Post = ({ state, actions, libraries }) => {
                   <PostMeta item={post} />
 
                   <div>
-                    <button> Lightroom </button>
+                    <button><Link link={postcategory[0]?.link}> {postcategory[0]?.name} </Link></button>
                   </div>
 
 
                 </DetailsTextInner>
               </DetailsText>
 
-               {/* Post Featured image here we can put adsense here      */}
+              {/* Post Featured image here we can put adsense here      */}
               {/* <PostDetailsImg>
 
                 {state.theme.featuredMedia.showOnPost && (
@@ -208,29 +209,32 @@ const Post = ({ state, actions, libraries }) => {
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
                       <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
-                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }}   className="d_innerbtn">Download</Button>
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload>
-               
-                        <Adwrapper className={downloadhover ? "chalu" : ""}>
+
+                      <Adwrapper className={downloadhover ? "chalu" : ""}>
                         {/* <GoogleAds /> */}
-                        </Adwrapper>
-                    
+                      </Adwrapper>
+
                     </EntryContent>
 
                     {post.tags && <PostTags tags={tags} />}
                   </>
                 )}
 
-                <div>
-                  <h4>Related Searches</h4>
-                  <TagsList>
-                    {posttags?.map(val =>
-                      <li>  <Link link={val.link}>{val.name}</Link> </li>
-                    )}
-                  </TagsList>
-                </div>
-             
-                <Comments postId={data.id} id="comments"/>
+                
+                  {posttags?.length ? <div>
+                    <h4>Related Searches</h4>
+                    <TagsList>
+                      {posttags?.map(val =>
+                        <li>  <Link link={val.link}>{val.name}</Link> </li>
+                      )}
+                    </TagsList>
+                    </div>
+                    : ""}
+                
+
+                <Comments postId={data.id} id="comments" />
 
               </PostDiscription>
 
@@ -476,13 +480,20 @@ position: relative;
     display: block;
     width: 236px;
     height: 86px;
+    
 button {     position: relative;
   top: -4px;
   padding: 16px 53px;
   opacity: 1;
   z-index: 99;
   font-size: 18px;
-  left: 11px;}
+  left: 11px;
+  text-decoration: none;
+    text-transform: uppercase!important;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0px;
+}
 
 `;
 const Adwrapper = styled.adwrapper`
@@ -573,6 +584,7 @@ button{
   font-size: 15px;
   color: #F8A64C;
   font-weight: 700;
+  a{text-decoration:none;color:#F8A64C;}
 
 
   @media (min-width:320px) and (max-width:767px) {

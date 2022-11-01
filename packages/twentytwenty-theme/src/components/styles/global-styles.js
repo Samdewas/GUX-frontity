@@ -760,7 +760,36 @@ li.sub_menu_child_li_outer {
 
 
 
+discription figure span img {
+  position: relative !important;
+  height:auto !important;
+}
+discription figure span{
+ padding-bottom:0px !important;
+}
+discription h2{
+font-size:27px !important;
+}
+discription h3{
+  font-size:27px !important;
+  }
+  discription h4{
+    font-size:27px !important;
+    }
+    discription h1{
+      font-size:27px !important;
+      }
 
+discription p {
+  font-size:17px !important;
+  }
+  discription ul {
+    margin-left:0px; list-style:none;
+    }
+  discription li {
+    font-size:17px !important;
+    margin-left:0px;
+    }
 
 
 
@@ -1030,9 +1059,7 @@ header#site-header a {
   font-weight: 500;
 }
 header#site-header.inner_header {
-  background: linear-gradient(
-98.81deg
-, #ffffff -0.82%, #d3eec5 101.53%)!important;
+  background: linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%) !important;
 }
 
 header#site-header li {

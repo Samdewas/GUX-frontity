@@ -56,11 +56,14 @@ const PostItem = ({
 
 
       <PostBox>
+      <PostLink link={item.link}>
         <PostBoxImg>
+
           {state.theme.featuredMedia.showOnArchive && showMedia && (
             <FeaturedMedia id={item.featured_media} />
           )}
         </PostBoxImg>
+        </PostLink>
 
         <PostTextBox>
 
@@ -310,8 +313,19 @@ export const EntryContent = styled.div`
 export const PostBox = styled.postbox`
 width: 100%;
 margin-bottom:20px;
+transition: all 0.4s;
 @media (max-width:575px){
   margin-top:-50px;
+}
+
+:hover posttext{
+  transition: all 0.4s;
+  border-bottom:4px solid #077A3A;
+  color:#fff;
+
+  h2{color:#077A3A;}
+  ul li{color:#077A3A;}
+ 
 }
 
 `;
@@ -340,6 +354,7 @@ padding: 5px 15px 15px 15px;
 margin: -6rem 0rem 1rem 1.9rem;
 float: left;
 z-index: -999;
+border-bottom:4px solid transparent;
 
 @media(max-width:767px){
     width: 92%;
