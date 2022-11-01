@@ -114,22 +114,22 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               </ul>
             </BredCrumb> : ""
           }
-          {/* {data.isHome ?
+          {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
-              <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-font.webp" /> :
+              <img className="banner_img" alt="addon" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-font.webp" /> :
               state.router.link?.includes("/category/add-ons/") ?
-                <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
+                <img className="banner_img" alt="ps" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
                 state.router.link?.includes("/category/graphics/") ?
-                  <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Graphics.webp"  /> :
+                  <img className="banner_img" alt="graphic" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Graphics.webp"  /> :
                   state.router.link?.includes("/category/themes/") ?
-                    <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
+                    <img className="banner_img" alt="web" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
                     state.router.link?.includes("/category/add-ons/photoshop-action/") ?
-                      <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
+                      <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
-                        <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
+                        <img className="banner_img" alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
                         <img className="banner_img" src={BannerBg} />
-          } */}
+          }
           <SectionContainer size="large">
 
             <BannerInner>
@@ -191,7 +191,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                 <CategoryCircle key={val.id}>
                   <Link link={val?.link?.replaceAll(state.source.url, "")}>
                     <div>
-                      <img width="210px" height="210px" src={val?.acf?.cate_image} />
+                      <img alt="category-image" width="210px" height="210px" src={val?.acf?.cate_image} />
                     </div>
                     <p> {val.name} </p>
                   </Link>
