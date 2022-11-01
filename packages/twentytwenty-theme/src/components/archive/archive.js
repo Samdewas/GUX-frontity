@@ -126,6 +126,8 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                     <img className="banner_img" alt="web" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
                     state.router.link?.includes("/category/add-ons/photoshop-action/") ?
                       <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
+                      state.router.link?.includes("/category/templates/") ?
+                      <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
                         <img className="banner_img" alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
                         <img className="banner_img" src={BannerBg} />
@@ -181,7 +183,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 
 
-        {/* {state.router.link.includes("/category") ?
+        {state.router.link.includes("/category") ?
 
 
           <CategoryMain>
@@ -208,7 +210,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               </>
             }
           </CategoryMain>
-          : <CategoryMain></CategoryMain>} */}
+          : <CategoryMain></CategoryMain>}
         <PostMain>
 
 
@@ -437,7 +439,6 @@ const SearchForm = styled.form`
     margin: 0px auto;
     top: 25px;
     left: 9px;
-    margin-bottom:100px;
   }
   @media (max-width:575px){
     width: 80%;
