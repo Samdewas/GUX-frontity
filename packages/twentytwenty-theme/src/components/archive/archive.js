@@ -181,7 +181,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 
 
-        {state.router.link.includes("/category") ?
+        {/* {state.router.link.includes("/category") ?
 
 
           <CategoryMain>
@@ -208,7 +208,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               </>
             }
           </CategoryMain>
-          : <CategoryMain></CategoryMain>}
+          : <CategoryMain></CategoryMain>} */}
         <PostMain>
 
 
@@ -437,6 +437,7 @@ const SearchForm = styled.form`
     margin: 0px auto;
     top: 25px;
     left: 9px;
+    margin-bottom:100px;
   }
   @media (max-width:575px){
     width: 80%;
