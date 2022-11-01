@@ -114,7 +114,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               </ul>
             </BredCrumb> : ""
           }
-          {data.isHome ?
+          {/* {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :
             state.router.link?.includes("/category/fonts/") ?
               <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-font.webp" /> :
@@ -129,7 +129,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
                         <img className="banner_img" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
                         <img className="banner_img" src={BannerBg} />
-          }
+          } */}
           <SectionContainer size="large">
 
             <BannerInner>
@@ -200,7 +200,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               :
               <>
               
-                <Skelton className="catecircle" />
+                <Skelton height={220} width={220} radius="50%" />
                 <Skelton height={220} width={220} radius="50%" />
                 <Skelton height={220} width={220} radius="50%" />
                 <Skelton height={220} width={220} radius="50%" />
@@ -309,8 +309,6 @@ grid-template-columns: repeat(5, 2fr);
 gap: 10px 10px;
 margin-bottom: 5rem;
 margin-top: 7rem;
-
-
 
 @media (max-width:767px){
   grid-template-columns: repeat(3, 2fr);
