@@ -191,21 +191,23 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                 <CategoryCircle key={val.id}>
                   <Link link={val?.link?.replaceAll(state.source.url, "")}>
                     <div>
-                      <img src={val?.acf?.cate_image} />
+                      <img width="210px" height="210px" src={val?.acf?.cate_image} />
                     </div>
                     <p> {val.name} </p>
                   </Link>
                 </CategoryCircle>
               )
               :
-              <>
-              
-                <Skelton height={220} width={220} radius="50%" />
-                <Skelton height={220} width={220} radius="50%" />
-                <Skelton height={220} width={220} radius="50%" />
-                <Skelton height={220} width={220} radius="50%" />
-                <Skelton height={220} width={220} radius="50%" />
-              </>
+             
+              <Skeltonwrapper>
+                <Skelton className="catecircle" />
+                <Skelton className="catecircle" />
+                <Skelton className="catecircle" />
+                <Skelton className="catecircle" />
+                <Skelton className="catecircle" />
+             
+
+              </Skeltonwrapper>
             }
           </CategoryMain>
           : <CategoryMain></CategoryMain>}
@@ -278,7 +280,13 @@ clear:left;
   padding:0px 20px;
 
 }
+`;
 
+export const Skeltonwrapper = styled.skeltonwrapper`
+
+.catecircle{width:220px;
+  height:220px;
+  border-radius:50% !important;}
 
 `;
 
@@ -310,6 +318,8 @@ gap: 10px 10px;
 margin-bottom: 5rem;
 margin-top: 7rem;
 
+
+
 @media (max-width:767px){
   grid-template-columns: repeat(3, 2fr);
   a{color:#000; text-decoration:none;}
@@ -318,6 +328,7 @@ margin-top: 7rem;
 @media (max-width:575px){
   margin-bottom: 0rem;
 }
+
 `;
 
 export const CategoryCircle = styled.categorycircle`
