@@ -198,16 +198,14 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                 </CategoryCircle>
               )
               :
-             
-              <Skeltonwrapper>
+              <>
+              
                 <Skelton className="catecircle" />
-                <Skelton className="catecircle" />
-                <Skelton className="catecircle" />
-                <Skelton className="catecircle" />
-                <Skelton className="catecircle" />
-             
-
-              </Skeltonwrapper>
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+                <Skelton height={220} width={220} radius="50%" />
+              </>
             }
           </CategoryMain>
           : <CategoryMain></CategoryMain>}
@@ -280,13 +278,7 @@ clear:left;
   padding:0px 20px;
 
 }
-`;
 
-export const Skeltonwrapper = styled.skeltonwrapper`
-
-.catecircle{width:220px;
-  height:220px;
-  border-radius:50% !important;}
 
 `;
 
@@ -328,7 +320,6 @@ margin-top: 7rem;
 @media (max-width:575px){
   margin-bottom: 0rem;
 }
-
 `;
 
 export const CategoryCircle = styled.categorycircle`
