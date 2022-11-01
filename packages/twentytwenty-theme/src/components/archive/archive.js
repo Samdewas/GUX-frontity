@@ -127,6 +127,8 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                     state.router.link?.includes("/category/add-ons/photoshop-action/") ?
                       <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Photoshop.webp"  /> :
                       state.router.link?.includes("/category/templates/") ?
+                      <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Graphics.webp"  /> :
+                      state.router.link?.includes("/category/stock-image/") ?
                       <img className="banner_img" alt="pss" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Website.webp"  /> :
                       state.router.link?.includes("/category/add-ons/lightroom-preset/") ?
                         <img className="banner_img" alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/px-Lightroom.webp"  /> :
@@ -167,7 +169,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                   placeholder="Search for Photoshop Action, Lightroom Preset, Fonts etc..."
                   name="search"
                 />
-                <img className="srch_icon" src={searchicon} />
+                <img className="srch_icon" alt="search" src={searchicon} />
                 <SearchButton bg={primary}>Search</SearchButton>
               </SearchForm>
             </div>

@@ -3,8 +3,8 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://graphicux.com/",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "title": "Download Free Photoshop Action and All Ui/Ux resources - GraphicUX",
+      "description": "Download Free Photoshop Action &amp; All Ui/Ux resources"
     }
   },
   "packages": [
