@@ -263,7 +263,7 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    <GoogleAds  slot='6445886756' width="300px" heigth="250px" key="534535" />
+                    <GoogleAds  slot='6445886756' width="300px" heigth="250px" />
                   </SidebarH>
 
                 </SideCateItem>
@@ -285,7 +285,7 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    <GoogleAds  slot='6449053810' width="300px" heigth="600px" key="534535" />
+                    <GoogleAds  slot='6449053810' width="300px" heigth="600px" />
                   </SidebarH>
 
                 </SideCateItem>
