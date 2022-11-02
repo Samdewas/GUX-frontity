@@ -13,6 +13,7 @@ const GoogleAds = ({ actions, slot, width, height }) => {
         script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
 
         document.body.appendChild(script);
+
     }, []);
     const adBlockFunction = () => {
         // Google Analytics End
@@ -24,21 +25,17 @@ const GoogleAds = ({ actions, slot, width, height }) => {
             {adblockerActive ?
                 <Adblock>
                     <h2>Adblock Detected !<br />
-Please disable adblock  to use our site.</h2>
+                        Please disable adblock  to use our site.</h2>
                 </Adblock>
                 : ""}
-            {/* <AdSense.Google
-                client='ca-pub-5442643109134129'
-                slot={slot}
-                style={{ width: width, height: height, float: 'left'}}
-                format=''
-            /> */}
+
             <AdSense.Google
                 client='ca-pub-5442643109134129'
                 slot={slot}
-                style={{ width: width, height: height, float: 'left' }}
+                style={{ width: width, height: height }}
                 format=''
             />
+
         </>
     );
 };

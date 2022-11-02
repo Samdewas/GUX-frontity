@@ -17,8 +17,8 @@ import { useRef } from "react";
 import Input from "../styles/input";
 import Button from "../styles/button";
 import ScreenReaderText from "../styles/screen-reader";
-import GoogleAds from "../ads/GoogleAds";
 import Comments from "../globle/comments/index.js";
+import AdSense from 'react-adsense';
 
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
@@ -107,9 +107,21 @@ const Post = ({ state, actions, libraries }) => {
    * home posts and the list component so if the user visits
    * the home page, everything is ready and it loads instantly.
    */
+  const [adblockerActive, setAdblockerActive] = useState(false);
   useEffect(() => {
     actions.source.fetch("/");
+    const script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+    document.body.appendChild(script);
   }, [actions.source]);
+
+
+  const adBlockFunction = () => {
+    // Google Analytics End
+    setAdblockerActive(true);
+  }
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
     return () => {
@@ -153,11 +165,15 @@ const Post = ({ state, actions, libraries }) => {
       setDownloadhover(false);
     }
   }
-  console.log("lasldfjlsjd", postcategory)
   return data.isReady ? (
 
     <>
-
+      {adblockerActive ?
+        <Adblock>
+          <h2>Adblock Detected !<br />
+            Please disable adblock  to use our site.</h2>
+        </Adblock>
+        : ""}
       <PostArticle>
 
         <SectionContainer size="large">
@@ -213,7 +229,7 @@ const Post = ({ state, actions, libraries }) => {
                       </UXdownload>
 
                       <Adwrapper className={downloadhover ? "chalu" : ""}>
-                      <GoogleAds  slot='5221506164' width="300px" heigth="250px" key="534535" />
+                        <GoogleAds slot='5221506164' width="300px" heigth="250px" key="534535" />
                       </Adwrapper>
 
                     </EntryContent>
@@ -222,17 +238,17 @@ const Post = ({ state, actions, libraries }) => {
                   </>
                 )}
 
-                
-                  {posttags?.length ? <div>
-                    <h4>Related Searches</h4>
-                    <TagsList>
-                      {posttags?.map(val =>
-                        <li>  <Link link={val.link}>{val.name}</Link> </li>
-                      )}
-                    </TagsList>
-                    </div>
-                    : ""}
-                
+
+                {posttags?.length ? <div>
+                  <h4>Related Searches</h4>
+                  <TagsList>
+                    {posttags?.map(val =>
+                      <li>  <Link link={val.link}>{val.name}</Link> </li>
+                    )}
+                  </TagsList>
+                </div>
+                  : ""}
+
 
                 <Comments postId={data.id} id="comments" />
 
@@ -263,7 +279,14 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    <GoogleAds  slot='6445886756' width="300" heigth="250" />
+
+                    <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5764423148'
+                      style={{ width: 500, height: 300, float: 'left' }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
                   </SidebarH>
 
                 </SideCateItem>
@@ -285,12 +308,20 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    <GoogleAds  slot='6449053810' width="300" heigth="600" />
+
+                    <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5764423148'
+                      style={{ width: 500, height: 300, float: 'left' }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
+
                   </SidebarH>
 
                 </SideCateItem>
 
-              
+
 
               </RightBarLink>
             </DetailsColumnRight>
@@ -358,7 +389,22 @@ export default connect(Post);
 
 
 
+const Adblock = styled.adblock`
+h2 {
+    width: 1888px;
+    position: fixed;
+    top: -59px;
+    left: 0px;
+    right: 0px;
+    background: rgb(116 112 112 / 94%);
+    height: 100vh;
+    text-align: center;
+    padding-top: 20%;
+    color: #ffffff;
+    z-index: 999999999;
+  }
 
+`;
 
 const DetailsColumnLeft = styled.detailscolumnleft`
 width: calc(75% - 6rem);
