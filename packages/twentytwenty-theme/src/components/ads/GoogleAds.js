@@ -23,7 +23,8 @@ const GoogleAds = ({ actions, slot, width, height }) => {
         <>
             {adblockerActive ?
                 <Adblock>
-                    <h2>Please Deactive Adblocker Tool</h2>
+                    <h2>Adblock Detected !
+Please disable adblock <br /> to use our site.</h2>
                 </Adblock>
                 : ""}
             <AdSense.Google
@@ -60,11 +61,11 @@ h2 {
     top: -59px;
     left: 0px;
     right: 0px;
-    background: #747070b5;
+    background: rgb(116 112 112 / 94%);
     height: 100vh;
     text-align: center;
     padding-top: 20%;
-    color: #fff;
+    color: #ffffff;
     z-index: 999999999;
   }
 
