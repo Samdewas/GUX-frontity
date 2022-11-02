@@ -320,8 +320,8 @@ const Post = ({ state, actions, libraries }) => {
 
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='6449053810'
-                      style={{ width: 300, height: 600, float: 'left' }}
+                      slot='6445886756'
+                      style={{ width: 300, height: 250, float: 'left' }}
                       format=''
                     />
                     {/* <h6> Ad </h6> */}

@@ -7,8 +7,8 @@ import SearchModal from "./search/search-modal";
 import MobileSearchButton from "./mobile/search-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
-import Logo from "../assets/img/logo.png"
 import { useLocation } from 'react-router-dom';
+import Lazyload from "./lazyloading/lazyload";
 
 
 
@@ -39,8 +39,8 @@ const Header = ({ state }) => {
             <SiteTitle>
               <StyledLink link="/">
                 {/* {title}  */}
-                {/* <img className="logo" src={Logo} /> */}
-                <span> Logo </span>
+                <Lazyload className="logo" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/logo.webp" alt="graphicux" />
+                {/* <span> Logo </span> */}
               </StyledLink>
             </SiteTitle>
             {/* <SiteDescription>{description}</SiteDescription> */}

@@ -55,7 +55,7 @@ const Footer = ({ state }) => {
         <Footerlink>
 
           <FooterBox1>
-          <h3> <Link link="/"> Logo </Link> </h3>
+          <h3> <Link link="/"> GraphicUX</Link> </h3>
           <ul>
             <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
 
