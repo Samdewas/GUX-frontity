@@ -68,10 +68,10 @@ const Footer = ({ state }) => {
           <FooterBox2>
           <h3> Quick Links </h3>
           <ul>
-            <li> <Link link="/"> About </Link> </li>
-            <li> <Link link="/"> Categories </Link> </li>
-            <li> <Link link="/"> Privacy Policy </Link> </li>
-            <li> <Link link="/"> Dmca</Link> </li>
+            <li> <Link link="about-us/"> About Us </Link> </li>
+            <li> <Link link="#"> Category </Link> </li>
+            <li> <Link link="privacy-policy/"> Privacy Policy </Link> </li>
+            <li> <Link link="dmca/"> Dmca</Link> </li>
             <li> <Link link="contact-us/"> Contact us</Link> </li>
           </ul>
           </FooterBox2>
@@ -79,7 +79,7 @@ const Footer = ({ state }) => {
           <FooterBox3>
           <h3> Categories </h3>
           <ul>
-            <li> <Link link="category/fonts/"> Premium Fonts </Link> </li>
+            <li> <Link link="category/fonts/"> Free Fonts </Link> </li>
             <li> <Link link="category/add-ons/photoshop-action/"> Photoshop Action </Link> </li>
             <li> <Link link="category/add-ons/lightroom-preset/"> Lightroom Preset </Link> </li>
             <li> <Link link="category/graphics/"> Graphics and Mockups</Link> </li>
@@ -97,19 +97,19 @@ const Footer = ({ state }) => {
           </ul>
          
             <SocialMedia>
-          <li> <Link link="/"> <Lazyload alt="fb"  className="socialimg1" src={fb1} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="fb"  className="socialimg1" src={fb1} />
           <Lazyload alt="facebook"  className="socialimg2" src={fb2} />
           </Link> </li>
 
-          <li> <Link link="/"> <Lazyload alt="insta"  className="socialimg1" src={i1} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="insta"  className="socialimg1" src={i1} />
           <Lazyload alt="instagram"  className="socialimg2" src={i2} />
           </Link> </li>
 
-          <li> <Link link="/"> <Lazyload alt="pinterest"   className="socialimg1" src={p1} />
+          <li> <Link target="blank" link="https://www.pinterest.com/graphicgux/"> <Lazyload alt="pinterest"   className="socialimg1" src={p1} />
           <Lazyload alt="pin"  className="socialimg2" src={p2} />
           </Link> </li>
 
-          <li> <Link link="/"> <Lazyload alt="twitt"  className="socialimg1" src={t1} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="twitt"  className="socialimg1" src={t1} />
           <Lazyload alt="twitter"  className="socialimg2" src={t2} />
           </Link> </li>
           <p><Link link="mailto:graphicgux@gmail.com"> <Lazyload alt="email" src={eml} /> graphicgux@gmail.com </Link> </p>

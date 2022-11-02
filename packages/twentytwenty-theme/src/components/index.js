@@ -39,6 +39,9 @@ import useFocusEffect from "./hooks/use-focus-effect";
 import Contact from "./contact";
 import Link from "@frontity/components/link"
 import Lazyload from "./lazyloading/lazyload";
+import AboutUs from "./about-us";
+import PrivacyPolicy from "./privacy-policy";
+import Dmca from "./Dmca";
 
 
 const SectionContainer = styled.div`
@@ -201,7 +204,7 @@ const Theme = ({ state, actions }) => {
        </div>
        <div className="fcaption">
         <h5>High-quality stock content</h5>
-        <p>Download scroll-stopping images of the best quality
+        <p>Download resource of the best quality
           to make your projects look professional.</p>
           </div>
       </li>
@@ -213,8 +216,8 @@ const Theme = ({ state, actions }) => {
        </div>
        <div className="fcaption">
         <h5>Ready-to-use assets</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
+        <p>We have best ready to use digital assets
+          you can use it for free.</p>
           </div>
       </li>
 
@@ -225,8 +228,8 @@ const Theme = ({ state, actions }) => {
        </div>
        <div className="fcaption">
         <h5>Guaranteed search results</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
+        <p>Search and Download scroll-stopping best quality
+        item you can find any assets whout any hassle.</p>
           </div>
       </li>
 
@@ -237,8 +240,10 @@ const Theme = ({ state, actions }) => {
        </div>
        <div className="fcaption">
         <h5>Fresh content everyday</h5>
-        <p>Download scroll-stopping images of the best quality
-          to make your projects look professional.</p>
+        <p>We upload fresh content on everyday
+          with all the category that match your need
+          
+          .</p>
           </div>
       </li>
     </ul>
@@ -260,6 +265,9 @@ const Theme = ({ state, actions }) => {
             <Post when={data.isPostType && data.isPost} />
             <PageError when={data.isError} />
             <Contact when={state.router.link.includes("/contact-us")} />
+            <AboutUs when={state.router.link.includes("/about-us")} />
+            <PrivacyPolicy when={state.router.link.includes("/privacy-policy")} />
+            <Dmca when={state.router.link.includes("/dmca")} />
           </Switch>
 
       
@@ -345,9 +353,9 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
 <div className="ux_lightroom2"> <Lazyload alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
 <div className="ux_lightroom1">
 <h4>Lightroom Preset</h4>
-<p>  Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
+<p>  Lightroom presets are a great way to speed up photo editing very simple. You can totally have fun with them, too! You can easily experiment
+   on different looks and apply them uniformly across images. These also make it possible for you to set a signature look and awesome look,
+    especially if you have Instagram following or youtube channel and also with your photograph.</p>  
 <div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><Lazyload alt="arrows" src={arrowicon} /></div>
 </div>
 
@@ -362,12 +370,12 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
 
         <div className="ux_action1">
         <h4>Graphics & Mockups</h4>
-        <p>  The use of a great-looking font is the main part of making
+        <p>  The use of graphics is the main part of making
 any kind of design look more professional. Of course, to reach
 the same degree of professionalism you dont always have to
-use premium fonts. If you cant afford to spend money on costly
-fonts to make your designs appear great then dont panic.
-You can instantly download thousands of Free Fonts from here. </p>  
+use. If you cant afford to spend money on costly
+graphics and mockup to make your designs appear great then dont panic.
+You can instantly download thousands of Free graphics related assets here. </p>  
 <div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><Lazyload alt="arrow" src={arrowicon} /></div>
         </div>
 
