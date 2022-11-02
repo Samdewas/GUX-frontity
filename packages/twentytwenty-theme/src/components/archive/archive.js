@@ -225,7 +225,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                    <GoogleAds  slot='7479301206' width="300px" heigth="250px" key="534535" />
+                    <GoogleAds  slot='7479301206' width="300" heigth="250" key="534535" />
                     <Article
                       key={item.id}
                       item={item}
