@@ -35,8 +35,8 @@ Please disable adblock  to use our site.</h2>
             /> */}
             <AdSense.Google
                 client='ca-pub-5442643109134129'
-                slot='5764423148'
-                style={{ width: 500, height: 300, float: 'left' }}
+                slot={slot}
+                style={{ width: width, height: height, float: 'left' }}
                 format=''
             />
         </>
