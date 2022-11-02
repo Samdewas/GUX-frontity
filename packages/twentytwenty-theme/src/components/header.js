@@ -39,7 +39,7 @@ const Header = ({ state }) => {
             <SiteTitle>
               <StyledLink link="/">
                 {/* {title}  */}
-                <Lazyload className="logo" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/logo.webp" alt="graphicux" />
+                <Lazyload className="logo" width="180px" height="53px" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/logo.webp" alt="graphicux" />
                 {/* <span> Logo </span> */}
               </StyledLink>
             </SiteTitle>
