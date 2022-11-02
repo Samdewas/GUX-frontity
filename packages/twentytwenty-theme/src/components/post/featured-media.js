@@ -31,7 +31,7 @@ const FeaturedMedia = ({ state, id, className }) => {
       ) || null;
   return (
     <Figure className={className}>
-      <LazyLoad>
+      {/* <LazyLoad> */}
         <Image
           alt={media.alt_text}
           src={media.source_url}
@@ -39,7 +39,7 @@ const FeaturedMedia = ({ state, id, className }) => {
           height="282px"
           width="387px"
         />
-      </LazyLoad>
+      {/* </LazyLoad> */}
 
     </Figure>
   );
