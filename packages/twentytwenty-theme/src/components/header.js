@@ -27,7 +27,7 @@ const Header = ({ state }) => {
 
   return (
 
-
+    
     <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header" : "inner_header"}>
       <HeaderInner>
         <TitleWrapper>

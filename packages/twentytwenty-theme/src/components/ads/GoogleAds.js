@@ -16,7 +16,7 @@ const GoogleAds = ({ actions, slot, width, height }) => {
     }, [actions.source]);
     const adBlockFunction = () => {
         // Google Analytics End
-        setAdblockerActive(false);
+        setAdblockerActive(true);
     }
 
     return (
@@ -29,7 +29,7 @@ const GoogleAds = ({ actions, slot, width, height }) => {
             <AdSense.Google
                 client='ca-pub-5442643109134129'
                 slot={slot}
-                style={{ width: width, height: height, float: 'left' , display:"inline-block" }}
+                style={{ width: width, height: height}}
                 format=''
             />
             {/* <AdSense.Google
