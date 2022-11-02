@@ -34,7 +34,16 @@ const settings = {
     "@frontity/tiny-router",
     "@frontity/html2react",
     "@frontity/head-tags",
-    "@frontity/wp-comments"
+    "@frontity/wp-comments",
+
+    {
+      name: "@frontity/google-analytics",
+      state: {
+        googleAnalytics: {
+          trackingId: "UA-138709497-1",
+        },
+      },
+    },
 
   ]
 };

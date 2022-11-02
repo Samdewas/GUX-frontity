@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { connect, styled } from "frontity";
 import AdSense from 'react-adsense';
 
-const GoogleAds = ({ actions }) => {
+const GoogleAds = ({ actions, slot, width, height }) => {
     const [adblockerActive, setAdblockerActive] = useState(false);
 
     useEffect(() => {
         actions.source.fetch("/");
         const script = document.createElement("script");
-
         script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
         script.async = true;
         script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
@@ -29,10 +28,25 @@ const GoogleAds = ({ actions }) => {
                 : ""}
             <AdSense.Google
                 client='ca-pub-5442643109134129'
+                slot={slot}
+                style={{ width: width, height: height, float: 'left' , display:"inline-block" }}
+                format=''
+            />
+            {/* <AdSense.Google
+                client='ca-pub-5442643109134129'
                 slot='5764423148'
                 style={{ width: 500, height: 300, float: 'left' }}
                 format=''
-            />
+            /> */}
+{/*             
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-5442643109134129"
+     data-ad-slot="6445886756"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> */}
+
         </>
     );
 };

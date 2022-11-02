@@ -213,7 +213,7 @@ const Post = ({ state, actions, libraries }) => {
                       </UXdownload>
 
                       <Adwrapper className={downloadhover ? "chalu" : ""}>
-                        {/* <GoogleAds /> */}
+                      <GoogleAds  slot='5221506164' width="300px" heigth="250px" key="534535" />
                       </Adwrapper>
 
                     </EntryContent>
@@ -262,6 +262,14 @@ const Post = ({ state, actions, libraries }) => {
 
                 <SideCateItem>
                   <SidebarH>
+                    {/* <h6> Ad </h6> */}
+                    <GoogleAds  slot='6445886756' width="300px" heigth="250px" key="534535" />
+                  </SidebarH>
+
+                </SideCateItem>
+
+                <SideCateItem>
+                  <SidebarH>
                     <h6> Categories </h6>
                   </SidebarH>
                   <ul>
@@ -277,10 +285,12 @@ const Post = ({ state, actions, libraries }) => {
                 <SideCateItem>
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
-                    {/* <GoogleAds /> */}
+                    <GoogleAds  slot='6449053810' width="300px" heigth="600px" key="534535" />
                   </SidebarH>
 
                 </SideCateItem>
+
+              
 
               </RightBarLink>
             </DetailsColumnRight>
