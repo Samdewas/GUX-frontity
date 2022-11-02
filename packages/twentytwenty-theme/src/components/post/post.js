@@ -229,7 +229,16 @@ const Post = ({ state, actions, libraries }) => {
                       </UXdownload>
 
                       <Adwrapper className={downloadhover ? "chalu" : ""}>
-                        <GoogleAds slot='5221506164' width="300px" heigth="250px" key="534535" />
+              
+                         {/* <h6> Ad </h6> */}
+
+                    <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5221506164'
+                      style={{ width: 300, height: 250, float: 'left' }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
                       </Adwrapper>
 
                     </EntryContent>
@@ -282,8 +291,8 @@ const Post = ({ state, actions, libraries }) => {
 
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='5764423148'
-                      style={{ width: 500, height: 300, float: 'left' }}
+                      slot='6445886756'
+                      style={{ width: 300, height: 250, float: 'left' }}
                       format=''
                     />
                     {/* <h6> Ad </h6> */}
@@ -311,8 +320,8 @@ const Post = ({ state, actions, libraries }) => {
 
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='5764423148'
-                      style={{ width: 500, height: 300, float: 'left' }}
+                      slot='6449053810'
+                      style={{ width: 300, height: 600, float: 'left' }}
                       format=''
                     />
                     {/* <h6> Ad </h6> */}
