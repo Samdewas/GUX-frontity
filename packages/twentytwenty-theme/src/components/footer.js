@@ -33,7 +33,7 @@ const BackToTop = () => {
 
   return (
     <p href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer", position: "fixed", right: "30px", bottom: "20px", color: "white" }}>
-      <span style={{ marginRight: 8 }}><Lazyload className="hidemob" alt="gototop"  width="88px" height="88px"  src={topimg} /></span>
+      <span style={{ marginRight: 8 }}><img className="hidemob" alt="gototop"  width="88px" height="88px"  src={topimg} /></span>
       <span className="arrow" aria-hidden="true">
         ↑
       </span>
@@ -59,7 +59,7 @@ const Footer = ({ state }) => {
           <ul>
             <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
 
-            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <Lazyload alt="buymecoffee"  src={buy} /> </Link>
+            <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img alt="buymecoffee"  src={buy} /> </Link>
          
 
           </ul>
@@ -92,27 +92,27 @@ const Footer = ({ state }) => {
           <ul>
           <NewsLetterInput>
               <input type="text" placeholder="Email address" />
-              <button> Subscribe  <Lazyload alt="notification" src={Notification} /> </button>
+              <button> Subscribe  <img alt="notification" src={Notification} /> </button>
             </NewsLetterInput>
           </ul>
          
             <SocialMedia>
-          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="fb"  className="socialimg1" src={fb1} />
-          <Lazyload alt="facebook"  className="socialimg2" src={fb2} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <img alt="fb"  className="socialimg1" src={fb1} />
+          <img alt="facebook"  className="socialimg2" src={fb2} />
           </Link> </li>
 
-          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="insta"  className="socialimg1" src={i1} />
-          <Lazyload alt="instagram"  className="socialimg2" src={i2} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <img alt="insta"  className="socialimg1" src={i1} />
+          <img alt="instagram"  className="socialimg2" src={i2} />
           </Link> </li>
 
-          <li> <Link target="blank" link="https://www.pinterest.com/graphicgux/"> <Lazyload alt="pinterest"   className="socialimg1" src={p1} />
-          <Lazyload alt="pin"  className="socialimg2" src={p2} />
+          <li> <Link target="blank" link="https://www.pinterest.com/graphicgux/"> <img alt="pinterest"   className="socialimg1" src={p1} />
+          <img alt="pin"  className="socialimg2" src={p2} />
           </Link> </li>
 
-          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <Lazyload alt="twitt"  className="socialimg1" src={t1} />
-          <Lazyload alt="twitter"  className="socialimg2" src={t2} />
+          <li> <Link target="blank" link="https://www.facebook.com/GraphicUX/"> <img alt="twitt"  className="socialimg1" src={t1} />
+          <img alt="twitter"  className="socialimg2" src={t2} />
           </Link> </li>
-          <p><Link link="mailto:graphicgux@gmail.com"> <Lazyload alt="email" src={eml} /> graphicgux@gmail.com </Link> </p>
+          <p><Link link="mailto:graphicgux@gmail.com"> <img alt="email" src={eml} /> graphicgux@gmail.com </Link> </p>
           </SocialMedia>
       
           </FooterBox4>

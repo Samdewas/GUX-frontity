@@ -42,7 +42,7 @@ const Header = ({ state }) => {
               <StyledLink link="/">
                 {/* {title}  */}
 
-                <Lazyload className="logo" width="180px" height="53px" src={state.router.link == '/' ? Logo : Logo2} alt="graphicux" />
+                <img className="logo" width="180px" height="53px" src={state.router.link == '/' ? Logo : Logo2} alt="graphicux" />
                 {/* <span> Logo </span> */}
               </StyledLink>
             </SiteTitle>
