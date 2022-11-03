@@ -792,10 +792,6 @@ discription p {
     }
 
 
-
-
-
-
 .dropdown, .dropup {
   position: relative;
 }
@@ -891,10 +887,6 @@ header#site-header .dropdown-menu li {
   display: block !important;
   margin: 0 !important;
 }
-
-
-
-
 
 
 header#site-header .SubMenu ul {
@@ -1059,7 +1051,7 @@ header#site-header a {
   font-weight: 500;
 }
 header#site-header.inner_header {
-  background: linear-gradient(180deg, #25C97C -178.6%, #FFFFFF 100.5%) !important;
+  background: #084523;
 }
 
 header#site-header li {
@@ -1069,10 +1061,10 @@ header#site-header li {
   color: black!important;
 }
 header#site-header.inner_header span {
-  color: black !important;
+  color: #fff !important;
 }
 header#site-header.inner_header button svg {
-  fill: black;
+  fill: #fff;
 }
 
 header#site-header.inner_header {

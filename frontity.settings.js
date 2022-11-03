@@ -44,6 +44,14 @@ const settings = {
         },
       },
     },
+    {
+      name: "@frontity/google-tag-manager-analytics",
+      state: {
+        googleTagManagerAnalytics: {
+          containerId: "G-D44D3408K9",
+        },
+      },
+    },
 
   ]
 };
