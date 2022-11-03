@@ -315,12 +315,12 @@ margin-bottom: 5rem;
 margin-top: 7rem;
 
 @media (max-width:767px){
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(2, 2fr);
   a{color:#000; text-decoration:none;}
 }
 
 @media (max-width:575px){
-  margin-bottom: 0rem;
+  margin-bottom: 90px;
 }
 `;
 

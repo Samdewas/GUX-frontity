@@ -9,6 +9,8 @@ import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
 import { useLocation } from 'react-router-dom';
 import Lazyload from "./lazyloading/lazyload";
+import Logo from "../assets/img/uxlogo.svg"
+import Logo2 from "../assets/img/uxlogow.svg"
 
 
 
@@ -39,7 +41,8 @@ const Header = ({ state }) => {
             <SiteTitle>
               <StyledLink link="/">
                 {/* {title}  */}
-                <Lazyload className="logo" width="180px" height="53px" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/logo.webp" alt="graphicux" />
+
+                <Lazyload className="logo" width="180px" height="53px" src={state.router.link == '/' ? Logo : Logo2} alt="graphicux" />
                 {/* <span> Logo </span> */}
               </StyledLink>
             </SiteTitle>

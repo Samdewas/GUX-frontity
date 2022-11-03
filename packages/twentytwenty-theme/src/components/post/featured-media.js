@@ -1,7 +1,7 @@
 import { connect, styled } from "frontity";
 import Img from "@frontity/components/image";
 import SectionContainer from "../styles/section-container";
-import LazyLoad from "react-lazy-load";
+// import LazyLoad from "react-lazy-load";
 
 /**
  * The featured image/video of the post.
@@ -31,7 +31,7 @@ const FeaturedMedia = ({ state, id, className }) => {
       ) || null;
   return (
     <Figure className={className}>
-      <LazyLoad>
+      {/* <LazyLoad> */}
         <Image
           alt={media.alt_text}
           src={media.source_url}
@@ -39,7 +39,7 @@ const FeaturedMedia = ({ state, id, className }) => {
           height="282px"
           width="387px"
         />
-      </LazyLoad>
+      {/* </LazyLoad> */}
 
     </Figure>
   );
