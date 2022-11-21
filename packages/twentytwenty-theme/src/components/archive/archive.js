@@ -11,7 +11,7 @@ import { useTransition, animated } from "react-spring";
 import useFocusTrap from "../hooks/use-trap-focus";
 import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
-import GoogleAds from "../ads/GoogleAds";
+import AdSense from 'react-adsense';
 import Skelton from "../Skelton";
 
 // import "slick-carousel/slick/slick.css";
@@ -94,15 +94,43 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
     }
   }, [state.router.link]);
 
+  const [adblockerActive, setAdblockerActive] = useState(false);
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+    document.body.appendChild(script);
+  }, [actions.source]);
+
+
+  const adBlockFunction = () => {
+    // Google Analytics End
+    setAdblockerActive(true);
+  }
 
   return (
     <>
+     {adblockerActive ?
+        <Adblock>
+          <h2>Adblock Detected !<br />
+            Please disable adblock  to use our site.</h2>
+        </Adblock>
+        : ""}
       {!data.isHome ?
         <BannerSection>
           {data?.isHome || !data?.isSearch ?
             <>
-            <GoogleAds slot='7406912261' width="728" heigth="90" style={{display: "inline-block;"}} />
-           
+            {/* <h6> Ad </h6> */}
+
+            <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='7406912261'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
             <BredCrumb>
               <ul>
                 <li>
@@ -264,7 +292,22 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
 
 export default connect(Archive);
 
+const Adblock = styled.adblock`
+h2 {
+    width: 1888px;
+    position: fixed;
+    top: -59px;
+    left: 0px;
+    right: 0px;
+    background: rgb(116 112 112 / 94%);
+    height: 100vh;
+    text-align: center;
+    padding-top: 20%;
+    color: #ffffff;
+    z-index: 999999999;
+  }
 
+`; 
 export const PostMain = styled.postmain`
 display: grid;
 grid-template-columns: repeat(3,2fr);

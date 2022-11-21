@@ -42,7 +42,7 @@ import Lazyload from "./lazyloading/lazyload";
 import AboutUs from "./about-us";
 import PrivacyPolicy from "./privacy-policy";
 import Dmca from "./Dmca";
-import GoogleAds from "./ads/GoogleAds";
+import AdSense from 'react-adsense';
 
 
 const SectionContainer = styled.div`
@@ -106,8 +106,28 @@ const Theme = ({ state, actions }) => {
       closeSearchModal();
     }
   };
+  const [adblockerActive, setAdblockerActive] = useState(false);
+  useEffect(() => {
+    actions.source.fetch("/");
+    const script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.onerror = (err) => err.type == "error" ? adBlockFunction() : "";
+    document.body.appendChild(script);
+  }, [actions.source]);
+
+  const adBlockFunction = () => {
+    // Google Analytics End
+    setAdblockerActive(true);
+  }
   return (
     <>
+     {adblockerActive ?
+        <Adblock>
+          <h2>Adblock Detected !<br />
+            Please disable adblock  to use our site.</h2>
+        </Adblock>
+        : ""}
       {/* Add global styles for the whole site, like body or a's or font-faces. 
         Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={globalStyles(state.theme.colors)} />
@@ -193,11 +213,16 @@ const Theme = ({ state, actions }) => {
               <Uxfeatured>
 
 <SectionContainer>
+ {/* <h6> Ad </h6> */}
 
-   {/* <h6> Ad </h6> */}
-
-   <GoogleAds slot='5764423148' width="728" heigth="90" style={{display: "inline-block;"}} />
+ <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5764423148'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
                     {/* <h6> Ad </h6> */}
+  
   <h4>The Smartest Choice For Creatives Like You</h4>  
   <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
 
