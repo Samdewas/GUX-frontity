@@ -221,13 +221,13 @@ const Post = ({ state, actions, libraries }) => {
                     {/* <h6> Ad </h6> */}
              </div>
               {/* Post Featured image here we can put adsense here      */}
-              <PostDetailsImg>
+              {/* <PostDetailsImg>
 
                 {state.theme.featuredMedia.showOnPost && (
                   <FeaturedImage id={post.featured_media} isSinglePost={true} />
                 )}
 
-              </PostDetailsImg>
+              </PostDetailsImg> */}
 
               <PostDiscription>
 
@@ -642,7 +642,7 @@ const DetailsTextInner = styled.detailstextinner`
 display: flex;
 justify-content: space-between;
 align-items: center;
-
+margin-bottom:10px;
 @media (min-width:320px) and (max-width:767px){
   display: block;
 }
