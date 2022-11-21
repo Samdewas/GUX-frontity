@@ -264,12 +264,12 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                   <AdSense.Google
+                   {/* <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='7479301206'
                       style={{ width: 300, height: 250, display: "inline-block" }}
                       format=''
-                    />
+                    /> */}
                     <Article
                       key={item.id}
                       item={item}
