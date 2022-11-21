@@ -11,8 +11,8 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "dev":"cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
-    "build": "frontity build",
+    "dev": "frontity dev",
+    "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' frontity build",
     "serve": "frontity serve"
   },
   "prettier": {},
