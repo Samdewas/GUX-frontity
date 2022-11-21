@@ -100,6 +100,9 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
       {!data.isHome ?
         <BannerSection>
           {data?.isHome || !data?.isSearch ?
+            <>
+            <GoogleAds slot='7406912261' width="728" heigth="90" style={{display: "inline-block;"}} />
+           
             <BredCrumb>
               <ul>
                 <li>
@@ -112,7 +115,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                   <Link link="/"> <span> {decode(state.source[data.taxonomy][data.id].name).toUpperCase()} </span></Link>
                 </li>
               </ul>
-            </BredCrumb> : ""
+            </BredCrumb>  </> : ""
           }
           {data.isHome ?
             <img className="banner_img" src={BannerBg} /> :

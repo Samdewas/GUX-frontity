@@ -52,6 +52,14 @@ const settings = {
         },
       },
     },
+    {
+      name: "frontity-microsoft-clarity",
+      state: {
+        microsoftClarity: {
+          trackingCode: "emc50vc0un"
+        }
+      }
+    }
 
   ]
 };
