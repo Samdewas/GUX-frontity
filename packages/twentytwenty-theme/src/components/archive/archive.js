@@ -124,7 +124,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data?.isHome || !data?.isSearch ?
             <>
             {/* <h6> Ad </h6> */}
-            <div>
+            <div className="header_adwrapper">
             <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='7406912261'
