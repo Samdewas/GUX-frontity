@@ -11,7 +11,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "dev": "frontity dev",
+    "dev":"cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
     "build": "frontity build",
     "serve": "frontity serve"
   },
@@ -28,6 +28,7 @@
     "@frontity/wp-comments": "^1.0.0",
     "@frontity/wp-source": "^1.11.7",
     "@kunukn/react-collapse": "^2.2.9",
+    "cross-env": "^7.0.3",
     "frontity": "^1.17.2",
     "rc-menu": "^7.5.5",
     "react-adsense": "^0.1.0",
