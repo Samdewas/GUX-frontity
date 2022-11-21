@@ -212,7 +212,6 @@ const Post = ({ state, actions, libraries }) => {
              <div> 
 
  {/* <h6> Ad </h6> */}
-
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='2702898115'
