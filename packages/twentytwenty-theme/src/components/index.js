@@ -196,7 +196,7 @@ const Theme = ({ state, actions }) => {
 
    {/* <h6> Ad </h6> */}
 
-   <GoogleAds slot='5764423148' width="728" heigth="90" />
+   <GoogleAds slot='5764423148' width="728" heigth="90" style={{display: "inline-block;"}} />
                     {/* <h6> Ad </h6> */}
   <h4>The Smartest Choice For Creatives Like You</h4>  
   <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
