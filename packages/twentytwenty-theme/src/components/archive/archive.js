@@ -13,6 +13,7 @@ import useFocusEffect from "../hooks/use-focus-effect";
 import Link from "../link";
 import AdSense from 'react-adsense';
 import Skelton from "../Skelton";
+import GoogleAds from "../ads/GoogleAds";
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -264,13 +265,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                   <AdSense.Google
-                      client='ca-pub-5442643109134129'
-                      slot='7479301206'
-                      style={{ width: 300, height: 250, display: "inline-block" }}
-                      format=''
-                      key="545741254"
-                    />
+                    <GoogleAds  slot='7479301206' width="300" heigth="250" key="534535" />
                     <Article
                       key={item.id}
                       item={item}
