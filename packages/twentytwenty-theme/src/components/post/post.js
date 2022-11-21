@@ -210,13 +210,13 @@ const Post = ({ state, actions, libraries }) => {
               </DetailsText>
 
               {/* Post Featured image here we can put adsense here      */}
-              {/* <PostDetailsImg>
+              <PostDetailsImg>
 
                 {state.theme.featuredMedia.showOnPost && (
                   <FeaturedImage id={post.featured_media} isSinglePost={true} />
                 )}
 
-              </PostDetailsImg> */}
+              </PostDetailsImg>
 
               <PostDiscription>
 
