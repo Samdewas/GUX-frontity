@@ -123,13 +123,21 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
           {data?.isHome || !data?.isSearch ?
             <>
             {/* <h6> Ad </h6> */}
-
+            <div className="header_adwrapper">
             <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='7406912261'
                       style={{ width: 728, height: 90, display: "inline-block" }}
                       format=''
                     />
+
+<AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5942129260'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
+                    </div>
                     {/* <h6> Ad </h6> */}
             <BredCrumb>
               <ul>
@@ -256,7 +264,12 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
               <>
                 {index == 4 ?
                   <Fragment key={item.id}>
-                    {/* <GoogleAds  slot='7479301206' width="300" heigth="250" key="534535" /> */}
+                   <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='7479301206'
+                      style={{ width: 300, height: 250, display: "inline-block" }}
+                      format=''
+                    />
                     <Article
                       key={item.id}
                       item={item}
@@ -396,6 +409,8 @@ const BannerSection = styled.bannersection`
   h2{  color: #084523;
     font-size:45px;}
   p{font-size: 20px;}
+
+  .header_adwrapper{text-align:center;}
 `;
 
 

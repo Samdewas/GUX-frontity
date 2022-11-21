@@ -188,6 +188,7 @@ const Post = ({ state, actions, libraries }) => {
                   dangerouslySetInnerHTML={{ __html: post.title.rendered }}
                 />
               </PostDetailsTitle>
+         
               <DetailsText>
                 <div>
                   {post.caption && (
@@ -198,9 +199,9 @@ const Post = ({ state, actions, libraries }) => {
                 </div>
 
                 <DetailsTextInner >
-
+               
                   <PostMeta item={post} />
-
+                 
                   <div>
                     <button><Link link={postcategory[0]?.link}> {postcategory[0]?.name} </Link></button>
                   </div>
@@ -208,7 +209,18 @@ const Post = ({ state, actions, libraries }) => {
 
                 </DetailsTextInner>
               </DetailsText>
+             <div> 
 
+ {/* <h6> Ad </h6> */}
+
+                    <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='2702898115'
+                      style={{ width: 728, height: 250, display: 'inline-block' }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
+             </div>
               {/* Post Featured image here we can put adsense here      */}
               <PostDetailsImg>
 
