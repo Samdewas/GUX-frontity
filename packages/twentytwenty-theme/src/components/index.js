@@ -42,7 +42,6 @@ import Lazyload from "./lazyloading/lazyload";
 import AboutUs from "./about-us";
 import PrivacyPolicy from "./privacy-policy";
 import Dmca from "./Dmca";
-import GoogleAds from "./ads/GoogleAds";
 
 
 const SectionContainer = styled.div`
@@ -194,10 +193,6 @@ const Theme = ({ state, actions }) => {
 
 <SectionContainer>
 
-   {/* <h6> Ad </h6> */}
-
-   {/* <GoogleAds slot='5764423148' width="728" heigth="90" /> */}
-                    {/* <h6> Ad </h6> */}
   <h4>The Smartest Choice For Creatives Like You</h4>  
   <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
 
