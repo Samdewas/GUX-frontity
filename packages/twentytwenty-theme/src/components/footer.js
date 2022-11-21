@@ -34,9 +34,6 @@ const BackToTop = () => {
   return (
     <p href="#site-header" onClick={scrollToTop} style={{ cursor: "pointer", position: "fixed", right: "30px", bottom: "20px", color: "white" }}>
       <span style={{ marginRight: 8 }}><img className="hidemob" alt="gototop"  width="88px" height="88px"  src={topimg} /></span>
-      <span className="arrow" aria-hidden="true">
-        ↑
-      </span>
     </p>
   );
 };
