@@ -590,7 +590,7 @@ button {     position: relative;
 `;
 const Adwrapper = styled.adwrapper`
   display: inline-block !important;
-  transform: translate(-34px, -58px);
+  transform: translate(-34px, 19px);
 `;
 
 const PostDetailsTitle = styled.postdetailstitle`
