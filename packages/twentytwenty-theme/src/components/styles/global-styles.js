@@ -99,8 +99,9 @@ const documentSetup = (colors) => css`
   .wp-block-button {
     z-index: 999;
     position: relative;
-    display: initial;
-    left: 14px;
+    display: inherit;
+    left: 0px;
+    margin-bottom : 18px;
 }
 .wp-block-button a {
   background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
