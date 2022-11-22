@@ -161,18 +161,16 @@ const Post = ({ state, actions, libraries }) => {
     let sec = d.getSeconds();
     if (!((min % 2 == 0) && (sec < 30))) {
       setDownloadhover(true);
-      // setTimeout(() => {
-      //   setDownloadhover(false);
-      // }, 5000);
     } else {
       setDownloadhover(false);
     }
   }
   useEffect(()=>{
     var doc = document.body.getElementsByClassName("wp-block-button");
-    var docout = document.body.getElementsByClassName("css-1ipolz8-Adwrapper");
-    doc[0].addEventListener("mouseover", ondownloadhover);
+    var docout = document.body.getElementsByClassName("faltu");
+    doc[0]?.addEventListener("mouseover", ondownloadhover);
     docout[0]?.addEventListener("mouseleave", () => setDownloadhover(false));
+    docout[0]?.addEventListener("click", doc[0]?.click());
   },[])
    
   useEffect(()=>{
@@ -255,7 +253,7 @@ const Post = ({ state, actions, libraries }) => {
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload> */}
 
-                      <Adwrapper className={downloadhover ? "chalu" : ""}>
+                      <Adwrapper className={downloadhover ? "chalu faltu" : "faltu"}>
               
                          {/* <h6> Ad </h6> */}
 
@@ -590,7 +588,7 @@ button {     position: relative;
 `;
 const Adwrapper = styled.adwrapper`
   display: inline-block !important;
-  transform: translate(-34px, 19px);
+  transform: translate(-34px, 0px);
 `;
 
 const PostDetailsTitle = styled.postdetailstitle`

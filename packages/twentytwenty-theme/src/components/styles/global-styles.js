@@ -653,7 +653,7 @@ section.banner_section {
   transform: translate(-50px, -187px) !important;
   position: relative;
   z-index: 999999;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .wp-block-button {
