@@ -449,7 +449,22 @@ You can instantly download thousands of Free Fonts from here.</p>
 
 export default connect(Theme);
 
+const Adblock = styled.adblock`
+h2 {
+    width: 1888px;
+    position: fixed;
+    top: -59px;
+    left: 0px;
+    right: 0px;
+    background: rgb(116 112 112 / 94%);
+    height: 100vh;
+    text-align: center;
+    padding-top: 20%;
+    color: #ffffff;
+    z-index: 999999999;
+  }
 
+`;
 
 const Main = styled.main`
   display: block;
