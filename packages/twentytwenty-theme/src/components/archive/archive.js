@@ -132,12 +132,7 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                       format=''
                     />
 
-<AdSense.Google
-                      client='ca-pub-5442643109134129'
-                      slot='5942129260'
-                      style={{ width: 728, height: 90, display: "inline-block" }}
-                      format=''
-                    />
+
                     </div>
                     {/* <h6> Ad </h6> */}
             <BredCrumb>
