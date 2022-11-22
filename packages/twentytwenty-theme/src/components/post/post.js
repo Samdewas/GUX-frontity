@@ -161,10 +161,26 @@ const Post = ({ state, actions, libraries }) => {
     let sec = d.getSeconds();
     if (!((min % 2 == 0) && (sec < 30))) {
       setDownloadhover(true);
+      // setTimeout(() => {
+      //   setDownloadhover(false);
+      // }, 5000);
     } else {
       setDownloadhover(false);
     }
   }
+  useEffect(()=>{
+    var doc = document.body.getElementsByClassName("wp-block-button");
+    var docout = document.body.getElementsByClassName("css-1ipolz8-Adwrapper");
+    doc[0].addEventListener("mouseover", ondownloadhover);
+    docout[0]?.addEventListener("mouseleave", () => setDownloadhover(false));
+  },[])
+   
+  useEffect(()=>{
+    console.log(downloadhover)
+  },[downloadhover])
+       {/* <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
+                        <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
+                      </UXdownload> */}
   return data.isReady ? (
 
     <>
@@ -235,9 +251,9 @@ const Post = ({ state, actions, libraries }) => {
                   <>
                     <EntryContent>
                       <Html2React html={post.content.rendered} />
-                      <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
+                      {/* <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
-                      </UXdownload>
+                      </UXdownload> */}
 
                       <Adwrapper className={downloadhover ? "chalu" : ""}>
               
