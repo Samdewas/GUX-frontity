@@ -169,9 +169,9 @@ const Post = ({ state, actions, libraries }) => {
     }
   }
   useEffect(()=>{
-    const div = document.getElementsByClassName("css-1yfiow-EntryContent")[0].querySelectorAll('h2')[0];
+    const div = document.getElementsByClassName("css-1yfiow-EntryContent")[0]?.querySelectorAll('h2')[0];
     let html = "<ins class='adsbygoogle' style='display:inline-block;width:300px;height:250px' data-ad-client='ca-pub-5442643109134129' data-ad-slot='5056940893'></ins>";
-    div.insertAdjacentHTML("beforebegin", html);
+    div?.insertAdjacentHTML("beforebegin", html);
     
     var doc = document.body.getElementsByClassName("wp-block-button");
     var docout = document.body.getElementsByClassName("faltu");
