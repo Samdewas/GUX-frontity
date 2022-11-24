@@ -170,7 +170,7 @@ const SiteFooter = styled.footer`
  
 
   @media (min-width: 700px) {
-    margin-top: 15rem;
+    margin-top: 8rem;
     font-size: 1.8rem;
     padding: 8rem 0 4.3rem 0;
   }

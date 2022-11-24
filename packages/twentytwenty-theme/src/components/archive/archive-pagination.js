@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { connect, styled, css } from "frontity";
 import Link from "../link";
+import AdSense from 'react-adsense';
 
 const paginate = (totalPages, currentPage) => {
   const delta = 1;
@@ -62,6 +63,7 @@ const Pagination = ({ state, actions, libraries }) => {
     section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
   };
   return (
+    <>
     <Container>
       <Direction>
         {previous && (
@@ -100,7 +102,19 @@ const Pagination = ({ state, actions, libraries }) => {
           </StyledLink>
         )}
       </Direction>
+   
     </Container>
+   
+     <Paginationads>
+
+     <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='6042204529'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
+     </Paginationads>
+    </>
   );
 };
 
@@ -135,6 +149,11 @@ const Container = styled.div`
     font-size: 1.3em;
     font-weight: 700;
   }
+`;
+
+const Paginationads = styled.div`
+ text-align:center;
+ margin-top:20px
 `;
 
 const PagingList = styled.ul`

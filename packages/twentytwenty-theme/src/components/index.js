@@ -194,7 +194,7 @@ const Theme = ({ state, actions }) => {
                   {data.isHome ?
                     <Uxcategory>
 
-                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img alt="fonts" src={ishover == 5 ? Cate_img11 : Cate_img1} />  </Link><h3>Premium Fonts </h3>
+                      <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(5)}> <Link link="category/fonts/"> <img alt="fonts" src={ishover == 5 ? Cate_img1 : Cate_img11} />  </Link><h3>Premium Fonts </h3>
                       </li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(1)}> <Link link="category/add-ons/"> <img alt="psaction" src={ishover == 1 ? Cate_img12 : Cate_img2}  /></Link>  <h3>Photoshop Action </h3></li>
                       <li onMouseLeave={() => setIshover("")} onMouseOver={() => setIshover(2)}> <Link link="category/add-ons/lightroom-preset/"> <img alt="lightroom" src={ishover == 2 ? Cate_img13 : Cate_img3}  /> </Link> <h3>Lightroom Preset </h3></li>
@@ -428,7 +428,7 @@ the same degree of professionalism you dont always have to
 use premium fonts. If you cant afford to spend money on costly
 fonts to make your designs appear great then dont panic.
 You can instantly download thousands of Free Fonts from here.</p>  
-<div className="d_btn"><Link link="category/themes/"> Download Now </Link><img alt="arrow" src={arrowicon} /></div>
+<div className="d_btn"><Link link="category/themes/"> Download Now </Link> <img alt="arrow" src={arrowicon} /></div>
 </div>
 
 
@@ -527,8 +527,32 @@ display: flex;
 justify-content: center;
 margin-left:0px;
 
+
+li:nth-child(1):hover a{
+  background: #15be77 !important;
+  transition:all 0.8s;  
+}
+li:nth-child(2):hover a {
+  background: #2bbbfa !important;
+  transition:all 0.8s;
+}
+li:nth-child(3):hover a {
+  background: #f8a64c !important;
+  transition:all 0.8s;
+}
+li:nth-child(4):hover a {
+  background: #ed56a3 !important;
+  transition:all 0.8s;
+}
+li:nth-child(5):hover a {
+  background: #a259ff !important;
+  transition:all 0.8s;
+}
+
+
 li{
   text-align:center;
+  cursor:pointer !important;
   :hover a{
     color: #47e087;
   }

@@ -232,10 +232,17 @@ const Post = ({ state, actions, libraries }) => {
              <div> 
 
  {/* <h6> Ad </h6> */}
-                    <AdSense.Google
+                    
+                      <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='2702898115'
-                      style={{ width: 728, height: 250, display: 'inline-block' }}
+                      style={{ width: 336, height: 250, display: 'inline-block' }}
+                      format=''
+                    />
+                    <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5436872666'
+                      style={{ width: 336, height: 250, display: 'inline-block' }}
                       format=''
                     />
                     {/* <h6> Ad </h6> */}

@@ -268,6 +268,16 @@ const Archive = ({ state, showExcerpt, showMedia, actions }) => {
                       showMedia={item.jetpack_featured_media_url}
                     />
                   </Fragment> :
+                  index == 9 ?
+                  <Fragment key={item.id}>
+                    <GoogleAds  slot='8300401193' width="300" heigth="250" key="58284" />
+                    <Article
+                      key={item.id}
+                      item={item}
+                      showExcerpt={_showExcerpt}
+                      showMedia={item.jetpack_featured_media_url}
+                    />
+                  </Fragment> :
                   <Fragment key={item.id}>
                     <Article
                       key={item.id}

@@ -25,7 +25,7 @@ const settings = {
         "source": {
           "url": "https://graphicux.com/",
           "params": {
-            "per_page": 11,
+            "per_page": 13,
             "type": ["post", "page"],
           },
         }
