@@ -20,6 +20,21 @@ const Header = ({ state }) => {
   const { headerBg } = state.theme.colors;
 
   useEffect(() => {
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  });
+
+  const isSticky = (e) => {
+    const header = document.querySelector(".fixed_header");
+    const scrollTop = window.scrollY;
+    scrollTop >= 150
+      ? header.classList.add("hd_fixed")
+      : header.classList.remove("hd_fixed");
+  };
+
+  useEffect(() => {
     (function (w, d, s, id) {
       if (typeof (w.webpushr) !== 'undefined') return; w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) }; var js, fjs = d.getElementsByTagName(s)[0]; js = d.createElement(s); js.id = id; js.async = 1; js.src = "https://cdn.webpushr.com/app.min.js";
       fjs.parentNode.appendChild(js);
@@ -30,7 +45,7 @@ const Header = ({ state }) => {
   return (
 
     
-    <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header" : "inner_header"}>
+    <PageHeader bg={headerBg} id="site-header" className={state.router.link === "/" ? "home_header fixed_header" : "inner_header fixed_header"}>
       <HeaderInner>
         <TitleWrapper>
           {/* Search button on mobile */}

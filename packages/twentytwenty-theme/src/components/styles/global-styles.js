@@ -950,6 +950,20 @@ li.submenu-main-item .SubMenu a {
   top: 0px;
   padding: 0px 15px;
 }
+.is-sticky .sidebar_ad_none{
+  display:none;
+}
+#site-header.hd_fixed {
+  position: fixed !important;
+  top: 0px !important;
+  width: 100%;
+  z-index: 9999;
+  background: #fff !important;
+  transition:all 0.2s ease-in-out 0s;
+  box-shadow: rgb(149 157 165 / 18%) 0px 8px 24px;
+}
+.fixed_header{transition: ease-out 0.5s;}
+
 
 
 

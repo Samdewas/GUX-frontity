@@ -132,7 +132,7 @@ const Post = ({ state, actions, libraries }) => {
   const isSticky = (e) => {
     const header = document.querySelector(".rt_header_main");
     const scrollTop = window.scrollY;
-    scrollTop >= 150
+    scrollTop >= 630
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };
@@ -323,7 +323,7 @@ const Post = ({ state, actions, libraries }) => {
                   </Form>
                 </SearchBar>
 
-                <SideCateItem>
+                <SideCateItem className="sidebar_ad_none"> 
                   <SidebarH>
                     {/* <h6> Ad </h6> */}
 
@@ -338,7 +338,7 @@ const Post = ({ state, actions, libraries }) => {
 
                 </SideCateItem>
 
-                <SideCateItem>
+                <SideCateItem className="sidebar_ad_none">
                   <SidebarH>
                     <h6> Categories </h6>
                   </SidebarH>
@@ -358,8 +358,8 @@ const Post = ({ state, actions, libraries }) => {
 
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='6445886756'
-                      style={{ width: 300, height: 250, float: 'left' }}
+                      slot='8811829676'
+                      style={{ width: 300, height: 600, display: 'inline-block' }}
                       format=''
                     />
                     {/* <h6> Ad </h6> */}
