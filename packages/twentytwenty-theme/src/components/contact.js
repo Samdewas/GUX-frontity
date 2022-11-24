@@ -61,7 +61,7 @@ const Contact = ({ state }) => {
             <h2> Contact Us </h2>
             <FormGroup>
               <label> Full name </label>
-              <input type="text" required placeholder="full name" value={name} onChange={(e)=> setName(e.target.value)} />
+              <input type="text" required placeholder="Full name" value={name} onChange={(e)=> setName(e.target.value)} />
             </FormGroup>
             <FormGroup>
               <label> Email Address </label>
@@ -70,7 +70,7 @@ const Contact = ({ state }) => {
 
             <FormGroup>
               <label> Phone Number </label>
-              <input type="text" placeholder="phone number" />
+              <input type="text" placeholder="Phone number" />
             </FormGroup>
 
             <FormGroup>

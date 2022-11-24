@@ -132,7 +132,7 @@ const Post = ({ state, actions, libraries }) => {
   const isSticky = (e) => {
     const header = document.querySelector(".rt_header_main");
     const scrollTop = window.scrollY;
-    scrollTop >= 630
+    scrollTop >= 450
       ? header.classList.add("is-sticky")
       : header.classList.remove("is-sticky");
   };

@@ -947,7 +947,7 @@ li.submenu-main-item .SubMenu a {
   position: fixed;
   width: 15%;
   right: 370px;
-  top: 0px;
+  top: 76px;
   padding: 0px 15px;
 }
 .is-sticky .sidebar_ad_none{
@@ -962,6 +962,7 @@ li.submenu-main-item .SubMenu a {
   transition:all 0.2s ease-in-out 0s;
   box-shadow: rgb(149 157 165 / 18%) 0px 8px 24px;
 }
+.hd_fixed div{padding:6px 0px !important;}
 .fixed_header{transition: ease-out 0.5s;}
 
 

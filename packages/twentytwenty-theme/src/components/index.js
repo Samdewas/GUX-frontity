@@ -473,6 +473,8 @@ const Main = styled.main`
 
 const BannerSection = styled.bannersection`
   padding: 40px 0px;
+  background: linear-gradient(180deg, #C1FFC1 0%, #FFFFFF 64.88%);
+  display:block;
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
@@ -530,23 +532,23 @@ margin-left:0px;
 
 li:nth-child(1):hover a{
   background: #15be77 !important;
-  transition:all 0.8s;  
+   transition:all 0.2s ease-in-out 0s;  
 }
 li:nth-child(2):hover a {
   background: #2bbbfa !important;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 li:nth-child(3):hover a {
   background: #f8a64c !important;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 li:nth-child(4):hover a {
   background: #ed56a3 !important;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 li:nth-child(5):hover a {
   background: #a259ff !important;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 
 
@@ -595,29 +597,29 @@ li:nth-of-type(4) a {
 li:nth-of-type(5) a {
   background: #a259ff59;
 }
-li:nth-of-type(1):hover h3{ color:#15be77;  transition:all 0.8s;}
+li:nth-of-type(1):hover h3{ color:#15be77;   transition:all 0.2s ease-in-out 0s;}
 li:nth-of-type(1) a:hover {
   background: #15be77;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 li:nth-of-type(2) a:hover {
   background: #2bbbfa;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
-li:nth-of-type(2):hover h3{ color:#2bbbfa;  transition:all 0.8s;}
+li:nth-of-type(2):hover h3{ color:#2bbbfa;   transition:all 0.2s ease-in-out 0s;}
 li:nth-of-type(3) a:hover {
   background: #f8a64c;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
-li:nth-of-type(3):hover h3{ color:#f8a64c; transition:all 0.8s;}
+li:nth-of-type(3):hover h3{ color:#f8a64c;  transition:all 0.2s ease-in-out 0s;}
 li:nth-of-type(4) a:hover {
   background: #ed56a3;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
-li:nth-of-type(4):hover h3{ color:#ed56a3; transition:all 0.8s;}
+li:nth-of-type(4):hover h3{ color:#ed56a3;  transition:all 0.2s ease-in-out 0s;}
 li:nth-of-type(5) a:hover {
   background: #a259ff;
-  transition:all 0.8s;
+   transition:all 0.2s ease-in-out 0s;
 }
 li:nth-of-type(5):hover h3{ color:#a259ff;}
 
