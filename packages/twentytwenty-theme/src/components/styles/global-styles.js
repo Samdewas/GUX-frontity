@@ -963,7 +963,7 @@ li.submenu-main-item .SubMenu a {
   box-shadow: rgb(149 157 165 / 18%) 0px 8px 24px;
 }
 .hd_fixed div{padding:6px 0px !important;}
-.fixed_header{transition: ease-out 0.5s;}
+
 
 
 

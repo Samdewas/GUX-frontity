@@ -475,6 +475,8 @@ const BannerSection = styled.bannersection`
   padding: 40px 0px;
   background: linear-gradient(180deg, #C1FFC1 0%, #FFFFFF 64.88%);
   display:block;
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.04);
+  border-radius: 0px 0px 190px 190px;
   h2{  color: #084523;
     font-size:42px;}
   p{font-size: 20px;}
