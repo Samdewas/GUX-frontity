@@ -163,10 +163,10 @@ const Theme = ({ state, actions }) => {
                 <BannerInner>
 
                   <div>
-                    <h2> Discover Free Premium Fonts,<br />
-                      Photoshop Action and All Graphic Resources </h2>
-                    <p>Graphicux.com is well known for saving money for customers but with our<br />
-                      free fonts and Photoshop action section, we have gone one step further</p>
+                    <h2> Your One-stop Shop For Fonts, Photoshop Action,<br />
+                    And Every Graphic Resource You Will Ever Need </h2>
+                    <p>GraphicUX is an evolution that brings the finest designs and creatives<br />
+                    at unbeatable prices. Create designs that outbid others.</p>
                   </div>
                 </BannerInner>
 
@@ -223,8 +223,8 @@ const Theme = ({ state, actions }) => {
                     />
                     {/* <h6> Ad </h6> */}
   
-  <h4>The Smartest Choice For Creatives Like You</h4>  
-  <p>Whether you’re looking for designs or photographs, you’ll find the perfect asset on GraphicUX.</p>
+  <h4>The Ideal Choices For Creatives Like you! All Under One Roof</h4>  
+  <p>From designs to photographs you will find all the right things to make the perfect creatives on GraphicUX.</p>
 
     <ul>
       <li> 
@@ -234,9 +234,8 @@ const Theme = ({ state, actions }) => {
        <img alt="quality" src={ficon1} />
        </div>
        <div className="fcaption">
-        <h5>High-quality stock content</h5>
-        <p>Download resource of the best quality
-          to make your projects look professional.</p>
+        <h5>Premium Quality Content</h5>
+        <p>Download the finest quality resources to give every project a professional edge.</p>
           </div>
       </li>
 
@@ -246,9 +245,8 @@ const Theme = ({ state, actions }) => {
        <img alt="Ready-to-use" src={ficon2} />
        </div>
        <div className="fcaption">
-        <h5>Ready-to-use assets</h5>
-        <p>We have best ready to use digital assets
-          you can use it for free.</p>
+        <h5>Ready-to-use Asset</h5>
+        <p>Along with quality you can find a variety of free ready to use digital assets.</p>
           </div>
       </li>
 
@@ -258,9 +256,8 @@ const Theme = ({ state, actions }) => {
        <img alt="Guaranteed" src={ficon3} />
        </div>
        <div className="fcaption">
-        <h5>Guaranteed search results</h5>
-        <p>Search and Download scroll-stopping best quality
-        item you can find any assets whout any hassle.</p>
+        <h5>Hassle-Free Navigation</h5>
+        <p>Whatever you are looking for, find the best digital asset for your project with the ease of search and download.</p>
           </div>
       </li>
 
@@ -270,11 +267,8 @@ const Theme = ({ state, actions }) => {
        <img alt="Fresh"  src={ficon4} />
        </div>
        <div className="fcaption">
-        <h5>Fresh content everyday</h5>
-        <p>We upload fresh content on everyday
-          with all the category that match your need
-          
-          .</p>
+        <h5>New Content Everyday</h5>
+        <p>Something new every time you visit GraphicUX! New content uploaded everyday to help you think big and create better.</p>
           </div>
       </li>
     </ul>
@@ -364,9 +358,9 @@ const Theme = ({ state, actions }) => {
 
         <div className="ux_action1">
         <h4>Photoshop Actions</h4>
-        <p>   Photoshop actions can help you transform the pictures into masterpieces and save time throughout the editing process. They will
-help you achieve an elegant look too.
-Photoshop Actions is a complete collection of HDR effects actions, color correction, matte effects, winter effects, and many more.</p>  
+        <p> Photoshop actions offer a virtually limitless opportunity to create digital art that are indeed masterpieces. 
+          The advanced programming helps save time throughout the editing process and also ensures that the final product is aesthetic and visually appealing.
+           Photoshop Actions is a collection of HDR effects, color correction, matte effects, winter effects and more.</p>  
 <div className="d_btn"><Link link="/category/add-ons/photoshop-action/"> Download Now </Link><img alt="arrow" src={arrowicon} /></div>
 <img className="_psgif" alt="psactions" src={ps_icon} />
         </div>
@@ -384,9 +378,9 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
 <div className="ux_lightroom2"> <img alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
 <div className="ux_lightroom1">
 <h4>Lightroom Preset</h4>
-<p>  Lightroom presets are a great way to speed up photo editing very simple. You can totally have fun with them, too! You can easily experiment
-   on different looks and apply them uniformly across images. These also make it possible for you to set a signature look and awesome look,
-    especially if you have Instagram following or youtube channel and also with your photograph.</p>  
+<p>  With Lightroom Preset at your disposal you can conveniently edit images at a great speed alongside having fun while doing it.
+   It allows you to experiment with different visual looks and apply them uniformly across images, so that you can have a clear vision of what you want.
+   You can also create a signature look, for any platform ( i.e Instagram, Youtube etc) across the internet. </p>  
 <div className="d_btn"><Link link="/category/add-ons/lightroom-preset/"> Download Now </Link><img alt="arrows" src={arrowicon} /></div>
 </div>
 
@@ -401,12 +395,10 @@ Photoshop Actions is a complete collection of HDR effects actions, color correct
 
         <div className="ux_action1">
         <h4>Graphics & Mockups</h4>
-        <p>  The use of graphics is the main part of making
-any kind of design look more professional. Of course, to reach
-the same degree of professionalism you dont always have to
-use. If you cant afford to spend money on costly
-graphics and mockup to make your designs appear great then dont panic.
-You can instantly download thousands of Free graphics related assets here. </p>  
+        <p>  Take any design up a notch with impeccable graphics! The use of graphics is a key component in making the
+           outcome of any design look more professional and sophisticated. Even when the use of graphics can make a lot of difference
+            to your design it can sometimes feel heavy on your pocket. To ensure that you don’t have to compromise,
+           we have accumulated a wide range of graphics & mockups that you can download and use cost free at GraphicUX.  </p>  
 <div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><img alt="arrow" src={arrowicon} /></div>
         </div>
 
@@ -422,12 +414,11 @@ You can instantly download thousands of Free graphics related assets here. </p>
 <div className="ux_lightroom2"> <img alt="web" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/website.webp" />  </div>            
 <div className="ux_lightroom1">
 <h4>Website Themes</h4>
-<p> The use of a great-looking font is the main part of making
-any kind of design look more professional. Of course, to reach
-the same degree of professionalism you dont always have to
-use premium fonts. If you cant afford to spend money on costly
-fonts to make your designs appear great then dont panic.
-You can instantly download thousands of Free Fonts from here.</p>  
+<p> Every website that exists today is an amalgamation of impeccable web development, 
+  noteworthy content and most importantly spotless design. Our website themes are created
+   to help you build a website that exudes perfection at zero cost. Every website theme that you will find on
+    GraphicUX can be used by any user free of cost.
+   So, what are you waiting for? Make your websites fabulous without burning a hole in your pocket.</p>  
 <div className="d_btn"><Link link="category/themes/"> Download Now </Link> <img alt="arrow" src={arrowicon} /></div>
 </div>
 
@@ -478,13 +469,15 @@ const BannerSection = styled.bannersection`
   box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.04);
   border-radius: 0px 0px 190px 190px;
   h2{  color: #084523;
-    font-size:42px;}
+    font-size:38px;}
   p{font-size: 20px;}
 
   @media (min-width:992px){
     h2{
     width: 900px;
     height: 120px;
+    line-height: 50px;
+    margin:3rem auto 1rem;
   }
   }
   @media (max-width:767px){

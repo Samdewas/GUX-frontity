@@ -54,7 +54,9 @@ const Footer = ({ state }) => {
           <FooterBox1>
           <h3> <Link link="/"> GraphicUX</Link> </h3>
           <ul>
-            <p> Graphicux.com is well known for saving money for customers but with our free fonts and Photoshop action section, we have gone one step further</p>
+            <p> GraphicUX is where a designer meets his true passion. 
+              You will find everything you need to ace your creatives. We not only
+               help you save money with our free fonts and Photoshop actions, but we have a lot in store for you. </p>
 
             <Link target="_blank" link="https://www.buymeacoffee.com/graphicux"> <img alt="buymecoffee"  src={buy} /> </Link>
          
