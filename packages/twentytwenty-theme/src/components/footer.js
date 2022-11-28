@@ -54,7 +54,7 @@ const Footer = ({ state }) => {
           <FooterBox1>
           <h3> <Link link="/"> GraphicUX</Link> </h3>
           <ul>
-            <p> GraphicUX is where a designer meets his true passion. 
+            <p>GraphicUX is where a designer meets his true passion. 
               You will find everything you need to ace your creatives. We not only
                help you save money with our free fonts and Photoshop actions, but we have a lot in store for you. </p>
 
