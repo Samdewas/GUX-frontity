@@ -161,7 +161,13 @@ const Theme = ({ state, actions }) => {
               <SectionContainer size="large">
 
                 <BannerInner>
-
+                <AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5764423148'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
+                    {/* <h6> Ad </h6> */}
                   <div>
                     <h2> Your One-stop Shop For Fonts, Photoshop Action,<br />
                     And Every Graphic Resource You Will Ever Need </h2>
@@ -210,19 +216,32 @@ const Theme = ({ state, actions }) => {
 
               </SectionContainer>
 
-              <Uxfeatured>
+              
 
+
+     </BannerSection> : ""}
+     {data.isHome ?
+<Recentitem id="archivetop">
+  Recent Published
+</Recentitem>
+:""}
+          <Switch>
+            <Loading when={data.isFetching} />
+            <SearchResults when={data.isSearch} />
+            <Archive when={data.isArchive} />
+            <Post when={data.isPostType && data.isPost} />
+            <PageError when={data.isError} />
+            <Contact when={state.router.link.includes("/contact-us")} />
+            <AboutUs when={state.router.link.includes("/about-us")} />
+            <PrivacyPolicy when={state.router.link.includes("/privacy-policy")} />
+            <Dmca when={state.router.link.includes("/dmca")} />
+          </Switch>
+
+
+          {data.isHome ?
+          <Uxfeatured>
 <SectionContainer>
- {/* <h6> Ad </h6> */}
-
- <AdSense.Google
-                      client='ca-pub-5442643109134129'
-                      slot='5764423148'
-                      style={{ width: 728, height: 90, display: "inline-block" }}
-                      format=''
-                    />
-                    {/* <h6> Ad </h6> */}
-  
+ {/* <h6> Ad </h6> */}  
   <h4>The Ideal Choices For Creatives Like you! All Under One Roof</h4>  
   <p>From designs to photographs you will find all the right things to make the perfect creatives on GraphicUX.</p>
 
@@ -274,28 +293,7 @@ const Theme = ({ state, actions }) => {
     </ul>
     </SectionContainer>
 
-  </Uxfeatured> 
-
-
-     </BannerSection> : ""}
-     {data.isHome ?
-<Recentitem id="archivetop">
-  Recent Published
-</Recentitem>
-:""}
-          <Switch>
-            <Loading when={data.isFetching} />
-            <SearchResults when={data.isSearch} />
-            <Archive when={data.isArchive} />
-            <Post when={data.isPostType && data.isPost} />
-            <PageError when={data.isError} />
-            <Contact when={state.router.link.includes("/contact-us")} />
-            <AboutUs when={state.router.link.includes("/about-us")} />
-            <PrivacyPolicy when={state.router.link.includes("/privacy-policy")} />
-            <Dmca when={state.router.link.includes("/dmca")} />
-          </Switch>
-
-      
+  </Uxfeatured>  : ""} 
                   {/* <Trendingfonts>
 <SectionContainer>
   <div className="font_wrapper">
@@ -367,7 +365,7 @@ const Theme = ({ state, actions }) => {
 
         <div className="ux_action2">
         
-           <img alt="action"  src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/action.webp" />  </div>
+           <img alt="action" width="583px" height="421px"  src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/action.webp" />  </div>
         </SectionContainer>
 
 </Photoshopaction>
@@ -375,7 +373,7 @@ const Theme = ({ state, actions }) => {
 <Lightroompreset>
       <div className="overlay1">
 <SectionContainer>
-<div className="ux_lightroom2"> <img alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
+<div className="ux_lightroom2"> <img width="533px" height="431px" alt="light" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/light.webp" />  </div>            
 <div className="ux_lightroom1">
 <h4>Lightroom Preset</h4>
 <p>  With Lightroom Preset at your disposal you can conveniently edit images at a great speed alongside having fun while doing it.
@@ -402,7 +400,7 @@ const Theme = ({ state, actions }) => {
 <div className="d_btn"><Link link="/category/graphics/"> Download Now </Link><img alt="arrow" src={arrowicon} /></div>
         </div>
 
-        <div className="ux_action2"> <img alt="graphics" src={graphics} />  </div>
+        <div className="ux_action2"> <img width="426px" height="423px" alt="graphics" src={graphics} />  </div>
         </SectionContainer>
 
 </Graphics>
@@ -411,7 +409,7 @@ const Theme = ({ state, actions }) => {
 <Uxtheme>
 
 <SectionContainer>
-<div className="ux_lightroom2"> <img alt="web" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/website.webp" />  </div>            
+<div className="ux_lightroom2"> <img width="533px" height="458px" alt="web" src="https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/website.webp" />  </div>            
 <div className="ux_lightroom1">
 <h4>Website Themes</h4>
 <p> Every website that exists today is an amalgamation of impeccable web development, 
@@ -490,7 +488,7 @@ const BannerSection = styled.bannersection`
 
 const BannerInner = styled.div`
 text-align: center;
-padding-top: 120px;
+padding-top: 70px;
 width: 70%;
 margin: auto;
 
@@ -788,7 +786,6 @@ width:100%;
 padding-bottom: 50px;
 float: left;
 padding: 80px 0px;
-margin-top:80px;
 
 .ux_action1{width:38%;
 margin-left:70px;

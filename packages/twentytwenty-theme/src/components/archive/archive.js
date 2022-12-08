@@ -409,7 +409,10 @@ const BannerSection = styled.bannersection`
 
   h2{  color: #084523;
     font-size:45px;}
-  p{font-size: 20px;}
+  p{font-size: 20px;
+  h1{font-size: 5.4rem;
+    color: #084523;}
+  }
 
   .header_adwrapper{text-align:center;}
 `;
