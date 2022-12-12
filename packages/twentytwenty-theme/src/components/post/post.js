@@ -717,10 +717,11 @@ img{
   display: block;
   background: #fffdfd;
   width: 100%;
-  height: 130px;
+  height: 135px;
   position: absolute;
   bottom: 0px;
 }
+
 
 .ux_placeholder_vn span{padding-bottom:0px !important;}
 button{
