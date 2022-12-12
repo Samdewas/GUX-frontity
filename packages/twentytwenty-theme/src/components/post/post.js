@@ -713,6 +713,7 @@ img{
 .ux_placeholder_vn{position:relative;}
 .ux_placeholder_vn:after {
   content: "";
+  background:url('https://webnetny.s3.us-west-2.amazonaws.com/wp-ftt/placeholderux.svg');
   display: block;
   background: #fffdfd;
   width: 100%;
