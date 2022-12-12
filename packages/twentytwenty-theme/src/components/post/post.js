@@ -708,8 +708,10 @@ const PostDiscription = styled.discription`
 img{
   margin: 20px 0px;
   border-radius:5px;
+  position:static !important;
 }
 
+.ux_placeholder span{padding-bottom:0px !important;}
 button{
   background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
   border-radius: 8px;
