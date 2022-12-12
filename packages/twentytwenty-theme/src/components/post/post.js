@@ -710,8 +710,18 @@ img{
   border-radius:5px;
   position:static !important;
 }
+.ux_placeholder_vn{position:relative;}
+.ux_placeholder_vn:after {
+  content: "";
+  display: block;
+  background: #fffdfd;
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  bottom: 0px;
+}
 
-.ux_placeholder span{padding-bottom:0px !important;}
+.ux_placeholder_vn span{padding-bottom:0px !important;}
 button{
   background: linear-gradient(98.81deg, #53E88B -0.82%, #15BE77 101.53%);
   border-radius: 8px;
