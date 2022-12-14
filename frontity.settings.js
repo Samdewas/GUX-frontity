@@ -51,14 +51,6 @@ const settings = {
           containerId: "G-D44D3408K9",
         },
       },
-    },
-    {
-      name: "frontity-microsoft-clarity",
-      state: {
-        microsoftClarity: {
-          trackingCode: "emc50vc0un"
-        }
-      }
     }
 
   ]
