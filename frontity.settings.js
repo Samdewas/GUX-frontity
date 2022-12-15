@@ -2,7 +2,7 @@ const settings = {
   "name": "ux",
   "state": {
     "frontity": {
-      "url": "http://3.133.224.158/",
+      "url": "https://graphicux.com/",
       "title": "Download Free Photoshop Action and All Ui/Ux resources - GraphicUX",
       "description": "Download Free Photoshop Action &amp; All Ui/Ux resources"
     }
@@ -23,7 +23,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://3.133.224.158/",
+          "url": "https://graphicux.com/",
           "params": {
             "per_page": 13,
             "type": ["post", "page"],
