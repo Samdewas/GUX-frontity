@@ -154,11 +154,11 @@ const Post = ({ state, actions, libraries }) => {
 
   // 2mint me 30 second chalega total 1 ghante me 15 mint //
   const [downloadhover, setDownloadhover] = useState(false);
-
+  const d = new Date();
+  let min = d.getMinutes();
+  let sec = d.getSeconds();
   const ondownloadhover = () => {
-    const d = new Date();
-    let min = d.getMinutes();
-    let sec = d.getSeconds();
+    
     if (((min % 2 == 0) && (sec < 40))) {
       setDownloadhover(true);
       setTimeout(() => {
@@ -194,6 +194,14 @@ const Post = ({ state, actions, libraries }) => {
             Please disable adblock  to use our site.</h2>
         </Adblock>
         : ""}
+<div style={{textAlign: "center"}}>
+<AdSense.Google
+                      client='ca-pub-5442643109134129'
+                      slot='5764423148'
+                      style={{ width: 728, height: 90, display: "inline-block" }}
+                      format=''
+                    />
+                    </div>
       <PostArticle>
 
         <SectionContainer size="large">
@@ -232,19 +240,18 @@ const Post = ({ state, actions, libraries }) => {
              <div> 
 
  {/* <h6> Ad </h6> */}
-                    
                       <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='2702898115'
                       style={{ width: 336, height: 250, display: 'inline-block' }}
                       format=''
-                    />
+                    /> 
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='5436872666'
-                      style={{ width: 336, height: 250, display: 'inline-block' }}
+                      slot='5056940893'
+                      style={{ width: 300, height: 250, display: 'inline-block' }}
                       format=''
-                    />
+                    /> 
                     {/* <h6> Ad </h6> */}
              </div>
               {/* Post Featured image here we can put adsense here      */}
@@ -269,13 +276,35 @@ const Post = ({ state, actions, libraries }) => {
                       <Adwrapper className={downloadhover ? "chalu faltu" : "faltu"}>
               
                          {/* <h6> Ad </h6> */}
-
+                         {(min < 15) ?  
+                       <AdSense.Google
+                       client='ca-pub-5442643109134129'
+                       slot='5221506164'
+                       style={{ width: 300, height: 250, float: 'left' }}
+                       format=''
+                     /> :
+                    (min < 30 == 0) ?
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
-                      slot='5221506164'
-                      style={{ width: 300, height: 250, float: 'left' }}
+                      slot='2702898115'
+                      style={{ width: 336, height: 250, display: 'inline-block' }}
                       format=''
-                    />
+                    /> :
+                    (min < 45 == 0) ?
+                    <AdSense.Google
+                    client='ca-pub-5442643109134129'
+                    slot='5056940893'
+                    style={{ width: 300, height: 250, display: 'inline-block' }}
+                    format=''
+                  /> : 
+                  <AdSense.Google
+                    client='ca-pub-5442643109134129'
+                    slot='5436872666'
+                    style={{ width: 336, height: 250, display: 'inline-block' }}
+                    format=''
+                  />
+                  }
+                   
                     {/* <h6> Ad </h6> */}
                       </Adwrapper>
 
