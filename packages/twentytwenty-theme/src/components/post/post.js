@@ -185,6 +185,7 @@ const Post = ({ state, actions, libraries }) => {
        {/* <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload> */}
+                    console.log(min);
   return data.isReady ? (
 
     <>
