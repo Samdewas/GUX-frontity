@@ -283,14 +283,14 @@ const Post = ({ state, actions, libraries }) => {
                        style={{ width: 300, height: 250, float: 'left' }}
                        format=''
                      /> :
-                    (min < 30 == 0) ?
+                    (min < 30 ) ?
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='2702898115'
                       style={{ width: 336, height: 250, display: 'inline-block' }}
                       format=''
                     /> :
-                    (min < 45 == 0) ?
+                    (min < 45 ) ?
                     <AdSense.Google
                     client='ca-pub-5442643109134129'
                     slot='5056940893'
