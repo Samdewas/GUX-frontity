@@ -154,11 +154,11 @@ const Post = ({ state, actions, libraries }) => {
 
   // 2mint me 30 second chalega total 1 ghante me 15 mint //
   const [downloadhover, setDownloadhover] = useState(false);
-  const d = new Date();
-  let min = d.getMinutes();
-  let sec = d.getSeconds();
+  
   const ondownloadhover = () => {
-    
+    const d = new Date();
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
     if (((min % 2 == 0) && (sec < 40))) {
       setDownloadhover(true);
       setTimeout(() => {
@@ -168,7 +168,13 @@ const Post = ({ state, actions, libraries }) => {
       setDownloadhover(false);
     }
   }
+  const [minute, setMinute] = useState(null);
+
   useEffect(()=>{
+    const d = new Date();
+    let min = d.getMinutes();
+    let sec = d.getSeconds();
+    setMinute(min);
     const div = document.getElementsByClassName("PostDiscription")[0]?.querySelectorAll('div')[0]?.querySelectorAll('h2')[0];
     let html = "<ins class='adsbygoogle' style='display:inline-block;width:300px;height:250px' data-ad-client='ca-pub-5442643109134129' data-ad-slot='5056940893'></ins>";
     div?.insertAdjacentHTML("beforebegin", html);
@@ -179,13 +185,11 @@ const Post = ({ state, actions, libraries }) => {
     docout[0]?.addEventListener("mouseleave", () => setDownloadhover(false));
   },[])
    
-  useEffect(()=>{
-    console.log(downloadhover)
-  },[downloadhover])
+  
        {/* <UXdownload onMouseEnter={ondownloadhover} onMouseLeave={() => setDownloadhover(false)}>
                         <Button style={{ zIndex: downloadhover ? 9999 : 99 }} className="d_innerbtn">Download</Button>
                       </UXdownload> */}
-                    console.log(min);
+                    console.log(minute);
   return data.isReady ? (
 
     <>
@@ -277,21 +281,21 @@ const Post = ({ state, actions, libraries }) => {
                       <Adwrapper className={downloadhover ? "chalu faltu" : "faltu"}>
               
                          {/* <h6> Ad </h6> */}
-                         {(min < 15) ?  
+                         {(minute < 15) ?  
                        <AdSense.Google
                        client='ca-pub-5442643109134129'
                        slot='5221506164'
                        style={{ width: 300, height: 250, float: 'left' }}
                        format=''
                      /> :
-                    (min < 30 ) ?
+                    (minute < 30 ) ?
                     <AdSense.Google
                       client='ca-pub-5442643109134129'
                       slot='2702898115'
                       style={{ width: 336, height: 250, display: 'inline-block' }}
                       format=''
                     /> :
-                    (min < 45 ) ?
+                    (minute < 45 ) ?
                     <AdSense.Google
                     client='ca-pub-5442643109134129'
                     slot='5056940893'
