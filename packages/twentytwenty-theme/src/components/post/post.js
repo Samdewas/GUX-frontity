@@ -159,7 +159,7 @@ const Post = ({ state, actions, libraries }) => {
     const d = new Date();
     let min = d.getMinutes();
     let sec = d.getSeconds();
-    if (((min % 2 == 0) && (sec < 40))) {
+    if (((min % 2 == 0) && (sec < 30))) {
       setDownloadhover(true);
       setTimeout(() => {
         document.getElementsByClassName("wp-block-button__link")[0]?.click();
