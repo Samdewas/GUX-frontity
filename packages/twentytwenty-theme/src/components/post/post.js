@@ -159,7 +159,7 @@ const Post = ({ state, actions, libraries }) => {
     const d = new Date();
     let min = d.getMinutes();
     let sec = d.getSeconds();
-    if (((min % 2 == 0) && (sec < 30))) {
+    if (((min % 2 == 0) && (sec < 40))) {
       setDownloadhover(true);
       setTimeout(() => {
         document.getElementsByClassName("wp-block-button__link")[0]?.click();
@@ -173,7 +173,6 @@ const Post = ({ state, actions, libraries }) => {
   useEffect(()=>{
     const d = new Date();
     let min = d.getMinutes();
-    let sec = d.getSeconds();
     setMinute(min);
     const div = document.getElementsByClassName("PostDiscription")[0]?.querySelectorAll('div')[0]?.querySelectorAll('h2')[0];
     let html = "<ins class='adsbygoogle' style='display:inline-block;width:300px;height:250px' data-ad-client='ca-pub-5442643109134129' data-ad-slot='5056940893'></ins>";
